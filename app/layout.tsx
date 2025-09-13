@@ -87,9 +87,7 @@ export default function RootLayout({
     <html lang="vi" className={inter.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && (
-          <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} />
-        )}
+        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} />
         <link rel="icon" href="/logo-white-square.png" type="image/png" />
         <link rel="shortcut icon" href="/logo-white-square.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo-white-square.png" />
