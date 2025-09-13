@@ -1,0 +1,21 @@
+{
+  "name": "BK Green - Giải Pháp Nước Toàn Diện",
+  "short_name": "BK Green",
+  "description": "CÔNG TY CỔ PHẦN KỸ THUẬT BK GREEN - Chuyên về xây dựng công trình cấp, thoát nước và xử lý nước thải",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007a3f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-white-square.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "vi",
+  "dir": "ltr"
+}
