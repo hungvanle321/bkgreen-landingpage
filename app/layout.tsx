@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AOSInit from '@/components/AOSInit'
+import { getGoogleVerificationCode } from '@/lib/env'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -83,11 +84,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Debug environment variables
+  console.log('=== ENVIRONMENT VARIABLES DEBUG ===');
+  console.log('NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION:', process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION);
+  console.log('All NEXT_PUBLIC env vars:', Object.keys(process.env).filter(key => key.startsWith('NEXT_PUBLIC_')));
+  console.log('getGoogleVerificationCode():', getGoogleVerificationCode());
+  console.log('=====================================');
+
   return (
     <html lang="vi" className={inter.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} />
+        {getGoogleVerificationCode() && (
+          <meta name="google-site-verification" content={getGoogleVerificationCode()} />
+        )}
         <link rel="icon" href="/logo-white-square.png" type="image/png" />
         <link rel="shortcut icon" href="/logo-white-square.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo-white-square.png" />
