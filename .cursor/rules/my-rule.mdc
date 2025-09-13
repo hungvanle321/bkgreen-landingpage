@@ -1,0 +1,15 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+1. Always use TypeScript for all files (.tsx, .ts).
+2. Follow Tailwind best practices: Utility-first, no custom CSS unless necessary.
+3. Use Shadcn components where possible for UI consistency.
+4. Import Lucide icons dynamically or as needed.
+5. Keep code clean, with ESLint rules enforced (no unused vars, etc.).
+6. For Zustand: Create stores in /lib/stores.ts.
+7. Use Vietnamese for all user-facing text, but code comments in English.
+8. Optimize images with Next Image.
+9. No external APIs yet, static content.
+10. If generating, stop and ask for missing assets like images.
