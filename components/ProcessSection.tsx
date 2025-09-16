@@ -1,35 +1,37 @@
-'use client'
+"use client"
 
-import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+
 
 export default function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0)
-  
+  const t = useTranslations('process')
+
   const processSteps = [
     {
       step: '01',
-      title: 'Khảo Sát & Đánh Giá',
-      description: 'Khảo sát hiện trạng và đánh giá nhu cầu xử lý nước',
+      title: t('steps.survey.title'),
+      description: t('steps.survey.description'),
       image: '/process-survey.jpg'
     },
     {
       step: '02', 
-      title: 'Thiết Kế Hệ Thống',
-      description: 'Thiết kế hệ thống xử lý nước phù hợp với yêu cầu',
+      title: t('steps.design.title'),
+      description: t('steps.design.description'),
       image: '/process-design.jpg'
     },
     {
       step: '03',
-      title: 'Thi Công & Lắp Đặt',
-      description: 'Thi công và lắp đặt hệ thống theo thiết kế',
+      title: t('steps.installation.title'),
+      description: t('steps.installation.description'),
       image: '/process-installation.jpg'
     },
     {
       step: '04',
-      title: 'Vận Hành & Bảo Trì',
-      description: 'Vận hành hệ thống và bảo trì định kỳ',
+      title: t('steps.maintenance.title'),
+      description: t('steps.maintenance.description'),
       image: '/process-maintenance.jpg'
     }
   ]
@@ -43,14 +45,14 @@ export default function ProcessSection() {
             className="text-4xl font-bold tracking-tight text-white sm:text-5xl"
             data-aos="fade-up"
           >
-            Quy Trình Làm Việc
+            {t('title')}
           </h2>
           <p 
             className="mt-6 text-xl leading-8 text-gray-200"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Quy trình chuyên nghiệp từ khảo sát đến vận hành hệ thống xử lý nước
+            {t('subtitle')}
           </p>
         </div>
 

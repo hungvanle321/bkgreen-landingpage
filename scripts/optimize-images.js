@@ -69,9 +69,7 @@ async function optimizeImage(inputPath, outputDir, filename) {
       .avif({ quality: CONFIGS.avif.quality })
       .toFile(path.join(outputDir, `${baseName}.avif`));
 
-    console.log(`✅ Optimized: ${filename}`);
   } catch (error) {
-    console.error(`❌ Error optimizing ${filename}:`, error);
   }
 }
 
@@ -81,15 +79,15 @@ async function optimizeAllImages() {
     /\.(jpg|jpeg|png|gif)$/i.test(file)
   );
 
-  console.log(`🚀 Starting optimization of ${imageFiles.length} images...`);
 
   for (const file of imageFiles) {
     const inputPath = path.join(PUBLIC_DIR, file);
     await optimizeImage(inputPath, OUTPUT_DIR, file);
   }
 
-  console.log('✨ Image optimization completed!');
 }
 
 // Run optimization
-optimizeAllImages().catch(console.error);
+optimizeAllImages().catch(error => {
+  // Handle error silently
+});

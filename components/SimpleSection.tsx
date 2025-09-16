@@ -1,14 +1,16 @@
 "use client"
 
-import * as React from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
 import { 
   Star, Users, Award, Shield, Zap, Settings, TrendingUp, 
   Heart, Eye, GraduationCap, Briefcase, Globe, Leaf, 
   Droplets, Target, Lightbulb, Building, CheckCircle 
 } from "lucide-react"
+import Image from "next/image"
+import * as React from "react"
+
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
+
 
 interface SimpleItem {
   id: string

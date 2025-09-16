@@ -1,13 +1,17 @@
 'use client'
 
+import { Phone, Mail, MapPin, Send } from 'lucide-react'
+import {useTranslations} from 'next-intl'
 import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Phone, Mail, MapPin, Send } from 'lucide-react'
 
 export default function ContactSection() {
+  const t = useTranslations('contact')
+  const tCommon = useTranslations('common')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,7 +22,6 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission here
-    console.log('Form submitted:', formData)
     // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' })
   }
@@ -38,14 +41,14 @@ export default function ContactSection() {
             className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
             data-aos="fade-up"
           >
-            Liên Hệ Với Chúng Tôi
+            {t('title')}
           </h2>
           <p 
             className="mt-6 text-lg leading-8 text-gray-600"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất
+            {t('subtitle')}
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
@@ -53,9 +56,9 @@ export default function ContactSection() {
           <div data-aos="fade-right" data-aos-delay="300">
             <Card>
               <CardHeader>
-                <CardTitle>Gửi Tin Nhắn</CardTitle>
+                <CardTitle>{t('form.title')}</CardTitle>
                 <CardDescription>
-                  Điền thông tin vào form bên dưới, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất
+                  {t('form.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -64,7 +67,7 @@ export default function ContactSection() {
                     <Input
                       type="text"
                       name="name"
-                      placeholder="Họ và tên *"
+                      placeholder={t('form.name')}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -74,7 +77,7 @@ export default function ContactSection() {
                     <Input
                       type="email"
                       name="email"
-                      placeholder="Email *"
+                      placeholder={t('form.email')}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -84,7 +87,7 @@ export default function ContactSection() {
                     <Input
                       type="tel"
                       name="phone"
-                      placeholder="Số điện thoại"
+                      placeholder={t('form.phone')}
                       value={formData.phone}
                       onChange={handleChange}
                     />
@@ -92,7 +95,7 @@ export default function ContactSection() {
                   <div>
                     <Textarea
                       name="message"
-                      placeholder="Nội dung tin nhắn *"
+                      placeholder={t('form.message')}
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
@@ -101,7 +104,7 @@ export default function ContactSection() {
                   </div>
                   <Button type="submit" className="w-full">
                     <Send className="h-4 w-4 mr-2" />
-                    Gửi Tin Nhắn
+                    {t('form.submit')}
                   </Button>
                 </form>
               </CardContent>
@@ -112,29 +115,29 @@ export default function ContactSection() {
           <div className="space-y-6" data-aos="fade-left" data-aos-delay="400">
             <Card>
               <CardHeader>
-                <CardTitle>Thông Tin Liên Hệ</CardTitle>
+                <CardTitle>{t('info.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-primary-red" />
                   <div>
-                    <p className="font-medium">Điện thoại</p>
-                    <p className="text-gray-600">0931252511</p>
+                    <p className="font-medium">{t('info.phone')}</p>
+                    <p className="text-gray-600">{tCommon('phoneDisplay')}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-primary-red" />
                   <div>
-                    <p className="font-medium">Email</p>
+                    <p className="font-medium">{t('info.email')}</p>
                     <p className="text-gray-600">dien.tran@bkgreen.vn</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-primary-red mt-0.5" />
                   <div>
-                    <p className="font-medium">Địa chỉ</p>
+                    <p className="font-medium">{t('info.address')}</p>
                     <p className="text-gray-600">
-                      517B Lê Trọng Tấn, Tây Thạnh, TP. HCM
+                      {t('location.address')}
                     </p>
                   </div>
                 </div>
@@ -147,8 +150,8 @@ export default function ContactSection() {
         {/* Google Maps */}
         <div className="mt-16" data-aos="fade-up" data-aos-delay="600">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Vị Trí Văn Phòng</h3>
-            <p className="text-gray-600">517B Lê Trọng Tấn, Tây Thạnh, TP. HCM</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('location.title')}</h3>
+            <p className="text-gray-600">{t('location.address')}</p>
           </div>
           <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
             <iframe
@@ -170,7 +173,7 @@ export default function ContactSection() {
               className="inline-flex items-center px-4 py-2 bg-primary-red text-white rounded-lg hover:bg-primary-red/90 transition-colors"
             >
               <MapPin className="h-4 w-4 mr-2" />
-              Xem trên Google Maps
+              {t('location.viewMap')}
             </a>
           </div>
         </div>

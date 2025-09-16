@@ -1,9 +1,12 @@
 "use client"
 
-import * as React from "react"
-import { SimpleFlipCard } from "@/components/ui/simple-flip-card"
-import { Badge } from "@/components/ui/badge"
 import { Target } from "lucide-react"
+import {useTranslations} from 'next-intl'
+import * as React from "react"
+
+import { Badge } from "@/components/ui/badge"
+import { SimpleFlipCard } from "@/components/ui/simple-flip-card"
+
 
 interface SimpleFlipItem {
   id: string
@@ -24,13 +27,14 @@ export function SimpleFlipSection({
   items,
   className
 }: SimpleFlipSectionProps) {
+  const t = useTranslations('aboutPage')
   return (
     <section className={className}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge className="mb-4" style={{ backgroundColor: '#007a3f' }}>
             <Target className="mr-2 h-4 w-4" />
-            Giá Trị Cốt Lõi
+            {t('coreValues.badge')}
           </Badge>
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
             {title}

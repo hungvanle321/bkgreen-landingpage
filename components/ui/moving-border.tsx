@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+
 import { cn } from "@/lib/utils"
 
 interface MovingBorderProps {
@@ -14,8 +15,8 @@ interface MovingBorderProps {
 export function MovingBorder({ 
   children, 
   duration = 2000, 
-  rx, 
-  ry, 
+  rx: _rx, 
+  ry: _ry, 
   className 
 }: MovingBorderProps) {
   return (

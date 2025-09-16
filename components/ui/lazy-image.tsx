@@ -1,8 +1,10 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import OptimizedImage from './optimized-image'
+
 import { cn } from '@/lib/utils'
+
+import OptimizedImage from './optimized-image'
 
 interface LazyImageProps {
   src: string

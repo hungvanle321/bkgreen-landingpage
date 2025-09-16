@@ -1,0 +1,534 @@
+{
+  "navigation": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "services": "Dịch Vụ",
+    "products": "Sản Phẩm",
+    "projects": "Dự Án",
+    "contact": "Liên Hệ",
+    "openMenu": "Mở menu chính",
+    "closeMenu": "Đóng menu"
+  },
+  "process": {
+    "title": "Quy Trình Làm Việc",
+    "subtitle": "Quy trình chuyên nghiệp từ khảo sát đến vận hành hệ thống xử lý nước",
+    "steps": {
+      "survey": {"title": "Khảo Sát & Đánh Giá", "description": "Khảo sát hiện trạng và đánh giá nhu cầu xử lý nước"},
+      "design": {"title": "Thiết Kế Hệ Thống", "description": "Thiết kế hệ thống xử lý nước phù hợp với yêu cầu"},
+      "installation": {"title": "Thi Công & Lắp Đặt", "description": "Thi công và lắp đặt hệ thống theo thiết kế"},
+      "maintenance": {"title": "Vận Hành & Bảo Trì", "description": "Vận hành hệ thống và bảo trì định kỳ"}
+    }
+  },
+  "equipment": {
+    "title": "Thiết Bị & Sản Phẩm",
+    "subtitle": "Chúng tôi cung cấp thiết bị và sản phẩm chất lượng cao cho hệ thống xử lý nước",
+    "items": {
+      "pump": {"title": "Máy Bơm Công Nghiệp", "description": "Máy bơm chuyên dụng cho hệ thống xử lý nước", "category": "Thiết bị chính"},
+      "valve": {"title": "Van Công Nghiệp", "description": "Van điều khiển, van an toàn cho hệ thống nước", "category": "Phụ kiện"},
+      "fire": {"title": "Thiết Bị PCCC", "description": "Hệ thống phòng cháy chữa cháy chuyên nghiệp", "category": "An toàn"},
+      "ro": {"title": "Hệ Thống RO", "description": "Thiết bị lọc nước RO công nghiệp", "category": "Xử lý nước"}
+    }
+  },
+  "hero": {
+    "title": "Hệ thống hoàn chỉnh cho nhu cầu nước của bạn",
+    "subtitle": "Tại BK Green, chúng tôi hiểu rằng mỗi khách hàng có những nhu cầu riêng biệt. Chúng tôi tiến hành đánh giá toàn diện để cung cấp các giải pháp tùy chỉnh nhằm nâng cao chất lượng nước và tối ưu hóa hiệu quả vận hành.",
+    "cta": "Liên Hệ Chúng Tôi"
+  },
+  "services": {
+    "title": "Dịch Vụ Của Chúng Tôi",
+    "subtitle": "Chúng tôi cung cấp đầy đủ các dịch vụ từ thiết kế, thi công đến vận hành hệ thống xử lý nước",
+    "wastewater": {
+      "title": "Xử Lý Nước Thải",
+      "description": "Cung cấp giải pháp & thi công hệ thống xử lý nước thải cho tòa nhà, khu công nghiệp"
+    },
+    "ro": {
+      "title": "Hệ Thống RO",
+      "description": "Cung cấp giải pháp & thi công hệ thống xử lý nước RO"
+    },
+    "electrical": {
+      "title": "Tủ Điện & SCADA",
+      "description": "Cung cấp giải pháp và thi công hệ thống tủ điện, SCADA"
+    },
+    "equipment": {
+      "title": "Thiết Bị PCCC",
+      "description": "Kinh doanh & phân phối thiết bị: Máy bơm, Van, Phụ kiện ngành nước và PCCC"
+    },
+    "fire": {
+      "title": "Thiết bị PCCC",
+      "description": "Thiết bị phòng cháy chữa cháy chuyên nghiệp"
+    },
+    "operation": {
+      "title": "Vận hành hệ thống",
+      "description": "Dịch vụ vận hành và bảo trì hệ thống nước"
+    },
+    "consulting": {
+      "title": "Tư Vấn Kỹ Thuật",
+      "description": "Tư vấn và thiết kế hệ thống xử lý nước tối ưu cho từng dự án"
+    }
+  },
+  "contact": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất",
+    "form": {
+      "title": "Gửi Tin Nhắn",
+      "description": "Điền thông tin vào form bên dưới, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất",
+      "name": "Họ và tên *",
+      "email": "Email *",
+      "phone": "Số điện thoại",
+      "message": "Nội dung tin nhắn *",
+      "submit": "Gửi Tin Nhắn"
+    },
+    "info": {
+      "title": "Thông Tin Liên Hệ",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "address": "Địa chỉ"
+    },
+    "location": {
+      "title": "Vị Trí Văn Phòng",
+      "address": "517B Lê Trọng Tấn, Tây Thạnh, TP. HCM",
+      "viewMap": "Xem trên Google Maps"
+    }
+  },
+  "footer": {
+    "quickLinks": "Liên Kết Nhanh",
+    "company": "CÔNG TY CỔ PHẦN KỸ THUẬT BK GREEN",
+    "description": "Chuyên về xây dựng công trình cấp, thoát nước và xử lý nước thải",
+    "address": "517B Lê Trọng Tấn, Tây Thạnh, TP. HCM",
+    "email": "dien.tran@bkgreen.vn",
+    "copyright": "© 2025 BK Green. Tất cả quyền được bảo lưu."
+  },
+  "about": {
+    "title": "Về BK Green",
+    "p1": "CÔNG TY CỔ PHẦN KỸ THUẬT BK GREEN là một công ty trẻ, năng động chuyên về xây dựng công trình cấp nước, thoát nước và xử lý nước thải.",
+    "p2": "Với đội ngũ kỹ sư trẻ, nhiệt tình và có chuyên môn cao, chúng tôi mang đến những giá trị thực sự cho khách hàng thông qua việc áp dụng công nghệ hiện đại và dịch vụ tận tâm.",
+    "p3": "Với phương châm ‘Tạo ra giá trị thực sự’, BK Green luôn nỗ lực học hỏi, phát triển và ứng dụng các giải pháp kỹ thuật tiên tiến, góp phần bảo vệ môi trường và mang lại những giải pháp bền vững cho cộng đồng.",
+    "imageAlt": "Công ty BK Green - Đội ngũ kỹ sư chuyên nghiệp",
+    "features": {
+      "expertise": {
+        "title": "Chuyên Môn Cao",
+        "description": "Đội ngũ kỹ sư có kiến thức chuyên sâu và kinh nghiệm thực tế trong xử lý nước"
+      },
+      "technology": {
+        "title": "Công Nghệ Tiên Tiến",
+        "description": "Áp dụng các giải pháp công nghệ hiện đại và thiết bị chất lượng cao"
+      },
+      "team": {
+        "title": "Đội Ngũ Nhiệt Tình",
+        "description": "Nhân viên trẻ, năng động, có tinh thần học hỏi và phát triển không ngừng"
+      },
+      "quality": {
+        "title": "Cam Kết Chất Lượng",
+        "description": "Luôn đặt chất lượng và sự hài lòng của khách hàng lên hàng đầu"
+      }
+    }
+  }
+  ,
+  "aboutPage": {
+    "meta": {
+      "title": "Giới Thiệu",
+      "description": "Tổng quan BK Green: điểm mạnh, cam kết, lãnh đạo, chứng nhận, cơ sở vật chất"
+    },
+    "overview": {
+      "badge": "Về Chúng Tôi",
+      "imageAlt": "Về công ty BK Green",
+      "cards": {
+        "growth": {"title": "Tăng Trưởng", "desc": "Phát triển bền vững"},
+        "environment": {"title": "Môi Trường", "desc": "Thân thiện sinh thái"}
+      },
+      "p1": "Công ty Cổ phần Kỹ thuật BK Green là một công ty mới được thành lập với mục tiêu mang đến giải pháp nước cấp và nước thải bền vững tại Việt Nam.",
+      "p2": "Chúng tôi bắt đầu hành trình của mình với đội ngũ chuyên gia giàu kinh nghiệm và tầm nhìn dài hạn về một tương lai nơi nguồn nước được bảo vệ và quản lý một cách bền vững."
+    },
+    "strengths": {
+      "badge": "Điểm Mạnh",
+      "title": "Tại Sao Chọn BK Green?",
+      "subtitle": "Những lý do khiến chúng tôi trở thành đối tác đáng tin cậy",
+      "stats": [
+        {"title": "Đội ngũ chuyên gia", "description": "Với hơn 15 năm kinh nghiệm trong lĩnh vực kỹ thuật nước, đội ngũ kỹ sư của chúng tôi được đào tạo chuyên sâu và có chứng chỉ quốc tế. Chúng tôi cam kết mang đến những giải pháp tối ưu nhất cho mỗi dự án."},
+        {"title": "Cam kết chất lượng", "description": "Chúng tôi tuân thủ nghiêm ngặt các tiêu chuẩn quốc tế ISO 9001:2015 và áp dụng quy trình kiểm soát chất lượng 3 cấp độ. Mỗi sản phẩm và dịch vụ đều được kiểm tra kỹ lưỡng trước khi giao đến khách hàng."},
+        {"title": "Tập trung bền vững", "description": "BK Green tiên phong trong việc phát triển các giải pháp xanh, thân thiện với môi trường. Chúng tôi sử dụng công nghệ tiết kiệm năng lượng và tái chế nước thải, góp phần bảo vệ môi trường bền vững cho tương lai."}
+      ]
+    },
+    "commit": {
+      "badge": "Cam Kết",
+      "title": "Cam Kết Của Chúng Tôi",
+      "subtitle": "Bảo vệ nguồn nước và tối ưu năng lượng với giải pháp hiện đại",
+      "cards": {
+        "tech": {"title": "Kỹ Thuật & Công Nghệ", "desc": "Ứng dụng công nghệ tiên tiến và kỹ thuật chuyên sâu"},
+        "env": {"title": "Môi Trường Bền Vững", "desc": "Cam kết bảo vệ môi trường và phát triển bền vững"},
+        "water": {"title": "Giải Pháp Nước", "desc": "Xử lý nước cấp, nước thải và giải pháp toàn diện"}
+      },
+      "legend": {"tech": "Kỹ Thuật & Công Nghệ", "env": "Môi Trường Bền Vững", "water": "Giải Pháp Nước Toàn Diện"}
+    }
+    ,
+    "leadership": {
+      "badge": "Ban Lãnh Đạo",
+      "title": "Đội Ngũ Lãnh Đạo",
+      "subtitle": "Đội ngũ chuyên gia giàu kinh nghiệm, dẫn dắt BK Green hướng tới tương lai bền vững",
+      "expertLabel": "Chuyên gia hàng đầu",
+      "members": [
+        {
+          "name": "Ông Trần Bá Điền",
+          "role": "Giám đốc điều hành",
+          "description": "Kỹ sư môi trường với hơn 15 năm kinh nghiệm trong lĩnh vực xử lý nước thải và quản lý dự án",
+          "detailsTitle": "Kinh Nghiệm & Thành Tựu",
+          "details": [
+            "15+ năm kinh nghiệm trong xử lý nước thải",
+            "Quản lý hơn 50 dự án quy mô lớn",
+            "Chứng chỉ PMP - Quản lý dự án chuyên nghiệp",
+            "Thạc sĩ Kỹ thuật Môi trường",
+            "Chuyên gia tư vấn cho nhiều doanh nghiệp lớn"
+          ]
+        }
+      ]
+    }
+    ,
+    "certifications": {
+      "badge": "Chứng Nhận",
+      "title": "Chứng Nhận & Bằng Cấp",
+      "subtitle": "Đảm bảo chất lượng và tuân thủ các tiêu chuẩn quốc tế",
+      "items": [
+        {"title": "Chứng Nhận Chất Lượng", "description": "Tuân thủ các tiêu chuẩn quốc tế về chất lượng và an toàn"},
+        {"title": "Bằng Cấp Kỹ Thuật", "description": "Đội ngũ kỹ sư được đào tạo chuyên sâu và có chứng chỉ hành nghề"},
+        {"title": "Giấy Phép Hoạt Động", "description": "Đầy đủ giấy phép kinh doanh và hoạt động trong lĩnh vực môi trường"}
+      ]
+    }
+    ,
+    "facilities": {
+      "badge": "Cơ Sở Vật Chất",
+      "title": "Cơ Sở Vật Chất",
+      "subtitle": "Hệ thống cơ sở vật chất hiện đại, đáp ứng mọi nhu cầu sản xuất và nghiên cứu",
+      "items": [
+        {"title": "Văn Phòng Chính", "description": "Trụ sở chính tại TP. Hồ Chí Minh với đầy đủ tiện nghi"},
+        {"title": "Xưởng Sản Xuất", "description": "Xưởng sản xuất và lắp ráp thiết bị chuyên nghiệp"},
+        {"title": "Phòng Thí Nghiệm", "description": "Phòng thí nghiệm kiểm tra chất lượng nước hiện đại"}
+      ]
+    }
+    ,
+    "cta": {
+      "title": "Bắt Đầu Hành Trình Cùng BK Green",
+      "subtitle": "Liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất cho dự án của bạn",
+      "primary": "Liên Hệ Ngay",
+      "secondary": "Xem Dịch Vụ"
+    }
+    ,
+    "coreValues": {
+      "title": "Những Giá Trị Định Hướng",
+      "subtitle": "Những nguyên tắc cốt lõi dẫn dắt mọi hoạt động và quyết định của chúng tôi",
+      "badge": "Giá Trị Cốt Lõi",
+      "items": {
+        "quality": {
+          "title": "Chất lượng",
+          "content": [
+            "Đặt chất lượng lên hàng đầu",
+            "Tuân thủ tiêu chuẩn quốc tế",
+            "Kiểm soát chất lượng nghiêm ngặt"
+          ]
+        },
+        "innovation": {
+          "title": "Đổi mới",
+          "content": [
+            "Áp dụng công nghệ tiên tiến",
+            "Nghiên cứu phát triển liên tục",
+            "Sáng tạo trong giải pháp"
+          ]
+        },
+        "sustainability": {
+          "title": "Bền vững",
+          "content": [
+            "Bảo vệ môi trường",
+            "Phát triển bền vững",
+            "Sử dụng tài nguyên hiệu quả"
+          ]
+        },
+        "customerSupport": {
+          "title": "Hỗ trợ khách hàng",
+          "content": [
+            "Đồng hành suốt dự án",
+            "Dịch vụ chăm sóc tận tâm",
+            "Hỗ trợ kỹ thuật 24/7"
+          ]
+        }
+      }
+    }
+    ,
+    "development": {
+      "title": "Định Hướng Phát Triển",
+      "subtitle": "BK Green đang xây dựng nền tảng vững chắc để trở thành đối tác đáng tin cậy trong lĩnh vực kỹ thuật nước",
+      "badge": "Tầm Nhìn",
+      "items": {
+        "tech": {
+          "title": "Nền Tảng Công Nghệ",
+          "description": "Xây dựng hệ thống công nghệ hiện đại và đáng tin cậy",
+          "detailsTitle": "Công Nghệ & Thiết Bị",
+          "details": [
+            "Đầu tư vào thiết bị xử lý nước chất lượng cao",
+            "Hệ thống giám sát và vận hành hiện đại",
+            "Quy trình kiểm soát chất lượng nghiêm ngặt",
+            "Đào tạo đội ngũ kỹ thuật chuyên sâu",
+            "Xây dựng hệ thống quản lý dự án hiệu quả"
+          ]
+        },
+        "partnership": {
+          "title": "Xây Dựng Đối Tác",
+          "description": "Phát triển mạng lưới đối tác chiến lược và bền vững",
+          "detailsTitle": "Mạng Lưới Đối Tác",
+          "details": [
+            "Tìm kiếm nhà cung cấp thiết bị uy tín",
+            "Xây dựng quan hệ với đối tác công nghệ",
+            "Phát triển mạng lưới nhà thầu phụ",
+            "Hợp tác với các viện nghiên cứu",
+            "Mở rộng quan hệ đối tác trong tương lai"
+          ]
+        },
+        "innovation": {
+          "title": "Tập Trung Đổi Mới",
+          "description": "Đầu tư vào nghiên cứu và phát triển giải pháp bền vững",
+          "detailsTitle": "Nghiên Cứu & Phát Triển",
+          "details": [
+            "Nghiên cứu công nghệ xử lý nước tiên tiến",
+            "Phát triển giải pháp thân thiện môi trường",
+            "Ứng dụng công nghệ số trong vận hành",
+            "Đầu tư vào đào tạo và phát triển nhân lực",
+            "Xây dựng thư viện kiến thức chuyên môn"
+          ]
+        }
+      }
+    }
+    ,
+    "guidance": {
+      "badge": "Định Hướng",
+      "title": "Tầm Nhìn, Sứ Mệnh & Giá Trị",
+      "subtitle": "Những nguyên tắc cốt lõi và định hướng phát triển của BK Green",
+      "cards": {
+        "vision": {
+          "title": "Tầm Nhìn",
+          "desc": "Trở thành công ty dẫn đầu trong lĩnh vực kỹ thuật nước tại Việt Nam và Đông Nam Á, được công nhận về đổi mới công nghệ và cam kết bền vững môi trường."
+        },
+        "mission": {
+          "title": "Sứ Mệnh",
+          "desc": "Cung cấp giải pháp kỹ thuật nước toàn diện từ thiết kế, thi công đến vận hành, đáp ứng nhu cầu hộ gia đình đến công nghiệp."
+        },
+        "values": {
+          "title": "Giá Trị",
+          "desc": "Chất lượng vượt trội, đổi mới sáng tạo, bền vững môi trường và hỗ trợ khách hàng tận tâm."
+        }
+      },
+      "legend": {
+        "vision": "Tầm Nhìn",
+        "mission": "Sứ Mệnh",
+        "values": "Giá Trị"
+      }
+    }
+    ,
+    "interactive": {
+      "hint": {
+        "front": "Nhấp để xem chi tiết",
+        "back": "Nhấp để quay lại"
+      }
+    }
+  }
+  ,
+  "servicesPage": {
+    "header": {
+      "title": "Dịch Vụ Của Chúng Tôi",
+      "subtitle": "BK Green cung cấp các giải pháp xử lý nước thải, nước cấp và hệ thống RO, bắt đầu với các dự án nhỏ và đang mở rộng dịch vụ tại Việt Nam."
+    },
+    "catalog": {
+      "title": "Danh Mục Dịch Vụ",
+      "learnMore": "Tìm Hiểu Thêm"
+    },
+    "services": {
+      "wastewater": {
+        "description": "Cung cấp giải pháp và thi công cho tòa nhà, khu công nghiệp trong các dự án ban đầu.",
+        "features": ["Thiết kế hệ thống xử lý nước thải", "Thi công và lắp đặt chuyên nghiệp", "Vận hành và bảo trì hệ thống", "Tư vấn kỹ thuật chuyên sâu"]
+      },
+      "operation": {
+        "description": "Dịch vụ vận hành nước thải và nước cấp, đang phát triển.",
+        "features": ["Vận hành hệ thống liên tục", "Bảo trì định kỳ", "Giám sát từ xa", "Báo cáo chi tiết"]
+      },
+      "ro": {
+        "description": "Thi công hệ thống xử lý nước RO với công nghệ hiện đại.",
+        "features": ["Thiết kế hệ thống RO tối ưu", "Lắp đặt chuyên nghiệp", "Bảo trì và thay thế linh kiện", "Tối ưu hóa hiệu suất"]
+      },
+      "electrical": {
+        "description": "Cung cấp giải pháp tự động hóa cho các dự án mới.",
+        "features": ["Thiết kế tủ điện điều khiển", "Hệ thống SCADA hiện đại", "Tự động hóa quy trình", "Giám sát và điều khiển từ xa"]
+      },
+      "equipment": {
+        "description": "Phân phối máy bơm, van, phụ kiện ngành nước và PCCC.",
+        "features": ["Máy bơm chuyên dụng", "Van và phụ kiện chất lượng", "Thiết bị PCCC hiện đại", "Tư vấn lựa chọn thiết bị"]
+      }
+    },
+    "sustainability": {
+      "title": "Hướng Tới Tương Lai Xanh",
+      "subtitle": "Chúng tôi đang xây dựng các giải pháp tiết kiệm năng lượng trong các dự án đầu tiên, hướng tới một tương lai bền vững cho nguồn nước Việt Nam."
+    },
+    "process": {
+      "title": "Quy Trình Dự Án",
+      "subtitle": "Quy trình chuyên nghiệp từ khảo sát đến vận hành, đảm bảo chất lượng và hiệu quả",
+      "stepLabel": "Bước {step}",
+      "badge": "Quy trình chuyên nghiệp",
+      "steps": [
+        {"title": "Khảo Sát & Phân Tích", "description": "Đánh giá hiện trạng và phân tích nhu cầu cụ thể của dự án"},
+        {"title": "Thiết Kế & Lập Kế Hoạch", "description": "Thiết kế chi tiết hệ thống và lập kế hoạch triển khai"},
+        {"title": "Thi Công & Lắp Đặt", "description": "Thi công chuyên nghiệp với đội ngũ kỹ thuật giàu kinh nghiệm"},
+        {"title": "Vận Hành & Bảo Trì", "description": "Hỗ trợ vận hành và bảo trì định kỳ hệ thống"}
+      ]
+    },
+    "technologies": {
+      "title": "Công Nghệ Sử Dụng",
+      "subtitle": "Áp dụng công nghệ tiên tiến và thiết bị hiện đại cho mọi dự án",
+      "items": {
+        "ro": {"title": "Hệ Thống RO", "description": "Công nghệ lọc nước thẩm thấu ngược tiên tiến", "features": ["Tỷ lệ thu hồi cao", "Tiết kiệm năng lượng", "Chất lượng nước ổn định"]},
+        "scada": {"title": "SCADA & Tự Động Hóa", "description": "Hệ thống giám sát và điều khiển từ xa", "features": ["Giám sát 24/7", "Điều khiển tự động", "Báo cáo chi tiết"]},
+        "fire": {"title": "Thiết Bị PCCC", "description": "Hệ thống phòng cháy chữa cháy chuyên nghiệp", "features": ["Phát hiện sớm", "Chữa cháy hiệu quả", "Tuân thủ tiêu chuẩn"]}
+      }
+    },
+    "cases": {
+      "title": "Case Studies",
+      "subtitle": "Các dự án tiêu biểu và kết quả đạt được",
+      "resultsTitle": "Kết quả đạt được:",
+      "0": {"title": "Dự Án Khu Công Nghiệp", "industry": "Công nghiệp", "description": "Hệ thống xử lý nước thải 2000m³/ngày cho khu công nghiệp", "results": ["Giảm 95% ô nhiễm", "Tiết kiệm 30% chi phí", "Vận hành ổn định"]},
+      "1": {"title": "Nhà Máy Nước Sạch", "industry": "Nước cấp", "description": "Hệ thống RO công nghiệp cho nhà máy nước sạch", "results": ["Công suất 1000m³/h", "Chất lượng nước cao", "Bảo trì dễ dàng"]},
+      "2": {"title": "Tòa Nhà Thương Mại", "industry": "Thương mại", "description": "Hệ thống PCCC và xử lý nước cho tòa nhà cao tầng", "results": ["An toàn tuyệt đối", "Tuân thủ quy định", "Chi phí hợp lý"]}
+    },
+    "support": {
+      "title": "Bảo Hành & Hỗ Trợ",
+      "subtitle": "Cam kết hỗ trợ toàn diện cho khách hàng",
+      "items": [
+        {"title": "Hỗ Trợ 24/7", "description": "Đội ngũ kỹ thuật hỗ trợ 24/7 cho mọi vấn đề"},
+        {"title": "Bảo Hành Dài Hạn", "description": "Bảo hành toàn diện cho tất cả thiết bị và hệ thống"},
+        {"title": "Đào Tạo Vận Hành", "description": "Đào tạo nhân viên vận hành và bảo trì hệ thống"}
+      ]
+    },
+    "faq": {
+      "title": "Câu Hỏi Thường Gặp",
+      "subtitle": "Giải đáp các thắc mắc phổ biến về dịch vụ của chúng tôi",
+      "items": [
+        {"q": "Thời gian thi công một dự án thường mất bao lâu?", "a": "Thời gian thi công phụ thuộc vào quy mô dự án, thường từ 2-6 tháng cho các dự án vừa và nhỏ."},
+        {"q": "BK Green có hỗ trợ bảo trì sau khi hoàn thành dự án?", "a": "Có, chúng tôi cung cấp dịch vụ bảo trì định kỳ và hỗ trợ kỹ thuật 24/7."},
+        {"q": "Chi phí dịch vụ được tính như thế nào?", "a": "Chi phí được tính dựa trên quy mô dự án, công nghệ sử dụng và yêu cầu cụ thể của khách hàng."}
+      ]
+    },
+    "cta": {
+      "title": "Cần Tư Vấn Dịch Vụ?",
+      "subtitle": "Liên hệ với chúng tôi để được tư vấn miễn phí và nhận báo giá chi tiết",
+      "primary": "Liên Hệ Ngay",
+      "secondary": "Xem Dự Án"
+    },
+    "filters": {
+      "industry": ["Nhà ở", "Công nghiệp"],
+      "type": ["Nước thải", "Nước cấp"]
+    }
+  }
+  ,
+  "projectsPage": {
+    "header": {"title": "Lĩnh Vực Hoạt Động", "subtitle": "BK Green đang triển khai các dự án đầu tiên, mang đến giải pháp nước sạch cho cộng đồng."},
+    "stats": {"active": "Dự án đang triển khai", "completed": "Dự án hoàn thành", "capacity": "Công suất thiết kế", "service": "Dịch vụ chuyên nghiệp"},
+    "featured": {"title": "Dự Án Nổi Bật", "viewDetail": "Xem Chi Tiết"},
+    "all": {"title": "Tất Cả Dự Án", "detail": "Chi Tiết"},
+    "cta": {"title": "Gửi Dự Án Của Bạn", "subtitle": "Có dự án cần tư vấn? Hãy liên hệ với chúng tôi để được hỗ trợ chuyên nghiệp", "primary": "Liên Hệ Ngay", "secondary": "Xem Dịch Vụ"}
+  }
+  ,
+  "contactPage": {
+    "header": {"title": "Liên Hệ Với Chúng Tôi", "subtitle": "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất"},
+    "form": {
+      "title": "Gửi Tin Nhắn",
+      "name": "Họ và tên *",
+      "email": "Email *",
+      "company": "Công ty",
+      "phone": "Số điện thoại",
+      "requestType": "Loại yêu cầu *",
+      "message": "Tin nhắn *",
+      "submit": "Gửi Tin Nhắn",
+      "placeholder": {
+        "name": "Nhập họ và tên",
+        "email": "Nhập email",
+        "company": "Nhập tên công ty",
+        "phone": "Nhập số điện thoại",
+        "requestType": "Chọn loại yêu cầu",
+        "message": "Nhập nội dung tin nhắn..."
+      },
+      "requestTypes": ["Tư vấn dự án", "Báo giá sản phẩm", "Hỗ trợ kỹ thuật", "Hợp tác kinh doanh", "Khác"]
+    },
+    "office": {"title": "Văn Phòng", "mapPlaceholder": "Google Maps sẽ được tích hợp tại đây", "city": "TP. Hồ Chí Minh", "viewMap": "Xem trên Google Maps"},
+    "support": {"title": "Hỗ Trợ Khách Hàng", "hotline": "Hotline hỗ trợ", "hours": "Từ 8:00 - 17:00 (T2-T6)", "email": "Email hỗ trợ", "sla": "Phản hồi trong 24h"},
+    "faqLink": "Câu Hỏi Thường Gặp",
+    "info": {"phoneTitle": "Điện thoại", "phoneDesc": "Liên hệ trực tiếp để được tư vấn", "emailTitle": "Email", "emailDesc": "Gửi email cho chúng tôi", "addressTitle": "Địa chỉ", "addressDesc": "Văn phòng chính tại HCM", "hoursTitle": "Giờ làm việc", "hoursDesc": "Thứ 2 - Thứ 6 hàng tuần"},
+    "cta": {"title": "Bắt Đầu Dự Án Của Bạn", "subtitle": "Sẵn sàng triển khai dự án xử lý nước? Hãy liên hệ với chúng tôi ngay hôm nay", "call": "Gọi Ngay", "email": "Gửi Email"}
+  }
+  ,
+  "productsPage": {
+    "header": {"title": "Sản Phẩm Của Chúng Tôi", "subtitle": "BK Green cung cấp các sản phẩm chất lượng cao: máy bơm, van, phụ kiện và hệ thống RO từ các đối tác đáng tin cậy."},
+    "featured": {
+      "title": "Sản Phẩm Nổi Bật",
+      "detailBtn": "Chi Tiết",
+      "products": [
+        {"name": "Bơm Công Nghiệp BK-P100", "category": "Máy Bơm", "specs": "Lưu lượng: 100 m³/h | Áp suất: 50m", "description": "Máy bơm công nghiệp hiệu suất cao, tiết kiệm năng lượng"},
+        {"name": "Van Điều Áp BK-V50", "category": "Van", "specs": "Áp suất: 0-16 bar | Nhiệt độ: -10°C đến 80°C", "description": "Van điều áp chính xác, độ bền cao"},
+        {"name": "Hệ Thống RO BK-RO2000", "category": "Hệ Thống RO", "specs": "Công suất: 2000L/h | Tỷ lệ thu hồi: 75%", "description": "Hệ thống lọc nước RO công nghiệp"}
+      ]
+    },
+    "categories": {
+      "title": "Danh Mục Sản Phẩm",
+      "learnMore": "Tìm Hiểu Thêm",
+      "items": {
+        "pumps": {
+          "title": "Máy Bơm",
+          "description": "Máy bơm chuyên dụng cho hệ thống xử lý nước",
+          "products": [
+            {"name": "Bơm Công Nghiệp", "specs": "Lưu lượng: 50-500 m³/h", "description": "Máy bơm công nghiệp hiệu suất cao"},
+            {"name": "Bơm Nước Thải", "specs": "Lưu lượng: 20-200 m³/h", "description": "Chuyên dụng cho xử lý nước thải"}
+          ]
+        },
+        "valves": {
+          "title": "Van",
+          "description": "Van điều áp và chống rò rỉ chất lượng cao",
+          "products": [
+            {"name": "Van Điều Áp", "specs": "Áp suất: 0-16 bar", "description": "Điều chỉnh áp suất chính xác"},
+            {"name": "Van Chống Rò Rỉ", "specs": "Áp suất: 0-25 bar", "description": "Ngăn ngừa rò rỉ hiệu quả"}
+          ]
+        },
+        "fire": {
+          "title": "Phụ Kiện PCCC",
+          "description": "Thiết bị phòng cháy chữa cháy chuyên nghiệp",
+          "products": [
+            {"name": "Vòi Phun Nước", "specs": "Đường kính: 50-200mm", "description": "Vòi phun chữa cháy chuyên dụng"},
+            {"name": "Hệ Thống Báo Cháy", "specs": "Phạm vi: 1000m²", "description": "Hệ thống báo cháy tự động"}
+          ]
+        }
+      }
+    },
+    "filters": {
+      "title": "Bộ Lọc & Tìm Kiếm",
+      "typeTitle": "Loại Sản Phẩm",
+      "applicationTitle": "Ứng Dụng",
+      "type": ["Máy Bơm", "Van", "Phụ Kiện PCCC", "Hệ Thống RO"],
+      "application": ["Công nghiệp", "Dân dụng", "Thương mại"],
+      "searchPlaceholder": "Tìm kiếm sản phẩm...",
+      "filterBtn": "Lọc",
+      "helper": "Sử dụng bộ lọc bên trái và thanh tìm kiếm để tìm sản phẩm phù hợp với nhu cầu của bạn."
+    },
+    "related": {
+      "title": "Giải Pháp Liên Quan",
+      "subtitle": "Khám phá các dịch vụ và dự án liên quan đến sản phẩm của chúng tôi",
+      "servicesBtn": "Xem Dịch Vụ",
+      "projectsBtn": "Xem Dự Án"
+    },
+    "cta": {
+      "title": "Tìm Đại Lý",
+      "subtitle": "Liên hệ với chúng tôi để tìm đại lý gần nhất và nhận tư vấn sản phẩm",
+      "primary": "Liên Hệ Ngay"
+    }
+  }
+  ,
+  "units": {
+    "m3PerDay": "m³/ngày",
+    "m3PerHour": "m³/h"
+  },
+  "common": {
+    "phone": "0931252511",
+    "phoneDisplay": "0931 252 511"
+  }
+}

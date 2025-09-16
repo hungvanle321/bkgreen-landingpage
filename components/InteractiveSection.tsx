@@ -1,15 +1,20 @@
 "use client"
 
-import * as React from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FlipCard } from "@/components/ui/flip-card"
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
 import { 
   Star, Users, Award, Shield, Zap, Settings, TrendingUp, 
   Heart, Eye, GraduationCap, Briefcase, Globe, Leaf, 
   Droplets, Target, Lightbulb, Building, CheckCircle 
 } from "lucide-react"
+import Image from "next/image"
+import {useTranslations} from 'next-intl'
+import * as React from "react"
+
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { FlipCard } from "@/components/ui/flip-card"
+
+
+
 
 interface InteractiveItem {
   id: string
@@ -53,6 +58,7 @@ export function InteractiveSection({
   className
 }: InteractiveSectionProps) {
   const [flippedCards, setFlippedCards] = React.useState<Set<string>>(new Set())
+  const t = useTranslations('aboutPage')
 
   const toggleFlip = (id: string) => {
     setFlippedCards(prev => {
@@ -130,7 +136,7 @@ export function InteractiveSection({
                     </p>
                     <div className="mt-4 flex justify-center">
                       <div className="text-sm text-blue-600 font-medium">
-                        👆 Nhấp để xem chi tiết
+                        👆 {t('interactive.hint.front')}
                       </div>
                     </div>
                   </CardContent>
@@ -168,7 +174,7 @@ export function InteractiveSection({
                     )}
                     <div className="mt-6 text-center">
                       <div className="text-xs text-gray-500">
-                        👆 Nhấp để quay lại
+                        👆 {t('interactive.hint.back')}
                       </div>
                     </div>
                   </CardContent>

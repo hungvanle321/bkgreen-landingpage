@@ -4,7 +4,7 @@
 export const BLUR_DATA_URL = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
 
 // Generate blur placeholder for images
-export function generateBlurDataURL(width: number = 1, height: number = 1): string {
+export function generateBlurDataURL(): string {
   return BLUR_DATA_URL
 }
 
@@ -12,7 +12,7 @@ export function generateBlurDataURL(width: number = 1, height: number = 1): stri
 export function getImageSizes(layout: 'hero' | 'card' | 'grid' | 'single'): string {
   switch (layout) {
     case 'hero':
-      return '(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw'
+      return '(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw'       
     case 'card':
       return '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
     case 'grid':

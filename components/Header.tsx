@@ -1,21 +1,26 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
 import { Menu, X, Home, Info, Wrench, Package, FolderOpen } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import {useLocale, useTranslations} from 'next-intl'
+import { useState, useEffect } from 'react'
+
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { Button } from '@/components/ui/button'
 
-const navigation = [
-  { name: 'Trang Chủ', href: '/', icon: Home },
-  { name: 'Giới Thiệu', href: '/gioi-thieu', icon: Info },
-  { name: 'Dịch Vụ', href: '/dich-vu', icon: Wrench },
-  { name: 'Sản Phẩm', href: '/san-pham', icon: Package },
-  { name: 'Dự Án', href: '/du-an', icon: FolderOpen },
+const navItems = [
+  { key: 'home', href: '/', icon: Home },
+  { key: 'about', href: '/gioi-thieu', icon: Info },
+  { key: 'services', href: '/dich-vu', icon: Wrench },
+  { key: 'products', href: '/san-pham', icon: Package },
+  { key: 'projects', href: '/du-an', icon: FolderOpen },
 ]
 
 export default function Header() {
+  const t = useTranslations('navigation')
+  const locale = useLocale()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
@@ -29,7 +34,22 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const isHomePage = pathname === '/'
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const original = document.body.style.overflow
+      const originalHtml = document.documentElement.style.overflow
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = original
+        document.documentElement.style.overflow = originalHtml
+      }
+    }
+  }, [mobileMenuOpen])
+
+
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`
   const headerClasses = isHomePage 
     ? `fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
@@ -43,7 +63,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         {/* Logo Container */}
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 focus:outline-none focus:ring-0">
+          <Link href={`/${locale}`} className="-m-1.5 p-1.5 focus:outline-none focus:ring-0">
             <span className="sr-only">BK Green</span>
             <div className="flex items-center space-x-2">
               {/* Mobile Logo - Left aligned */}
@@ -55,6 +75,7 @@ export default function Header() {
                     width={32}
                     height={32}
                     className="w-8 h-8"
+                    priority
                   />
                 </div>
               ) : (
@@ -64,6 +85,7 @@ export default function Header() {
                   width={48}
                   height={48}
                   className="w-12 h-12 sm:hidden"
+                  priority
                 />
               )}
               {/* Tablet Logo */}
@@ -75,6 +97,7 @@ export default function Header() {
                     width={112}
                     height={24}
                     className="w-28 h-6"
+                    priority
                   />
                 </div>
               ) : (
@@ -84,6 +107,7 @@ export default function Header() {
                   width={128}
                   height={32}
                   className="hidden sm:block lg:hidden w-32 h-8"
+                  priority
                 />
               )}
               {/* Desktop Logo */}
@@ -95,6 +119,7 @@ export default function Header() {
                     width={160}
                     height={40}
                     className="w-40 h-10"
+                    priority
                   />
                 </div>
               ) : (
@@ -104,6 +129,7 @@ export default function Header() {
                   width={160}
                   height={40}
                   className="hidden lg:block w-40 h-10"
+                  priority
                 />
               )}
             </div>
@@ -119,26 +145,27 @@ export default function Header() {
             }`}
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Mở menu chính</span>
+            <span className="sr-only">{t('openMenu') }</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
+          {navItems.map((item) => (
             <Link
-              key={item.name}
-              href={item.href}
+              key={item.key}
+              href={`/${locale}${item.href}`}
               className={`text-sm font-semibold leading-6 transition-colors ${
                 isHomePage && !isScrolled
                   ? 'text-white hover:text-primary-red'
                   : 'text-gray-900 hover:text-primary-red'
               }`}
             >
-              {item.name}
+              {t(item.key)}
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+          <LanguageSwitcher />
           <Button 
             asChild 
             className={isHomePage && !isScrolled 
@@ -146,7 +173,7 @@ export default function Header() {
               : "bg-primary-red text-white hover:bg-primary-red/90"
             }
           >
-            <Link href="/lien-he" className="focus:outline-none focus:ring-0">Liên Hệ</Link>
+            <Link href={`/${locale}/lien-he`} className="focus:outline-none focus:ring-0">{t('contact')}</Link>
           </Button>
         </div>
       </nav>
@@ -154,49 +181,63 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
-          <div className="fixed inset-0 z-50" />
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <button 
+            aria-label="Close menu"
+            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 z-[90] bg-black/30"
+          />
+          <div className="fixed inset-y-0 right-0 z-[100] w-full h-screen overflow-y-auto overscroll-contain bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 shadow-xl">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5 focus:outline-none focus:ring-0">
-                <span className="sr-only">BK Green</span>
-                <div className="flex items-center space-x-2">
-                  <Image 
-                    src="/logo-transparent-square.svg" 
-                    alt="BK Green Logo" 
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
-                  <span className="text-lg font-bold text-primary-blue">BK GREEN</span>
-                </div>
-              </Link>
+              <span className="sr-only">BK Green</span>
+              <div />
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span className="sr-only">Đóng menu</span>
+                <span className="sr-only">{t('closeMenu')}</span>
                 <X className="h-6 w-6" aria-hidden="true" />
               </button>
+            </div>
+            {/* Big centered logo like footer mobile */}
+            <div className="flex flex-col items-center mt-2 mb-6">
+              <Link href={`/${locale}`} className="focus:outline-none focus:ring-0">
+                <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center shadow-lg mb-3">
+                  <Image 
+                    src="/logo-transparent-square.svg" 
+                    alt="BK Green Logo" 
+                    width={48}
+                    height={48}
+                    className="w-12 h-12"
+                    priority
+                  />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-blue text-center">BK GREEN</h2>
+              </Link>
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
+                  {navItems.map((item) => (
                     <Link
-                      key={item.name}
-                      href={item.href}
+                      key={item.key}
+                      href={`/${locale}${item.href}`}
                       className="-mx-3 flex rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 items-center space-x-2"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <item.icon className="h-5 w-5" />
-                      <span>{item.name}</span>
+                      <span>{t(item.key)}</span>
                     </Link>
                   ))}
                 </div>
-                <div className="py-6">
-                  <Button asChild className="w-full">
-                    <Link href="/lien-he" className="focus:outline-none focus:ring-0">Liên Hệ</Link>
+                <div className="py-6 space-y-4">
+                  <div className="flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
+                  <Button asChild className="w-full" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href={`/${locale}/lien-he`} className="focus:outline-none focus:ring-0" onClick={() => setMobileMenuOpen(false)}>
+                      {t('contact')}
+                    </Link>
                   </Button>
                 </div>
               </div>

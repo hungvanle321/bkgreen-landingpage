@@ -1,8 +1,16 @@
-import Link from 'next/link'
-import Image from 'next/image'
+"use client"
+
 import { Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import {useTranslations, useLocale} from 'next-intl'
 
 export default function Footer() {
+  const tNav = useTranslations('navigation')
+  const tFooter = useTranslations('footer')
+  const tServices = useTranslations('services')
+  const tCommon = useTranslations('common')
+  const locale = useLocale()
   return (
     <footer className="bg-gray-900 text-white relative z-10">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -15,15 +23,14 @@ export default function Footer() {
               width={48}
               height={48}
               className="w-12 h-12"
+              priority
             />
           </div>
           <h2 className="text-2xl font-bold text-white">BK GREEN</h2>
           <p className="text-sm text-gray-300 text-center mt-2">
-            CÔNG TY CỔ PHẦN KỸ THUẬT BK GREEN
+            {tFooter('company')}
           </p>
-          <p className="text-sm text-gray-300 text-center">
-            GIẢI PHÁP NƯỚC TOÀN DIỆN
-          </p>
+          <p className="text-sm text-gray-300 text-center">{tFooter('description')}</p>
         </div>
 
         {/* Mobile Contact Section - Full Width */}
@@ -33,7 +40,7 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center justify-center space-x-3">
                 <Phone className="h-5 w-5 text-primary-red" />
-                <span className="text-lg text-white font-medium">0931252511</span>
+                <span className="text-lg text-white font-medium">{tCommon('phoneDisplay')}</span>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <Mail className="h-5 w-5 text-primary-red" />
@@ -60,45 +67,49 @@ export default function Footer() {
                   width={24}
                   height={24}
                   className="w-6 h-6"
+                  priority
                 />
               </div>
               <span className="text-xl font-bold">BK GREEN</span>
             </div>
             <p className="text-sm text-gray-300">
-              CÔNG TY CỔ PHẦN KỸ THUẬT BK GREEN
+              {tFooter('company')}
             </p>
-            <p className="text-sm text-gray-300">
-              GIẢI PHÁP NƯỚC TOÀN DIỆN
-            </p>
+            <p className="text-sm text-gray-300">{tFooter('description')}</p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Liên Kết Nhanh</h3>
+            <h3 className="text-lg font-semibold">{tFooter('quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Trang Chủ
+                <Link href={`/${locale}`} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {tNav('home')}
                 </Link>
               </li>
               <li>
-                <Link href="/gioi-thieu" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Giới Thiệu
+                <Link href={`/${locale}/gioi-thieu`} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {tNav('about')}
                 </Link>
               </li>
               <li>
-                <Link href="/dich-vu" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Dịch Vụ
+                <Link href={`/${locale}/dich-vu`} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {tNav('services')}
                 </Link>
               </li>
               <li>
-                <Link href="/san-pham" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Sản Phẩm
+                <Link href={`/${locale}/san-pham`} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {tNav('products')}
                 </Link>
               </li>
               <li>
-                <Link href="/du-an" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Dự Án
+                <Link href={`/${locale}/du-an`} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {tNav('projects')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/lien-he`} className="text-sm text-gray-300 hover:text-white transition-colors">
+                  {tNav('contact')}
                 </Link>
               </li>
             </ul>
@@ -106,32 +117,30 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Dịch Vụ</h3>
+            <h3 className="text-lg font-semibold">{tNav('services')}</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>Xử lý nước thải</li>
-              <li>Hệ thống RO</li>
-              <li>Thiết bị PCCC</li>
-              <li>Vận hành hệ thống</li>
+              <li>{tServices('wastewater.title')}</li>
+              <li>{tServices('ro.title')}</li>
+              <li>{tServices('fire.title')}</li>
+              <li>{tServices('operation.title')}</li>
             </ul>
           </div>
 
           {/* Desktop Contact Info */}
           <div className="space-y-4 hidden lg:block">
-            <h3 className="text-lg font-semibold">Liên Hệ</h3>
+            <h3 className="text-lg font-semibold">{tNav('contact')}</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-primary-red" />
-                <span className="text-sm text-gray-300">0931252511</span>
+                <span className="text-sm text-gray-300">{tCommon('phoneDisplay')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-primary-red" />
-                <span className="text-sm text-gray-300">dien.tran@bkgreen.vn</span>
+                <span className="text-sm text-gray-300">{tFooter('email')}</span>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-primary-red mt-0.5" />
-                <span className="text-sm text-gray-300">
-                  517B Lê Trọng Tấn, Tây Thạnh, TP. HCM
-                </span>
+                <span className="text-sm text-gray-300">{tFooter('address')}</span>
               </div>
             </div>
           </div>
@@ -150,9 +159,7 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
             </div>
-            <p className="text-sm text-gray-400">
-              © 2025 BK Green. All rights reserved.
-            </p>
+            <p className="text-sm text-gray-400">{tFooter('copyright')}</p>
           </div>
         </div>
       </div>

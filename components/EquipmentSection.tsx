@@ -1,31 +1,36 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+"use client"
+
 import Image from 'next/image'
+import {useTranslations} from 'next-intl'
+
+import { Card } from '@/components/ui/card'
 
 export default function EquipmentSection() {
+  const t = useTranslations('equipment')
   const equipment = [
     {
-      title: 'Máy Bơm Công Nghiệp',
-      description: 'Các loại máy bơm chuyên dụng cho hệ thống xử lý nước',
+      title: t('items.pump.title'),
+      description: t('items.pump.description'),
       image: '/equipment-pump.jpg',
-      category: 'Thiết bị chính'
+      category: t('items.pump.category')
     },
     {
-      title: 'Van Công Nghiệp',
-      description: 'Van điều khiển, van an toàn cho hệ thống nước',
+      title: t('items.valve.title'),
+      description: t('items.valve.description'),
       image: '/equipment-valve.jpg',
-      category: 'Phụ kiện'
+      category: t('items.valve.category')
     },
     {
-      title: 'Thiết Bị PCCC',
-      description: 'Hệ thống phòng cháy chữa cháy chuyên nghiệp',
+      title: t('items.fire.title'),
+      description: t('items.fire.description'),
       image: '/equipment-fire.jpg',
-      category: 'An toàn'
+      category: t('items.fire.category')
     },
     {
-      title: 'Hệ Thống RO',
-      description: 'Thiết bị lọc nước RO công nghiệp',
+      title: t('items.ro.title'),
+      description: t('items.ro.description'),
       image: '/equipment-ro.jpg',
-      category: 'Xử lý nước'
+      category: t('items.ro.category')
     }
   ]
 
@@ -38,14 +43,14 @@ export default function EquipmentSection() {
             className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
             data-aos="fade-up"
           >
-            Thiết Bị & Sản Phẩm
+            {t('title')}
           </h2>
           <p 
             className="mt-6 text-lg leading-8 text-gray-600"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Chúng tôi cung cấp đầy đủ các thiết bị và sản phẩm chất lượng cao cho hệ thống xử lý nước
+            {t('subtitle')}
           </p>
         </div>
         

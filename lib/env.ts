@@ -8,7 +8,7 @@ export function getEnvVar(key: string, fallback?: string): string | undefined {
   }
   
   const value = process.env[key];
-  return value && value.trim() ? value : fallback;
+  return value?.trim() ? value : fallback;
 }
 
 /**

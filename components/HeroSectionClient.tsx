@@ -1,11 +1,15 @@
 'use client'
 
-import { useImagePreloader } from '@/lib/hooks/use-image-preloader'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import {useTranslations, useLocale} from 'next-intl'
+
+import { Button } from '@/components/ui/button'
+import { useImagePreloader } from '@/lib/hooks/use-image-preloader'
 
 export default function HeroSectionClient() {
+  const t = useTranslations('hero')
+  const locale = useLocale()
   // Preload critical images
   useImagePreloader({ 
     imageUrls: ['/hero-bg.jpg'], 
@@ -23,7 +27,7 @@ export default function HeroSectionClient() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <span className="block">Hệ thống hoàn chỉnh cho nhu cầu nước của bạn</span>
+              <span className="block">{t('title')}</span>
             </h1>
             
             <p 
@@ -31,9 +35,7 @@ export default function HeroSectionClient() {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              Tại BK Green, chúng tôi hiểu rằng mỗi khách hàng có những nhu cầu riêng biệt. 
-              Chúng tôi tiến hành đánh giá toàn diện để cung cấp các giải pháp tùy chỉnh 
-              nhằm nâng cao chất lượng nước và tối ưu hóa hiệu quả vận hành.
+              {t('subtitle')}
             </p>
             
             <div 
@@ -46,8 +48,8 @@ export default function HeroSectionClient() {
                 size="lg" 
                 className="w-full sm:w-auto bg-primary-red hover:bg-primary-red/90 text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               >
-                <Link href="/lien-he" className="flex items-center justify-center space-x-2 focus:outline-none focus:ring-0">
-                  <span>Liên Hệ Chúng Tôi</span>
+                <Link href={`/${locale}/lien-he`} className="flex items-center justify-center space-x-2 focus:outline-none focus:ring-0">
+                  <span>{t('cta')}</span>
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
               </Button>

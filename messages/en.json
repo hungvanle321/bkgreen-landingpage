@@ -1,0 +1,534 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open main menu",
+    "closeMenu": "Close menu"
+  },
+  "process": {
+    "title": "Our Working Process",
+    "subtitle": "A professional workflow from survey to operation",
+    "steps": {
+      "survey": {"title": "Survey & Assessment", "description": "Survey current conditions and evaluate treatment needs"},
+      "design": {"title": "System Design", "description": "Design an appropriate water treatment system"},
+      "installation": {"title": "Construction & Installation", "description": "Construct and install the system as designed"},
+      "maintenance": {"title": "Operation & Maintenance", "description": "Operate the system and perform periodic maintenance"}
+    }
+  },
+  "equipment": {
+    "title": "Equipment & Products",
+    "subtitle": "We supply high-quality equipment and products for water treatment systems",
+    "items": {
+      "pump": {"title": "Industrial Pumps", "description": "Specialized pumps for water treatment systems", "category": "Main equipment"},
+      "valve": {"title": "Industrial Valves", "description": "Control and safety valves for water systems", "category": "Accessories"},
+      "fire": {"title": "Fire Protection", "description": "Professional fire protection systems", "category": "Safety"},
+      "ro": {"title": "RO Systems", "description": "Industrial RO filtration equipment", "category": "Water treatment"}
+    }
+  },
+  "hero": {
+    "title": "Complete systems for your water needs",
+    "subtitle": "At BK Green, we understand every customer has unique needs. We perform comprehensive assessments to deliver tailored solutions that improve water quality and optimize operational efficiency.",
+    "cta": "Contact Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We provide end-to-end services from design and construction to operation of water treatment systems",
+    "wastewater": {
+      "title": "Wastewater Treatment",
+      "description": "Provide solutions & build wastewater treatment systems for buildings and industrial parks"
+    },
+    "ro": {
+      "title": "RO Systems",
+      "description": "Provide solutions & implement RO water treatment systems"
+    },
+    "electrical": {
+      "title": "Electrical Cabinets & SCADA",
+      "description": "Provide solutions and implement electrical cabinet and SCADA systems"
+    },
+    "equipment": {
+      "title": "Fire Equipment",
+      "description": "Trade & distribute equipment: Pumps, Valves, Water and Fire Protection accessories"
+    },
+    "fire": {
+      "title": "Fire Protection Equipment",
+      "description": "Professional fire protection and firefighting equipment"
+    },
+    "operation": {
+      "title": "System Operation",
+      "description": "Water system operation and maintenance services"
+    },
+    "consulting": {
+      "title": "Technical Consulting",
+      "description": "Consulting and designing optimal systems for each project"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Contact us for the best consultation and support",
+    "form": {
+      "title": "Send Message",
+      "description": "Fill in the information below, we will contact you as soon as possible",
+      "name": "Full Name *",
+      "email": "Email *",
+      "phone": "Phone Number",
+      "message": "Message Content *",
+      "submit": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "location": {
+      "title": "Office Location",
+      "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+      "viewMap": "View on Google Maps"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "company": "BK GREEN TECHNICAL JOINT STOCK COMPANY",
+    "description": "Specializing in water supply, drainage construction and wastewater treatment",
+    "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+    "email": "dien.tran@bkgreen.vn",
+    "copyright": "© 2025 BK Green. All rights reserved."
+  },
+  "about": {
+    "title": "About BK Green",
+    "p1": "BK GREEN TECHNICAL JOINT STOCK COMPANY is a young and dynamic company specializing in water supply, drainage construction and wastewater treatment projects.",
+    "p2": "With a young, enthusiastic and highly skilled team of engineers, we bring real value to customers through modern technology and dedicated service.",
+    "p3": "With the motto ‘Creating real values’, BK Green continuously learns, develops and applies advanced engineering solutions to protect the environment and deliver sustainable solutions to the community.",
+    "imageAlt": "BK Green Company - Professional engineering team",
+    "features": {
+      "expertise": {
+        "title": "High Expertise",
+        "description": "Engineers with deep knowledge and practical experience in water treatment"
+      },
+      "technology": {
+        "title": "Advanced Technology",
+        "description": "Applying modern technology solutions and high-quality equipment"
+      },
+      "team": {
+        "title": "Enthusiastic Team",
+        "description": "Young, dynamic staff with a strong, continuous growth mindset"
+      },
+      "quality": {
+        "title": "Quality Commitment",
+        "description": "Always putting quality and customer satisfaction first"
+      }
+    }
+  }
+  ,
+  "aboutPage": {
+    "meta": {
+      "title": "About BK Green",
+      "description": "Overview of BK Green: strengths, commitments, leadership, certifications, facilities"
+    },
+    "overview": {
+      "badge": "About Us",
+      "imageAlt": "About BK Green",
+      "cards": {
+        "growth": {"title": "Growth", "desc": "Sustainable development"},
+        "environment": {"title": "Environment", "desc": "Eco-friendly"}
+      },
+      "p1": "BK GREEN TECHNICAL JSC is founded to deliver sustainable water supply and wastewater solutions.",
+      "p2": "We began our journey with an experienced team and a long-term vision for a future where water resources are protected and managed sustainably."
+    },
+    "strengths": {
+      "badge": "Strengths",
+      "title": "Why Choose BK Green?",
+      "subtitle": "Reasons we are a trusted partner in water engineering",
+      "stats": [
+        {"title": "Expert Team", "description": "With 15+ years of experience in water engineering, our engineers are intensively trained and internationally certified. We are committed to delivering the most optimal solutions for every project."},
+        {"title": "Quality Commitment", "description": "We strictly comply with ISO 9001:2015 and apply a 3-layer quality control process. Every product and service is thoroughly inspected before delivery to customers."},
+        {"title": "Sustainability Focus", "description": "BK Green pioneers green, environmentally friendly solutions. We use energy‑saving technologies and wastewater recycling to help protect the environment for the future."}
+      ]
+    },
+    "commit": {
+      "badge": "Commitment",
+      "title": "Our Commitments",
+      "subtitle": "Protecting water and optimizing energy with modern solutions",
+      "cards": {
+        "tech": {"title": "Engineering & Technology", "desc": "Applying advanced technologies and deep engineering"},
+        "env": {"title": "Sustainable Environment", "desc": "Commitment to environmental protection and sustainability"},
+        "water": {"title": "Water Solutions", "desc": "Water supply, wastewater treatment and comprehensive solutions"}
+      },
+      "legend": {"tech": "Engineering & Technology", "env": "Sustainable Environment", "water": "Comprehensive Water Solutions"}
+    }
+    ,
+    "leadership": {
+      "badge": "Leadership",
+      "title": "Leadership Team",
+      "subtitle": "Experienced experts leading BK Green toward a sustainable future",
+      "expertLabel": "Top Expert",
+      "members": [
+        {
+          "name": "Mr. Tran Ba Dien",
+          "role": "Chief Executive Officer",
+          "description": "Environmental engineer with 15+ years in wastewater treatment and project management",
+          "detailsTitle": "Experience & Achievements",
+          "details": [
+            "15+ years in wastewater treatment",
+            "Managed 50+ large-scale projects",
+            "PMP certification - Professional Project Management",
+            "Master of Environmental Engineering",
+            "Consultant to major enterprises"
+          ]
+        }
+      ]
+    }
+    ,
+    "certifications": {
+      "badge": "Certifications",
+      "title": "Certifications & Degrees",
+      "subtitle": "Ensuring quality and compliance with international standards",
+      "items": [
+        {"title": "Quality Certification", "description": "Compliant with international quality and safety standards"},
+        {"title": "Technical Degrees", "description": "Engineers with intensive training and professional licenses"},
+        {"title": "Operating Licenses", "description": "Full business and environmental operation licenses"}
+      ]
+    }
+    ,
+    "facilities": {
+      "badge": "Facilities",
+      "title": "Facilities",
+      "subtitle": "Modern infrastructure for all production and research needs",
+      "items": [
+        {"title": "Head Office", "description": "Headquarters in Ho Chi Minh City with full amenities"},
+        {"title": "Manufacturing Workshop", "description": "Professional equipment manufacturing and assembly workshop"},
+        {"title": "Laboratory", "description": "Modern water quality testing laboratory"}
+      ]
+    }
+    ,
+    "cta": {
+      "title": "Start Your Journey with BK Green",
+      "subtitle": "Contact us for the best consultation and support for your project",
+      "primary": "Contact Now",
+      "secondary": "View Services"
+    }
+    ,
+    "coreValues": {
+      "title": "Guiding Values",
+      "subtitle": "Core principles guiding all our activities and decisions",
+      "badge": "Core Values",
+      "items": {
+        "quality": {
+          "title": "Quality",
+          "content": [
+            "Quality first",
+            "International standards compliance",
+            "Strict quality control"
+          ]
+        },
+        "innovation": {
+          "title": "Innovation",
+          "content": [
+            "Adopting advanced technologies",
+            "Continuous R&D",
+            "Creative solutions"
+          ]
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "content": [
+            "Environmental protection",
+            "Sustainable development",
+            "Efficient resource use"
+          ]
+        },
+        "customerSupport": {
+          "title": "Customer Support",
+          "content": [
+            "Accompanying throughout the project",
+            "Dedicated care",
+            "24/7 technical support"
+          ]
+        }
+      }
+    }
+    ,
+    "development": {
+      "title": "Development Orientation",
+      "subtitle": "BK Green is building a solid foundation to be a trusted partner in water engineering",
+      "badge": "Vision",
+      "items": {
+        "tech": {
+          "title": "Technology Foundation",
+          "description": "Building a modern and reliable technology system",
+          "detailsTitle": "Technology & Equipment",
+          "details": [
+            "Invest in high-quality water treatment equipment",
+            "Modern monitoring and operation systems",
+            "Strict quality control processes",
+            "Deep technical staff training",
+            "Build effective project management systems"
+          ]
+        },
+        "partnership": {
+          "title": "Partnership Building",
+          "description": "Developing strategic and sustainable partner networks",
+          "detailsTitle": "Partner Network",
+          "details": [
+            "Find reputable equipment suppliers",
+            "Build relationships with technology partners",
+            "Develop subcontractor networks",
+            "Cooperate with research institutes",
+            "Expand future partnerships"
+          ]
+        },
+        "innovation": {
+          "title": "Innovation Focus",
+          "description": "Investing in research and sustainable solutions",
+          "detailsTitle": "Research & Development",
+          "details": [
+            "Research advanced water treatment technologies",
+            "Develop eco-friendly solutions",
+            "Apply digital technologies in operation",
+            "Invest in training and human development",
+            "Build a professional knowledge library"
+          ]
+        }
+      }
+    }
+    ,
+    "guidance": {
+      "badge": "Guidance",
+      "title": "Vision, Mission & Values",
+      "subtitle": "Core principles and development orientation of BK Green",
+      "cards": {
+        "vision": {
+          "title": "Vision",
+          "desc": "Become a leading water engineering company in Vietnam and Southeast Asia, recognized for technological innovation and environmental sustainability."
+        },
+        "mission": {
+          "title": "Mission",
+          "desc": "Provide comprehensive water engineering solutions from design and construction to operation for households to large industrial projects."
+        },
+        "values": {
+          "title": "Values",
+          "desc": "Outstanding quality, innovative mindset, environmental sustainability and dedicated customer support."
+        }
+      },
+      "legend": {
+        "vision": "Vision",
+        "mission": "Mission",
+        "values": "Values"
+      }
+    }
+    ,
+    "interactive": {
+      "hint": {
+        "front": "Click to see details",
+        "back": "Click to go back"
+      }
+    }
+  }
+  ,
+  "servicesPage": {
+    "header": {
+      "title": "Our Services",
+      "subtitle": "BK Green provides wastewater treatment, water supply and RO systems, starting with small projects and expanding services across Vietnam."
+    },
+    "catalog": {
+      "title": "Service Catalog",
+      "learnMore": "Learn More"
+    },
+    "services": {
+      "wastewater": {
+        "description": "Provide solutions and construction for buildings and industrial parks in early-stage projects.",
+        "features": ["Design wastewater treatment systems", "Professional construction and installation", "Operate and maintain systems", "Deep technical consulting"]
+      },
+      "operation": {
+        "description": "Operation services for wastewater and water supply, in development.",
+        "features": ["Continuous system operation", "Periodic maintenance", "Remote monitoring", "Detailed reporting"]
+      },
+      "ro": {
+        "description": "Implement RO water treatment systems with modern technology.",
+        "features": ["Optimize RO system design", "Professional installation", "Maintenance and component replacement", "Performance optimization"]
+      },
+      "electrical": {
+        "description": "Provide automation solutions for new projects.",
+        "features": ["Control cabinet design", "Modern SCADA systems", "Process automation", "Remote monitoring and control"]
+      },
+      "equipment": {
+        "description": "Distribute pumps, valves, water accessories and fire protection equipment.",
+        "features": ["Specialized pumps", "Quality valves and accessories", "Modern fire protection equipment", "Equipment selection consulting"]
+      }
+    },
+    "sustainability": {
+      "title": "Towards a Green Future",
+      "subtitle": "We are building energy-saving solutions in initial projects, aiming for a sustainable water future in Vietnam."
+    },
+    "process": {
+      "title": "Project Process",
+      "subtitle": "A professional workflow from survey to operation, ensuring quality and efficiency",
+      "stepLabel": "Step {step}",
+      "badge": "Professional process",
+      "steps": [
+        {"title": "Survey & Analysis", "description": "Assess current conditions and analyze project-specific needs"},
+        {"title": "Design & Planning", "description": "Detail system design and implementation planning"},
+        {"title": "Construction & Installation", "description": "Professional construction with experienced technical team"},
+        {"title": "Operation & Maintenance", "description": "Support operation and periodic system maintenance"}
+      ]
+    },
+    "technologies": {
+      "title": "Technologies Used",
+      "subtitle": "Applying advanced technologies and modern equipment to every project",
+      "items": {
+        "ro": {"title": "RO Systems", "description": "Advanced reverse osmosis water filtration technology", "features": ["High recovery rate", "Energy saving", "Stable water quality"]},
+        "scada": {"title": "SCADA & Automation", "description": "Remote monitoring and control systems", "features": ["24/7 monitoring", "Automatic control", "Detailed reporting"]},
+        "fire": {"title": "Fire Protection Equipment", "description": "Professional fire protection systems", "features": ["Early detection", "Effective firefighting", "Standards compliance"]}
+      }
+    },
+    "cases": {
+      "title": "Case Studies",
+      "subtitle": "Highlighted projects and achieved results",
+      "resultsTitle": "Achieved results:",
+      "0": {"title": "Industrial Park Project", "industry": "Industrial", "description": "2000m³/day wastewater treatment system for an industrial park", "results": ["Reduce 95% pollution", "Save 30% cost", "Stable operation"]},
+      "1": {"title": "Clean Water Plant", "industry": "Water supply", "description": "Industrial RO system for a clean water plant", "results": ["Capacity 1000m³/h", "High water quality", "Easy maintenance"]},
+      "2": {"title": "Commercial Building", "industry": "Commercial", "description": "Fire protection and water treatment systems for high-rise buildings", "results": ["Absolute safety", "Regulation compliance", "Reasonable cost"]}
+    },
+    "support": {
+      "title": "Warranty & Support",
+      "subtitle": "Comprehensive support commitment for customers",
+      "items": [
+        {"title": "24/7 Support", "description": "Technical team supports 24/7 for all issues"},
+        {"title": "Long-term Warranty", "description": "Comprehensive warranty for all equipment and systems"},
+        {"title": "Operation Training", "description": "Train staff to operate and maintain the system"}
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Answers to common questions about our services",
+      "items": [
+        {"q": "How long does construction usually take?", "a": "It depends on project size, typically 2-6 months for small to medium projects."},
+        {"q": "Does BK Green support maintenance after completion?", "a": "Yes, we provide periodic maintenance and 24/7 technical support."},
+        {"q": "How are service costs calculated?", "a": "Costs are based on project size, technology used, and specific customer requirements."}
+      ]
+    },
+    "cta": {
+      "title": "Need Service Consultation?",
+      "subtitle": "Contact us for free consultation and a detailed quote",
+      "primary": "Contact Now",
+      "secondary": "View Projects"
+    },
+    "filters": {
+      "industry": ["Residential", "Industrial"],
+      "type": ["Wastewater", "Water supply"]
+    }
+  }
+  ,
+  "projectsPage": {
+    "header": {"title": "Projects", "subtitle": "BK Green is launching its first projects, bringing clean water solutions to the community."},
+    "stats": {"active": "Ongoing projects", "completed": "Completed projects", "capacity": "Design capacity", "service": "Professional service"},
+    "featured": {"title": "Featured Projects", "viewDetail": "View Details"},
+    "all": {"title": "All Projects", "detail": "Details"},
+    "cta": {"title": "Submit Your Project", "subtitle": "Have a project to consult? Contact us for professional support", "primary": "Contact Now", "secondary": "View Services"}
+  }
+  ,
+  "contactPage": {
+    "header": {"title": "Contact Us", "subtitle": "Reach out for the best consultation and support"},
+    "form": {
+      "title": "Send Message",
+      "name": "Full Name *",
+      "email": "Email *",
+      "company": "Company",
+      "phone": "Phone",
+      "requestType": "Request type *",
+      "message": "Message *",
+      "submit": "Send Message",
+      "placeholder": {
+        "name": "Enter full name",
+        "email": "Enter email",
+        "company": "Enter company name",
+        "phone": "Enter phone number",
+        "requestType": "Select a request type",
+        "message": "Enter your message..."
+      },
+      "requestTypes": ["Project consulting", "Product quotation", "Technical support", "Business partnership", "Other"]
+    },
+    "office": {"title": "Office", "mapPlaceholder": "Google Maps will be embedded here", "city": "Ho Chi Minh City", "viewMap": "View on Google Maps"},
+    "support": {"title": "Customer Support", "hotline": "Support hotline", "hours": "8:00 - 17:00 (Mon-Fri)", "email": "Support email", "sla": "Reply within 24h"},
+    "faqLink": "Frequently Asked Questions",
+    "info": {"phoneTitle": "Phone", "phoneDesc": "Call us for consultation", "emailTitle": "Email", "emailDesc": "Send us an email", "addressTitle": "Address", "addressDesc": "Head office in HCMC", "hoursTitle": "Working hours", "hoursDesc": "Monday - Friday"},
+    "cta": {"title": "Start Your Project", "subtitle": "Ready to deploy a water project? Contact us today", "call": "Call Now", "email": "Send Email"}
+  }
+  ,
+  "productsPage": {
+    "header": {"title": "Our Products", "subtitle": "BK Green supplies high-quality products: pumps, valves, accessories and RO systems from trusted partners."},
+    "featured": {
+      "title": "Featured Products",
+      "detailBtn": "Details",
+      "products": [
+        {"name": "Industrial Pump BK-P100", "category": "Pumps", "specs": "Flow: 100 m³/h | Head: 50 m", "description": "High‑efficiency industrial pump with energy saving"},
+        {"name": "Pressure Valve BK-V50", "category": "Valves", "specs": "Pressure: 0-16 bar | Temp: -10°C to 80°C", "description": "Accurate pressure control with high durability"},
+        {"name": "RO System BK-RO2000", "category": "RO Systems", "specs": "Capacity: 2000 L/h | Recovery: 75%", "description": "Industrial RO water filtration system"}
+      ]
+    },
+    "categories": {
+      "title": "Product Categories",
+      "learnMore": "Learn More",
+      "items": {
+        "pumps": {
+          "title": "Pumps",
+          "description": "Specialized pumps for water treatment systems",
+          "products": [
+            {"name": "Industrial Pump", "specs": "Flow: 50-500 m³/h", "description": "High‑efficiency industrial pump"},
+            {"name": "Wastewater Pump", "specs": "Flow: 20-200 m³/h", "description": "Dedicated for wastewater treatment"}
+          ]
+        },
+        "valves": {
+          "title": "Valves",
+          "description": "High‑quality pressure and leak‑proof valves",
+          "products": [
+            {"name": "Pressure Valve", "specs": "Pressure: 0-16 bar", "description": "Precise pressure adjustment"},
+            {"name": "Leak‑proof Valve", "specs": "Pressure: 0-25 bar", "description": "Effective leakage prevention"}
+          ]
+        },
+        "fire": {
+          "title": "Fire Accessories",
+          "description": "Professional fire protection equipment",
+          "products": [
+            {"name": "Water Nozzle", "specs": "Diameter: 50-200 mm", "description": "Dedicated firefighting nozzle"},
+            {"name": "Fire Alarm System", "specs": "Coverage: 1000 m²", "description": "Automatic fire alarm system"}
+          ]
+        }
+      }
+    },
+    "filters": {
+      "title": "Filters & Search",
+      "typeTitle": "Product Type",
+      "applicationTitle": "Application",
+      "type": ["Pumps", "Valves", "Fire Accessories", "RO Systems"],
+      "application": ["Industrial", "Residential", "Commercial"],
+      "searchPlaceholder": "Search products...",
+      "filterBtn": "Filter",
+      "helper": "Use the filters on the left and the search bar to find products matching your needs."
+    },
+    "related": {
+      "title": "Related Solutions",
+      "subtitle": "Explore services and projects related to our products",
+      "servicesBtn": "View Services",
+      "projectsBtn": "View Projects"
+    },
+    "cta": {
+      "title": "Find a Dealer",
+      "subtitle": "Contact us to find the nearest dealer and get product advice",
+      "primary": "Contact Now"
+    }
+  }
+  ,
+  "units": {
+    "m3PerDay": "m³/day",
+    "m3PerHour": "m³/h"
+  },
+  "common": {
+    "phone": "0931252511",
+    "phoneDisplay": "+84 931 252 511"
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "products": "Produits",
+    "projects": "Projets",
+    "contact": "Contact",
+    "openMenu": "Ouvrir le menu principal",
+    "closeMenu": "Fermer le menu"
+  },
+  "process": {
+    "title": "Notre Processus de Travail",
+    "subtitle": "Un flux professionnel du relevé à l'exploitation",
+    "steps": {
+      "survey": {"title": "Étude & Évaluation", "description": "Étudier l'état actuel et évaluer les besoins de traitement"},
+      "design": {"title": "Conception du Système", "description": "Concevoir un système de traitement de l'eau approprié"},
+      "installation": {"title": "Construction & Installation", "description": "Construire et installer le système selon la conception"},
+      "maintenance": {"title": "Exploitation & Maintenance", "description": "Exploiter le système et assurer la maintenance périodique"}
+    }
+  },
+  "equipment": {
+    "title": "Équipements & Produits",
+    "subtitle": "Nous fournissons des équipements et produits de haute qualité pour les systèmes de traitement de l'eau",
+    "items": {
+      "pump": {"title": "Pompes industrielles", "description": "Pompes spécialisées pour les systèmes de traitement de l'eau", "category": "Équipement principal"},
+      "valve": {"title": "Vannes industrielles", "description": "Vannes de contrôle et de sécurité pour systèmes d'eau", "category": "Accessoires"},
+      "fire": {"title": "Protection incendie", "description": "Systèmes professionnels de protection incendie", "category": "Sécurité"},
+      "ro": {"title": "Systèmes RO", "description": "Équipements de filtration RO industriels", "category": "Traitement de l'eau"}
+    }
+  },
+  "hero": {
+    "title": "Systèmes complets pour vos besoins en eau",
+    "subtitle": "Chez BK Green, nous savons que chaque client a des besoins uniques. Nous réalisons des évaluations complètes pour fournir des solutions sur mesure améliorant la qualité de l'eau et l'efficacité opérationnelle.",
+    "cta": "Contactez-nous"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Nous proposons des services de bout en bout, de la conception et la construction à l'exploitation des systèmes de traitement de l'eau",
+    "wastewater": {
+      "title": "Traitement des Eaux Usées",
+      "description": "Fournir des solutions et réaliser des systèmes de traitement des eaux usées pour bâtiments et parcs industriels"
+    },
+    "ro": {
+      "title": "Systèmes RO",
+      "description": "Fournir des solutions et mettre en œuvre des systèmes RO"
+    },
+    "electrical": {
+      "title": "Armoires Électriques & SCADA",
+      "description": "Fournir des solutions et mettre en place des armoires électriques et des systèmes SCADA"
+    },
+    "equipment": {
+      "title": "Équipements Incendie",
+      "description": "Commerce & distribution d'équipements : Pompes, Vannes, Accessoires eau et protection incendie"
+    },
+    "fire": {
+      "title": "Équipement de Protection Incendie",
+      "description": "Équipement professionnel de protection et de lutte contre l'incendie"
+    },
+    "operation": {
+      "title": "Exploitation du Système",
+      "description": "Services d'exploitation et de maintenance des systèmes d'eau"
+    },
+    "consulting": {
+      "title": "Conseil Technique",
+      "description": "Conseil et conception de systèmes optimaux pour chaque projet"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support",
+    "form": {
+      "title": "Envoyer un Message",
+      "description": "Remplissez les informations ci-dessous, nous vous contacterons dès que possible",
+      "name": "Nom Complet *",
+      "email": "Email *",
+      "phone": "Numéro de Téléphone",
+      "message": "Contenu du Message *",
+      "submit": "Envoyer le Message"
+    },
+    "info": {
+      "title": "Informations de Contact",
+      "phone": "Téléphone",
+      "email": "Email",
+      "address": "Adresse"
+    },
+    "location": {
+      "title": "Emplacement du Bureau",
+      "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+      "viewMap": "Voir sur Google Maps"
+    }
+  },
+  "footer": {
+    "quickLinks": "Liens rapides",
+    "company": "SOCIÉTÉ PAR ACTIONS TECHNIQUE BK GREEN",
+    "description": "Spécialisée dans la construction d'approvisionnement en eau, de drainage et de traitement des eaux usées",
+    "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+    "email": "dien.tran@bkgreen.vn",
+    "copyright": "© 2025 BK Green. Tous droits réservés."
+  },
+  "about": {
+    "title": "À propos de BK Green",
+    "p1": "BK GREEN TECHNICAL JOINT STOCK COMPANY est une entreprise jeune et dynamique spécialisée dans les projets d'approvisionnement en eau, de drainage et de traitement des eaux usées.",
+    "p2": "Avec une équipe d'ingénieurs jeunes, enthousiastes et hautement qualifiés, nous apportons une réelle valeur aux clients grâce à la technologie moderne et à un service dédié.",
+    "p3": "Avec la devise ‘Créer une réelle valeur’, BK Green apprend, se développe et applique en continu des solutions d'ingénierie avancées pour protéger l'environnement et offrir des solutions durables à la communauté.",
+    "imageAlt": "Entreprise BK Green - Équipe d'ingénieurs professionnels",
+    "features": {
+      "expertise": {
+        "title": "Grande Expertise",
+        "description": "Ingénieurs avec des connaissances approfondies et une expérience pratique en traitement de l'eau"
+      },
+      "technology": {
+        "title": "Technologie Avancée",
+        "description": "Application de solutions technologiques modernes et d'équipements de haute qualité"
+      },
+      "team": {
+        "title": "Équipe Enthousiaste",
+        "description": "Personnel jeune et dynamique avec un fort esprit de croissance continue"
+      },
+      "quality": {
+        "title": "Engagement Qualité",
+        "description": "Toujours placer la qualité et la satisfaction client au premier plan"
+      }
+    }
+  }
+  ,
+  "aboutPage": {
+    "meta": {
+      "title": "À propos",
+      "description": "Présentation de BK Green : atouts, engagements, direction, certifications, infrastructures"
+    },
+    "overview": {
+      "badge": "À propos de nous",
+      "imageAlt": "À propos de BK Green",
+      "cards": {
+        "growth": {"title": "Croissance", "desc": "Développement durable"},
+        "environment": {"title": "Environnement", "desc": "Éco-responsable"}
+      },
+      "p1": "BK GREEN TECHNICAL JSC est fondée pour offrir des solutions durables d'eau potable et de traitement des eaux usées.",
+      "p2": "Nous avons commencé notre parcours avec une équipe expérimentée et une vision à long terme pour un avenir où l'eau est protégée et gérée de manière durable."
+    },
+    "strengths": {
+      "badge": "Atouts",
+      "title": "Pourquoi choisir BK Green ?",
+      "subtitle": "Raisons pour lesquelles nous sommes un partenaire de confiance",
+      "stats": [
+        {"title": "Équipe d'experts", "description": "Avec plus de 15 ans d'expérience en ingénierie de l'eau, nos ingénieurs sont formés intensivement et certifiés à l'international. Nous nous engageons à fournir les solutions les plus optimales pour chaque projet."},
+        {"title": "Engagement qualité", "description": "Nous respectons strictement la norme ISO 9001:2015 et appliquons un processus de contrôle qualité en 3 niveaux. Chaque produit et service est rigoureusement vérifié avant livraison aux clients."},
+        {"title": "Focus durabilité", "description": "BK Green est pionnier des solutions vertes et respectueuses de l'environnement. Nous utilisons des technologies économes en énergie et le recyclage des eaux usées pour contribuer à la protection de l'environnement."}
+      ]
+    },
+    "commit": {
+      "badge": "Engagement",
+      "title": "Nos Engagements",
+      "subtitle": "Protéger l'eau et optimiser l'énergie avec des solutions modernes",
+      "cards": {
+        "tech": {"title": "Ingénierie & Technologie", "desc": "Application de technologies avancées et expertise approfondie"},
+        "env": {"title": "Environnement Durable", "desc": "Engagement pour la protection de l'environnement et la durabilité"},
+        "water": {"title": "Solutions d'Eau", "desc": "Eau potable, traitement des eaux usées et solutions complètes"}
+      },
+      "legend": {"tech": "Ingénierie & Technologie", "env": "Environnement Durable", "water": "Solutions d'Eau Complètes"}
+    }
+    ,
+    "leadership": {
+      "badge": "Direction",
+      "title": "Équipe de Direction",
+      "subtitle": "Des experts expérimentés conduisent BK Green vers un avenir durable",
+      "expertLabel": "Expert de premier plan",
+      "members": [
+        {
+          "name": "M. Tran Ba Dien",
+          "role": "Directeur Général",
+          "description": "Ingénieur environnement avec 15+ ans en traitement des eaux usées et gestion de projets",
+          "detailsTitle": "Expérience & Réalisations",
+          "details": [
+            "15+ ans en traitement des eaux usées",
+            "Gestion de 50+ projets de grande envergure",
+            "Certification PMP - Gestion de projet professionnelle",
+            "Master en ingénierie de l'environnement",
+            "Consultant pour de grandes entreprises"
+          ]
+        }
+      ]
+    }
+    ,
+    "certifications": {
+      "badge": "Certifications",
+      "title": "Certifications & Diplômes",
+      "subtitle": "Assurer la qualité et la conformité aux normes internationales",
+      "items": [
+        {"title": "Certification de Qualité", "description": "Conforme aux normes internationales de qualité et de sécurité"},
+        {"title": "Diplômes Techniques", "description": "Ingénieurs formés intensivement avec licences professionnelles"},
+        {"title": "Licences d'Exploitation", "description": "Licences complètes d'activité et d'environnement"}
+      ]
+    }
+    ,
+    "facilities": {
+      "badge": "Infrastructures",
+      "title": "Infrastructures",
+      "subtitle": "Infrastructures modernes pour tous les besoins de production et de recherche",
+      "items": [
+        {"title": "Siège Social", "description": "Siège à Ho Chi Minh-Ville avec toutes commodités"},
+        {"title": "Atelier de Production", "description": "Atelier professionnel de fabrication et d'assemblage d'équipements"},
+        {"title": "Laboratoire", "description": "Laboratoire moderne de tests de qualité de l'eau"}
+      ]
+    }
+    ,
+    "cta": {
+      "title": "Commencez votre parcours avec BK Green",
+      "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support pour votre projet",
+      "primary": "Contactez maintenant",
+      "secondary": "Voir les services"
+    }
+    ,
+    "coreValues": {
+      "title": "Valeurs directrices",
+      "subtitle": "Principes fondamentaux guidant toutes nos activités et décisions",
+      "badge": "Valeurs fondamentales",
+      "items": {
+        "quality": {
+          "title": "Qualité",
+          "content": [
+            "La qualité avant tout",
+            "Conformité aux normes internationales",
+            "Contrôle qualité strict"
+          ]
+        },
+        "innovation": {
+          "title": "Innovation",
+          "content": [
+            "Adoption de technologies avancées",
+            "R&D continue",
+            "Solutions créatives"
+          ]
+        },
+        "sustainability": {
+          "title": "Durabilité",
+          "content": [
+            "Protection de l'environnement",
+            "Développement durable",
+            "Utilisation efficace des ressources"
+          ]
+        },
+        "customerSupport": {
+          "title": "Support Client",
+          "content": [
+            "Accompagnement tout au long du projet",
+            "Service dédié",
+            "Support technique 24/7"
+          ]
+        }
+      }
+    }
+    ,
+    "development": {
+      "title": "Orientation du Développement",
+      "subtitle": "BK Green construit une base solide pour devenir un partenaire de confiance en ingénierie de l'eau",
+      "badge": "Vision",
+      "items": {
+        "tech": {
+          "title": "Fondation Technologique",
+          "description": "Construire un système technologique moderne et fiable",
+          "detailsTitle": "Technologie & Équipement",
+          "details": [
+            "Investir dans des équipements de traitement de l'eau de haute qualité",
+            "Systèmes modernes de surveillance et d'exploitation",
+            "Processus de contrôle qualité stricts",
+            "Formation technique approfondie du personnel",
+            "Construire des systèmes efficaces de gestion de projet"
+          ]
+        },
+        "partnership": {
+          "title": "Construction de Partenariats",
+          "description": "Développer des réseaux de partenaires stratégiques et durables",
+          "detailsTitle": "Réseau de Partenaires",
+          "details": [
+            "Trouver des fournisseurs d'équipements réputés",
+            "Établir des relations avec des partenaires technologiques",
+            "Développer des réseaux de sous-traitants",
+            "Coopérer avec des instituts de recherche",
+            "Étendre les partenariats futurs"
+          ]
+        },
+        "innovation": {
+          "title": "Focus Innovation",
+          "description": "Investir dans la recherche et des solutions durables",
+          "detailsTitle": "Recherche & Développement",
+          "details": [
+            "Rechercher des technologies avancées de traitement de l'eau",
+            "Développer des solutions écologiques",
+            "Appliquer les technologies numériques dans l'exploitation",
+            "Investir dans la formation et le développement humain",
+            "Construire une bibliothèque de connaissances professionnelles"
+          ]
+        }
+      }
+    }
+    ,
+    "guidance": {
+      "badge": "Orientation",
+      "title": "Vision, Mission & Valeurs",
+      "subtitle": "Principes fondamentaux et orientation du développement de BK Green",
+      "cards": {
+        "vision": {
+          "title": "Vision",
+          "desc": "Devenir une entreprise leader en ingénierie de l'eau au Vietnam et en Asie du Sud-Est, reconnue pour l'innovation technologique et la durabilité environnementale."
+        },
+        "mission": {
+          "title": "Mission",
+          "desc": "Fournir des solutions complètes d'ingénierie de l'eau, de la conception et la construction à l'exploitation, pour les foyers jusqu'aux grands projets industriels."
+        },
+        "values": {
+          "title": "Valeurs",
+          "desc": "Qualité supérieure, innovation, durabilité environnementale et support client dévoué."
+        }
+      },
+      "legend": {
+        "vision": "Vision",
+        "mission": "Mission",
+        "values": "Valeurs"
+      }
+    }
+    ,
+    "interactive": {
+      "hint": {
+        "front": "Cliquez pour voir les détails",
+        "back": "Cliquez pour revenir"
+      }
+    }
+  }
+  ,
+  "servicesPage": {
+    "header": {
+      "title": "Nos Services",
+      "subtitle": "BK Green fournit des systèmes de traitement des eaux usées, d'eau potable et RO, en commençant par de petits projets et en étendant ses services au Vietnam."
+    },
+    "catalog": {
+      "title": "Catalogue des Services",
+      "learnMore": "En savoir plus"
+    },
+    "services": {
+      "wastewater": {
+        "description": "Fournir des solutions et la construction pour les bâtiments et les parcs industriels dans les projets initiaux.",
+        "features": ["Conception de systèmes de traitement des eaux usées", "Construction et installation professionnelles", "Exploitation et maintenance des systèmes", "Conseil technique approfondi"]
+      },
+      "operation": {
+        "description": "Services d'exploitation pour les eaux usées et l'eau potable, en développement.",
+        "features": ["Exploitation continue des systèmes", "Maintenance périodique", "Surveillance à distance", "Rapports détaillés"]
+      },
+      "ro": {
+        "description": "Mettre en œuvre des systèmes RO avec une technologie moderne.",
+        "features": ["Conception optimale du système RO", "Installation professionnelle", "Maintenance et remplacement des composants", "Optimisation des performances"]
+      },
+      "electrical": {
+        "description": "Fournir des solutions d'automatisation pour les nouveaux projets.",
+        "features": ["Conception d'armoires de commande", "Systèmes SCADA modernes", "Automatisation des processus", "Surveillance et contrôle à distance"]
+      },
+      "equipment": {
+        "description": "Distribuer des pompes, des vannes, des accessoires d'eau et des équipements de protection incendie.",
+        "features": ["Pompes spécialisées", "Vannes et accessoires de qualité", "Équipements de protection incendie modernes", "Conseil de sélection d'équipement"]
+      }
+    },
+    "sustainability": {
+      "title": "Vers un avenir vert",
+      "subtitle": "Nous construisons des solutions économes en énergie dans les premiers projets, visant un avenir durable de l'eau au Vietnam."
+    },
+    "process": {
+      "title": "Processus du Projet",
+      "subtitle": "Un flux professionnel du relevé à l'exploitation, garantissant qualité et efficacité",
+      "stepLabel": "Étape {step}",
+      "badge": "Processus professionnel",
+      "steps": [
+        {"title": "Étude & Analyse", "description": "Évaluer l'état actuel et analyser les besoins spécifiques du projet"},
+        {"title": "Conception & Planification", "description": "Concevoir en détail le système et planifier la mise en œuvre"},
+        {"title": "Construction & Installation", "description": "Construction professionnelle avec une équipe technique expérimentée"},
+        {"title": "Exploitation & Maintenance", "description": "Soutenir l'exploitation et la maintenance périodique du système"}
+      ]
+    },
+    "technologies": {
+      "title": "Technologies Utilisées",
+      "subtitle": "Application de technologies avancées et d'équipements modernes à chaque projet",
+      "items": {
+        "ro": {"title": "Systèmes RO", "description": "Technologie avancée d'osmose inverse", "features": ["Taux de récupération élevé", "Économie d'énergie", "Qualité de l'eau stable"]},
+        "scada": {"title": "SCADA & Automatisation", "description": "Systèmes de surveillance et de contrôle à distance", "features": ["Surveillance 24/7", "Contrôle automatique", "Rapports détaillés"]},
+        "fire": {"title": "Équipements de Protection Incendie", "description": "Systèmes professionnels de protection incendie", "features": ["Détection précoce", "Lutte contre l'incendie efficace", "Conformité aux normes"]}
+      }
+    },
+    "cases": {
+      "title": "Études de cas",
+      "subtitle": "Projets phares et résultats obtenus",
+      "resultsTitle": "Résultats obtenus :",
+      "0": {"title": "Projet de Parc Industriel", "industry": "Industriel", "description": "Système de traitement des eaux usées 2000m³/jour pour un parc industriel", "results": ["Réduction de 95% de la pollution", "Économie de 30% des coûts", "Exploitation stable"]},
+      "1": {"title": "Usine d'Eau Potable", "industry": "Eau potable", "description": "Système RO industriel pour une usine d'eau potable", "results": ["Capacité 1000m³/h", "Haute qualité de l'eau", "Maintenance facile"]},
+      "2": {"title": "Bâtiment Commercial", "industry": "Commercial", "description": "Systèmes de protection incendie et de traitement de l'eau pour immeuble de grande hauteur", "results": ["Sécurité absolue", "Conformité réglementaire", "Coût raisonnable"]}
+    },
+    "support": {
+      "title": "Garantie & Support",
+      "subtitle": "Engagement de support complet pour les clients",
+      "items": [
+        {"title": "Support 24/7", "description": "Équipe technique disponible 24/7 pour tous les problèmes"},
+        {"title": "Garantie Longue Durée", "description": "Garantie complète pour tous les équipements et systèmes"},
+        {"title": "Formation à l'Exploitation", "description": "Former le personnel à l'exploitation et à la maintenance du système"}
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Réponses aux questions fréquentes sur nos services",
+      "items": [
+        {"q": "Combien de temps dure généralement la construction ?", "a": "Cela dépend de la taille du projet, généralement 2 à 6 mois pour les projets petits à moyens."},
+        {"q": "BK Green assure-t-il la maintenance après la fin du projet ?", "a": "Oui, nous assurons une maintenance périodique et un support technique 24/7."},
+        {"q": "Comment sont calculés les coûts des services ?", "a": "Les coûts dépendent de la taille du projet, de la technologie utilisée et des exigences spécifiques du client."}
+      ]
+    },
+    "cta": {
+      "title": "Besoin d'une consultation de service ?",
+      "subtitle": "Contactez-nous pour une consultation gratuite et un devis détaillé",
+      "primary": "Contactez maintenant",
+      "secondary": "Voir les projets"
+    },
+    "filters": {
+      "industry": ["Résidentiel", "Industriel"],
+      "type": ["Eaux usées", "Eau potable"]
+    }
+  }
+  ,
+  "projectsPage": {
+    "header": {"title": "Projets", "subtitle": "BK Green lance ses premiers projets, apportant des solutions d'eau potable à la communauté."},
+    "stats": {"active": "Projets en cours", "completed": "Projets terminés", "capacity": "Capacité de conception", "service": "Service professionnel"},
+    "featured": {"title": "Projets phares", "viewDetail": "Voir les détails"},
+    "all": {"title": "Tous les projets", "detail": "Détails"},
+    "cta": {"title": "Soumettez votre projet", "subtitle": "Vous avez un projet à consulter ? Contactez-nous pour un support professionnel", "primary": "Contactez maintenant", "secondary": "Voir les services"}
+  }
+  ,
+  "contactPage": {
+    "header": {"title": "Contactez-nous", "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support"},
+    "form": {
+      "title": "Envoyer un message",
+      "name": "Nom complet *",
+      "email": "Email *",
+      "company": "Entreprise",
+      "phone": "Téléphone",
+      "requestType": "Type de demande *",
+      "message": "Message *",
+      "submit": "Envoyer le message",
+      "placeholder": {
+        "name": "Entrez le nom complet",
+        "email": "Entrez l'email",
+        "company": "Entrez le nom de l'entreprise",
+        "phone": "Entrez le numéro de téléphone",
+        "requestType": "Sélectionnez un type de demande",
+        "message": "Entrez votre message..."
+      },
+      "requestTypes": ["Conseil de projet", "Devis produit", "Support technique", "Partenariat commercial", "Autre"]
+    },
+    "office": {"title": "Bureau", "mapPlaceholder": "Google Maps sera intégré ici", "city": "Ho Chi Minh-Ville", "viewMap": "Voir sur Google Maps"},
+    "support": {"title": "Support Client", "hotline": "Hotline de support", "hours": "8:00 - 17:00 (Lun-Ven)", "email": "Email de support", "sla": "Réponse sous 24h"},
+    "faqLink": "Questions fréquentes",
+    "info": {"phoneTitle": "Téléphone", "phoneDesc": "Appelez-nous pour une consultation", "emailTitle": "Email", "emailDesc": "Envoyez-nous un email", "addressTitle": "Adresse", "addressDesc": "Siège à HCMV", "hoursTitle": "Heures d'ouverture", "hoursDesc": "Du lundi au vendredi"},
+    "cta": {"title": "Démarrez votre projet", "subtitle": "Prêt à lancer un projet d'eau ? Contactez-nous dès aujourd'hui", "call": "Appelez maintenant", "email": "Envoyer un email"}
+  }
+  ,
+  "productsPage": {
+    "header": {"title": "Nos Produits", "subtitle": "BK Green fournit des produits de haute qualité : pompes, vannes, accessoires et systèmes RO de partenaires de confiance."},
+    "featured": {
+      "title": "Produits phares",
+      "detailBtn": "Détails",
+      "products": [
+        {"name": "Pompe Industrielle BK-P100", "category": "Pompes", "specs": "Débit : 100 m³/h | Hauteur : 50 m", "description": "Pompe industrielle à haut rendement, économe en énergie"},
+        {"name": "Vanne de Pression BK-V50", "category": "Vannes", "specs": "Pression : 0-16 bar | Temp : -10°C à 80°C", "description": "Contrôle de pression précis et grande durabilité"},
+        {"name": "Système RO BK-RO2000", "category": "Systèmes RO", "specs": "Capacité : 2000 L/h | Rendement : 75%", "description": "Système RO industriel de filtration d'eau"}
+      ]
+    },
+    "categories": {
+      "title": "Catégories de Produits",
+      "learnMore": "En savoir plus",
+      "items": {
+        "pumps": {
+          "title": "Pompes",
+          "description": "Pompes spécialisées pour les systèmes de traitement de l'eau",
+          "products": [
+            {"name": "Pompe Industrielle", "specs": "Débit : 50-500 m³/h", "description": "Pompe industrielle à haut rendement"},
+            {"name": "Pompe Eaux Usées", "specs": "Débit : 20-200 m³/h", "description": "Spécialisée pour le traitement des eaux usées"}
+          ]
+        },
+        "valves": {
+          "title": "Vannes",
+          "description": "Vannes de pression et anti‑fuite de haute qualité",
+          "products": [
+            {"name": "Vanne de Pression", "specs": "Pression : 0-16 bar", "description": "Réglage de pression précis"},
+            {"name": "Vanne Anti‑fuite", "specs": "Pression : 0-25 bar", "description": "Prévention efficace des fuites"}
+          ]
+        },
+        "fire": {
+          "title": "Accessoires Incendie",
+          "description": "Équipements professionnels de protection incendie",
+          "products": [
+            {"name": "Lance d'Eau", "specs": "Diamètre : 50-200 mm", "description": "Lance d'incendie dédiée"},
+            {"name": "Système d'Alarme Incendie", "specs": "Couverture : 1000 m²", "description": "Système d'alarme incendie automatique"}
+          ]
+        }
+      }
+    },
+    "filters": {
+      "title": "Filtres & Recherche",
+      "typeTitle": "Type de produit",
+      "applicationTitle": "Application",
+      "type": ["Pompes", "Vannes", "Accessoires Incendie", "Systèmes RO"],
+      "application": ["Industriel", "Résidentiel", "Commercial"],
+      "searchPlaceholder": "Rechercher des produits...",
+      "filterBtn": "Filtrer",
+      "helper": "Utilisez les filtres à gauche et la barre de recherche pour trouver les produits adaptés à vos besoins."
+    },
+    "related": {
+      "title": "Solutions liées",
+      "subtitle": "Découvrez les services et projets liés à nos produits",
+      "servicesBtn": "Voir les services",
+      "projectsBtn": "Voir les projets"
+    },
+    "cta": {
+      "title": "Trouver un revendeur",
+      "subtitle": "Contactez‑nous pour trouver le revendeur le plus proche et obtenir des conseils produits",
+      "primary": "Contactez maintenant"
+    }
+  }
+  ,
+  "units": {
+    "m3PerDay": "m³/jour",
+    "m3PerHour": "m³/h"
+  },
+  "common": {
+    "phone": "0931252511",
+    "phoneDisplay": "+84 931 252 511"
+  }
+}

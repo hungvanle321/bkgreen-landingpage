@@ -1,19 +1,7 @@
-import HeroSection from '@/components/HeroSection'
-import AboutSection from '@/components/AboutSection'
-import ServicesSection from '@/components/ServicesSection'
-import EquipmentSection from '@/components/EquipmentSection'
-import ProcessSection from '@/components/ProcessSection'
-import ContactSection from '@/components/ContactSection'
+import {redirect} from 'next/navigation';
 
-export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <EquipmentSection />
-      <ProcessSection />
-      <ContactSection />
-    </>
-  )
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  // Redirect to Vietnamese locale by default
+  redirect('/vi');
 }
