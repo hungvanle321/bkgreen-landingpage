@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
     ],
     unoptimized: false,
     // Disable lazy loading by default for above-the-fold images
@@ -19,6 +23,10 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     // Optimize loading
     minimumCacheTTL: 60,
+  },
+  webpack: (config) => {
+    config.resolve.alias['pg-native'] = false;
+    return config;
   },
 }
 

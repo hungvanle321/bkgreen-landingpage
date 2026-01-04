@@ -4,6 +4,7 @@ import { Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useTranslations, useLocale} from 'next-intl'
+import { useTheme } from 'next-themes'
 
 export default function Footer() {
   const tNav = useTranslations('navigation')
@@ -11,15 +12,16 @@ export default function Footer() {
   const tServices = useTranslations('services')
   const tCommon = useTranslations('common')
   const locale = useLocale()
+  const { theme } = useTheme()
   return (
     <footer className="bg-gray-900 text-white relative z-10">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         {/* Mobile Logo Section */}
         <div className="flex flex-col items-center mb-8 lg:hidden">
           <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center shadow-lg mb-4">
-            <Image 
-              src="/logo-transparent-square.svg" 
-              alt="BK Green Logo" 
+            <Image
+              src={theme === 'dark' ? '/logo-white-square.svg' : '/logo-transparent-square.svg'}
+              alt="BK Green Logo"
               width={48}
               height={48}
               className="w-12 h-12"
@@ -61,9 +63,9 @@ export default function Footer() {
           <div className="space-y-4 hidden lg:block">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                <Image 
-                  src="/logo-transparent-square.svg" 
-                  alt="BK Green Logo" 
+                <Image
+                  src={theme === 'dark' ? '/logo-white-square.svg' : '/logo-transparent-square.svg'}
+                  alt="BK Green Logo"
                   width={24}
                   height={24}
                   className="w-6 h-6"

@@ -6,18 +6,27 @@ import {useTranslations, useLocale} from 'next-intl'
 
 import { Button } from '@/components/ui/button'
 import { useImagePreloader } from '@/lib/hooks/use-image-preloader'
+import { useMedia } from '@/hooks/useMedia'
 
 export default function HeroSectionClient() {
   const t = useTranslations('hero')
   const locale = useLocale()
+  
+  // Lấy ảnh hero background từ database
+  const { media: heroBackground, loading: heroLoading } = useMedia('hero_background')
+  
+  // Ảnh fallback nếu không có ảnh từ database
+  const fallbackImage = '/hero-bg.jpg'
+  const backgroundImage = heroBackground?.url || fallbackImage
+  
   // Preload critical images
-  useImagePreloader({ 
-    imageUrls: ['/hero-bg.jpg'], 
-    priority: true 
+  useImagePreloader({
+    imageUrls: [backgroundImage],
+    priority: true
   })
 
   return (
-    <section className="relative text-white bg-cover bg-center bg-no-repeat min-h-screen flex items-center" style={{ backgroundImage: 'url(/hero-bg.jpg)' }}>
+    <section className="relative text-white bg-cover bg-center bg-no-repeat min-h-screen flex items-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="absolute inset-0 bg-black/60 md:bg-black/70"></div>
       <div className="relative w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-7xl">

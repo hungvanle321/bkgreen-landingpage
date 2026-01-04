@@ -1,0 +1,256 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  contactForms ContactForm[]
+  projects     Project[]
+  services     Service[]
+  products     Product[]
+  equipment    Equipment[]
+  processSteps ProcessStep[]
+  teamMembers  TeamMember[]
+  pages        Page[]
+}
+
+model ContactForm {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  status    ContactStatus @default(PENDING)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User?    @relation(fields: [userId], references: [id])
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  images      String[]
+  location    String?
+  type        String?
+  status      String?
+  year        String?
+  capacity    String?
+  order       Int      @default(0)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+  translations ProjectTranslation[]
+}
+
+model ProjectTranslation {
+  id        String   @id @default(cuid())
+  projectId String
+  locale    String   // 'vi', 'en', 'fr'
+  title     String
+  description String
+  category  String?
+  
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  
+  @@unique([projectId, locale])
+  @@index([projectId])
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  icon        String?
+  image       String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+  translations ServiceTranslation[]
+}
+
+model ServiceTranslation {
+  id          String   @id @default(cuid())
+  serviceId   String
+  locale      String   // 'vi', 'en', 'fr'
+  title       String
+  description String
+  
+  service     Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  
+  @@unique([serviceId, locale])
+  @@index([serviceId])
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  images      String[]
+  price       Float?
+  specs       String?
+  order       Int      @default(0)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+  translations ProductTranslation[]
+}
+
+model ProductTranslation {
+  id          String   @id @default(cuid())
+  productId   String
+  locale      String   // 'vi', 'en', 'fr'
+  name        String
+  description String
+  category    String?
+  
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  @@unique([productId, locale])
+  @@index([productId])
+}
+
+model Equipment {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  image       String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+  translations EquipmentTranslation[]
+}
+
+model EquipmentTranslation {
+  id          String   @id @default(cuid())
+  equipmentId String
+  locale      String   // 'vi', 'en', 'fr'
+  title       String
+  description String
+  category    String?
+  
+  equipment   Equipment @relation(fields: [equipmentId], references: [id], onDelete: Cascade)
+  
+  @@unique([equipmentId, locale])
+  @@index([equipmentId])
+}
+
+model ProcessStep {
+  id          String   @id @default(cuid())
+  step        String   // '01', '02', etc.
+  image       String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+  translations ProcessStepTranslation[]
+}
+
+model ProcessStepTranslation {
+  id            String   @id @default(cuid())
+  processStepId String
+  locale        String   // 'vi', 'en', 'fr'
+  title         String
+  description   String
+  
+  processStep   ProcessStep @relation(fields: [processStepId], references: [id], onDelete: Cascade)
+  
+  @@unique([processStepId, locale])
+  @@index([processStepId])
+}
+
+model TeamMember {
+  id          String   @id @default(cuid())
+  name        String
+  position    String
+  bio         String
+  image       String?
+  email       String?
+  phone       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+}
+
+model Page {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  content     String
+  metaTitle   String?
+  metaDescription String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  type      String
+  size      Int
+  category  String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum ContactStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}

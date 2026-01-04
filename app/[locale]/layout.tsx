@@ -7,6 +7,7 @@ import '../globals.css'
 import AOSInit from '@/components/AOSInit'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 import type { Metadata } from 'next'
 
@@ -91,7 +92,12 @@ export default async function LocaleLayout({
   const messages = (await import(`../../messages/${locale}.json`)).default
   return (
     <div className={inter.variable}>
-      <NextIntlClientProvider key={locale} messages={messages} locale={locale}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        disableTransitionOnChange
+      >
+        <NextIntlClientProvider key={locale} messages={messages} locale={locale}>
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -139,7 +145,8 @@ export default async function LocaleLayout({
         {children}
       </main>
       <Footer />
-      </NextIntlClientProvider>
+        </NextIntlClientProvider>
+      </ThemeProvider>
     </div>
   )
 }

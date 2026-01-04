@@ -24,12 +24,26 @@ export default function LanguageSwitcher() {
 
   const currentLanguage = languages.find(lang => lang.code === locale)
 
-  const handleLanguageChange = (newLocale: string) => {
-    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/'
-    const newPath = `/${newLocale}${pathWithoutLocale}`
-    setOpen(false)
-    router.push(newPath)
+  const handleLanguageChange = async (newLocale: string) => {
+    // Check if we're in admin area
+    const isAdminRoute = pathname.startsWith('/admin')
+
+    if (isAdminRoute) {
+      // For admin routes, store locale in cookie and reload
+      document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000` // 1 year
+      setOpen(false)
+      router.refresh() // Refresh to apply new locale
+    } else {
+      // For regular routes, change URL with locale prefix
+      const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/'
+      const newPath = `/${newLocale}${pathWithoutLocale}`
+      setOpen(false)
+      router.push(newPath)
+    }
   }
+
+  const isAdmin = pathname.startsWith('/admin')
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
@@ -46,6 +60,25 @@ export default function LanguageSwitcher() {
       document.removeEventListener('keydown', onKey)
     }
   }, [])
+
+  if (isAdmin && isMobile) {
+    return (
+      <div className="space-y-2">
+        {languages.map(language => (
+          <button
+            key={language.code}
+            onClick={() => handleLanguageChange(language.code)}
+            className={`w-full flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted transition-colors ${
+              locale === language.code ? 'bg-accent' : ''
+            }`}
+          >
+            <language.Flag title={language.name} className="h-4 w-6 rounded-sm" />
+            <span className="text-sm font-medium">{language.name}</span>
+          </button>
+        ))}
+      </div>
+    )
+  }
 
   return (
     <div ref={containerRef} className="relative">
@@ -65,20 +98,19 @@ export default function LanguageSwitcher() {
         <span className="sr-only">Change language</span>
       </Button>
 
-      {/* Mobile inline options (no layer) */}
-      <div className="sm:hidden flex flex-col items-stretch gap-2 w-full">
+      {/* Mobile inline options */}
+      <div className="sm:hidden flex gap-2">
         {languages.map(language => (
           <button
             key={language.code}
             aria-label={language.name}
             onClick={() => handleLanguageChange(language.code)}
-            className={`w-full flex items-center gap-2 rounded-lg px-3 py-2 text-sm border transition-colors duration-150 ${
+            className={`flex items-center justify-center rounded-lg px-2 py-2 border transition-colors duration-150 ${
               locale === language.code ? 'border-gray-300 bg-gray-50' : 'border-gray-200 bg-white hover:bg-gray-50'
             }`}
           >
-            <language.Flag title={language.name} className="h-4 w-6 rounded-sm" />
-            <span className="text-xs">{language.name}</span>
-            {locale === language.code && <Check className="h-4 w-4" />}
+            <language.Flag title={language.name} className="h-6 w-8 rounded-sm" />
+            {locale === language.code && <Check className="h-3 w-3 ml-1" />}
           </button>
         ))}
       </div>
@@ -107,8 +139,6 @@ export default function LanguageSwitcher() {
               </button>
             ))}
           </div>
-
-          {/* Mobile no-layer mode: dropdown disabled */}
         </>
       )}
     </div>

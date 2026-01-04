@@ -2,53 +2,55 @@
 
 import { Droplets, Settings, Zap, Shield, Wrench, Package } from 'lucide-react'
 import Image from 'next/image'
-import {useTranslations} from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
 
 import { Card } from '@/components/ui/card'
 import { getImageSizes, generateBlurDataURL, shouldPrioritize } from '@/lib/image-utils'
 
 // import { motion } from 'framer-motion'
 
+interface Service {
+  id: string
+  slug: string
+  icon: string
+  image: string
+  title: string
+  description: string
+}
+
+const iconMap = {
+  Droplets,
+  Settings,
+  Zap,
+  Shield,
+  Wrench,
+  Package,
+}
+
 export default function ServicesSection() {
   const t = useTranslations('services')
-  const services = [
-    {
-      icon: Droplets,
-      title: t('wastewater.title'),
-      description: t('wastewater.description'),
-      image: '/service-wastewater.jpg'
-    },
-    {
-      icon: Settings,
-      title: t('operation.title'),
-      description: t('operation.description'),
-      image: '/service-operation.jpg'
-    },
-    {
-      icon: Zap,
-      title: t('ro.title'),
-      description: t('ro.description'),
-      image: '/service-ro.jpg'
-    },
-    {
-      icon: Shield,
-      title: t('electrical.title'),
-      description: t('electrical.description'),
-      image: '/service-electrical.jpg'
-    },
-    {
-      icon: Wrench,
-      title: t('equipment.title'),
-      description: t('equipment.description'),
-      image: '/service-equipment.jpg'
-    },
-    {
-      icon: Package,
-      title: t('consulting.title'),
-      description: t('consulting.description'),
-      image: '/service-consulting.jpg'
+  const locale = useLocale()
+  const [services, setServices] = useState<Service[]>([])
+  const [_loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch(`/api/services?locale=${locale}`)
+        if (response.ok) {
+          const data = await response.json()
+          setServices(data)
+        }
+      } catch (error) {
+        console.error('Error fetching services:', error)
+      } finally {
+        setLoading(false)
+      }
     }
-  ]
+
+    void fetchServices()
+  }, [locale])
 
   return (
     <section className="py-16 relative">
@@ -97,7 +99,10 @@ export default function ServicesSection() {
                 <div className="relative z-10 h-full flex flex-col justify-end p-6">
                   <div className="flex items-center justify-center mb-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-green">
-                      <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                      {(() => {
+                        const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Package
+                        return <IconComponent className="h-6 w-6 text-white" aria-hidden="true" />
+                      })()}
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-white text-center mb-2">

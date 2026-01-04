@@ -1,6 +1,8 @@
 "use client"
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Building } from 'lucide-react'
 import {useTranslations} from 'next-intl'
+import { useState } from 'react'
+import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -37,13 +39,117 @@ export default function ContactPage() {
     }
   ]
 
-  const requestTypes = [
-    t('form.requestTypes.0'),
-    t('form.requestTypes.1'),
-    t('form.requestTypes.2'),
-    t('form.requestTypes.3'),
-    t('form.requestTypes.4')
-  ]
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const validateForm = () => {
+    const newErrors = {
+      name: '',
+      email: '',
+      message: ''
+    }
+    let isValid = true
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Vui lòng nhập họ và tên'
+      isValid = false
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Họ và tên phải có ít nhất 2 ký tự'
+      isValid = false
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Vui lòng nhập email'
+      isValid = false
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email không hợp lệ'
+      isValid = false
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Vui lòng nhập tin nhắn'
+      isValid = false
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Tin nhắn phải có ít nhất 10 ký tự'
+      isValid = false
+    }
+
+
+    setErrors(newErrors)
+    return isValid
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!validateForm()) {
+      return
+    }
+    
+    try {
+      setIsSubmitting(true)
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message
+        }),
+      })
+
+      if (response.ok) {
+        toast.success('Cảm ơn bạn đã gửi thông tin liên hệ. Chúng tôi sẽ phản hồi trong thời gian sớm nhất!')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        })
+        setErrors({
+          name: '',
+          email: '',
+          message: ''
+        })
+      } else {
+        const errorData = await response.json()
+        if (errorData.details && Array.isArray(errorData.details)) {
+          // Handle validation errors
+          const validationErrors = errorData.details.reduce((acc: any, err: any) => {
+            if (err.path && err.path[0]) {
+              acc[err.path[0]] = err.message
+            }
+            return acc
+          }, {})
+          setErrors(validationErrors)
+        } else {
+          toast.error(errorData.error || 'Có lỗi xảy ra khi gửi thông tin liên hệ')
+        }
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      toast.error('Có lỗi xảy ra khi gửi thông tin liên hệ')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen pt-16">
@@ -94,60 +200,103 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
                 {t('form.title')}
               </h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       {t('form.name')}
                     </label>
-                    <Input id="name" name="name" type="text" required className="w-full" placeholder={t('form.placeholder.name')} />
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      className={`w-full ${errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
+                      placeholder={t('form.placeholder.name')}
+                      value={formData.name}
+                      onChange={(e) => {
+                        setFormData({...formData, name: e.target.value})
+                        // Clear error when user starts typing
+                        if (errors.name) {
+                          setErrors({...errors, name: ''})
+                        }
+                      }}
+                    />
+                    {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       {t('form.email')}
                     </label>
-                    <Input id="email" name="email" type="email" required className="w-full" placeholder={t('form.placeholder.email')} />
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      className={`w-full ${errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
+                      placeholder={t('form.placeholder.email')}
+                      value={formData.email}
+                      onChange={(e) => {
+                        setFormData({...formData, email: e.target.value})
+                        // Clear error when user starts typing
+                        if (errors.email) {
+                          setErrors({...errors, email: ''})
+                        }
+                      }}
+                    />
+                    {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('form.company')}
-                  </label>
-                  <Input id="company" name="company" type="text" className="w-full" placeholder={t('form.placeholder.company')} />
-                </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('form.phone')}
                   </label>
-                  <Input id="phone" name="phone" type="tel" className="w-full" placeholder={t('form.placeholder.phone')} />
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    className="w-full"
+                    placeholder={t('form.placeholder.phone')}
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  />
                 </div>
 
-                <div>
-                  <label htmlFor="requestType" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('form.requestType')}
-                  </label>
-                  <select id="requestType" name="requestType" required className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option value="">{t('form.placeholder.requestType')}</option>
-                    {requestTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
-                </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('form.message')}
                   </label>
-                  <Textarea id="message" name="message" rows={6} required className="w-full" placeholder={t('form.placeholder.message')} />
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    required
+                    className={`w-full ${errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
+                    placeholder={t('form.placeholder.message')}
+                    value={formData.message}
+                    onChange={(e) => {
+                      setFormData({...formData, message: e.target.value})
+                      // Clear error when user starts typing
+                      if (errors.message) {
+                        setErrors({...errors, message: ''})
+                      }
+                    }}
+                  />
+                  {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full flex items-center justify-center space-x-2" style={{ backgroundColor: '#cc0000', borderColor: '#cc0000' }}>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full flex items-center justify-center space-x-2"
+                  style={{ backgroundColor: '#cc0000', borderColor: '#cc0000' }}
+                  disabled={isSubmitting}
+                >
                   <Send className="h-5 w-5" />
-                  <span>{t('form.submit')}</span>
+                  <span>{isSubmitting ? 'Đang gửi...' : t('form.submit')}</span>
                 </Button>
               </form>
             </div>

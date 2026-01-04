@@ -5,10 +5,18 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { Card, CardContent } from '@/components/ui/card'
+import { useMedia } from '@/hooks/useMedia'
 // import { motion } from 'framer-motion'
 
 export default function AboutSection() {
   const t = useTranslations('about')
+  
+  // Lấy ảnh about từ database
+  const { media: aboutImage, loading: aboutLoading } = useMedia('about_image')
+  
+  // Ảnh fallback nếu không có ảnh từ database
+  const fallbackImage = '/about-company.jpg'
+  const aboutImageUrl = aboutImage?.url || fallbackImage
   const features = [
     {
       icon: Droplets,
@@ -55,7 +63,7 @@ export default function AboutSection() {
             <div className="mt-8">
               <div className="relative h-80 rounded-lg overflow-hidden">
                 <Image
-                  src="/about-company.jpg"
+                  src={aboutImageUrl}
                   alt={t('imageAlt')}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"

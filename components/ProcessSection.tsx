@@ -1,53 +1,97 @@
 "use client"
 
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
+import { useState, useEffect } from 'react'
 
+interface ProcessStep {
+  id: string
+  step: string
+  image: string
+  title: string
+  description: string
+}
 
 export default function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0)
   const t = useTranslations('process')
+  const locale = useLocale()
+  const [processSteps, setProcessSteps] = useState<ProcessStep[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const processSteps = [
-    {
-      step: '01',
-      title: t('steps.survey.title'),
-      description: t('steps.survey.description'),
-      image: '/process-survey.jpg'
-    },
-    {
-      step: '02', 
-      title: t('steps.design.title'),
-      description: t('steps.design.description'),
-      image: '/process-design.jpg'
-    },
-    {
-      step: '03',
-      title: t('steps.installation.title'),
-      description: t('steps.installation.description'),
-      image: '/process-installation.jpg'
-    },
-    {
-      step: '04',
-      title: t('steps.maintenance.title'),
-      description: t('steps.maintenance.description'),
-      image: '/process-maintenance.jpg'
+  useEffect(() => {
+    const fetchProcessSteps = async () => {
+      try {
+        const response = await fetch(`/api/process?locale=${locale}`)
+        if (response.ok) {
+          const data = await response.json()
+          setProcessSteps(data)
+        }
+      } catch (error) {
+        console.error('Error fetching process steps:', error)
+      } finally {
+        setLoading(false)
+      }
     }
-  ]
+
+    void fetchProcessSteps()
+  }, [locale])
+
+  if (loading) {
+    return (
+      <section className="relative py-24 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/process-diagram.jpg)' }}>
+        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-center h-96">
+          <div className="text-white text-xl">{t('loading')}</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (!processSteps || processSteps.length === 0) {
+    return (
+      <section className="relative py-24 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/process-diagram.jpg)' }}>
+        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2
+              className="text-4xl font-bold tracking-tight text-white sm:text-5xl"
+              data-aos="fade-up"
+            >
+              {t('title')}
+            </h2>
+            <p
+              className="mt-6 text-xl leading-8 text-gray-200"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              {t('subtitle')}
+            </p>
+          </div>
+          <div className="text-center text-white text-xl">
+            {t('noData')}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  // Ensure activeStep is within bounds
+  const safeActiveStep = Math.min(activeStep, processSteps.length - 1)
+  const currentStep = processSteps[safeActiveStep]
 
   return (
     <section className="relative py-24 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/process-diagram.jpg)' }}>
       <div className="absolute inset-0 bg-black/70"></div>
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 
+          <h2
             className="text-4xl font-bold tracking-tight text-white sm:text-5xl"
             data-aos="fade-up"
           >
             {t('title')}
           </h2>
-          <p 
+          <p
             className="mt-6 text-xl leading-8 text-gray-200"
             data-aos="fade-up"
             data-aos-delay="200"
@@ -59,11 +103,11 @@ export default function ProcessSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="space-y-6">
             {processSteps.map((step, index) => (
-              <div 
-                key={step.step}
+              <div
+                key={step.id}
                 className={`flex gap-6 p-4 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-[1.02] ${
-                  activeStep === index 
-                    ? 'bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg scale-[1.02]' 
+                  safeActiveStep === index
+                    ? 'bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg scale-[1.02]'
                     : 'hover:bg-white/10 bg-white/5'
                 }`}
                 onClick={() => setActiveStep(index)}
@@ -74,8 +118,8 @@ export default function ProcessSection() {
               >
                 <div className="flex-shrink-0">
                   <div className={`flex h-16 w-16 items-center justify-center rounded-full text-white font-bold text-xl transition-all duration-300 ${
-                    activeStep === index 
-                      ? 'bg-primary-red' 
+                    safeActiveStep === index
+                      ? 'bg-primary-red'
                       : 'bg-white/30 hover:bg-white/50'
                   }`}>
                     {step.step}
@@ -83,7 +127,7 @@ export default function ProcessSection() {
                 </div>
                 <div className="flex-1">
                   <h3 className={`text-xl font-semibold mb-3 transition-all duration-300 ${
-                    activeStep === index ? 'text-white' : 'text-gray-200'
+                    safeActiveStep === index ? 'text-white' : 'text-gray-200'
                   }`}>
                     {step.title}
                   </h3>
@@ -94,26 +138,27 @@ export default function ProcessSection() {
               </div>
             ))}
           </div>
-          
-          <div 
+
+          <div
             className="relative"
             data-aos="fade-left"
           >
             <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
-                src={processSteps[activeStep].image}
-                alt={processSteps[activeStep].title}
+                src={currentStep.image}
+                alt={currentStep.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 className="object-cover transition-all duration-700 ease-in-out"
-                key={activeStep}
+                key={safeActiveStep}
                 priority={true}
                 loading="eager"
+                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-2xl font-bold mb-2 transition-all duration-500">{processSteps[activeStep].title}</h3>
-                <p className="text-gray-200 transition-all duration-500">{processSteps[activeStep].description}</p>
+                <h3 className="text-2xl font-bold mb-2 transition-all duration-500">{currentStep.title}</h3>
+                <p className="text-gray-200 transition-all duration-500">{currentStep.description}</p>
               </div>
             </div>
           </div>

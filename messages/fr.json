@@ -508,7 +508,9 @@
       "application": ["Industriel", "Résidentiel", "Commercial"],
       "searchPlaceholder": "Rechercher des produits...",
       "filterBtn": "Filtrer",
-      "helper": "Utilisez les filtres à gauche et la barre de recherche pour trouver les produits adaptés à vos besoins."
+      "helper": "Utilisez les filtres à gauche et la barre de recherche pour trouver les produits adaptés à vos besoins.",
+      "loading": "Chargement des produits...",
+      "noProductsFound": "Aucun produit trouvé."
     },
     "related": {
       "title": "Solutions liées",
@@ -530,5 +532,640 @@
   "common": {
     "phone": "0931252511",
     "phoneDisplay": "+84 931 252 511"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Tableau de bord Admin",
+      "welcome": "Bienvenue sur le tableau de bord administrateur",
+      "description": "Utilisez le menu de navigation pour gérer le contenu de votre site web, les utilisateurs et les paramètres.",
+      "stats": {
+        "totalUsers": "Utilisateurs totaux",
+        "totalProjects": "Projets totaux",
+        "totalServices": "Services totaux",
+        "totalProducts": "Produits totaux"
+      },
+      "quickLinks": {
+        "pages": {
+          "title": "Pages",
+          "description": "Gérer les pages du site web"
+        },
+        "services": {
+          "title": "Services",
+          "description": "Gérer les services"
+        },
+        "projects": {
+          "title": "Projets",
+          "description": "Gérer les projets"
+        },
+        "products": {
+          "title": "Produits",
+          "description": "Gérer les produits"
+        }
+      },
+      "quickActions": {
+        "title": "Actions rapides",
+        "description": "Effectuez rapidement les tâches administratives courantes.",
+        "team": {
+          "title": "Gestion d'équipe",
+          "description": "Gérer les membres de l'équipe et leurs informations"
+        },
+        "media": {
+          "title": "Bibliothèque média",
+          "description": "Téléverser et gérer les fichiers média"
+        },
+        "contactForms": {
+          "title": "Formulaires de contact",
+          "description": "Voir et gérer les soumissions de formulaires de contact"
+        }
+      }
+    },
+    "navigation": {
+      "main": "Navigation principale",
+      "dashboard": "Tableau de bord",
+      "pages": "Pages",
+      "services": "Services",
+      "projects": "Projets",
+      "products": "Produits",
+      "equipment": "Équipement",
+      "process": "Processus",
+      "team": "Équipe",
+      "media": "Médias",
+      "contactForms": "Formulaires de contact",
+      "settings": "Paramètres",
+      "logout": "Déconnexion"
+    },
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "subtitle": "Entrez vos identifiants pour accéder au panneau d'administration",
+      "required": "Veuillez saisir l'email et le mot de passe",
+      "invalidCredentials": "Email ou mot de passe invalide",
+      "success": "Connexion réussie",
+      "serverError": "Une erreur s'est produite lors de la connexion"
+    },
+    "projects": {
+      "title": "Gérer les Projets",
+      "addNew": "Ajouter un Nouveau Projet",
+      "edit": "Modifier le Projet",
+      "create": "Créer un Nouveau Projet",
+      "list": "Liste des Projets",
+      "listDescription": "Gérer tous les projets",
+      "formDescription": "Remplir les informations du projet",
+      "form": {
+        "slug": "Slug",
+        "title": "Titre",
+        "description": "Description",
+        "category": "Catégorie",
+        "location": "Emplacement",
+        "type": "Type",
+        "status": "Statut",
+        "year": "Année",
+        "capacity": "Capacité",
+        "order": "Ordre",
+        "featured": "En vedette",
+        "images": "Images"
+      },
+      "table": {
+        "image": "Image",
+        "title": "Titre",
+        "location": "Emplacement",
+        "status": "Statut",
+        "featured": "En vedette",
+        "actions": "Actions"
+      },
+      "yes": "Oui",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce projet?",
+      "success": {
+        "created": "Projet créé avec succès",
+        "updated": "Projet mis à jour avec succès",
+        "deleted": "Projet supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des projets",
+        "saveFailed": "Échec de l'enregistrement du projet",
+        "deleteFailed": "Échec de la suppression du projet",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "services": {
+      "title": "Gérer les Services",
+      "addNew": "Ajouter un Nouveau Service",
+      "edit": "Modifier le Service",
+      "create": "Créer un Nouveau Service",
+      "list": "Liste des Services",
+      "listDescription": "Gérer tous les services",
+      "formDescription": "Remplir les informations du service",
+      "form": {
+        "slug": "Slug",
+        "title": "Titre",
+        "description": "Description",
+        "order": "Ordre",
+        "image": "Image"
+      },
+      "table": {
+        "image": "Image",
+        "title": "Titre",
+        "order": "Ordre",
+        "actions": "Actions"
+      },
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce service?",
+      "success": {
+        "created": "Service créé avec succès",
+        "updated": "Service mis à jour avec succès",
+        "deleted": "Service supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des services",
+        "saveFailed": "Échec de l'enregistrement du service",
+        "deleteFailed": "Échec de la suppression du service",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "products": {
+      "title": "Gérer les Produits",
+      "addNew": "Ajouter un Nouveau Produit",
+      "edit": "Modifier le Produit",
+      "create": "Créer un Nouveau Produit",
+      "list": "Liste des Produits",
+      "listDescription": "Gérer tous les produits",
+      "formDescription": "Remplir les informations du produit",
+      "form": {
+        "slug": "Slug",
+        "name": "Nom",
+        "description": "Description",
+        "category": "Catégorie",
+        "price": "Prix",
+        "specs": "Spécifications",
+        "order": "Ordre",
+        "featured": "En vedette",
+        "images": "Images"
+      },
+      "table": {
+        "image": "Image",
+        "name": "Nom",
+        "price": "Prix",
+        "featured": "En vedette",
+        "actions": "Actions"
+      },
+      "yes": "Oui",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce produit?",
+      "success": {
+        "created": "Produit créé avec succès",
+        "updated": "Produit mis à jour avec succès",
+        "deleted": "Produit supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des produits",
+        "saveFailed": "Échec de l'enregistrement du produit",
+        "deleteFailed": "Échec de la suppression du produit",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "equipment": {
+      "title": "Gérer l'Équipement",
+      "addNew": "Ajouter un Nouvel Équipement",
+      "edit": "Modifier l'Équipement",
+      "create": "Créer un Nouvel Équipement",
+      "list": "Liste de l'Équipement",
+      "listDescription": "Gérer tout l'équipement",
+      "formDescription": "Remplir les informations de l'équipement",
+      "form": {
+        "slug": "Slug",
+        "title": "Titre",
+        "description": "Description",
+        "category": "Catégorie",
+        "order": "Ordre",
+        "image": "Image"
+      },
+      "table": {
+        "image": "Image",
+        "title": "Titre",
+        "order": "Ordre",
+        "actions": "Actions"
+      },
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet équipement?",
+      "success": {
+        "created": "Équipement créé avec succès",
+        "updated": "Équipement mis à jour avec succès",
+        "deleted": "Équipement supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement de l'équipement",
+        "saveFailed": "Échec de l'enregistrement de l'équipement",
+        "deleteFailed": "Échec de la suppression de l'équipement",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "process": {
+      "title": "Gérer le Processus",
+      "addNew": "Ajouter une Nouvelle Étape",
+      "edit": "Modifier l'Étape",
+      "create": "Créer une Nouvelle Étape",
+      "list": "Liste des Étapes",
+      "listDescription": "Gérer toutes les étapes du processus",
+      "formDescription": "Remplir les informations de l'étape",
+      "form": {
+        "step": "Numéro d'Étape",
+        "title": "Titre",
+        "description": "Description",
+        "order": "Ordre",
+        "image": "Image"
+      },
+      "table": {
+        "step": "Étape",
+        "image": "Image",
+        "title": "Titre",
+        "order": "Ordre",
+        "actions": "Actions"
+      },
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette étape?",
+      "success": {
+        "created": "Étape créée avec succès",
+        "updated": "Étape mise à jour avec succès",
+        "deleted": "Étape supprimée avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des étapes",
+        "saveFailed": "Échec de l'enregistrement de l'étape",
+        "deleteFailed": "Échec de la suppression de l'étape",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "contactForms": {
+      "title": "Gérer les Formulaires de Contact",
+      "list": "Liste des Formulaires",
+      "listDescription": "Voir et gérer les formulaires de contact",
+      "filterByStatus": "Filtrer par statut",
+      "all": "Tous",
+      "status": {
+        "pending": "En attente",
+        "inProgress": "En cours",
+        "completed": "Terminé",
+        "cancelled": "Annulé"
+      },
+      "table": {
+        "name": "Nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "message": "Message",
+        "status": "Statut",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce formulaire?",
+      "success": {
+        "updated": "Mis à jour avec succès",
+        "deleted": "Supprimé avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des formulaires",
+        "updateFailed": "Échec de la mise à jour du formulaire",
+        "deleteFailed": "Échec de la suppression du formulaire"
+      }
+    },
+    "actions": {
+      "create": "Créer",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "back": "Retour",
+      "upload": "Téléverser",
+      "view": "Voir",
+      "confirmDelete": "Confirmer la suppression",
+      "login": "Se connecter",
+      "loggingIn": "Connexion en cours...",
+      "actions": "Actions",
+      "download": "Télécharger",
+      "restore": "Restaurer l'image originale",
+      "uploading": "Téléversement...",
+      "saving": "Enregistrement...",
+      "more": "Plus",
+      "edit": "Modifier",
+      "delete": "Supprimer"
+    },
+    "forms": {
+      "title": "Titre",
+      "description": "Description",
+      "content": "Contenu",
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message",
+      "status": "Statut",
+      "category": "Catégorie",
+      "price": "Prix",
+      "image": "Image",
+      "file": "Fichier",
+      "position": "Poste",
+      "bio": "Biographie",
+      "slug": "Slug",
+      "metaTitle": "Titre meta",
+      "metaDescription": "Description meta",
+      "password": "Mot de passe",
+      "createdAt": "Créé",
+      "type": "Type",
+      "size": "Taille",
+      "general": "Général",
+      "logo": "Logo",
+      "logo_white": "Logo blanc",
+      "hero_background": "Arrière-plan hero",
+      "process_background": "Arrière-plan processus",
+      "favicon": "Favicon",
+      "social_media": "Médias sociaux",
+      "about_image": "Image à propos",
+      "uploadNew": "Téléverser nouveau",
+      "newPage": "Nouvelle page"
+    },
+    "errors": {
+      "required": "Ce champ est obligatoire",
+      "invalidEmail": "Adresse email invalide",
+      "uploadFailed": "Échec du téléversement",
+      "saveFailed": "Échec de l'enregistrement",
+      "deleteFailed": "Échec de la suppression",
+      "loginFailed": "Échec de la connexion",
+      "fetchFailed": "Échec du chargement des données",
+      "noFileSelected": "Aucun fichier sélectionné",
+      "restoreFailed": "Échec de la restauration",
+      "invalidData": "Données fournies invalides",
+      "fetchContactFormsFailed": "Échec du chargement des formulaires de contact",
+      "updateContactFormFailed": "Échec de la mise à jour du formulaire de contact",
+      "deleteContactFormFailed": "Échec de la suppression du formulaire de contact"
+    },
+    "fileUpload": {
+      "imageLabel": "Image",
+      "selectImage": "Sélectionner l'image",
+      "uploading": "Téléversement...",
+      "placeholder": "Sélectionner le fichier à téléverser",
+      "imagePlaceholder": "Sélectionner l'image",
+      "servicePlaceholder": "Sélectionner l'image du service",
+      "projectPlaceholder": "Sélectionner l'image du projet",
+      "productPlaceholder": "Sélectionner l'image du produit",
+      "teamPlaceholder": "Sélectionner l'image de l'équipe",
+      "processPlaceholder": "Sélectionner l'image de l'étape",
+      "equipmentPlaceholder": "Sélectionner l'image de l'équipement",
+      "onlyImage": "Seuls les fichiers image sont acceptés",
+      "sizeLimit": "Le fichier ne doit pas dépasser 5 Mo",
+      "uploadSuccess": "Téléversement réussi",
+      "uploadFailed": "Échec du téléversement"
+    },
+    "success": {
+      "saved": "Enregistré avec succès",
+      "deleted": "Supprimé avec succès",
+      "uploaded": "Téléversé avec succès",
+      "login": "Connexion réussie",
+      "restored": "Image restaurée avec succès"
+    },
+    "saving": "Enregistrement...",
+    "savings": "Enregistrement...",
+    "media": {
+      "title": "Bibliothèque Média",
+      "list": "Liste des fichiers",
+      "listDescription": "Gérer tous les fichiers média",
+      "upload": "Téléverser un fichier",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce fichier?",
+      "success": {
+        "uploaded": "Fichier téléversé avec succès",
+        "deleted": "Fichier supprimé avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des fichiers",
+        "uploadFailed": "Échec du téléversement du fichier",
+        "deleteFailed": "Échec de la suppression du fichier"
+      }
+    },
+    "team": {
+      "title": "Gestion d'Équipe",
+      "addNew": "Ajouter un Nouveau Membre",
+      "edit": "Modifier le Membre",
+      "create": "Créer un Nouveau Membre",
+      "list": "Liste des Membres",
+      "listDescription": "Gérer tous les membres de l'équipe",
+      "formDescription": "Remplir les informations du membre",
+      "form": {
+        "name": "Nom",
+        "position": "Poste",
+        "bio": "Biographie",
+        "email": "Email",
+        "phone": "Téléphone",
+        "image": "Image"
+      },
+      "table": {
+        "image": "Image",
+        "name": "Nom",
+        "position": "Poste",
+        "email": "Email",
+        "phone": "Téléphone",
+        "actions": "Actions"
+      },
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce membre?",
+      "success": {
+        "created": "Membre créé avec succès",
+        "updated": "Membre mis à jour avec succès",
+        "deleted": "Membre supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des membres",
+        "saveFailed": "Échec de l'enregistrement du membre",
+        "deleteFailed": "Échec de la suppression du membre",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "general": "Paramètres généraux",
+      "generalDescription": "Paramètres généraux du système",
+      "appearance": "Apparence",
+      "appearanceDescription": "Paramètres d'apparence",
+      "security": "Sécurité",
+      "securityDescription": "Paramètres de sécurité",
+      "notifications": "Notifications",
+      "notificationsDescription": "Paramètres de notification",
+      "save": "Enregistrer les paramètres",
+      "cancel": "Annuler",
+      "loading": "Chargement...",
+      "success": {
+        "saved": "Paramètres enregistrés avec succès"
+      },
+      "errors": {
+        "saveFailed": "Échec de l'enregistrement des paramètres",
+        "fetchFailed": "Échec du chargement des paramètres"
+      },
+      "siteName": "Nom du site",
+      "siteNamePlaceholder": "Entrez le nom du site",
+      "siteDescription": "Description du site",
+      "siteDescriptionPlaceholder": "Entrez la description du site",
+      "darkMode": "Mode sombre",
+      "sessionTimeout": "Expiration de session",
+      "sessionTimeoutPlaceholder": "Entrez le délai d'expiration (minutes)",
+      "emailNotifications": "Notifications par email",
+      "mediaSettings": "Paramètres Media",
+      "mediaSettingsDescription": "Configurer les images fixes pour votre site web",
+      "logo": "Logo",
+      "selectLogoPlaceholder": "Sélectionner l'image du logo",
+      "heroBackground": "Arrière-plan Hero",
+      "selectHeroBackgroundPlaceholder": "Sélectionner l'arrière-plan hero",
+      "favicon": "Favicon",
+      "selectFaviconPlaceholder": "Sélectionner favicon",
+      "none": "Aucun"
+    },
+    "media": {
+      "uploadFile": "Téléverser un fichier",
+      "list": "Liste des fichiers",
+      "listDescription": "Gérer tous les fichiers média",
+      "upload": "Téléverser un fichier",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce fichier?",
+      "success": {
+        "uploaded": "Fichier téléversé avec succès",
+        "deleted": "Fichier supprimé avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des fichiers",
+        "uploadFailed": "Échec du téléversement du fichier",
+        "deleteFailed": "Échec de la suppression du fichier"
+      }
+    },
+    "team": {
+      "title": "Gestion d'Équipe",
+      "addNew": "Ajouter un Nouveau Membre",
+      "edit": "Modifier le Membre",
+      "create": "Créer un Nouveau Membre",
+      "list": "Liste des Membres",
+      "listDescription": "Gérer tous les membres de l'équipe",
+      "formDescription": "Remplir les informations du membre",
+      "form": {
+        "name": "Nom",
+        "position": "Poste",
+        "bio": "Biographie",
+        "email": "Email",
+        "phone": "Téléphone",
+        "image": "Image"
+      },
+      "table": {
+        "image": "Image",
+        "name": "Nom",
+        "position": "Poste",
+        "email": "Email",
+        "phone": "Téléphone",
+        "actions": "Actions"
+      },
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce membre?",
+      "success": {
+        "created": "Membre créé avec succès",
+        "updated": "Membre mis à jour avec succès",
+        "deleted": "Membre supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès"
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des membres",
+        "saveFailed": "Échec de l'enregistrement du membre",
+        "deleteFailed": "Échec de la suppression du membre",
+        "imageUploadFailed": "Échec du téléversement de l'image"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "general": "Paramètres généraux",
+      "generalDescription": "Paramètres généraux du système",
+      "appearance": "Apparence",
+      "appearanceDescription": "Paramètres d'apparence",
+      "security": "Sécurité",
+      "securityDescription": "Paramètres de sécurité",
+      "notifications": "Notifications",
+      "notificationsDescription": "Paramètres de notification",
+      "save": "Enregistrer les paramètres",
+      "cancel": "Annuler",
+      "loading": "Chargement...",
+      "success": {
+        "saved": "Paramètres enregistrés avec succès"
+      },
+      "errors": {
+        "saveFailed": "Échec de l'enregistrement des paramètres",
+        "fetchFailed": "Échec du chargement des paramètres"
+      },
+      "siteName": "Nom du site",
+      "siteNamePlaceholder": "Entrez le nom du site",
+      "siteDescription": "Description du site",
+      "siteDescriptionPlaceholder": "Entrez la description du site",
+      "darkMode": "Mode sombre",
+      "sessionTimeout": "Expiration de session",
+      "sessionTimeoutPlaceholder": "Entrez le délai d'expiration (minutes)",
+      "emailNotifications": "Notifications par email",
+      "mediaSettings": "Paramètres Media",
+      "mediaSettingsDescription": "Configurer les images fixes pour votre site web",
+      "logo": "Logo",
+      "selectLogoPlaceholder": "Sélectionner l'image du logo",
+      "heroBackground": "Arrière-plan Hero",
+      "selectHeroBackgroundPlaceholder": "Sélectionner l'arrière-plan hero",
+      "favicon": "Favicon",
+      "selectFaviconPlaceholder": "Sélectionner favicon",
+      "none": "Aucun"
+    },
+    "table": {
+      "image": "Image",
+      "name": "Nom",
+      "title": "Titre",
+      "order": "Ordre",
+      "actions": "Actions",
+      "bio": "Biographie",
+      "phone": "Téléphone",
+      "email": "Email",
+      "location": "Emplacement",
+      "status": "Statut",
+      "featured": "En vedette",
+      "price": "Prix",
+      "category": "Catégorie",
+      "step": "Étape",
+      "description": "Description",
+      "message": "Message",
+      "date": "Date"
+    },
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "yes": "Oui",
+    "no": "Non",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "loading": "Chargement...",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet élément?",
+    "success": {
+      "updated": "Mis à jour avec succès",
+      "deleted": "Supprimé avec succès",
+      "created": "Créé avec succès"
+    },
+    "errors": {
+      "fetchFailed": "Échec du chargement des données",
+      "saveFailed": "Échec de l'enregistrement",
+      "deleteFailed": "Échec de la suppression"
+    }
   }
 }

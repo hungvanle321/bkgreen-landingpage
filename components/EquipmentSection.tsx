@@ -1,38 +1,43 @@
 "use client"
 
 import Image from 'next/image'
-import {useTranslations} from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
 
 import { Card } from '@/components/ui/card'
 
+interface Equipment {
+  id: string
+  slug: string
+  image: string
+  title: string
+  description: string
+  category: string
+}
+
 export default function EquipmentSection() {
   const t = useTranslations('equipment')
-  const equipment = [
-    {
-      title: t('items.pump.title'),
-      description: t('items.pump.description'),
-      image: '/equipment-pump.jpg',
-      category: t('items.pump.category')
-    },
-    {
-      title: t('items.valve.title'),
-      description: t('items.valve.description'),
-      image: '/equipment-valve.jpg',
-      category: t('items.valve.category')
-    },
-    {
-      title: t('items.fire.title'),
-      description: t('items.fire.description'),
-      image: '/equipment-fire.jpg',
-      category: t('items.fire.category')
-    },
-    {
-      title: t('items.ro.title'),
-      description: t('items.ro.description'),
-      image: '/equipment-ro.jpg',
-      category: t('items.ro.category')
+  const locale = useLocale()
+  const [equipment, setEquipment] = useState<Equipment[]>([])
+  const [_loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchEquipment = async () => {
+      try {
+        const response = await fetch(`/api/equipment?locale=${locale}`)
+        if (response.ok) {
+          const data = await response.json()
+          setEquipment(data)
+        }
+      } catch (error) {
+        console.error('Error fetching equipment:', error)
+      } finally {
+        setLoading(false)
+      }
     }
-  ]
+
+    void fetchEquipment()
+  }, [locale])
 
   return (
     <section className="py-16 bg-white relative">
@@ -56,8 +61,8 @@ export default function EquipmentSection() {
         
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4">
           {equipment.map((item, index) => (
-            <div 
-              key={item.title}
+            <div
+              key={item.id}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -71,6 +76,7 @@ export default function EquipmentSection() {
                     className="object-cover object-center"
                     priority={index < 4}
                     loading={index < 4 ? "eager" : "lazy"}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
                 </div>

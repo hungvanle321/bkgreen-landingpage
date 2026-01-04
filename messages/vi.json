@@ -12,21 +12,51 @@
   "process": {
     "title": "Quy Trình Làm Việc",
     "subtitle": "Quy trình chuyên nghiệp từ khảo sát đến vận hành hệ thống xử lý nước",
+    "loading": "Đang tải...",
+    "noData": "Chưa có dữ liệu quy trình",
     "steps": {
-      "survey": {"title": "Khảo Sát & Đánh Giá", "description": "Khảo sát hiện trạng và đánh giá nhu cầu xử lý nước"},
-      "design": {"title": "Thiết Kế Hệ Thống", "description": "Thiết kế hệ thống xử lý nước phù hợp với yêu cầu"},
-      "installation": {"title": "Thi Công & Lắp Đặt", "description": "Thi công và lắp đặt hệ thống theo thiết kế"},
-      "maintenance": {"title": "Vận Hành & Bảo Trì", "description": "Vận hành hệ thống và bảo trì định kỳ"}
+      "survey": {
+        "title": "Khảo Sát & Đánh Giá",
+        "description": "Khảo sát hiện trạng và đánh giá nhu cầu xử lý nước"
+      },
+      "design": {
+        "title": "Thiết Kế Hệ Thống",
+        "description": "Thiết kế hệ thống xử lý nước phù hợp với yêu cầu"
+      },
+      "installation": {
+        "title": "Thi Công & Lắp Đặt",
+        "description": "Thi công và lắp đặt hệ thống theo thiết kế"
+      },
+      "maintenance": {
+        "title": "Vận Hành & Bảo Trì",
+        "description": "Vận hành hệ thống và bảo trì định kỳ"
+      }
     }
   },
   "equipment": {
     "title": "Thiết Bị & Sản Phẩm",
     "subtitle": "Chúng tôi cung cấp thiết bị và sản phẩm chất lượng cao cho hệ thống xử lý nước",
     "items": {
-      "pump": {"title": "Máy Bơm Công Nghiệp", "description": "Máy bơm chuyên dụng cho hệ thống xử lý nước", "category": "Thiết bị chính"},
-      "valve": {"title": "Van Công Nghiệp", "description": "Van điều khiển, van an toàn cho hệ thống nước", "category": "Phụ kiện"},
-      "fire": {"title": "Thiết Bị PCCC", "description": "Hệ thống phòng cháy chữa cháy chuyên nghiệp", "category": "An toàn"},
-      "ro": {"title": "Hệ Thống RO", "description": "Thiết bị lọc nước RO công nghiệp", "category": "Xử lý nước"}
+      "pump": {
+        "title": "Máy Bơm Công Nghiệp",
+        "description": "Máy bơm chuyên dụng cho hệ thống xử lý nước",
+        "category": "Thiết bị chính"
+      },
+      "valve": {
+        "title": "Van Công Nghiệp",
+        "description": "Van điều khiển, van an toàn cho hệ thống nước",
+        "category": "Phụ kiện"
+      },
+      "fire": {
+        "title": "Thiết Bị PCCC",
+        "description": "Hệ thống phòng cháy chữa cháy chuyên nghiệp",
+        "category": "An toàn"
+      },
+      "ro": {
+        "title": "Hệ Thống RO",
+        "description": "Thiết bị lọc nước RO công nghiệp",
+        "category": "Xử lý nước"
+      }
     }
   },
   "hero": {
@@ -122,8 +152,7 @@
         "description": "Luôn đặt chất lượng và sự hài lòng của khách hàng lên hàng đầu"
       }
     }
-  }
-  ,
+  },
   "aboutPage": {
     "meta": {
       "title": "Giới Thiệu",
@@ -133,8 +162,14 @@
       "badge": "Về Chúng Tôi",
       "imageAlt": "Về công ty BK Green",
       "cards": {
-        "growth": {"title": "Tăng Trưởng", "desc": "Phát triển bền vững"},
-        "environment": {"title": "Môi Trường", "desc": "Thân thiện sinh thái"}
+        "growth": {
+          "title": "Tăng Trưởng",
+          "desc": "Phát triển bền vững"
+        },
+        "environment": {
+          "title": "Môi Trường",
+          "desc": "Thân thiện sinh thái"
+        }
       },
       "p1": "Công ty Cổ phần Kỹ thuật BK Green là một công ty mới được thành lập với mục tiêu mang đến giải pháp nước cấp và nước thải bền vững tại Việt Nam.",
       "p2": "Chúng tôi bắt đầu hành trình của mình với đội ngũ chuyên gia giàu kinh nghiệm và tầm nhìn dài hạn về một tương lai nơi nguồn nước được bảo vệ và quản lý một cách bền vững."
@@ -144,9 +179,18 @@
       "title": "Tại Sao Chọn BK Green?",
       "subtitle": "Những lý do khiến chúng tôi trở thành đối tác đáng tin cậy",
       "stats": [
-        {"title": "Đội ngũ chuyên gia", "description": "Với hơn 15 năm kinh nghiệm trong lĩnh vực kỹ thuật nước, đội ngũ kỹ sư của chúng tôi được đào tạo chuyên sâu và có chứng chỉ quốc tế. Chúng tôi cam kết mang đến những giải pháp tối ưu nhất cho mỗi dự án."},
-        {"title": "Cam kết chất lượng", "description": "Chúng tôi tuân thủ nghiêm ngặt các tiêu chuẩn quốc tế ISO 9001:2015 và áp dụng quy trình kiểm soát chất lượng 3 cấp độ. Mỗi sản phẩm và dịch vụ đều được kiểm tra kỹ lưỡng trước khi giao đến khách hàng."},
-        {"title": "Tập trung bền vững", "description": "BK Green tiên phong trong việc phát triển các giải pháp xanh, thân thiện với môi trường. Chúng tôi sử dụng công nghệ tiết kiệm năng lượng và tái chế nước thải, góp phần bảo vệ môi trường bền vững cho tương lai."}
+        {
+          "title": "Đội ngũ chuyên gia",
+          "description": "Với hơn 15 năm kinh nghiệm trong lĩnh vực kỹ thuật nước, đội ngũ kỹ sư của chúng tôi được đào tạo chuyên sâu và có chứng chỉ quốc tế. Chúng tôi cam kết mang đến những giải pháp tối ưu nhất cho mỗi dự án."
+        },
+        {
+          "title": "Cam kết chất lượng",
+          "description": "Chúng tôi tuân thủ nghiêm ngặt các tiêu chuẩn quốc tế ISO 9001:2015 và áp dụng quy trình kiểm soát chất lượng 3 cấp độ. Mỗi sản phẩm và dịch vụ đều được kiểm tra kỹ lưỡng trước khi giao đến khách hàng."
+        },
+        {
+          "title": "Tập trung bền vững",
+          "description": "BK Green tiên phong trong việc phát triển các giải pháp xanh, thân thiện với môi trường. Chúng tôi sử dụng công nghệ tiết kiệm năng lượng và tái chế nước thải, góp phần bảo vệ môi trường bền vững cho tương lai."
+        }
       ]
     },
     "commit": {
@@ -154,13 +198,25 @@
       "title": "Cam Kết Của Chúng Tôi",
       "subtitle": "Bảo vệ nguồn nước và tối ưu năng lượng với giải pháp hiện đại",
       "cards": {
-        "tech": {"title": "Kỹ Thuật & Công Nghệ", "desc": "Ứng dụng công nghệ tiên tiến và kỹ thuật chuyên sâu"},
-        "env": {"title": "Môi Trường Bền Vững", "desc": "Cam kết bảo vệ môi trường và phát triển bền vững"},
-        "water": {"title": "Giải Pháp Nước", "desc": "Xử lý nước cấp, nước thải và giải pháp toàn diện"}
+        "tech": {
+          "title": "Kỹ Thuật & Công Nghệ",
+          "desc": "Ứng dụng công nghệ tiên tiến và kỹ thuật chuyên sâu"
+        },
+        "env": {
+          "title": "Môi Trường Bền Vững",
+          "desc": "Cam kết bảo vệ môi trường và phát triển bền vững"
+        },
+        "water": {
+          "title": "Giải Pháp Nước",
+          "desc": "Xử lý nước cấp, nước thải và giải pháp toàn diện"
+        }
       },
-      "legend": {"tech": "Kỹ Thuật & Công Nghệ", "env": "Môi Trường Bền Vững", "water": "Giải Pháp Nước Toàn Diện"}
-    }
-    ,
+      "legend": {
+        "tech": "Kỹ Thuật & Công Nghệ",
+        "env": "Môi Trường Bền Vững",
+        "water": "Giải Pháp Nước Toàn Diện"
+      }
+    },
     "leadership": {
       "badge": "Ban Lãnh Đạo",
       "title": "Đội Ngũ Lãnh Đạo",
@@ -181,37 +237,51 @@
           ]
         }
       ]
-    }
-    ,
+    },
     "certifications": {
       "badge": "Chứng Nhận",
       "title": "Chứng Nhận & Bằng Cấp",
       "subtitle": "Đảm bảo chất lượng và tuân thủ các tiêu chuẩn quốc tế",
       "items": [
-        {"title": "Chứng Nhận Chất Lượng", "description": "Tuân thủ các tiêu chuẩn quốc tế về chất lượng và an toàn"},
-        {"title": "Bằng Cấp Kỹ Thuật", "description": "Đội ngũ kỹ sư được đào tạo chuyên sâu và có chứng chỉ hành nghề"},
-        {"title": "Giấy Phép Hoạt Động", "description": "Đầy đủ giấy phép kinh doanh và hoạt động trong lĩnh vực môi trường"}
+        {
+          "title": "Chứng Nhận Chất Lượng",
+          "description": "Tuân thủ các tiêu chuẩn quốc tế về chất lượng và an toàn"
+        },
+        {
+          "title": "Bằng Cấp Kỹ Thuật",
+          "description": "Đội ngũ kỹ sư được đào tạo chuyên sâu và có chứng chỉ hành nghề"
+        },
+        {
+          "title": "Giấy Phép Hoạt Động",
+          "description": "Đầy đủ giấy phép kinh doanh và hoạt động trong lĩnh vực môi trường"
+        }
       ]
-    }
-    ,
+    },
     "facilities": {
       "badge": "Cơ Sở Vật Chất",
       "title": "Cơ Sở Vật Chất",
       "subtitle": "Hệ thống cơ sở vật chất hiện đại, đáp ứng mọi nhu cầu sản xuất và nghiên cứu",
       "items": [
-        {"title": "Văn Phòng Chính", "description": "Trụ sở chính tại TP. Hồ Chí Minh với đầy đủ tiện nghi"},
-        {"title": "Xưởng Sản Xuất", "description": "Xưởng sản xuất và lắp ráp thiết bị chuyên nghiệp"},
-        {"title": "Phòng Thí Nghiệm", "description": "Phòng thí nghiệm kiểm tra chất lượng nước hiện đại"}
+        {
+          "title": "Văn Phòng Chính",
+          "description": "Trụ sở chính tại TP. Hồ Chí Minh với đầy đủ tiện nghi"
+        },
+        {
+          "title": "Xưởng Sản Xuất",
+          "description": "Xưởng sản xuất và lắp ráp thiết bị chuyên nghiệp"
+        },
+        {
+          "title": "Phòng Thí Nghiệm",
+          "description": "Phòng thí nghiệm kiểm tra chất lượng nước hiện đại"
+        }
       ]
-    }
-    ,
+    },
     "cta": {
       "title": "Bắt Đầu Hành Trình Cùng BK Green",
       "subtitle": "Liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất cho dự án của bạn",
       "primary": "Liên Hệ Ngay",
       "secondary": "Xem Dịch Vụ"
-    }
-    ,
+    },
     "coreValues": {
       "title": "Những Giá Trị Định Hướng",
       "subtitle": "Những nguyên tắc cốt lõi dẫn dắt mọi hoạt động và quyết định của chúng tôi",
@@ -250,8 +320,7 @@
           ]
         }
       }
-    }
-    ,
+    },
     "development": {
       "title": "Định Hướng Phát Triển",
       "subtitle": "BK Green đang xây dựng nền tảng vững chắc để trở thành đối tác đáng tin cậy trong lĩnh vực kỹ thuật nước",
@@ -294,8 +363,7 @@
           ]
         }
       }
-    }
-    ,
+    },
     "guidance": {
       "badge": "Định Hướng",
       "title": "Tầm Nhìn, Sứ Mệnh & Giá Trị",
@@ -319,16 +387,14 @@
         "mission": "Sứ Mệnh",
         "values": "Giá Trị"
       }
-    }
-    ,
+    },
     "interactive": {
       "hint": {
         "front": "Nhấp để xem chi tiết",
         "back": "Nhấp để quay lại"
       }
     }
-  }
-  ,
+  },
   "servicesPage": {
     "header": {
       "title": "Dịch Vụ Của Chúng Tôi",
@@ -341,23 +407,48 @@
     "services": {
       "wastewater": {
         "description": "Cung cấp giải pháp và thi công cho tòa nhà, khu công nghiệp trong các dự án ban đầu.",
-        "features": ["Thiết kế hệ thống xử lý nước thải", "Thi công và lắp đặt chuyên nghiệp", "Vận hành và bảo trì hệ thống", "Tư vấn kỹ thuật chuyên sâu"]
+        "features": [
+          "Thiết kế hệ thống xử lý nước thải",
+          "Thi công và lắp đặt chuyên nghiệp",
+          "Vận hành và bảo trì hệ thống",
+          "Tư vấn kỹ thuật chuyên sâu"
+        ]
       },
       "operation": {
         "description": "Dịch vụ vận hành nước thải và nước cấp, đang phát triển.",
-        "features": ["Vận hành hệ thống liên tục", "Bảo trì định kỳ", "Giám sát từ xa", "Báo cáo chi tiết"]
+        "features": [
+          "Vận hành hệ thống liên tục",
+          "Bảo trì định kỳ",
+          "Giám sát từ xa",
+          "Báo cáo chi tiết"
+        ]
       },
       "ro": {
         "description": "Thi công hệ thống xử lý nước RO với công nghệ hiện đại.",
-        "features": ["Thiết kế hệ thống RO tối ưu", "Lắp đặt chuyên nghiệp", "Bảo trì và thay thế linh kiện", "Tối ưu hóa hiệu suất"]
+        "features": [
+          "Thiết kế hệ thống RO tối ưu",
+          "Lắp đặt chuyên nghiệp",
+          "Bảo trì và thay thế linh kiện",
+          "Tối ưu hóa hiệu suất"
+        ]
       },
       "electrical": {
         "description": "Cung cấp giải pháp tự động hóa cho các dự án mới.",
-        "features": ["Thiết kế tủ điện điều khiển", "Hệ thống SCADA hiện đại", "Tự động hóa quy trình", "Giám sát và điều khiển từ xa"]
+        "features": [
+          "Thiết kế tủ điện điều khiển",
+          "Hệ thống SCADA hiện đại",
+          "Tự động hóa quy trình",
+          "Giám sát và điều khiển từ xa"
+        ]
       },
       "equipment": {
         "description": "Phân phối máy bơm, van, phụ kiện ngành nước và PCCC.",
-        "features": ["Máy bơm chuyên dụng", "Van và phụ kiện chất lượng", "Thiết bị PCCC hiện đại", "Tư vấn lựa chọn thiết bị"]
+        "features": [
+          "Máy bơm chuyên dụng",
+          "Van và phụ kiện chất lượng",
+          "Thiết bị PCCC hiện đại",
+          "Tư vấn lựa chọn thiết bị"
+        ]
       }
     },
     "sustainability": {
@@ -370,45 +461,126 @@
       "stepLabel": "Bước {step}",
       "badge": "Quy trình chuyên nghiệp",
       "steps": [
-        {"title": "Khảo Sát & Phân Tích", "description": "Đánh giá hiện trạng và phân tích nhu cầu cụ thể của dự án"},
-        {"title": "Thiết Kế & Lập Kế Hoạch", "description": "Thiết kế chi tiết hệ thống và lập kế hoạch triển khai"},
-        {"title": "Thi Công & Lắp Đặt", "description": "Thi công chuyên nghiệp với đội ngũ kỹ thuật giàu kinh nghiệm"},
-        {"title": "Vận Hành & Bảo Trì", "description": "Hỗ trợ vận hành và bảo trì định kỳ hệ thống"}
+        {
+          "title": "Khảo Sát & Phân Tích",
+          "description": "Đánh giá hiện trạng và phân tích nhu cầu cụ thể của dự án"
+        },
+        {
+          "title": "Thiết Kế & Lập Kế Hoạch",
+          "description": "Thiết kế chi tiết hệ thống và lập kế hoạch triển khai"
+        },
+        {
+          "title": "Thi Công & Lắp Đặt",
+          "description": "Thi công chuyên nghiệp với đội ngũ kỹ thuật giàu kinh nghiệm"
+        },
+        {
+          "title": "Vận Hành & Bảo Trì",
+          "description": "Hỗ trợ vận hành và bảo trì định kỳ hệ thống"
+        }
       ]
     },
     "technologies": {
       "title": "Công Nghệ Sử Dụng",
       "subtitle": "Áp dụng công nghệ tiên tiến và thiết bị hiện đại cho mọi dự án",
       "items": {
-        "ro": {"title": "Hệ Thống RO", "description": "Công nghệ lọc nước thẩm thấu ngược tiên tiến", "features": ["Tỷ lệ thu hồi cao", "Tiết kiệm năng lượng", "Chất lượng nước ổn định"]},
-        "scada": {"title": "SCADA & Tự Động Hóa", "description": "Hệ thống giám sát và điều khiển từ xa", "features": ["Giám sát 24/7", "Điều khiển tự động", "Báo cáo chi tiết"]},
-        "fire": {"title": "Thiết Bị PCCC", "description": "Hệ thống phòng cháy chữa cháy chuyên nghiệp", "features": ["Phát hiện sớm", "Chữa cháy hiệu quả", "Tuân thủ tiêu chuẩn"]}
+        "ro": {
+          "title": "Hệ Thống RO",
+          "description": "Công nghệ lọc nước thẩm thấu ngược tiên tiến",
+          "features": [
+            "Tỷ lệ thu hồi cao",
+            "Tiết kiệm năng lượng",
+            "Chất lượng nước ổn định"
+          ]
+        },
+        "scada": {
+          "title": "SCADA & Tự Động Hóa",
+          "description": "Hệ thống giám sát và điều khiển từ xa",
+          "features": [
+            "Giám sát 24/7",
+            "Điều khiển tự động",
+            "Báo cáo chi tiết"
+          ]
+        },
+        "fire": {
+          "title": "Thiết Bị PCCC",
+          "description": "Hệ thống phòng cháy chữa cháy chuyên nghiệp",
+          "features": [
+            "Phát hiện sớm",
+            "Chữa cháy hiệu quả",
+            "Tuân thủ tiêu chuẩn"
+          ]
+        }
       }
     },
     "cases": {
       "title": "Case Studies",
       "subtitle": "Các dự án tiêu biểu và kết quả đạt được",
       "resultsTitle": "Kết quả đạt được:",
-      "0": {"title": "Dự Án Khu Công Nghiệp", "industry": "Công nghiệp", "description": "Hệ thống xử lý nước thải 2000m³/ngày cho khu công nghiệp", "results": ["Giảm 95% ô nhiễm", "Tiết kiệm 30% chi phí", "Vận hành ổn định"]},
-      "1": {"title": "Nhà Máy Nước Sạch", "industry": "Nước cấp", "description": "Hệ thống RO công nghiệp cho nhà máy nước sạch", "results": ["Công suất 1000m³/h", "Chất lượng nước cao", "Bảo trì dễ dàng"]},
-      "2": {"title": "Tòa Nhà Thương Mại", "industry": "Thương mại", "description": "Hệ thống PCCC và xử lý nước cho tòa nhà cao tầng", "results": ["An toàn tuyệt đối", "Tuân thủ quy định", "Chi phí hợp lý"]}
+      "0": {
+        "title": "Dự Án Khu Công Nghiệp",
+        "industry": "Công nghiệp",
+        "description": "Hệ thống xử lý nước thải 2000m³/ngày cho khu công nghiệp",
+        "results": [
+          "Giảm 95% ô nhiễm",
+          "Tiết kiệm 30% chi phí",
+          "Vận hành ổn định"
+        ]
+      },
+      "1": {
+        "title": "Nhà Máy Nước Sạch",
+        "industry": "Nước cấp",
+        "description": "Hệ thống RO công nghiệp cho nhà máy nước sạch",
+        "results": [
+          "Công suất 1000m³/h",
+          "Chất lượng nước cao",
+          "Bảo trì dễ dàng"
+        ]
+      },
+      "2": {
+        "title": "Tòa Nhà Thương Mại",
+        "industry": "Thương mại",
+        "description": "Hệ thống PCCC và xử lý nước cho tòa nhà cao tầng",
+        "results": [
+          "An toàn tuyệt đối",
+          "Tuân thủ quy định",
+          "Chi phí hợp lý"
+        ]
+      }
     },
     "support": {
       "title": "Bảo Hành & Hỗ Trợ",
       "subtitle": "Cam kết hỗ trợ toàn diện cho khách hàng",
       "items": [
-        {"title": "Hỗ Trợ 24/7", "description": "Đội ngũ kỹ thuật hỗ trợ 24/7 cho mọi vấn đề"},
-        {"title": "Bảo Hành Dài Hạn", "description": "Bảo hành toàn diện cho tất cả thiết bị và hệ thống"},
-        {"title": "Đào Tạo Vận Hành", "description": "Đào tạo nhân viên vận hành và bảo trì hệ thống"}
+        {
+          "title": "Hỗ Trợ 24/7",
+          "description": "Đội ngũ kỹ thuật hỗ trợ 24/7 cho mọi vấn đề"
+        },
+        {
+          "title": "Bảo Hành Dài Hạn",
+          "description": "Bảo hành toàn diện cho tất cả thiết bị và hệ thống"
+        },
+        {
+          "title": "Đào Tạo Vận Hành",
+          "description": "Đào tạo nhân viên vận hành và bảo trì hệ thống"
+        }
       ]
     },
     "faq": {
       "title": "Câu Hỏi Thường Gặp",
       "subtitle": "Giải đáp các thắc mắc phổ biến về dịch vụ của chúng tôi",
       "items": [
-        {"q": "Thời gian thi công một dự án thường mất bao lâu?", "a": "Thời gian thi công phụ thuộc vào quy mô dự án, thường từ 2-6 tháng cho các dự án vừa và nhỏ."},
-        {"q": "BK Green có hỗ trợ bảo trì sau khi hoàn thành dự án?", "a": "Có, chúng tôi cung cấp dịch vụ bảo trì định kỳ và hỗ trợ kỹ thuật 24/7."},
-        {"q": "Chi phí dịch vụ được tính như thế nào?", "a": "Chi phí được tính dựa trên quy mô dự án, công nghệ sử dụng và yêu cầu cụ thể của khách hàng."}
+        {
+          "q": "Thời gian thi công một dự án thường mất bao lâu?",
+          "a": "Thời gian thi công phụ thuộc vào quy mô dự án, thường từ 2-6 tháng cho các dự án vừa và nhỏ."
+        },
+        {
+          "q": "BK Green có hỗ trợ bảo trì sau khi hoàn thành dự án?",
+          "a": "Có, chúng tôi cung cấp dịch vụ bảo trì định kỳ và hỗ trợ kỹ thuật 24/7."
+        },
+        {
+          "q": "Chi phí dịch vụ được tính như thế nào?",
+          "a": "Chi phí được tính dựa trên quy mô dự án, công nghệ sử dụng và yêu cầu cụ thể của khách hàng."
+        }
       ]
     },
     "cta": {
@@ -418,21 +590,47 @@
       "secondary": "Xem Dự Án"
     },
     "filters": {
-      "industry": ["Nhà ở", "Công nghiệp"],
-      "type": ["Nước thải", "Nước cấp"]
+      "industry": [
+        "Nhà ở",
+        "Công nghiệp"
+      ],
+      "type": [
+        "Nước thải",
+        "Nước cấp"
+      ]
     }
-  }
-  ,
+  },
   "projectsPage": {
-    "header": {"title": "Lĩnh Vực Hoạt Động", "subtitle": "BK Green đang triển khai các dự án đầu tiên, mang đến giải pháp nước sạch cho cộng đồng."},
-    "stats": {"active": "Dự án đang triển khai", "completed": "Dự án hoàn thành", "capacity": "Công suất thiết kế", "service": "Dịch vụ chuyên nghiệp"},
-    "featured": {"title": "Dự Án Nổi Bật", "viewDetail": "Xem Chi Tiết"},
-    "all": {"title": "Tất Cả Dự Án", "detail": "Chi Tiết"},
-    "cta": {"title": "Gửi Dự Án Của Bạn", "subtitle": "Có dự án cần tư vấn? Hãy liên hệ với chúng tôi để được hỗ trợ chuyên nghiệp", "primary": "Liên Hệ Ngay", "secondary": "Xem Dịch Vụ"}
-  }
-  ,
+    "header": {
+      "title": "Lĩnh Vực Hoạt Động",
+      "subtitle": "BK Green đang triển khai các dự án đầu tiên, mang đến giải pháp nước sạch cho cộng đồng."
+    },
+    "stats": {
+      "active": "Dự án đang triển khai",
+      "completed": "Dự án hoàn thành",
+      "capacity": "Công suất thiết kế",
+      "service": "Dịch vụ chuyên nghiệp"
+    },
+    "featured": {
+      "title": "Dự Án Nổi Bật",
+      "viewDetail": "Xem Chi Tiết"
+    },
+    "all": {
+      "title": "Tất Cả Dự Án",
+      "detail": "Chi Tiết"
+    },
+    "cta": {
+      "title": "Gửi Dự Án Của Bạn",
+      "subtitle": "Có dự án cần tư vấn? Hãy liên hệ với chúng tôi để được hỗ trợ chuyên nghiệp",
+      "primary": "Liên Hệ Ngay",
+      "secondary": "Xem Dịch Vụ"
+    }
+  },
   "contactPage": {
-    "header": {"title": "Liên Hệ Với Chúng Tôi", "subtitle": "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất"},
+    "header": {
+      "title": "Liên Hệ Với Chúng Tôi",
+      "subtitle": "Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất"
+    },
     "form": {
       "title": "Gửi Tin Nhắn",
       "name": "Họ và tên *",
@@ -450,24 +648,72 @@
         "requestType": "Chọn loại yêu cầu",
         "message": "Nhập nội dung tin nhắn..."
       },
-      "requestTypes": ["Tư vấn dự án", "Báo giá sản phẩm", "Hỗ trợ kỹ thuật", "Hợp tác kinh doanh", "Khác"]
+      "requestTypes": [
+        "Tư vấn dự án",
+        "Báo giá sản phẩm",
+        "Hỗ trợ kỹ thuật",
+        "Hợp tác kinh doanh",
+        "Khác"
+      ]
     },
-    "office": {"title": "Văn Phòng", "mapPlaceholder": "Google Maps sẽ được tích hợp tại đây", "city": "TP. Hồ Chí Minh", "viewMap": "Xem trên Google Maps"},
-    "support": {"title": "Hỗ Trợ Khách Hàng", "hotline": "Hotline hỗ trợ", "hours": "Từ 8:00 - 17:00 (T2-T6)", "email": "Email hỗ trợ", "sla": "Phản hồi trong 24h"},
+    "office": {
+      "title": "Văn Phòng",
+      "mapPlaceholder": "Google Maps sẽ được tích hợp tại đây",
+      "city": "TP. Hồ Chí Minh",
+      "viewMap": "Xem trên Google Maps"
+    },
+    "support": {
+      "title": "Hỗ Trợ Khách Hàng",
+      "hotline": "Hotline hỗ trợ",
+      "hours": "Từ 8:00 - 17:00 (T2-T6)",
+      "email": "Email hỗ trợ",
+      "sla": "Phản hồi trong 24h"
+    },
     "faqLink": "Câu Hỏi Thường Gặp",
-    "info": {"phoneTitle": "Điện thoại", "phoneDesc": "Liên hệ trực tiếp để được tư vấn", "emailTitle": "Email", "emailDesc": "Gửi email cho chúng tôi", "addressTitle": "Địa chỉ", "addressDesc": "Văn phòng chính tại HCM", "hoursTitle": "Giờ làm việc", "hoursDesc": "Thứ 2 - Thứ 6 hàng tuần"},
-    "cta": {"title": "Bắt Đầu Dự Án Của Bạn", "subtitle": "Sẵn sàng triển khai dự án xử lý nước? Hãy liên hệ với chúng tôi ngay hôm nay", "call": "Gọi Ngay", "email": "Gửi Email"}
-  }
-  ,
+    "info": {
+      "phoneTitle": "Điện thoại",
+      "phoneDesc": "Liên hệ trực tiếp để được tư vấn",
+      "emailTitle": "Email",
+      "emailDesc": "Gửi email cho chúng tôi",
+      "addressTitle": "Địa chỉ",
+      "addressDesc": "Văn phòng chính tại HCM",
+      "hoursTitle": "Giờ làm việc",
+      "hoursDesc": "Thứ 2 - Thứ 6 hàng tuần"
+    },
+    "cta": {
+      "title": "Bắt Đầu Dự Án Của Bạn",
+      "subtitle": "Sẵn sàng triển khai dự án xử lý nước? Hãy liên hệ với chúng tôi ngay hôm nay",
+      "call": "Gọi Ngay",
+      "email": "Gửi Email"
+    }
+  },
   "productsPage": {
-    "header": {"title": "Sản Phẩm Của Chúng Tôi", "subtitle": "BK Green cung cấp các sản phẩm chất lượng cao: máy bơm, van, phụ kiện và hệ thống RO từ các đối tác đáng tin cậy."},
+    "header": {
+      "title": "Sản Phẩm Của Chúng Tôi",
+      "subtitle": "BK Green cung cấp các sản phẩm chất lượng cao: máy bơm, van, phụ kiện và hệ thống RO từ các đối tác đáng tin cậy."
+    },
     "featured": {
       "title": "Sản Phẩm Nổi Bật",
       "detailBtn": "Chi Tiết",
       "products": [
-        {"name": "Bơm Công Nghiệp BK-P100", "category": "Máy Bơm", "specs": "Lưu lượng: 100 m³/h | Áp suất: 50m", "description": "Máy bơm công nghiệp hiệu suất cao, tiết kiệm năng lượng"},
-        {"name": "Van Điều Áp BK-V50", "category": "Van", "specs": "Áp suất: 0-16 bar | Nhiệt độ: -10°C đến 80°C", "description": "Van điều áp chính xác, độ bền cao"},
-        {"name": "Hệ Thống RO BK-RO2000", "category": "Hệ Thống RO", "specs": "Công suất: 2000L/h | Tỷ lệ thu hồi: 75%", "description": "Hệ thống lọc nước RO công nghiệp"}
+        {
+          "name": "Bơm Công Nghiệp BK-P100",
+          "category": "Máy Bơm",
+          "specs": "Lưu lượng: 100 m³/h | Áp suất: 50m",
+          "description": "Máy bơm công nghiệp hiệu suất cao, tiết kiệm năng lượng"
+        },
+        {
+          "name": "Van Điều Áp BK-V50",
+          "category": "Van",
+          "specs": "Áp suất: 0-16 bar | Nhiệt độ: -10°C đến 80°C",
+          "description": "Van điều áp chính xác, độ bền cao"
+        },
+        {
+          "name": "Hệ Thống RO BK-RO2000",
+          "category": "Hệ Thống RO",
+          "specs": "Công suất: 2000L/h | Tỷ lệ thu hồi: 75%",
+          "description": "Hệ thống lọc nước RO công nghiệp"
+        }
       ]
     },
     "categories": {
@@ -478,24 +724,48 @@
           "title": "Máy Bơm",
           "description": "Máy bơm chuyên dụng cho hệ thống xử lý nước",
           "products": [
-            {"name": "Bơm Công Nghiệp", "specs": "Lưu lượng: 50-500 m³/h", "description": "Máy bơm công nghiệp hiệu suất cao"},
-            {"name": "Bơm Nước Thải", "specs": "Lưu lượng: 20-200 m³/h", "description": "Chuyên dụng cho xử lý nước thải"}
+            {
+              "name": "Bơm Công Nghiệp",
+              "specs": "Lưu lượng: 50-500 m³/h",
+              "description": "Máy bơm công nghiệp hiệu suất cao"
+            },
+            {
+              "name": "Bơm Nước Thải",
+              "specs": "Lưu lượng: 20-200 m³/h",
+              "description": "Chuyên dụng cho xử lý nước thải"
+            }
           ]
         },
         "valves": {
           "title": "Van",
           "description": "Van điều áp và chống rò rỉ chất lượng cao",
           "products": [
-            {"name": "Van Điều Áp", "specs": "Áp suất: 0-16 bar", "description": "Điều chỉnh áp suất chính xác"},
-            {"name": "Van Chống Rò Rỉ", "specs": "Áp suất: 0-25 bar", "description": "Ngăn ngừa rò rỉ hiệu quả"}
+            {
+              "name": "Van Điều Áp",
+              "specs": "Áp suất: 0-16 bar",
+              "description": "Điều chỉnh áp suất chính xác"
+            },
+            {
+              "name": "Van Chống Rò Rỉ",
+              "specs": "Áp suất: 0-25 bar",
+              "description": "Ngăn ngừa rò rỉ hiệu quả"
+            }
           ]
         },
         "fire": {
           "title": "Phụ Kiện PCCC",
           "description": "Thiết bị phòng cháy chữa cháy chuyên nghiệp",
           "products": [
-            {"name": "Vòi Phun Nước", "specs": "Đường kính: 50-200mm", "description": "Vòi phun chữa cháy chuyên dụng"},
-            {"name": "Hệ Thống Báo Cháy", "specs": "Phạm vi: 1000m²", "description": "Hệ thống báo cháy tự động"}
+            {
+              "name": "Vòi Phun Nước",
+              "specs": "Đường kính: 50-200mm",
+              "description": "Vòi phun chữa cháy chuyên dụng"
+            },
+            {
+              "name": "Hệ Thống Báo Cháy",
+              "specs": "Phạm vi: 1000m²",
+              "description": "Hệ thống báo cháy tự động"
+            }
           ]
         }
       }
@@ -504,11 +774,22 @@
       "title": "Bộ Lọc & Tìm Kiếm",
       "typeTitle": "Loại Sản Phẩm",
       "applicationTitle": "Ứng Dụng",
-      "type": ["Máy Bơm", "Van", "Phụ Kiện PCCC", "Hệ Thống RO"],
-      "application": ["Công nghiệp", "Dân dụng", "Thương mại"],
+      "type": [
+        "Máy Bơm",
+        "Van",
+        "Phụ Kiện PCCC",
+        "Hệ Thống RO"
+      ],
+      "application": [
+        "Công nghiệp",
+        "Dân dụng",
+        "Thương mại"
+      ],
       "searchPlaceholder": "Tìm kiếm sản phẩm...",
       "filterBtn": "Lọc",
-      "helper": "Sử dụng bộ lọc bên trái và thanh tìm kiếm để tìm sản phẩm phù hợp với nhu cầu của bạn."
+      "helper": "Sử dụng bộ lọc bên trái và thanh tìm kiếm để tìm sản phẩm phù hợp với nhu cầu của bạn.",
+      "loading": "Đang tải sản phẩm...",
+      "noProductsFound": "Không tìm thấy sản phẩm nào."
     },
     "related": {
       "title": "Giải Pháp Liên Quan",
@@ -521,8 +802,7 @@
       "subtitle": "Liên hệ với chúng tôi để tìm đại lý gần nhất và nhận tư vấn sản phẩm",
       "primary": "Liên Hệ Ngay"
     }
-  }
-  ,
+  },
   "units": {
     "m3PerDay": "m³/ngày",
     "m3PerHour": "m³/h"
@@ -530,5 +810,550 @@
   "common": {
     "phone": "0931252511",
     "phoneDisplay": "0931 252 511"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Bảng điều khiển",
+      "welcome": "Chào mừng đến với bảng điều khiển quản trị",
+      "description": "Sử dụng menu điều hướng để quản lý nội dung website, người dùng và cài đặt.",
+      "stats": {
+        "totalUsers": "Tổng số người dùng",
+        "totalProjects": "Tổng số dự án",
+        "totalServices": "Tổng số dịch vụ",
+        "totalProducts": "Tổng số sản phẩm"
+      },
+      "quickLinks": {
+        "pages": {
+          "title": "Trang",
+          "description": "Quản lý các trang website"
+        },
+        "services": {
+          "title": "Dịch vụ",
+          "description": "Quản lý dịch vụ"
+        },
+        "projects": {
+          "title": "Dự án",
+          "description": "Quản lý dự án"
+        },
+        "products": {
+          "title": "Sản phẩm",
+          "description": "Quản lý sản phẩm"
+        }
+      },
+      "quickActions": {
+        "title": "Thao tác nhanh",
+        "description": "Thực hiện các tác vụ quản trị thường dùng một cách nhanh chóng.",
+        "team": {
+          "title": "Quản lý Đội ngũ",
+          "description": "Quản lý thành viên đội ngũ và thông tin của họ"
+        },
+        "media": {
+          "title": "Thư viện Media",
+          "description": "Tải lên và quản lý các file media"
+        },
+        "contactForms": {
+          "title": "Form Liên hệ",
+          "description": "Xem và quản lý các form liên hệ đã gửi"
+        }
+      }
+    },
+    "navigation": {
+      "main": "Điều hướng chính",
+      "dashboard": "Bảng điều khiển",
+      "pages": "Trang",
+      "services": "Dịch vụ",
+      "projects": "Dự án",
+      "products": "Sản phẩm",
+      "equipment": "Thiết bị",
+      "process": "Quy trình",
+      "team": "Đội ngũ",
+      "media": "Thư viện",
+      "contactForms": "Liên hệ",
+      "settings": "Cài đặt",
+      "logout": "Đăng xuất",
+      "language": "Ngôn ngữ"
+    },
+    "login": {
+      "title": "Đăng nhập vào tài khoản của bạn",
+      "subtitle": "Nhập thông tin đăng nhập để truy cập bảng quản trị",
+      "required": "Vui lòng nhập email và mật khẩu",
+      "invalidCredentials": "Email hoặc mật khẩu không đúng",
+      "success": "Đăng nhập thành công",
+      "serverError": "Đã xảy ra lỗi trong quá trình đăng nhập"
+    },
+    "projects": {
+      "title": "Quản lý Dự án",
+      "addNew": "Thêm dự án mới",
+      "edit": "Chỉnh sửa dự án",
+      "create": "Tạo dự án mới",
+      "list": "Danh sách dự án",
+      "listDescription": "Quản lý tất cả các dự án",
+      "formDescription": "Điền thông tin dự án",
+      "form": {
+        "slug": "Đường dẫn",
+        "title": "Tiêu đề",
+        "description": "Mô tả",
+        "category": "Danh mục",
+        "location": "Địa điểm",
+        "type": "Loại",
+        "status": "Trạng thái",
+        "year": "Năm",
+        "capacity": "Công suất",
+        "order": "Thứ tự",
+        "featured": "Nổi bật",
+        "images": "Hình ảnh"
+      },
+      "table": {
+        "image": "Hình ảnh",
+        "title": "Tiêu đề",
+        "location": "Địa điểm",
+        "status": "Trạng thái",
+        "featured": "Nổi bật",
+        "actions": "Thao tác"
+      },
+      "yes": "Có",
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa dự án này?",
+      "success": {
+        "created": "Tạo dự án thành công",
+        "updated": "Cập nhật dự án thành công",
+        "deleted": "Xóa dự án thành công",
+        "imageUploaded": "Tải ảnh thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách dự án",
+        "saveFailed": "Không thể lưu dự án",
+        "deleteFailed": "Không thể xóa dự án",
+        "imageUploadFailed": "Không thể tải ảnh lên"
+      },
+      "delete": "Xóa",
+      "fileUpload": {
+        "projectPlaceholder": "Chọn hình ảnh dự án"
+      }
+    },
+    "services": {
+      "title": "Quản lý Dịch vụ",
+      "addNew": "Thêm dịch vụ mới",
+      "edit": "Chỉnh sửa dịch vụ",
+      "create": "Tạo dịch vụ mới",
+      "list": "Danh sách dịch vụ",
+      "listDescription": "Quản lý tất cả các dịch vụ",
+      "formDescription": "Điền thông tin dịch vụ",
+      "form": {
+        "slug": "Đường dẫn",
+        "title": "Tiêu đề",
+        "description": "Mô tả",
+        "order": "Thứ tự",
+        "image": "Hình ảnh"
+      },
+      "table": {
+        "image": "Hình ảnh",
+        "title": "Tiêu đề",
+        "order": "Thứ tự",
+        "actions": "Thao tác"
+      },
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa dịch vụ này?",
+      "success": {
+        "created": "Tạo dịch vụ thành công",
+        "updated": "Cập nhật dịch vụ thành công",
+        "deleted": "Xóa dịch vụ thành công",
+        "imageUploaded": "Tải ảnh thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách dịch vụ",
+        "saveFailed": "Không thể lưu dịch vụ",
+        "deleteFailed": "Không thể xóa dịch vụ",
+        "imageUploadFailed": "Không thể tải ảnh lên"
+      },
+      "delete": "Xóa",
+      "fileUpload": {
+        "servicePlaceholder": "Chọn hình ảnh dịch vụ"
+      }
+    },
+    "products": {
+      "title": "Quản lý Sản phẩm",
+      "addNew": "Thêm sản phẩm mới",
+      "edit": "Chỉnh sửa sản phẩm",
+      "create": "Tạo sản phẩm mới",
+      "list": "Danh sách sản phẩm",
+      "listDescription": "Quản lý tất cả các sản phẩm",
+      "formDescription": "Điền thông tin sản phẩm",
+      "form": {
+        "slug": "Đường dẫn",
+        "name": "Tên",
+        "description": "Mô tả",
+        "category": "Danh mục",
+        "price": "Giá",
+        "specs": "Thông số",
+        "order": "Thứ tự",
+        "featured": "Nổi bật",
+        "images": "Hình ảnh"
+      },
+      "table": {
+        "image": "Hình ảnh",
+        "name": "Tên",
+        "price": "Giá",
+        "featured": "Nổi bật",
+        "actions": "Thao tác"
+      },
+      "yes": "Có",
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa sản phẩm này?",
+      "success": {
+        "created": "Tạo sản phẩm thành công",
+        "updated": "Cập nhật sản phẩm thành công",
+        "deleted": "Xóa sản phẩm thành công",
+        "imageUploaded": "Tải ảnh thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách sản phẩm",
+        "saveFailed": "Không thể lưu sản phẩm",
+        "deleteFailed": "Không thể xóa sản phẩm",
+        "imageUploadFailed": "Không thể tải ảnh lên"
+      },
+      "delete": "Xóa",
+      "fileUpload": {
+        "productPlaceholder": "Chọn hình ảnh sản phẩm"
+      }
+    },
+    "equipment": {
+      "title": "Quản lý Thiết bị",
+      "addNew": "Thêm thiết bị mới",
+      "edit": "Chỉnh sửa thiết bị",
+      "create": "Tạo thiết bị mới",
+      "list": "Danh sách thiết bị",
+      "listDescription": "Quản lý tất cả các thiết bị",
+      "formDescription": "Điền thông tin thiết bị",
+      "form": {
+        "slug": "Đường dẫn",
+        "title": "Tiêu đề",
+        "description": "Mô tả",
+        "category": "Danh mục",
+        "order": "Thứ tự",
+        "image": "Hình ảnh"
+      },
+      "table": {
+        "image": "Hình ảnh",
+        "title": "Tiêu đề",
+        "order": "Thứ tự",
+        "actions": "Thao tác"
+      },
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa thiết bị này?",
+      "success": {
+        "created": "Tạo thiết bị thành công",
+        "updated": "Cập nhật thiết bị thành công",
+        "deleted": "Xóa thiết bị thành công",
+        "imageUploaded": "Tải ảnh thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách thiết bị",
+        "saveFailed": "Không thể lưu thiết bị",
+        "deleteFailed": "Không thể xóa thiết bị",
+        "imageUploadFailed": "Không thể tải ảnh lên"
+      },
+      "delete": "Xóa",
+      "fileUpload": {
+        "equipmentPlaceholder": "Chọn hình ảnh thiết bị"
+      }
+    },
+    "process": {
+      "title": "Quản lý Quy trình",
+      "addNew": "Thêm bước mới",
+      "edit": "Chỉnh sửa bước",
+      "create": "Tạo bước mới",
+      "list": "Danh sách bước",
+      "listDescription": "Quản lý tất cả các bước quy trình",
+      "formDescription": "Điền thông tin bước quy trình",
+      "form": {
+        "step": "Số bước",
+        "title": "Tiêu đề",
+        "description": "Mô tả",
+        "order": "Thứ tự",
+        "image": "Hình ảnh"
+      },
+      "table": {
+        "step": "Bước",
+        "image": "Hình ảnh",
+        "title": "Tiêu đề",
+        "order": "Thứ tự",
+        "actions": "Thao tác"
+      },
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa bước này?",
+      "success": {
+        "created": "Tạo bước thành công",
+        "updated": "Cập nhật bước thành công",
+        "deleted": "Xóa bước thành công",
+        "imageUploaded": "Tải ảnh thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách bước",
+        "saveFailed": "Không thể lưu bước",
+        "deleteFailed": "Không thể xóa bước",
+        "imageUploadFailed": "Không thể tải ảnh lên"
+      },
+      "delete": "Xóa",
+      "fileUpload": {
+        "processPlaceholder": "Chọn hình ảnh bước quy trình"
+      }
+    },
+    "contactForms": {
+      "title": "Quản lý Form Liên hệ",
+      "list": "Danh sách form",
+      "listDescription": "Xem và quản lý các form liên hệ",
+      "filterByStatus": "Lọc theo trạng thái",
+      "all": "Tất cả",
+      "status": {
+        "pending": "Chờ xử lý",
+        "inProgress": "Đang xử lý",
+        "completed": "Hoàn thành",
+        "cancelled": "Đã hủy"
+      },
+      "table": {
+        "name": "Tên",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "message": "Tin nhắn",
+        "status": "Trạng thái",
+        "date": "Ngày",
+        "actions": "Thao tác"
+      },
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa form này?",
+      "success": {
+        "updated": "Cập nhật thành công",
+        "deleted": "Xóa thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách form",
+        "updateFailed": "Không thể cập nhật form",
+        "deleteFailed": "Không thể xóa form"
+      }
+    },
+    "team": {
+      "title": "Quản lý Đội ngũ",
+      "addNew": "Thêm thành viên mới",
+      "edit": "Chỉnh sửa thành viên",
+      "create": "Tạo thành viên mới",
+      "list": "Danh sách thành viên",
+      "listDescription": "Quản lý tất cả các thành viên đội ngũ",
+      "formDescription": "Điền thông tin thành viên",
+      "form": {
+        "name": "Tên",
+        "position": "Chức vụ",
+        "bio": "Tiểu sử",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "image": "Hình ảnh"
+      },
+      "table": {
+        "image": "Hình ảnh",
+        "name": "Tên",
+        "position": "Chức vụ",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "actions": "Thao tác",
+        "bio": "Tiểu sử"
+      },
+      "cancel": "Hủy",
+      "save": "Lưu",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa thành viên này?",
+      "success": {
+        "created": "Tạo thành viên thành công",
+        "updated": "Cập nhật thành viên thành công",
+        "deleted": "Xóa thành viên thành công",
+        "imageUploaded": "Tải ảnh thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách thành viên",
+        "saveFailed": "Không thể lưu thành viên",
+        "deleteFailed": "Không thể xóa thành viên",
+        "imageUploadFailed": "Không thể tải ảnh lên"
+      },
+      "delete": "Xóa",
+      "fileUpload": {
+        "teamPlaceholder": "Chọn hình ảnh thành viên"
+      }
+    },
+    "media": {
+      "title": "Quản lý Thư viện",
+      "uploadFile": "Tải lên File",
+      "list": "Danh sách file",
+      "listDescription": "Quản lý tất cả các file media",
+      "upload": "Tải lên file",
+      "loading": "Đang tải...",
+      "confirmDelete": "Bạn có chắc muốn xóa file này?",
+      "success": {
+        "uploaded": "Tải file lên thành công",
+        "deleted": "Xóa file thành công"
+      },
+      "errors": {
+        "fetchFailed": "Không thể tải danh sách file",
+        "uploadFailed": "Không thể tải file lên",
+        "deleteFailed": "Không thể xóa file"
+      }
+    },
+    "settings": {
+      "title": "Cài đặt",
+      "general": "Cài đặt chung",
+      "generalDescription": "Cài đặt chung cho hệ thống",
+      "appearance": "Giao diện",
+      "appearanceDescription": "Cài đặt giao diện",
+      "security": "Bảo mật",
+      "securityDescription": "Cài đặt bảo mật",
+      "notifications": "Thông báo",
+      "notificationsDescription": "Cài đặt thông báo",
+      "save": "Lưu cài đặt",
+      "cancel": "Hủy",
+      "loading": "Đang tải...",
+      "success": {
+        "saved": "Lưu cài đặt thành công"
+      },
+      "errors": {
+        "saveFailed": "Không thể lưu cài đặt",
+        "fetchFailed": "Không thể tải cài đặt"
+      },
+      "siteName": "Tên trang web",
+      "siteNamePlaceholder": "Nhập tên trang web",
+      "siteDescription": "Mô tả trang web",
+      "siteDescriptionPlaceholder": "Nhập mô tả trang web",
+      "darkMode": "Chế độ tối",
+      "sessionTimeout": "Thời gian hết hạn phiên",
+      "sessionTimeoutPlaceholder": "Nhập thời gian hết hạn (phút)",
+      "emailNotifications": "Thông báo email",
+      "mediaSettings": "Cài đặt Media",
+      "mediaSettingsDescription": "Cấu hình hình ảnh cố định cho website của bạn",
+      "logo": "Logo",
+      "selectLogoPlaceholder": "Chọn hình ảnh logo",
+      "heroBackground": "Ảnh nền Hero",
+      "selectHeroBackgroundPlaceholder": "Chọn ảnh nền hero",
+      "favicon": "Favicon",
+      "selectFaviconPlaceholder": "Chọn favicon",
+      "none": "Không"
+    },
+    "forms": {
+      "title": "Tiêu đề",
+      "description": "Mô tả",
+      "content": "Nội dung",
+      "name": "Tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "message": "Tin nhắn",
+      "status": "Trạng thái",
+      "category": "Danh mục",
+      "price": "Giá",
+      "image": "Hình ảnh",
+      "file": "Tệp",
+      "position": "Chức vụ",
+      "bio": "Tiểu sử",
+      "slug": "Đường dẫn",
+      "metaTitle": "Tiêu đề meta",
+      "metaDescription": "Mô tả meta",
+      "password": "Mật khẩu",
+      "createdAt": "Ngày tạo",
+      "type": "Loại",
+      "size": "Kích thước",
+      "general": "Tổng quát",
+      "logo": "Logo",
+      "logo_white": "Logo trắng",
+      "hero_background": "Ảnh nền trang chủ",
+      "process_background": "Ảnh nền mục quy trình",
+      "favicon": "Favicon",
+      "social_media": "Mạng xã hội",
+      "about_image": "Hình ảnh giới thiệu",
+      "uploadNew": "Tải lên mới",
+      "newPage": "Trang mới"
+    },
+    "table": {
+      "image": "Hình ảnh",
+      "name": "Tên",
+      "title": "Tiêu đề",
+      "order": "Thứ tự",
+      "actions": "Thao tác",
+      "bio": "Tiểu sử",
+      "phone": "Số điện thoại",
+      "email": "Email",
+      "location": "Địa điểm",
+      "status": "Trạng thái",
+      "featured": "Nổi bật",
+      "price": "Giá",
+      "createdAt": "Ngày tạo",
+      "date": "Ngày",
+      "size": "Kích thước",
+      "type": "Loại"
+    },
+    "actions": {
+      "create": "Tạo mới",
+      "edit": "Chỉnh sửa",
+      "delete": "Xóa",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "back": "Quay lại",
+      "upload": "Tải lên",
+      "view": "Xem",
+      "confirmDelete": "Xác nhận xóa",
+      "login": "Đăng nhập",
+      "loggingIn": "Đang đăng nhập...",
+      "download": "Tải xuống",
+      "restore": "Khôi phục ảnh gốc",
+      "uploading": "Đang tải lên...",
+      "saving": "Đang lưu...",
+      "more": "Thêm",
+      "actions": "Thao tác"
+    },
+    "fileUpload": {
+      "imageLabel": "Hình ảnh",
+      "selectImage": "Chọn hình ảnh",
+      "uploading": "Đang tải lên...",
+      "placeholder": "Chọn file để tải lên",
+      "imagePlaceholder": "Chọn hình ảnh",
+      "servicePlaceholder": "Chọn hình ảnh dịch vụ",
+      "projectPlaceholder": "Chọn hình ảnh dự án",
+      "productPlaceholder": "Chọn hình ảnh sản phẩm",
+      "teamPlaceholder": "Chọn hình ảnh đại diện",
+      "processPlaceholder": "Chọn hình ảnh bước quy trình",
+      "equipmentPlaceholder": "Chọn hình ảnh thiết bị",
+      "onlyImage": "Chỉ chấp nhận file hình ảnh",
+      "sizeLimit": "File không được vượt quá 5MB",
+      "uploadSuccess": "Tải lên thành công",
+      "uploadFailed": "Tải lên thất bại"
+    },
+    "errors": {
+      "required": "Trường này là bắt buộc",
+      "invalidEmail": "Email không hợp lệ",
+      "uploadFailed": "Tải lên thất bại",
+      "saveFailed": "Lưu thất bại",
+      "deleteFailed": "Xóa thất bại",
+      "loginFailed": "Đăng nhập thất bại",
+      "fetchFailed": "Không thể tải dữ liệu",
+      "noFileSelected": "Chưa chọn file nào",
+      "restoreFailed": "Khôi phục thất bại",
+      "invalidData": "Dữ liệu cung cấp không hợp lệ",
+      "fetchContactFormsFailed": "Không thể tải danh sách form liên hệ",
+      "updateContactFormFailed": "Không thể cập nhật form liên hệ",
+      "deleteContactFormFailed": "Không thể xóa form liên hệ"
+    },
+    "success": {
+      "saved": "Lưu thành công",
+      "deleted": "Xóa thành công",
+      "uploaded": "Tải lên thành công",
+      "login": "Đăng nhập thành công",
+      "restored": "Khôi phục ảnh thành công"
+    },
+    "saving": "Đang lưu...",
+    "savings": "Đang lưu..."
   }
 }

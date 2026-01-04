@@ -164,15 +164,15 @@ export default function ServicesPageClient() {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {technologies.map((tech) => (
-              <Card key={tech.title} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white overflow-hidden">
+              <Card key={tech.title} className="flex flex-col h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white overflow-hidden">
                 <div className="aspect-video relative rounded-t-lg overflow-hidden">
                   <Image src={tech.image} alt={tech.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <CardHeader>
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="text-xl font-bold text-gray-900 mb-2">{tech.title}</CardTitle>
                   <CardDescription className="text-base">{tech.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   <ul className="space-y-2">
                     {tech.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-2">
@@ -196,18 +196,18 @@ export default function ServicesPageClient() {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map((study) => (
-              <Card key={study.title} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white overflow-hidden">
+              <Card key={study.title} className="flex flex-col h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white overflow-hidden">
                 <div className="aspect-video relative overflow-hidden">
                   <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute top-4 left-4">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-900">{study.industry}</span>
                   </div>
                 </div>
-                <CardHeader>
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="text-xl" style={{ color: '#1844a7' }}>{study.title}</CardTitle>
                   <CardDescription className="text-base">{study.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   <div className="space-y-3">
                     <h4 className="font-semibold text-gray-900">{t('cases.resultsTitle')}</h4>
                     <ul className="space-y-2">
@@ -234,17 +234,17 @@ export default function ServicesPageClient() {
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {supportServices.map((service) => (
-              <Card key={service.title} className="h-full text-center hover:shadow-lg transition-shadow border-0 bg-white overflow-hidden">
+              <Card key={service.title} className="flex flex-col h-full text-center hover:shadow-lg transition-shadow border-0 bg-white overflow-hidden">
                 <div className="aspect-video relative rounded-t-lg overflow-hidden">
                   <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover" />
                 </div>
-                <CardHeader>
+                <CardHeader className="flex-shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 mb-4 mx-auto">
                     <service.icon className="h-6 w-6 text-white" />
                   </div>
                   <CardTitle className="text-xl" style={{ color: '#1844a7' }}>{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
               </Card>

@@ -18,12 +18,101 @@ export default function ContactSection() {
     phone: '',
     message: ''
   })
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    const newErrors = {
+      name: '',
+      email: '',
+      message: ''
+    }
+    let isValid = true
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Vui lòng nhập họ và tên'
+      isValid = false
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Họ và tên phải có ít nhất 2 ký tự'
+      isValid = false
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Vui lòng nhập email'
+      isValid = false
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email không hợp lệ'
+      isValid = false
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Vui lòng nhập tin nhắn'
+      isValid = false
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Tin nhắn phải có ít nhất 10 ký tự'
+      isValid = false
+    }
+
+    setErrors(newErrors)
+    return isValid
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    // Reset form
-    setFormData({ name: '', email: '', phone: '', message: '' })
+    
+    if (!validateForm()) {
+      return
+    }
+
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          message: formData.message.trim()
+        }),
+      })
+
+      if (response.ok) {
+        // Show success message
+        alert('Cảm ơn bạn đã gửi thông tin liên hệ. Chúng tôi sẽ phản hồi trong thời gian sớm nhất!')
+        // Reset form
+        setFormData({ name: '', email: '', phone: '', message: '' })
+        setErrors({ name: '', email: '', message: '' })
+        setIsSubmitted(true)
+      } else {
+        const errorData = await response.json()
+        if (errorData.details && Array.isArray(errorData.details)) {
+          // Handle validation errors
+          const validationErrors = errorData.details.reduce((acc: any, err: any) => {
+            if (err.path && err.path[0]) {
+              acc[err.path[0]] = err.message
+            }
+            return acc
+          }, {})
+          setErrors(validationErrors)
+        } else {
+          alert(errorData.error || 'Có lỗi xảy ra khi gửi thông tin liên hệ')
+        }
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Có lỗi xảy ra khi gửi thông tin liên hệ')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,6 +120,13 @@ export default function ContactSection() {
       ...formData,
       [e.target.name]: e.target.value
     })
+    // Clear error when user starts typing
+    if (errors[e.target.name as keyof typeof errors]) {
+      setErrors({
+        ...errors,
+        [e.target.name]: ''
+      })
+    }
   }
 
   return (
@@ -70,8 +166,9 @@ export default function ContactSection() {
                       placeholder={t('form.name')}
                       value={formData.name}
                       onChange={handleChange}
-                      required
+                      className={errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}
                     />
+                    {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
                   </div>
                   <div>
                     <Input
@@ -80,8 +177,9 @@ export default function ContactSection() {
                       placeholder={t('form.email')}
                       value={formData.email}
                       onChange={handleChange}
-                      required
+                      className={errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}
                     />
+                    {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                   </div>
                   <div>
                     <Input
@@ -99,12 +197,13 @@ export default function ContactSection() {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      required
+                      className={errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}
                     />
+                    {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
                   </div>
-                  <Button type="submit" className="w-full">
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
                     <Send className="h-4 w-4 mr-2" />
-                    {t('form.submit')}
+                    {isSubmitting ? 'Đang gửi...' : t('form.submit')}
                   </Button>
                 </form>
               </CardContent>
