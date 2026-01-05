@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
     })
 
     // Transform the data to include the translated fields directly
-    const transformedProducts = products.map(product => ({
+    const transformedProducts = products.map((product: any) => ({
       id: product.id,
       slug: product.slug,
       images: product.images,

@@ -46,7 +46,7 @@ export async function getAllMedia(): Promise<MediaFile[]> {
       }
     })
     
-    return mediaFiles.map(mediaFile => ({
+    return mediaFiles.map((mediaFile: any) => ({
       id: mediaFile.id,
       name: mediaFile.name,
       url: mediaFile.url,

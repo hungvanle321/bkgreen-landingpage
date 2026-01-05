@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma'
 export async function GET() {
   try {
     const settings = await prisma.setting.findMany()
-    const settingsMap = settings.reduce((acc: Record<string, string>, setting) => {
+    const settingsMap = settings.reduce((acc: Record<string, string>, setting: any) => {
       acc[setting.key] = setting.value
       return acc
     }, {})
@@ -17,7 +17,7 @@ export async function GET() {
         select: { id: true, url: true }
       })
 
-      const mediaMap = mediaFiles.reduce((acc: Record<string, string>, media) => {
+      const mediaMap = mediaFiles.reduce((acc: Record<string, string>, media: any) => {
         acc[media.id] = media.url
         return acc
       }, {})
