@@ -12,6 +12,8 @@
   "process": {
     "title": "Notre Processus de Travail",
     "subtitle": "Un flux professionnel du relevé à l'exploitation",
+    "loading": "Chargement...",
+    "noData": "Aucune donnée de processus disponible",
     "steps": {
       "survey": {"title": "Étude & Évaluation", "description": "Étudier l'état actuel et évaluer les besoins de traitement"},
       "design": {"title": "Conception du Système", "description": "Concevoir un système de traitement de l'eau approprié"},

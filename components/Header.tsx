@@ -262,6 +262,7 @@ export default function Header() {
                       {t('contact')}
                     </Link>
                   </Button>
+                  <LanguageSwitcher />
                 </div>
               </div>
             </div>

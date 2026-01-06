@@ -12,6 +12,8 @@
   "process": {
     "title": "Our Working Process",
     "subtitle": "A professional workflow from survey to operation",
+    "loading": "Loading...",
+    "noData": "No process data available",
     "steps": {
       "survey": {"title": "Survey & Assessment", "description": "Survey current conditions and evaluate treatment needs"},
       "design": {"title": "System Design", "description": "Design an appropriate water treatment system"},

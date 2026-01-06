@@ -20,9 +20,14 @@ export default function LanguageSwitcher() {
   const router = useRouter()
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   const currentLanguage = languages.find(lang => lang.code === locale)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 640)
+  }, [])
 
   const handleLanguageChange = async (newLocale: string) => {
     // Check if we're in admin area
@@ -43,7 +48,6 @@ export default function LanguageSwitcher() {
   }
 
   const isAdmin = pathname.startsWith('/admin')
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
@@ -61,7 +65,7 @@ export default function LanguageSwitcher() {
     }
   }, [])
 
-  if (isAdmin && isMobile) {
+  if (isMobile) {
     return (
       <div className="space-y-2">
         {languages.map(language => (
