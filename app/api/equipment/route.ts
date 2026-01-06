@@ -17,8 +17,8 @@ export async function GET(request: NextRequest) {
       orderBy: { order: 'asc' },
     })
 
-    // Transform the data to include the translated fields directly
-    const transformedEquipment = equipment.map(item => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const transformedEquipment = equipment.map((item: any) => ({
       id: item.id,
       slug: item.slug,
       image: item.image,

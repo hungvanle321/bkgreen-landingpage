@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     })
 
     // Transform the data to include the translated fields directly
-    const transformedServices = services.map(service => ({
+    const transformedServices = services.map((service: any) => ({
       id: service.id,
       slug: service.slug,
       icon: service.icon,

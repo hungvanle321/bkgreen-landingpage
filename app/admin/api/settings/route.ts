@@ -8,7 +8,8 @@ export async function GET(request: NextRequest) {
   return requireAdmin(request, async () => {
     try {
       const settings = await prisma.setting.findMany()
-      const settingsMap = settings.reduce((acc: Record<string, string>, setting) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const settingsMap = settings.reduce((acc: Record<string, string>, setting: any) => {
         acc[setting.key] = setting.value
         return acc
       }, {})

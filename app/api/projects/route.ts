@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
     })
 
     // Transform the data to include the translated fields directly
-    const transformedProjects = projects.map(project => ({
+    const transformedProjects = projects.map((project: any) => ({
       id: project.id,
       slug: project.slug,
       images: project.images,
