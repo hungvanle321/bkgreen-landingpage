@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
   engineType = "binary"
 }
 
@@ -31,164 +31,164 @@ model User {
 }
 
 model ContactForm {
-  id        String   @id @default(cuid())
+  id        String        @id @default(cuid())
   name      String
   email     String
   phone     String?
   message   String
   status    ContactStatus @default(PENDING)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  // Relations
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id])
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  images    String[]
+  location  String?
+  type      String?
+  status    String?
+  year      String?
+  capacity  String?
+  order     Int      @default(0)
+  featured  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Relations
-  userId String?
-  user   User?    @relation(fields: [userId], references: [id])
-}
-
-model Project {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  images      String[]
-  location    String?
-  type        String?
-  status      String?
-  year        String?
-  capacity    String?
-  order       Int      @default(0)
-  featured    Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  userId       String?
+  user         User?                @relation(fields: [userId], references: [id])
   translations ProjectTranslation[]
 }
 
 model ProjectTranslation {
-  id        String   @id @default(cuid())
-  projectId String
-  locale    String   // 'vi', 'en', 'fr'
-  title     String
+  id          String  @id @default(cuid())
+  projectId   String
+  locale      String // 'vi', 'en', 'fr'
+  title       String
   description String
-  category  String?
-  
-  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  
+  category    String?
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
   @@unique([projectId, locale])
   @@index([projectId])
 }
 
 model Service {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  icon        String?
-  image       String?
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  icon      String?
+  image     String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relations
-  userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  userId       String?
+  user         User?                @relation(fields: [userId], references: [id])
   translations ServiceTranslation[]
 }
 
 model ServiceTranslation {
-  id          String   @id @default(cuid())
+  id          String @id @default(cuid())
   serviceId   String
-  locale      String   // 'vi', 'en', 'fr'
+  locale      String // 'vi', 'en', 'fr'
   title       String
   description String
-  
-  service     Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
-  
+
+  service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
   @@unique([serviceId, locale])
   @@index([serviceId])
 }
 
 model Product {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  images      String[]
-  price       Float?
-  specs       String?
-  order       Int      @default(0)
-  featured    Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  images    String[]
+  price     Float?
+  specs     String?
+  order     Int      @default(0)
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relations
-  userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  userId       String?
+  user         User?                @relation(fields: [userId], references: [id])
   translations ProductTranslation[]
 }
 
 model ProductTranslation {
-  id          String   @id @default(cuid())
+  id          String  @id @default(cuid())
   productId   String
-  locale      String   // 'vi', 'en', 'fr'
+  locale      String // 'vi', 'en', 'fr'
   name        String
   description String
   category    String?
-  
-  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-  
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
   @@unique([productId, locale])
   @@index([productId])
 }
 
 model Equipment {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  image       String?
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  image     String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relations
-  userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  userId       String?
+  user         User?                  @relation(fields: [userId], references: [id])
   translations EquipmentTranslation[]
 }
 
 model EquipmentTranslation {
-  id          String   @id @default(cuid())
+  id          String  @id @default(cuid())
   equipmentId String
-  locale      String   // 'vi', 'en', 'fr'
+  locale      String // 'vi', 'en', 'fr'
   title       String
   description String
   category    String?
-  
-  equipment   Equipment @relation(fields: [equipmentId], references: [id], onDelete: Cascade)
-  
+
+  equipment Equipment @relation(fields: [equipmentId], references: [id], onDelete: Cascade)
+
   @@unique([equipmentId, locale])
   @@index([equipmentId])
 }
 
 model ProcessStep {
-  id          String   @id @default(cuid())
-  step        String   // '01', '02', etc.
-  image       String?
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  step      String // '01', '02', etc.
+  image     String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relations
-  userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  userId       String?
+  user         User?                    @relation(fields: [userId], references: [id])
   translations ProcessStepTranslation[]
 }
 
 model ProcessStepTranslation {
-  id            String   @id @default(cuid())
+  id            String @id @default(cuid())
   processStepId String
-  locale        String   // 'vi', 'en', 'fr'
+  locale        String // 'vi', 'en', 'fr'
   title         String
   description   String
-  
-  processStep   ProcessStep @relation(fields: [processStepId], references: [id], onDelete: Cascade)
-  
+
+  processStep ProcessStep @relation(fields: [processStepId], references: [id], onDelete: Cascade)
+
   @@unique([processStepId, locale])
   @@index([processStepId])
 }
@@ -196,8 +196,14 @@ model ProcessStepTranslation {
 model TeamMember {
   id          String   @id @default(cuid())
   name        String
+  name_en     String?
+  name_fr     String?
   position    String
+  position_en String?
+  position_fr String?
   bio         String
+  bio_en      String?
+  bio_fr      String?
   image       String?
   email       String?
   phone       String?
@@ -206,22 +212,30 @@ model TeamMember {
 
   // Relations
   userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  user   User?   @relation(fields: [userId], references: [id])
 }
 
 model Page {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  title       String
-  content     String
-  metaTitle   String?
-  metaDescription String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  title              String
+  title_en           String?
+  title_fr           String?
+  content            String
+  content_en         String?
+  content_fr         String?
+  metaTitle          String?
+  metaTitle_en       String?
+  metaTitle_fr       String?
+  metaDescription    String?
+  metaDescription_en String?
+  metaDescription_fr String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 
   // Relations
   userId String?
-  user   User? @relation(fields: [userId], references: [id])
+  user   User?   @relation(fields: [userId], references: [id])
 }
 
 model Media {
@@ -236,9 +250,9 @@ model Media {
 }
 
 model Setting {
-  id    String @id @default(cuid())
-  key   String @unique
-  value String
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

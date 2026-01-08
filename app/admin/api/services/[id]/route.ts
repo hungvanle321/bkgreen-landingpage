@@ -66,7 +66,14 @@ export async function PATCH(
     try {
       const { id } = await params
       const body = await req.json()
-      const data = serviceSchema.parse(body)
+      // Filter out empty translations before validation
+      const filteredBody = {
+        ...body,
+        translations: body.translations?.filter((t: any) => 
+          t.title?.trim() && t.description?.trim()
+        ) || []
+      }
+      const data = serviceSchema.parse(filteredBody)
 
       const updateData: any = { ...data }
       delete updateData.translations
@@ -76,7 +83,7 @@ export async function PATCH(
         data: updateData,
       })
 
-      if (data.translations) {
+      if (data.translations && data.translations.length > 0) {
         await prisma.serviceTranslation.deleteMany({
           where: { serviceId: id },
         })

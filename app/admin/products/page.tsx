@@ -1,11 +1,13 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { DeleteConfirmDialog } from '@/components/ui/delete-confirm-dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -34,11 +36,20 @@ interface Product {
 
 export default function ProductsPage() {
   const t = useTranslations('admin.products')
+  const tValidation = useTranslations('admin.validation')
+  const locale = useLocale() as 'vi' | 'en' | 'fr'
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editingProduct, setEditingProduct] = useState<Product | null>(null)
   const [activeTab, setActiveTab] = useState('vi')
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [itemToDelete, setItemToDelete] = useState<string | null>(null)
+
+  // Helper to get translation by locale, fallback to 'vi' if not found
+  const getTranslation = (translations: Product['translations']) => {
+    return translations.find(t => t.locale === locale) || translations.find(t => t.locale === 'vi') || translations[0]
+  }
 
   const [formData, setFormData] = useState({
     slug: '',
@@ -74,6 +85,54 @@ export default function ProductsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
+      // Filter out empty translations before submitting
+      const filteredTranslations = formData.translations.filter(t => 
+        (t.name?.trim() && t.description?.trim())
+      )
+
+      if (filteredTranslations.length === 0) {
+        toast.error('Vui lòng nhập ít nhất một ngôn ngữ (tên và mô tả)')
+        return
+      }
+
+      // Validate price: must be a valid number or undefined
+      let validatedPrice: number | undefined = undefined
+      if (formData.price !== undefined && formData.price !== null) {
+        const priceValue = typeof formData.price === 'string' 
+          ? parseFloat(formData.price) 
+          : formData.price
+        
+        if (isNaN(priceValue)) {
+          toast.error(tValidation('priceInvalid') || 'Giá không hợp lệ')
+          return
+        }
+        
+        if (priceValue < 0) {
+          toast.error(tValidation('priceMin') || 'Giá phải lớn hơn hoặc bằng 0')
+          return
+        }
+        
+        validatedPrice = priceValue
+      }
+
+      // Validate order: must be a valid integer >= 0
+      let validatedOrder: number = 0
+      const orderValue = typeof formData.order === 'string' 
+        ? parseInt(formData.order) 
+        : formData.order
+      
+      if (isNaN(orderValue)) {
+        toast.error(tValidation('orderInvalid') || 'Thứ tự không hợp lệ')
+        return
+      }
+      
+      if (orderValue < 0) {
+        toast.error(tValidation('orderMin') || 'Thứ tự phải lớn hơn hoặc bằng 0')
+        return
+      }
+      
+      validatedOrder = orderValue
+
       const url = editingProduct 
         ? `/admin/api/products/${editingProduct.id}`
         : '/admin/api/products'
@@ -82,31 +141,45 @@ export default function ProductsPage() {
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          price: validatedPrice,
+          order: validatedOrder,
+          translations: filteredTranslations,
+        }),
       })
 
-      if (!res.ok) throw new Error('Failed to save')
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        throw new Error(errorData.error || 'Failed to save')
+      }
       
       toast.success(editingProduct ? t('success.updated') : t('success.created'))
       setDialogOpen(false)
       resetForm()
       void fetchProducts()
-    } catch {
-      toast.error(t('errors.saveFailed'))
+    } catch (error: any) {
+      toast.error(error.message || t('errors.saveFailed'))
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm(t('confirmDelete'))) return
+  const handleDeleteClick = (id: string) => {
+    setItemToDelete(id)
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    if (!itemToDelete) return
 
     try {
-      const res = await fetch(`/admin/api/products/${id}`, {
+      const res = await fetch(`/admin/api/products/${itemToDelete}`, {
         method: 'DELETE',
       })
 
       if (!res.ok) throw new Error('Failed to delete')
       
       toast.success(t('success.deleted'))
+      setItemToDelete(null)
       void fetchProducts()
     } catch {
       toast.error(t('errors.deleteFailed'))
@@ -130,26 +203,36 @@ export default function ProductsPage() {
     setEditingProduct(null)
   }
 
-  const openEditDialog = (product: Product) => {
-    setEditingProduct(product)
-    setFormData({
-      slug: product.slug,
-      images: product.images,
-      price: product.price,
-      specs: product.specs || '',
-      order: product.order,
-      featured: product.featured,
-      translations: ['vi', 'en', 'fr'].map(loc => {
-        const trans = product.translations.find(t => t.locale === loc)
-        return {
-          locale: loc,
-          name: trans?.name || '',
-          description: trans?.description || '',
-          category: trans?.category || '',
-        }
-      }),
-    })
-    setDialogOpen(true)
+  const openEditDialog = async (product: Product) => {
+    try {
+      // Fetch full product detail with all translations
+      const res = await fetch(`/admin/api/products/${product.id}`)
+      if (!res.ok) throw new Error('Failed to fetch product detail')
+      
+      const fullProduct = await res.json()
+      
+      setEditingProduct(fullProduct)
+      setFormData({
+        slug: fullProduct.slug,
+        images: fullProduct.images,
+        price: fullProduct.price,
+        specs: fullProduct.specs || '',
+        order: fullProduct.order,
+        featured: fullProduct.featured,
+        translations: ['vi', 'en', 'fr'].map(loc => {
+          const trans = fullProduct.translations.find((t: any) => t.locale === loc)
+          return {
+            locale: loc,
+            name: trans?.name || '',
+            description: trans?.description || '',
+            category: trans?.category || '',
+          }
+        }),
+      })
+      setDialogOpen(true)
+    } catch (error: any) {
+      toast.error(error.message || t('errors.fetchFailed'))
+    }
   }
 
 
@@ -187,8 +270,20 @@ export default function ProductsPage() {
                   <Label>{t('form.order')}</Label>
                   <Input
                     type="number"
+                    min="0"
+                    step="1"
                     value={formData.order}
-                    onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) })}
+                    onChange={(e) => {
+                      const value = e.target.value
+                      if (value === '' || value === null || value === undefined) {
+                        setFormData({ ...formData, order: 0 })
+                      } else {
+                        const numValue = parseInt(value)
+                        if (!isNaN(numValue)) {
+                          setFormData({ ...formData, order: numValue })
+                        }
+                      }
+                    }}
                   />
                 </div>
               </div>
@@ -199,8 +294,19 @@ export default function ProductsPage() {
                   <Input
                     type="number"
                     step="0.01"
-                    value={formData.price || ''}
-                    onChange={(e) => setFormData({ ...formData, price: e.target.value ? parseFloat(e.target.value) : undefined })}
+                    min="0"
+                    value={formData.price !== undefined && formData.price !== null ? formData.price : ''}
+                    onChange={(e) => {
+                      const value = e.target.value
+                      if (value === '' || value === null || value === undefined) {
+                        setFormData({ ...formData, price: undefined })
+                      } else {
+                        const numValue = parseFloat(value)
+                        if (!isNaN(numValue)) {
+                          setFormData({ ...formData, price: numValue })
+                        }
+                      }
+                    }}
                   />
                 </div>
                 <div>
@@ -249,7 +355,7 @@ export default function ProductsPage() {
                             )
                             setFormData({ ...formData, translations: newTrans })
                           }}
-                          required={loc === activeTab || Boolean(trans?.name && trans.name.trim() !== '')}
+                          required={loc === 'vi'}
                         />
                       </div>
                       <div>
@@ -262,7 +368,7 @@ export default function ProductsPage() {
                             )
                             setFormData({ ...formData, translations: newTrans })
                           }}
-                          required={loc === activeTab || Boolean(trans?.description && trans.description.trim() !== '')}
+                          required={loc === 'vi'}
                         />
                       </div>
                       <div>
@@ -313,7 +419,7 @@ export default function ProductsPage() {
               </TableHeader>
               <TableBody>
                 {products.map((product) => {
-                  const trans = product.translations[0]
+                  const trans = getTranslation(product.translations)
                   return (
                     <TableRow key={product.id}>
                       <TableCell>
@@ -331,22 +437,40 @@ export default function ProductsPage() {
                         {product.featured && <Badge>{t('yes')}</Badge>}
                       </TableCell>
                       <TableCell>
-                        <div className="flex gap-2">
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => openEditDialog(product)}
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Button>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => handleDelete(product.id)}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
+                        <TooltipProvider>
+                          <div className="flex gap-2">
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => openEditDialog(product)}
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{t('edit') || 'Edit'}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => handleDeleteClick(product.id)}
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{t('delete') || 'Delete'}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </div>
+                        </TooltipProvider>
                       </TableCell>
                     </TableRow>
                   )
@@ -358,7 +482,7 @@ export default function ProductsPage() {
           {/* Mobile Card View */}
           <div className="md:hidden divide-y divide-gray-200">
             {products.map((product) => {
-              const trans = product.translations[0]
+              const trans = getTranslation(product.translations)
               return (
                 <div key={product.id} className="py-4 space-y-4">
                   {/* Image and Name */}
@@ -392,32 +516,53 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex flex-col gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => openEditDialog(product)}
-                    >
-                      <Edit className="h-4 w-4 mr-2" />
-                      {t('edit')}
-                    </Button>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => handleDelete(product.id)}
-                    >
-                      <Trash2 className="h-4 w-4 mr-2" />
-                      {t('delete')}
-                    </Button>
-                  </div>
+                  <TooltipProvider>
+                    <div className="flex gap-2">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => openEditDialog(product)}
+                          >
+                            <Edit className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('edit') || 'Edit'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="destructive"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => handleDeleteClick(product.id)}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('delete') || 'Delete'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                  </TooltipProvider>
                 </div>
               )
             })}
           </div>
         </CardContent>
       </Card>
+
+      <DeleteConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirm={handleDeleteConfirm}
+        descriptionKey="products.confirmDelete"
+      />
     </div>
   )
 }

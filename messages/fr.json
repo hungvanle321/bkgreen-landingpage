@@ -271,6 +271,7 @@
       "actions": "Actions",
       "back": "Retour",
       "cancel": "Annuler",
+      "confirm": "Confirmer",
       "confirmDelete": "Confirmer la suppression",
       "create": "Créer",
       "delete": "Supprimer",
@@ -414,7 +415,25 @@
     "errors": {
       "deleteFailed": "Échec de la suppression",
       "fetchFailed": "Échec du chargement des données",
-      "saveFailed": "Échec de l'enregistrement"
+      "noFileSelected": "Aucun fichier sélectionné",
+      "restoreFailed": "Échec de la restauration",
+      "saveFailed": "Échec de l'enregistrement",
+      "uploadFailed": "Échec du téléversement"
+    },
+    "validation": {
+      "titleRequired": "Le titre est requis",
+      "nameRequired": "Le nom est requis",
+      "descriptionRequired": "La description est requise",
+      "slugRequired": "Le slug est requis",
+      "stepRequired": "L'étape est requise",
+      "orderMin": "L'ordre doit être supérieur ou égal à 0",
+      "atLeastOneTranslation": "Au moins une traduction est requise",
+      "contentRequired": "Le contenu est requis",
+      "positionRequired": "Le poste est requis",
+      "bioRequired": "La biographie est requise",
+      "priceInvalid": "Prix invalide",
+      "priceMin": "Le prix doit être supérieur ou égal à 0",
+      "orderInvalid": "Ordre invalide"
     },
     "fileUpload": {
       "equipmentPlaceholder": "Sélectionner l'image de l'équipement",
@@ -497,6 +516,7 @@
       "dashboard": "Tableau de bord",
       "equipment": "Équipement",
       "language": "Langue",
+      "more": "Autres",
       "logout": "Déconnexion",
       "main": "Navigation principale",
       "media": "Médias",
@@ -738,7 +758,9 @@
     "success": {
       "created": "Créé avec succès",
       "deleted": "Supprimé avec succès",
-      "updated": "Mis à jour avec succès"
+      "restored": "Restauré avec succès",
+      "updated": "Mis à jour avec succès",
+      "uploaded": "Téléversé avec succès"
     },
     "table": {
       "actions": "Actions",
@@ -938,6 +960,8 @@
     "closeMenu": "Fermer le menu",
     "contact": "Contact",
     "home": "Accueil",
+    "more": "Autres",
+    "pages": "Pages",
     "openMenu": "Ouvrir le menu principal",
     "products": "Produits",
     "projects": "Projets",

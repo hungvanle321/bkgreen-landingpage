@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useTranslations } from 'next-intl'
 import { Edit, Trash, Eye } from 'lucide-react'
@@ -8,6 +8,7 @@ import { toast } from 'sonner'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Button } from '@/components/ui/button'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 interface Page {
   id: string
@@ -20,7 +21,11 @@ interface Page {
   updatedAt: Date
 }
 
-export function PageTable() {
+interface PageTableProps {
+  onEdit?: (page: Page) => void
+}
+
+export function PageTable({ onEdit }: PageTableProps) {
   const t = useTranslations('admin')
   const [pages, setPages] = useState<Page[]>([])
   const [loading, setLoading] = useState(true)
@@ -41,6 +46,16 @@ export function PageTable() {
 
   useEffect(() => {
     void fetchPages()
+
+    const handler = () => {
+      void fetchPages()
+    }
+
+    window.addEventListener('admin:pages:refresh', handler)
+
+    return () => {
+      window.removeEventListener('admin:pages:refresh', handler)
+    }
   }, [])
 
   const deletePage = async (id: string) => {
@@ -82,24 +97,57 @@ export function PageTable() {
                 <TableCell className="hidden lg:table-cell">{page.metaTitle || '-'}</TableCell>
                 <TableCell className="hidden md:table-cell">{new Date(page.createdAt).toLocaleDateString()}</TableCell>
                 <TableCell>
-                  <div className="flex space-x-2">
-                    <Button variant="outline" size="sm">
-                      <Eye className="h-4 w-4 mr-2" />
-                      {t('actions.view') || 'View'}
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Edit className="h-4 w-4 mr-2" />
-                      {t('actions.edit') || 'Edit'}
-                    </Button>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      onClick={() => deletePage(page.id)}
-                    >
-                      <Trash className="h-4 w-4 mr-2" />
-                      {t('actions.delete') || 'Delete'}
-                    </Button>
-                  </div>
+                  <TooltipProvider>
+                    <div className="flex space-x-2">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            asChild
+                          >
+                            <a href={`/vi/pages/${page.slug}`} target="_blank" rel="noopener noreferrer">
+                              <Eye className="h-4 w-4" />
+                            </a>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('actions.view') || 'View'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => onEdit?.(page)}
+                          >
+                            <Edit className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('actions.edit') || 'Edit'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="destructive"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => deletePage(page.id)}
+                          >
+                            <Trash className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('actions.delete') || 'Delete'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                  </TooltipProvider>
                 </TableCell>
               </TableRow>
             ))}
@@ -116,25 +164,47 @@ export function PageTable() {
                 <h3 className="font-medium text-gray-900">{page.title}</h3>
                 <p className="text-sm text-gray-500 mt-1">{page.slug}</p>
               </div>
-              <div className="flex space-x-2">
-                <Button variant="outline" size="sm" className="h-8 px-2">
-                  <Eye className="h-3 w-3 mr-1" />
-                  {t('actions.view') || 'View'}
-                </Button>
-                <Button variant="outline" size="sm" className="h-8 px-2">
-                  <Edit className="h-3 w-3 mr-1" />
-                  {t('actions.edit') || 'Edit'}
-                </Button>
-                <Button
-                  variant="destructive"
-                  size="sm"
-                  className="h-8 px-2"
-                  onClick={() => deletePage(page.id)}
-                >
-                  <Trash className="h-3 w-3 mr-1" />
-                  {t('actions.delete') || 'Delete'}
-                </Button>
-              </div>
+              <TooltipProvider>
+                <div className="flex space-x-2">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button variant="outline" size="sm" className="h-8 w-8 p-0" asChild>
+                        <a href={`/vi/pages/${page.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Eye className="h-3 w-3" />
+                        </a>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{t('actions.view') || 'View'}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button variant="outline" size="sm" className="h-8 w-8 p-0" onClick={() => onEdit?.(page)}>
+                        <Edit className="h-3 w-3" />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{t('actions.edit') || 'Edit'}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        className="h-8 w-8 p-0"
+                        onClick={() => deletePage(page.id)}
+                      >
+                        <Trash className="h-3 w-3" />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{t('actions.delete') || 'Delete'}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </TooltipProvider>
             </div>
             
             <div className="grid grid-cols-2 gap-2 text-sm">

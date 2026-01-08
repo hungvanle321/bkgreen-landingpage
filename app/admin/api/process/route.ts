@@ -5,29 +5,16 @@ import { z } from 'zod'
 
 import { requireAdmin } from '@/lib/middleware'
 import { prisma } from '@/lib/prisma'
-
-const processStepSchema = z.object({
-  step: z.string().min(1),
-  image: z.string().optional(),
-  order: z.number().default(0),
-  translations: z.array(z.object({
-    locale: z.enum(['vi', 'en', 'fr']),
-    title: z.string().min(1),
-    description: z.string().min(1),
-  })),
-})
+import { processSchema } from '@/lib/validations'
+import { translateMissing } from '@/lib/azure-translate'
 
 export async function GET(request: NextRequest) {
-  return requireAdmin(request, async (req, _user) => {
+  return requireAdmin(request, async (_req, _user) => {
     try {
-      const { searchParams } = new URL(req.url)
-      const locale = searchParams.get('locale') || 'vi'
-      
+      // For admin, return all translations (not filtered by locale)
       const steps = await prisma.processStep.findMany({
         include: {
-          translations: {
-            where: { locale },
-          },
+          translations: true, // Get all translations
         },
         orderBy: { order: 'asc' },
       })
@@ -47,7 +34,16 @@ export async function POST(request: NextRequest) {
   return requireAdmin(request, async (req, user) => {
     try {
       const body = await req.json()
-      const data = processStepSchema.parse(body)
+      // Filter out empty translations before validation
+      const filteredBody = {
+        ...body,
+        translations: body.translations?.filter((t: any) => 
+          t.title?.trim() && t.description?.trim()
+        ) || []
+      }
+
+      const autoTranslated = await translateMissing(filteredBody.translations)
+      const data = processSchema.parse({ ...filteredBody, translations: autoTranslated })
 
       const step = await prisma.processStep.create({
         data: {

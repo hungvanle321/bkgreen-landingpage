@@ -1,12 +1,14 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { DeleteConfirmDialog } from '@/components/ui/delete-confirm-dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -37,12 +39,20 @@ interface Project {
 
 export default function ProjectsPage() {
   const t = useTranslations('admin.projects')
+  const tValidation = useTranslations('admin.validation')
+  const locale = useLocale() as 'vi' | 'en' | 'fr'
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editingProject, setEditingProject] = useState<Project | null>(null)
-  const [locale] = useState('vi')
   const [_activeTab, _setActiveTab] = useState('vi')
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [itemToDelete, setItemToDelete] = useState<string | null>(null)
+
+  // Helper to get translation by locale, fallback to 'vi' if not found
+  const getTranslation = (translations: Project['translations']) => {
+    return translations.find(t => t.locale === locale) || translations.find(t => t.locale === 'vi') || translations[0]
+  }
 
   const [formData, setFormData] = useState({
     slug: '',
@@ -63,7 +73,7 @@ export default function ProjectsPage() {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch(`/admin/api/projects?locale=${locale}`)
+      const res = await fetch('/admin/api/projects')
       if (!res.ok) throw new Error('Failed to fetch')
       const data = await res.json()
       setProjects(data)
@@ -81,6 +91,34 @@ export default function ProjectsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
+      // Filter out empty translations before submitting
+      const filteredTranslations = formData.translations.filter(t => 
+        (t.title?.trim() && t.description?.trim())
+      )
+
+      if (filteredTranslations.length === 0) {
+        toast.error('Vui lòng nhập ít nhất một ngôn ngữ (tiêu đề và mô tả)')
+        return
+      }
+
+      // Validate order: must be a valid integer >= 0
+      let validatedOrder: number = 0
+      const orderValue = typeof formData.order === 'string' 
+        ? parseInt(formData.order) 
+        : formData.order
+      
+      if (isNaN(orderValue)) {
+        toast.error(tValidation('orderInvalid') || 'Thứ tự không hợp lệ')
+        return
+      }
+      
+      if (orderValue < 0) {
+        toast.error(tValidation('orderMin') || 'Thứ tự phải lớn hơn hoặc bằng 0')
+        return
+      }
+      
+      validatedOrder = orderValue
+
       const url = editingProject 
         ? `/admin/api/projects/${editingProject.id}`
         : '/admin/api/projects'
@@ -89,31 +127,44 @@ export default function ProjectsPage() {
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          order: validatedOrder,
+          translations: filteredTranslations,
+        }),
       })
 
-      if (!res.ok) throw new Error('Failed to save')
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        throw new Error(errorData.error || 'Failed to save')
+      }
       
       toast.success(editingProject ? t('success.updated') : t('success.created'))
       setDialogOpen(false)
       resetForm()
       void fetchProjects()
-    } catch {
-      toast.error(t('errors.saveFailed'))
+    } catch (error: any) {
+      toast.error(error.message || t('errors.saveFailed'))
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm(t('confirmDelete'))) return
+  const handleDeleteClick = (id: string) => {
+    setItemToDelete(id)
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    if (!itemToDelete) return
 
     try {
-      const res = await fetch(`/admin/api/projects/${id}`, {
+      const res = await fetch(`/admin/api/projects/${itemToDelete}`, {
         method: 'DELETE',
       })
 
       if (!res.ok) throw new Error('Failed to delete')
       
       toast.success(t('success.deleted'))
+      setItemToDelete(null)
       void fetchProjects()
     } catch {
       toast.error(t('errors.deleteFailed'))
@@ -140,29 +191,39 @@ export default function ProjectsPage() {
     setEditingProject(null)
   }
 
-  const openEditDialog = (project: Project) => {
-    setEditingProject(project)
-    setFormData({
-      slug: project.slug,
-      images: project.images,
-      location: project.location || '',
-      type: project.type || '',
-      status: project.status || '',
-      year: project.year || '',
-      capacity: project.capacity || '',
-      order: project.order,
-      featured: project.featured,
-      translations: ['vi', 'en', 'fr'].map(loc => {
-        const trans = project.translations.find(t => t.locale === loc)
-        return {
-          locale: loc,
-          title: trans?.title || '',
-          description: trans?.description || '',
-          category: trans?.category || '',
-        }
-      }),
-    })
-    setDialogOpen(true)
+  const openEditDialog = async (project: Project) => {
+    try {
+      // Fetch full project detail with all translations
+      const res = await fetch(`/admin/api/projects/${project.id}`)
+      if (!res.ok) throw new Error('Failed to fetch project detail')
+      
+      const fullProject = await res.json()
+      
+      setEditingProject(fullProject)
+      setFormData({
+        slug: fullProject.slug,
+        images: fullProject.images,
+        location: fullProject.location || '',
+        type: fullProject.type || '',
+        status: fullProject.status || '',
+        year: fullProject.year || '',
+        capacity: fullProject.capacity || '',
+        order: fullProject.order,
+        featured: fullProject.featured,
+        translations: ['vi', 'en', 'fr'].map(loc => {
+          const trans = fullProject.translations.find((t: any) => t.locale === loc)
+          return {
+            locale: loc,
+            title: trans?.title || '',
+            description: trans?.description || '',
+            category: trans?.category || '',
+          }
+        }),
+      })
+      setDialogOpen(true)
+    } catch (error: any) {
+      toast.error(error.message || t('errors.fetchFailed'))
+    }
   }
 
 
@@ -200,8 +261,20 @@ export default function ProjectsPage() {
                   <Label>{t('form.order')}</Label>
                   <Input
                     type="number"
+                    min="0"
+                    step="1"
                     value={formData.order}
-                    onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) })}
+                    onChange={(e) => {
+                      const value = e.target.value
+                      if (value === '' || value === null || value === undefined) {
+                        setFormData({ ...formData, order: 0 })
+                      } else {
+                        const numValue = parseInt(value)
+                        if (!isNaN(numValue)) {
+                          setFormData({ ...formData, order: numValue })
+                        }
+                      }
+                    }}
                   />
                 </div>
               </div>
@@ -285,7 +358,7 @@ export default function ProjectsPage() {
                             )
                             setFormData({ ...formData, translations: newTrans })
                           }}
-                          required
+                          required={loc === 'vi'}
                         />
                       </div>
                       <div>
@@ -298,7 +371,7 @@ export default function ProjectsPage() {
                             )
                             setFormData({ ...formData, translations: newTrans })
                           }}
-                          required
+                          required={loc === 'vi'}
                         />
                       </div>
                       <div>
@@ -350,7 +423,7 @@ export default function ProjectsPage() {
               </TableHeader>
               <TableBody>
                 {projects.map((project) => {
-                  const trans = project.translations[0] || project.translations.find(t => t.locale === locale)
+                  const trans = getTranslation(project.translations)
                   return (
                     <TableRow key={project.id}>
                       <TableCell>
@@ -371,22 +444,40 @@ export default function ProjectsPage() {
                         {project.featured && <Badge>{t('yes')}</Badge>}
                       </TableCell>
                       <TableCell>
-                        <div className="flex gap-2">
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => openEditDialog(project)}
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Button>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => handleDelete(project.id)}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
+                        <TooltipProvider>
+                          <div className="flex gap-2">
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => openEditDialog(project)}
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{t('edit') || 'Edit'}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => handleDeleteClick(project.id)}
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{t('delete') || 'Delete'}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </div>
+                        </TooltipProvider>
                       </TableCell>
                     </TableRow>
                   )
@@ -398,7 +489,7 @@ export default function ProjectsPage() {
           {/* Mobile Card View */}
           <div className="md:hidden divide-y divide-gray-200">
             {projects.map((project) => {
-              const trans = project.translations[0] || project.translations.find(t => t.locale === locale)
+              const trans = getTranslation(project.translations)
               return (
                 <div key={project.id} className="py-4 space-y-4">
                   {/* Image and Title */}
@@ -437,32 +528,53 @@ export default function ProjectsPage() {
                   )}
 
                   {/* Actions */}
-                  <div className="flex flex-col gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => openEditDialog(project)}
-                    >
-                      <Edit className="h-4 w-4 mr-2" />
-                      {t('edit')}
-                    </Button>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => handleDelete(project.id)}
-                    >
-                      <Trash2 className="h-4 w-4 mr-2" />
-                      {t('delete')}
-                    </Button>
-                  </div>
+                  <TooltipProvider>
+                    <div className="flex gap-2">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => openEditDialog(project)}
+                          >
+                            <Edit className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('edit') || 'Edit'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="destructive"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => handleDeleteClick(project.id)}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('delete') || 'Delete'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                  </TooltipProvider>
                 </div>
               )
             })}
           </div>
         </CardContent>
       </Card>
+
+      <DeleteConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirm={handleDeleteConfirm}
+        descriptionKey="projects.confirmDelete"
+      />
     </div>
   )
 }

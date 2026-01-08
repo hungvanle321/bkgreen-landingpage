@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { DeleteConfirmDialog } from '@/components/ui/delete-confirm-dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -16,7 +18,7 @@ import { FileUpload } from '@/components/ui/file-upload'
 import { Plus, Edit, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Image from 'next/image'
-import { equipmentSchema } from '@/lib/validations'
+import { equipmentFormSchema } from '@/lib/validations'
 
 interface Equipment {
   id: string
@@ -33,14 +35,22 @@ interface Equipment {
 
 export default function EquipmentPage() {
   const t = useTranslations('admin.equipment')
+  const locale = useLocale() as 'vi' | 'en' | 'fr'
   const [equipment, setEquipment] = useState<Equipment[]>([])
   const [loading, setLoading] = useState(true)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editingEquipment, setEditingEquipment] = useState<Equipment | null>(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [itemToDelete, setItemToDelete] = useState<string | null>(null)
+
+  // Helper to get translation by locale, fallback to 'vi' if not found
+  const getTranslation = (translations: Equipment['translations']) => {
+    return translations.find(t => t.locale === locale) || translations.find(t => t.locale === 'vi') || translations[0]
+  }
 
   const form = useForm({
-    resolver: zodResolver(equipmentSchema),
+    resolver: zodResolver(equipmentFormSchema),
     mode: isSubmitted ? 'onChange' : 'onSubmit',
     defaultValues: {
       slug: '',
@@ -74,6 +84,17 @@ export default function EquipmentPage() {
   const handleSubmit = async (data: any) => {
     setIsSubmitted(true)
     try {
+      // Filter out empty translations before submitting
+      const filteredTranslations = data.translations?.filter((t: any) => 
+        (t.title?.trim() && t.description?.trim())
+      ) || []
+
+      if (filteredTranslations.length === 0) {
+        toast.error('Vui lòng nhập ít nhất một ngôn ngữ (tiêu đề và mô tả)')
+        setIsSubmitted(false)
+        return
+      }
+
       const url = editingEquipment
         ? `/admin/api/equipment/${editingEquipment.id}`
         : '/admin/api/equipment'
@@ -82,32 +103,46 @@ export default function EquipmentPage() {
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          translations: filteredTranslations,
+        }),
       })
 
-      if (!res.ok) throw new Error('Failed to save')
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        throw new Error(errorData.error || 'Failed to save')
+      }
 
       toast.success(editingEquipment ? t('success.updated') : t('success.created'))
       setDialogOpen(false)
       form.reset()
       setEditingEquipment(null)
+      setIsSubmitted(false)
       void fetchEquipment()
-    } catch {
-      toast.error(t('errors.saveFailed'))
+    } catch (error: any) {
+      toast.error(error.message || t('errors.saveFailed'))
+      setIsSubmitted(false)
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm(t('confirmDelete'))) return
+  const handleDeleteClick = (id: string) => {
+    setItemToDelete(id)
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    if (!itemToDelete) return
 
     try {
-      const res = await fetch(`/admin/api/equipment/${id}`, {
+      const res = await fetch(`/admin/api/equipment/${itemToDelete}`, {
         method: 'DELETE',
       })
 
       if (!res.ok) throw new Error('Failed to delete')
       
       toast.success(t('success.deleted'))
+      setItemToDelete(null)
       void fetchEquipment()
     } catch {
       toast.error(t('errors.deleteFailed'))
@@ -129,24 +164,34 @@ export default function EquipmentPage() {
     setIsSubmitted(false)
   }
 
-  const openEditDialog = (item: Equipment) => {
-    setEditingEquipment(item)
-    form.reset({
-      slug: item.slug,
-      image: item.image || '',
-      order: item.order,
-      translations: ['vi', 'en', 'fr'].map(loc => {
-        const trans = item.translations.find(t => t.locale === loc)
-        return {
-          locale: loc,
-          title: trans?.title || '',
-          description: trans?.description || '',
-          category: trans?.category || '',
-        }
-      }),
-    })
-    setDialogOpen(true)
-    setIsSubmitted(false)
+  const openEditDialog = async (item: Equipment) => {
+    try {
+      // Fetch full equipment detail with all translations
+      const res = await fetch(`/admin/api/equipment/${item.id}`)
+      if (!res.ok) throw new Error('Failed to fetch equipment detail')
+      
+      const fullEquipment = await res.json()
+      
+      setEditingEquipment(fullEquipment)
+      form.reset({
+        slug: fullEquipment.slug,
+        image: fullEquipment.image || '',
+        order: fullEquipment.order,
+        translations: ['vi', 'en', 'fr'].map(loc => {
+          const trans = fullEquipment.translations.find((t: any) => t.locale === loc)
+          return {
+            locale: loc,
+            title: trans?.title || '',
+            description: trans?.description || '',
+            category: trans?.category || '',
+          }
+        }),
+      })
+      setDialogOpen(true)
+      setIsSubmitted(false)
+    } catch (error: any) {
+      toast.error(error.message || t('errors.fetchFailed'))
+    }
   }
 
 
@@ -272,7 +317,7 @@ export default function EquipmentPage() {
               </TableHeader>
               <TableBody>
                 {equipment.map((item) => {
-                  const trans = item.translations[0]
+                  const trans = getTranslation(item.translations)
                   return (
                     <TableRow key={item.id}>
                       <TableCell>
@@ -287,22 +332,40 @@ export default function EquipmentPage() {
                       <TableCell>{trans?.title || '-'}</TableCell>
                       <TableCell className="hidden md:table-cell">{item.order}</TableCell>
                       <TableCell>
-                        <div className="flex gap-2">
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => openEditDialog(item)}
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Button>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => handleDelete(item.id)}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
+                        <TooltipProvider>
+                          <div className="flex gap-2">
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => openEditDialog(item)}
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{t('edit') || 'Edit'}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => handleDeleteClick(item.id)}
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>{t('delete') || 'Delete'}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </div>
+                        </TooltipProvider>
                       </TableCell>
                     </TableRow>
                   )
@@ -314,7 +377,7 @@ export default function EquipmentPage() {
           {/* Mobile Card View */}
           <div className="md:hidden divide-y divide-gray-200">
             {equipment.map((item) => {
-              const trans = item.translations[0]
+              const trans = getTranslation(item.translations)
               return (
                 <div key={item.id} className="py-4 space-y-4">
                   {/* Image and Title */}
@@ -337,32 +400,53 @@ export default function EquipmentPage() {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex flex-col gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => openEditDialog(item)}
-                    >
-                      <Edit className="h-4 w-4 mr-2" />
-                      {t('edit')}
-                    </Button>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => handleDelete(item.id)}
-                    >
-                      <Trash2 className="h-4 w-4 mr-2" />
-                      {t('delete')}
-                    </Button>
-                  </div>
+                  <TooltipProvider>
+                    <div className="flex gap-2">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => openEditDialog(item)}
+                          >
+                            <Edit className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('edit') || 'Edit'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="destructive"
+                            size="sm"
+                            className="h-8 w-8 p-0"
+                            onClick={() => handleDeleteClick(item.id)}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{t('delete') || 'Delete'}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                  </TooltipProvider>
                 </div>
               )
             })}
           </div>
         </CardContent>
       </Card>
+
+      <DeleteConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirm={handleDeleteConfirm}
+        descriptionKey="equipment.confirmDelete"
+      />
     </div>
   )
 }

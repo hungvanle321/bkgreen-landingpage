@@ -271,6 +271,7 @@
       "actions": "Thao tác",
       "back": "Quay lại",
       "cancel": "Hủy",
+      "confirm": "Xác nhận",
       "confirmDelete": "Xác nhận xóa",
       "create": "Tạo mới",
       "delete": "Xóa",
@@ -422,6 +423,21 @@
       "updateContactFormFailed": "Không thể cập nhật form liên hệ",
       "uploadFailed": "Tải lên thất bại"
     },
+    "validation": {
+      "titleRequired": "Tiêu đề không được để trống",
+      "nameRequired": "Tên không được để trống",
+      "descriptionRequired": "Mô tả không được để trống",
+      "slugRequired": "Đường dẫn không được để trống",
+      "stepRequired": "Bước không được để trống",
+      "orderMin": "Thứ tự phải lớn hơn hoặc bằng 0",
+      "atLeastOneTranslation": "Vui lòng nhập ít nhất một ngôn ngữ",
+      "contentRequired": "Nội dung không được để trống",
+      "positionRequired": "Chức vụ không được để trống",
+      "bioRequired": "Tiểu sử không được để trống",
+      "priceInvalid": "Giá không hợp lệ",
+      "priceMin": "Giá phải lớn hơn hoặc bằng 0",
+      "orderInvalid": "Thứ tự không hợp lệ"
+    },
     "fileUpload": {
       "equipmentPlaceholder": "Chọn hình ảnh thiết bị",
       "imageLabel": "Hình ảnh",
@@ -503,6 +519,7 @@
       "dashboard": "Bảng điều khiển",
       "equipment": "Thiết bị",
       "language": "Ngôn ngữ",
+      "more": "Khác",
       "logout": "Đăng xuất",
       "main": "Điều hướng chính",
       "media": "Thư viện",
@@ -740,10 +757,12 @@
       "title": "Cài đặt"
     },
     "success": {
+      "created": "Tạo thành công",
       "deleted": "Xóa thành công",
       "login": "Đăng nhập thành công",
       "restored": "Khôi phục ảnh thành công",
       "saved": "Lưu thành công",
+      "updated": "Cập nhật thành công",
       "uploaded": "Tải lên thành công"
     },
     "table": {
@@ -944,6 +963,8 @@
     "closeMenu": "Đóng menu",
     "contact": "Liên Hệ",
     "home": "Trang Chủ",
+    "more": "Khác",
+    "pages": "Trang",
     "openMenu": "Mở menu chính",
     "products": "Sản Phẩm",
     "projects": "Dự Án",

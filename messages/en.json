@@ -271,6 +271,7 @@
       "actions": "Actions",
       "back": "Back",
       "cancel": "Cancel",
+      "confirm": "Confirm",
       "confirmDelete": "Confirm Delete",
       "create": "Create",
       "delete": "Delete",
@@ -412,7 +413,25 @@
     "errors": {
       "deleteFailed": "Failed to delete",
       "fetchFailed": "Failed to fetch data",
-      "saveFailed": "Failed to save"
+      "noFileSelected": "No file selected",
+      "restoreFailed": "Failed to restore",
+      "saveFailed": "Failed to save",
+      "uploadFailed": "Failed to upload"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "nameRequired": "Name is required",
+      "descriptionRequired": "Description is required",
+      "slugRequired": "Slug is required",
+      "stepRequired": "Step is required",
+      "orderMin": "Order must be 0 or greater",
+      "atLeastOneTranslation": "At least one translation is required",
+      "contentRequired": "Content is required",
+      "positionRequired": "Position is required",
+      "bioRequired": "Bio is required",
+      "priceInvalid": "Invalid price",
+      "priceMin": "Price must be greater than or equal to 0",
+      "orderInvalid": "Invalid order"
     },
     "fileUpload": {
       "equipmentPlaceholder": "Select equipment image",
@@ -495,6 +514,7 @@
       "dashboard": "Dashboard",
       "equipment": "Equipment",
       "language": "Language",
+      "more": "More",
       "logout": "Logout",
       "main": "Main Navigation",
       "media": "Media",
@@ -735,7 +755,9 @@
     "success": {
       "created": "Created successfully",
       "deleted": "Deleted successfully",
-      "updated": "Updated successfully"
+      "restored": "Restored successfully",
+      "updated": "Updated successfully",
+      "uploaded": "Uploaded successfully"
     },
     "table": {
       "actions": "Actions",
@@ -940,6 +962,8 @@
     "closeMenu": "Close menu",
     "contact": "Contact",
     "home": "Home",
+    "more": "More",
+    "pages": "Pages",
     "openMenu": "Open main menu",
     "products": "Products",
     "projects": "Projects",

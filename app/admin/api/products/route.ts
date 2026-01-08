@@ -1,37 +1,21 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 
 import { z } from 'zod'
 
 import { requireAdmin } from '@/lib/middleware'
 import { prisma } from '@/lib/prisma'
-
-const productSchema = z.object({
-  slug: z.string().min(1),
-  images: z.array(z.string()).default([]),
-  price: z.number().optional(),
-  specs: z.string().optional(),
-  order: z.number().default(0),
-  featured: z.boolean().default(false),
-  translations: z.array(z.object({
-    locale: z.enum(['vi', 'en', 'fr']),
-    name: z.string().min(1),
-    description: z.string().min(1),
-    category: z.string().optional(),
-  })),
-})
+import { createValidationSchemas } from '@/lib/validation-i18n'
+import { translateMissing } from '@/lib/azure-translate'
 
 export async function GET(request: NextRequest) {
-  return requireAdmin(request, async (req, _user) => {
+  return requireAdmin(request, async (_req, _user) => {
     try {
-      const { searchParams } = new URL(req.url)
-      const locale = searchParams.get('locale') || 'vi'
-      
+      // For admin, return all translations (not filtered by locale)
       const products = await prisma.product.findMany({
         include: {
-          translations: {
-            where: { locale },
-          },
+          translations: true, // Get all translations
         },
         orderBy: { order: 'asc' },
       })
@@ -50,15 +34,39 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   return requireAdmin(request, async (req, user) => {
     try {
+      // Get locale from cookie or default to 'vi'
+      const cookieStore = await cookies()
+      const locale = (cookieStore.get('NEXT_LOCALE')?.value || 'vi') as 'vi' | 'en' | 'fr'
+      
+      // Load validation messages and create schema with i18n
+      const { getValidationMessages } = await import('@/lib/validation-i18n')
+      const validationMessages = await getValidationMessages(locale)
+      const { productSchema } = createValidationSchemas(validationMessages)
+
       const body = await req.json()
-      const data = productSchema.parse(body)
+      // Filter out empty translations before validation
+      const filteredBody = {
+        ...body,
+        translations: body.translations?.filter((t: any) => 
+          t.name?.trim() && t.description?.trim()
+        ) || []
+      }
+
+      // Auto-translate missing EN/FR from VI on create
+      const autoTranslated = await translateMissing(filteredBody.translations)
+      const data = productSchema.parse({ ...filteredBody, translations: autoTranslated })
 
       const product = await prisma.product.create({
         data: {
           ...data,
           userId: user.id,
           translations: {
-            create: data.translations,
+            create: data.translations.map((t) => ({
+              locale: t.locale,
+              name: t.name,
+              description: t.description,
+              category: t.category,
+            })),
           },
         },
         include: {

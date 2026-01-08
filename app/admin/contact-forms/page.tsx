@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
+import { DeleteConfirmDialog } from '@/components/ui/delete-confirm-dialog'
 
 interface ContactForm {
   id: string
@@ -25,6 +26,8 @@ export default function ContactFormsPage() {
   const [forms, setForms] = useState<ContactForm[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState<string>('all')
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [itemToDelete, setItemToDelete] = useState<string | null>(null)
 
   const fetchForms = async () => {
     try {
@@ -63,17 +66,23 @@ export default function ContactFormsPage() {
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm(t('confirmDelete'))) return
+  const handleDeleteClick = (id: string) => {
+    setItemToDelete(id)
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    if (!itemToDelete) return
 
     try {
-      const res = await fetch(`/admin/api/contact-forms/${id}`, {
+      const res = await fetch(`/admin/api/contact-forms/${itemToDelete}`, {
         method: 'DELETE',
       })
 
       if (!res.ok) throw new Error('Failed to delete')
       
       toast.success(t('success.deleted'))
+      setItemToDelete(null)
       void fetchForms()
     } catch {
       toast.error(t('errors.deleteFailed'))
@@ -160,7 +169,7 @@ export default function ContactFormsPage() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => handleDelete(form.id)}
+                        onClick={() => handleDeleteClick(form.id)}
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
@@ -186,7 +195,7 @@ export default function ContactFormsPage() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => handleDelete(form.id)}
+                      onClick={() => handleDeleteClick(form.id)}
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -234,6 +243,13 @@ export default function ContactFormsPage() {
           </div>
         </CardContent>
       </Card>
+
+      <DeleteConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirm={handleDeleteConfirm}
+        descriptionKey="contactForms.confirmDelete"
+      />
     </div>
   )
 }

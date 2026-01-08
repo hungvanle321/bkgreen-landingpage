@@ -5,36 +5,16 @@ import { z } from 'zod'
 
 import { requireAdmin } from '@/lib/middleware'
 import { prisma } from '@/lib/prisma'
-
-const projectSchema = z.object({
-  slug: z.string().min(1),
-  images: z.array(z.string()).default([]),
-  location: z.string().optional(),
-  type: z.string().optional(),
-  status: z.string().optional(),
-  year: z.string().optional(),
-  capacity: z.string().optional(),
-  order: z.number().default(0),
-  featured: z.boolean().default(false),
-  translations: z.array(z.object({
-    locale: z.enum(['vi', 'en', 'fr']),
-    title: z.string().min(1),
-    description: z.string().min(1),
-    category: z.string().optional(),
-  })),
-})
+import { projectSchema } from '@/lib/validations'
+import { translateMissing } from '@/lib/azure-translate'
 
 export async function GET(request: NextRequest) {
-  return requireAdmin(request, async (req, _user) => {
+  return requireAdmin(request, async (_req, _user) => {
     try {
-      const { searchParams } = new URL(req.url)
-      const locale = searchParams.get('locale') || 'vi'
-      
+      // For admin, return all translations (not filtered by locale)
       const projects = await prisma.project.findMany({
         include: {
-          translations: {
-            where: { locale },
-          },
+          translations: true, // Get all translations
         },
         orderBy: { order: 'asc' },
       })
@@ -54,7 +34,16 @@ export async function POST(request: NextRequest) {
   return requireAdmin(request, async (req, user) => {
     try {
       const body = await req.json()
-      const data = projectSchema.parse(body)
+      // Filter out empty translations before validation
+      const filteredBody = {
+        ...body,
+        translations: body.translations?.filter((t: any) => 
+          t.title?.trim() && t.description?.trim()
+        ) || []
+      }
+
+      const autoTranslated = await translateMissing(filteredBody.translations)
+      const data = projectSchema.parse({ ...filteredBody, translations: autoTranslated })
 
       const project = await prisma.project.create({
         data: {

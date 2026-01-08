@@ -8,8 +8,14 @@ import { prisma } from '@/lib/prisma'
 
 const teamMemberSchema = z.object({
   name: z.string().min(1).optional(),
+  name_en: z.string().optional(),
+  name_fr: z.string().optional(),
   position: z.string().min(1).optional(),
+  position_en: z.string().optional(),
+  position_fr: z.string().optional(),
   bio: z.string().min(1).optional(),
+  bio_en: z.string().optional(),
+  bio_fr: z.string().optional(),
   email: z.string().email().optional().nullable(),
   phone: z.string().optional().nullable(),
   image: z.string().optional().nullable(),

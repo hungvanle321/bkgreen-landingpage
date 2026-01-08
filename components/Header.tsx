@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu, X, Home, Info, Wrench, Package, FolderOpen } from 'lucide-react'
+import { Menu, X, Home, Info, Wrench, Package, FolderOpen, ChevronDown, FileText } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -22,12 +22,20 @@ const navItems = [
   { key: 'projects', href: '/du-an', icon: FolderOpen },
 ]
 
+interface Page {
+  id: string
+  title: string
+  slug: string
+}
+
 export default function Header() {
   const t = useTranslations('navigation')
   const locale = useLocale()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [settings, setSettings] = useState<Settings>({})
+  const [pages, setPages] = useState<Page[]>([])
+  const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -50,7 +58,20 @@ export default function Header() {
       }
     }
 
+    const fetchPages = async () => {
+      try {
+        const response = await fetch('/api/pages')
+        if (response.ok) {
+          const data = await response.json()
+          setPages(data || [])
+        }
+      } catch (error) {
+        console.error('Error fetching pages:', error)
+      }
+    }
+
     void fetchSettings()
+    void fetchPages()
   }, [])
 
   // Lock body scroll when mobile menu is open
@@ -175,7 +196,7 @@ export default function Header() {
             <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-12 lg:items-center">
           {navItems.map((item) => (
             <Link
               key={item.key}
@@ -189,6 +210,41 @@ export default function Header() {
               {t(item.key)}
             </Link>
           ))}
+          {pages.length > 0 && (
+            <div className="relative">
+              <button
+                type="button"
+                onMouseEnter={() => setPagesDropdownOpen(true)}
+                onMouseLeave={() => setPagesDropdownOpen(false)}
+                className={`text-sm font-semibold leading-6 transition-colors flex items-center gap-1 ${
+                  isHomePage && !isScrolled
+                    ? 'text-white hover:text-primary-red'
+                    : 'text-foreground hover:text-primary-red'
+                }`}
+              >
+                {t('more') || 'Khác'}
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              {pagesDropdownOpen && (
+                <div
+                  className="absolute top-full left-0 mt-2 w-56 bg-background border rounded-lg shadow-lg py-2 z-50"
+                  onMouseEnter={() => setPagesDropdownOpen(true)}
+                  onMouseLeave={() => setPagesDropdownOpen(false)}
+                >
+                  {pages.map((page) => (
+                    <Link
+                      key={page.id}
+                      href={`/${locale}/pages/${page.slug}`}
+                      className="block px-4 py-2 text-sm hover:bg-muted transition-colors"
+                      onClick={() => setPagesDropdownOpen(false)}
+                    >
+                      {page.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
           <LanguageSwitcher />
@@ -255,6 +311,24 @@ export default function Header() {
                       <span>{t(item.key)}</span>
                     </Link>
                   ))}
+                  {pages.length > 0 && (
+                    <>
+                      <div className="px-3 py-2 text-xs font-semibold text-muted-foreground uppercase">
+                        {t('more') || 'Khác'}
+                      </div>
+                      {pages.map((page) => (
+                        <Link
+                          key={page.id}
+                          href={`/${locale}/pages/${page.slug}`}
+                          className="-mx-3 flex rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted items-center space-x-2"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <FileText className="h-5 w-5" />
+                          <span>{page.title}</span>
+                        </Link>
+                      ))}
+                    </>
+                  )}
                 </div>
                 <div className="py-6 space-y-4">
                   <Button asChild className="w-full" onClick={() => setMobileMenuOpen(false)}>

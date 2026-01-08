@@ -5,10 +5,13 @@ import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { DeleteConfirmDialog } from '@/components/ui/delete-confirm-dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { FileUpload } from '@/components/ui/file-upload'
 import { Plus, Edit, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
@@ -17,8 +20,14 @@ import Image from 'next/image'
 interface TeamMember {
   id: string
   name: string
+  name_en?: string
+  name_fr?: string
   position: string
+  position_en?: string
+  position_fr?: string
   bio: string
+  bio_en?: string
+  bio_fr?: string
   email?: string
   phone?: string
   image?: string
@@ -30,15 +39,24 @@ export default function TeamPage() {
   const [loading, setLoading] = useState(true)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editingMember, setEditingMember] = useState<TeamMember | null>(null)
+  const [activeTab, setActiveTab] = useState('vi')
 
   const [formData, setFormData] = useState({
     name: '',
+    name_en: '',
+    name_fr: '',
     position: '',
+    position_en: '',
+    position_fr: '',
     bio: '',
+    bio_en: '',
+    bio_fr: '',
     email: '',
     phone: '',
     image: '',
   })
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [itemToDelete, setItemToDelete] = useState<string | null>(null)
 
   const fetchMembers = async () => {
     try {
@@ -83,17 +101,23 @@ export default function TeamPage() {
     }
   }
 
-  const handleDelete = async (id: string) => {
-    if (!confirm(t('confirmDelete'))) return
+  const handleDeleteClick = (id: string) => {
+    setItemToDelete(id)
+    setDeleteDialogOpen(true)
+  }
+
+  const handleDeleteConfirm = async () => {
+    if (!itemToDelete) return
 
     try {
-      const res = await fetch(`/admin/api/team/${id}`, {
+      const res = await fetch(`/admin/api/team/${itemToDelete}`, {
         method: 'DELETE',
       })
 
       if (!res.ok) throw new Error('Failed to delete')
       
       toast.success(t('success.deleted'))
+      setItemToDelete(null)
       void fetchMembers()
     } catch {
       toast.error(t('errors.deleteFailed'))
@@ -103,21 +127,34 @@ export default function TeamPage() {
   const resetForm = () => {
     setFormData({
       name: '',
+      name_en: '',
+      name_fr: '',
       position: '',
+      position_en: '',
+      position_fr: '',
       bio: '',
+      bio_en: '',
+      bio_fr: '',
       email: '',
       phone: '',
       image: '',
     })
     setEditingMember(null)
+    setActiveTab('vi')
   }
 
   const handleEdit = (member: TeamMember) => {
     setEditingMember(member)
     setFormData({
-      name: member.name,
-      position: member.position,
-      bio: member.bio,
+      name: member.name || '',
+      name_en: member.name_en || '',
+      name_fr: member.name_fr || '',
+      position: member.position || '',
+      position_en: member.position_en || '',
+      position_fr: member.position_fr || '',
+      bio: member.bio || '',
+      bio_en: member.bio_en || '',
+      bio_fr: member.bio_fr || '',
       email: member.email || '',
       phone: member.phone || '',
       image: member.image || '',
@@ -146,45 +183,22 @@ export default function TeamPage() {
               <DialogDescription>{t('formDescription')}</DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Label>{t('form.name')}</Label>
-                <Input
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-              </div>
-              <div>
-                <Label>{t('form.position')}</Label>
-                <Input
-                  value={formData.position}
-                  onChange={(e) => setFormData({ ...formData, position: e.target.value })}
-                  required
-                />
-              </div>
-              <div>
-                <Label>{t('form.bio')}</Label>
-                <Textarea
-                  value={formData.bio}
-                  onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-                  required
-                  rows={4}
-                />
-              </div>
-              <div>
-                <Label>{t('form.email')}</Label>
-                <Input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                />
-              </div>
-              <div>
-                <Label>{t('form.phone')}</Label>
-                <Input
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label>{t('form.email')}</Label>
+                  <Input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <Label>{t('form.phone')}</Label>
+                  <Input
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                </div>
               </div>
               <FileUpload
                 value={formData.image}
@@ -192,6 +206,56 @@ export default function TeamPage() {
                 placeholder={t('fileUpload.teamPlaceholder')}
                 showUrl={false}
               />
+
+              <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+                <TabsList className="grid w-full grid-cols-3">
+                  <TabsTrigger value="vi">Tiếng Việt</TabsTrigger>
+                  <TabsTrigger value="en">English</TabsTrigger>
+                  <TabsTrigger value="fr">Français</TabsTrigger>
+                </TabsList>
+                {['vi', 'en', 'fr'].map((loc) => {
+                  const localeKey = loc as 'vi' | 'en' | 'fr'
+                  const nameKey = localeKey === 'vi' ? 'name' : `name_${localeKey}` as 'name_en' | 'name_fr'
+                  const positionKey = localeKey === 'vi' ? 'position' : `position_${localeKey}` as 'position_en' | 'position_fr'
+                  const bioKey = localeKey === 'vi' ? 'bio' : `bio_${localeKey}` as 'bio_en' | 'bio_fr'
+                  
+                  return (
+                    <TabsContent key={loc} value={loc} className="space-y-4">
+                      <div>
+                        <Label>{t('form.name')}</Label>
+                        <Input
+                          value={formData[nameKey] || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, [nameKey]: e.target.value })
+                          }}
+                          required={localeKey === 'vi'}
+                        />
+                      </div>
+                      <div>
+                        <Label>{t('form.position')}</Label>
+                        <Input
+                          value={formData[positionKey] || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, [positionKey]: e.target.value })
+                          }}
+                          required={localeKey === 'vi'}
+                        />
+                      </div>
+                      <div>
+                        <Label>{t('form.bio')}</Label>
+                        <Textarea
+                          value={formData[bioKey] || ''}
+                          onChange={(e) => {
+                            setFormData({ ...formData, [bioKey]: e.target.value })
+                          }}
+                          required={localeKey === 'vi'}
+                          rows={4}
+                        />
+                      </div>
+                    </TabsContent>
+                  )
+                })}
+              </Tabs>
               <DialogFooter>
                 <Button type="button" variant="outline" onClick={() => setDialogOpen(false)}>
                   {t('cancel')}
@@ -237,14 +301,30 @@ export default function TeamPage() {
                     <TableCell className="hidden lg:table-cell">{member.email || '-'}</TableCell>
                     <TableCell className="hidden lg:table-cell">{member.phone || '-'}</TableCell>
                     <TableCell>
-                      <div className="flex gap-2">
-                        <Button variant="outline" size="sm" onClick={() => handleEdit(member)}>
-                          <Edit className="h-4 w-4" />
-                        </Button>
-                        <Button variant="destructive" size="sm" onClick={() => handleDelete(member.id)}>
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
-                      </div>
+                      <TooltipProvider>
+                        <div className="flex gap-2">
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button variant="outline" size="sm" className="h-8 w-8 p-0" onClick={() => handleEdit(member)}>
+                                <Edit className="h-4 w-4" />
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{t('edit') || 'Edit'}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button variant="destructive" size="sm" className="h-8 w-8 p-0" onClick={() => handleDeleteClick(member.id)}>
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{t('delete') || 'Delete'}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
+                      </TooltipProvider>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -292,21 +372,42 @@ export default function TeamPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-col gap-2">
-                  <Button variant="outline" size="sm" className="w-full" onClick={() => handleEdit(member)}>
-                    <Edit className="h-4 w-4 mr-2" />
-                    {t('edit')}
-                  </Button>
-                  <Button variant="destructive" size="sm" className="w-full" onClick={() => handleDelete(member.id)}>
-                    <Trash2 className="h-4 w-4 mr-2" />
-                    {t('delete')}
-                  </Button>
-                </div>
+                <TooltipProvider>
+                  <div className="flex gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="outline" size="sm" className="h-8 w-8 p-0" onClick={() => handleEdit(member)}>
+                          <Edit className="h-4 w-4" />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{t('edit') || 'Edit'}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="destructive" size="sm" className="h-8 w-8 p-0" onClick={() => handleDeleteClick(member.id)}>
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{t('delete') || 'Delete'}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                </TooltipProvider>
               </div>
             ))}
           </div>
         </CardContent>
       </Card>
+
+      <DeleteConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirm={handleDeleteConfirm}
+        descriptionKey="team.confirmDelete"
+      />
     </div>
   )
 }
