@@ -1,1127 +1,1355 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "products": "Products",
-    "projects": "Projects",
-    "contact": "Contact",
-    "openMenu": "Open main menu",
-    "closeMenu": "Close menu"
-  },
-  "process": {
-    "title": "Our Working Process",
-    "subtitle": "A professional workflow from survey to operation",
-    "loading": "Loading...",
-    "noData": "No process data available",
-    "steps": {
-      "survey": {"title": "Survey & Assessment", "description": "Survey current conditions and evaluate treatment needs"},
-      "design": {"title": "System Design", "description": "Design an appropriate water treatment system"},
-      "installation": {"title": "Construction & Installation", "description": "Construct and install the system as designed"},
-      "maintenance": {"title": "Operation & Maintenance", "description": "Operate the system and perform periodic maintenance"}
-    }
-  },
-  "equipment": {
-    "title": "Equipment & Products",
-    "subtitle": "We supply high-quality equipment and products for water treatment systems",
-    "items": {
-      "pump": {"title": "Industrial Pumps", "description": "Specialized pumps for water treatment systems", "category": "Main equipment"},
-      "valve": {"title": "Industrial Valves", "description": "Control and safety valves for water systems", "category": "Accessories"},
-      "fire": {"title": "Fire Protection", "description": "Professional fire protection systems", "category": "Safety"},
-      "ro": {"title": "RO Systems", "description": "Industrial RO filtration equipment", "category": "Water treatment"}
-    }
-  },
-  "hero": {
-    "title": "Complete systems for your water needs",
-    "subtitle": "At BK Green, we understand every customer has unique needs. We perform comprehensive assessments to deliver tailored solutions that improve water quality and optimize operational efficiency.",
-    "cta": "Contact Us"
-  },
-  "services": {
-    "title": "Our Services",
-    "subtitle": "We provide end-to-end services from design and construction to operation of water treatment systems",
-    "wastewater": {
-      "title": "Wastewater Treatment",
-      "description": "Provide solutions & build wastewater treatment systems for buildings and industrial parks"
-    },
-    "ro": {
-      "title": "RO Systems",
-      "description": "Provide solutions & implement RO water treatment systems"
-    },
-    "electrical": {
-      "title": "Electrical Cabinets & SCADA",
-      "description": "Provide solutions and implement electrical cabinet and SCADA systems"
-    },
-    "equipment": {
-      "title": "Fire Equipment",
-      "description": "Trade & distribute equipment: Pumps, Valves, Water and Fire Protection accessories"
-    },
-    "fire": {
-      "title": "Fire Protection Equipment",
-      "description": "Professional fire protection and firefighting equipment"
-    },
-    "operation": {
-      "title": "System Operation",
-      "description": "Water system operation and maintenance services"
-    },
-    "consulting": {
-      "title": "Technical Consulting",
-      "description": "Consulting and designing optimal systems for each project"
-    }
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Contact us for the best consultation and support",
-    "form": {
-      "title": "Send Message",
-      "description": "Fill in the information below, we will contact you as soon as possible",
-      "name": "Full Name *",
-      "email": "Email *",
-      "phone": "Phone Number",
-      "message": "Message Content *",
-      "submit": "Send Message"
-    },
-    "info": {
-      "title": "Contact Information",
-      "phone": "Phone",
-      "email": "Email",
-      "address": "Address"
-    },
-    "location": {
-      "title": "Office Location",
-      "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
-      "viewMap": "View on Google Maps"
-    }
-  },
-  "footer": {
-    "quickLinks": "Quick Links",
-    "company": "BK GREEN TECHNICAL JOINT STOCK COMPANY",
-    "description": "Specializing in water supply, drainage construction and wastewater treatment",
-    "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
-    "email": "dien.tran@bkgreen.vn",
-    "copyright": "© 2025 BK Green. All rights reserved."
-  },
   "about": {
-    "title": "About BK Green",
+    "features": {
+      "expertise": {
+        "description": "Engineers with deep knowledge and practical experience in water treatment",
+        "title": "High Expertise"
+      },
+      "quality": {
+        "description": "Always putting quality and customer satisfaction first",
+        "title": "Quality Commitment"
+      },
+      "team": {
+        "description": "Young, dynamic staff with a strong, continuous growth mindset",
+        "title": "Enthusiastic Team"
+      },
+      "technology": {
+        "description": "Applying modern technology solutions and high-quality equipment",
+        "title": "Advanced Technology"
+      }
+    },
+    "imageAlt": "BK Green Company - Professional engineering team",
     "p1": "BK GREEN TECHNICAL JOINT STOCK COMPANY is a young and dynamic company specializing in water supply, drainage construction and wastewater treatment projects.",
     "p2": "With a young, enthusiastic and highly skilled team of engineers, we bring real value to customers through modern technology and dedicated service.",
     "p3": "With the motto ‘Creating real values’, BK Green continuously learns, develops and applies advanced engineering solutions to protect the environment and deliver sustainable solutions to the community.",
-    "imageAlt": "BK Green Company - Professional engineering team",
-    "features": {
-      "expertise": {
-        "title": "High Expertise",
-        "description": "Engineers with deep knowledge and practical experience in water treatment"
-      },
-      "technology": {
-        "title": "Advanced Technology",
-        "description": "Applying modern technology solutions and high-quality equipment"
-      },
-      "team": {
-        "title": "Enthusiastic Team",
-        "description": "Young, dynamic staff with a strong, continuous growth mindset"
-      },
-      "quality": {
-        "title": "Quality Commitment",
-        "description": "Always putting quality and customer satisfaction first"
-      }
-    }
-  }
-  ,
+    "title": "About BK Green"
+  },
   "aboutPage": {
-    "meta": {
-      "title": "About BK Green",
-      "description": "Overview of BK Green: strengths, commitments, leadership, certifications, facilities"
-    },
-    "overview": {
-      "badge": "About Us",
-      "imageAlt": "About BK Green",
-      "cards": {
-        "growth": {"title": "Growth", "desc": "Sustainable development"},
-        "environment": {"title": "Environment", "desc": "Eco-friendly"}
-      },
-      "p1": "BK GREEN TECHNICAL JSC is founded to deliver sustainable water supply and wastewater solutions.",
-      "p2": "We began our journey with an experienced team and a long-term vision for a future where water resources are protected and managed sustainably."
-    },
-    "strengths": {
-      "badge": "Strengths",
-      "title": "Why Choose BK Green?",
-      "subtitle": "Reasons we are a trusted partner in water engineering",
-      "stats": [
-        {"title": "Expert Team", "description": "With 15+ years of experience in water engineering, our engineers are intensively trained and internationally certified. We are committed to delivering the most optimal solutions for every project."},
-        {"title": "Quality Commitment", "description": "We strictly comply with ISO 9001:2015 and apply a 3-layer quality control process. Every product and service is thoroughly inspected before delivery to customers."},
-        {"title": "Sustainability Focus", "description": "BK Green pioneers green, environmentally friendly solutions. We use energy‑saving technologies and wastewater recycling to help protect the environment for the future."}
-      ]
+    "certifications": {
+      "badge": "Certifications",
+      "items": [
+        {
+          "description": "Compliant with international quality and safety standards",
+          "title": "Quality Certification"
+        },
+        {
+          "description": "Engineers with intensive training and professional licenses",
+          "title": "Technical Degrees"
+        },
+        {
+          "description": "Full business and environmental operation licenses",
+          "title": "Operating Licenses"
+        }
+      ],
+      "subtitle": "Ensuring quality and compliance with international standards",
+      "title": "Certifications & Degrees"
     },
     "commit": {
       "badge": "Commitment",
-      "title": "Our Commitments",
-      "subtitle": "Protecting water and optimizing energy with modern solutions",
       "cards": {
-        "tech": {"title": "Engineering & Technology", "desc": "Applying advanced technologies and deep engineering"},
-        "env": {"title": "Sustainable Environment", "desc": "Commitment to environmental protection and sustainability"},
-        "water": {"title": "Water Solutions", "desc": "Water supply, wastewater treatment and comprehensive solutions"}
-      },
-      "legend": {"tech": "Engineering & Technology", "env": "Sustainable Environment", "water": "Comprehensive Water Solutions"}
-    }
-    ,
-    "leadership": {
-      "badge": "Leadership",
-      "title": "Leadership Team",
-      "subtitle": "Experienced experts leading BK Green toward a sustainable future",
-      "expertLabel": "Top Expert",
-      "members": [
-        {
-          "name": "Mr. Tran Ba Dien",
-          "role": "Chief Executive Officer",
-          "description": "Environmental engineer with 15+ years in wastewater treatment and project management",
-          "detailsTitle": "Experience & Achievements",
-          "details": [
-            "15+ years in wastewater treatment",
-            "Managed 50+ large-scale projects",
-            "PMP certification - Professional Project Management",
-            "Master of Environmental Engineering",
-            "Consultant to major enterprises"
-          ]
+        "env": {
+          "desc": "Commitment to environmental protection and sustainability",
+          "title": "Sustainable Environment"
+        },
+        "tech": {
+          "desc": "Applying advanced technologies and deep engineering",
+          "title": "Engineering & Technology"
+        },
+        "water": {
+          "desc": "Water supply, wastewater treatment and comprehensive solutions",
+          "title": "Water Solutions"
         }
-      ]
-    }
-    ,
-    "certifications": {
-      "badge": "Certifications",
-      "title": "Certifications & Degrees",
-      "subtitle": "Ensuring quality and compliance with international standards",
-      "items": [
-        {"title": "Quality Certification", "description": "Compliant with international quality and safety standards"},
-        {"title": "Technical Degrees", "description": "Engineers with intensive training and professional licenses"},
-        {"title": "Operating Licenses", "description": "Full business and environmental operation licenses"}
-      ]
-    }
-    ,
-    "facilities": {
-      "badge": "Facilities",
-      "title": "Facilities",
-      "subtitle": "Modern infrastructure for all production and research needs",
-      "items": [
-        {"title": "Head Office", "description": "Headquarters in Ho Chi Minh City with full amenities"},
-        {"title": "Manufacturing Workshop", "description": "Professional equipment manufacturing and assembly workshop"},
-        {"title": "Laboratory", "description": "Modern water quality testing laboratory"}
-      ]
-    }
-    ,
-    "cta": {
-      "title": "Start Your Journey with BK Green",
-      "subtitle": "Contact us for the best consultation and support for your project",
-      "primary": "Contact Now",
-      "secondary": "View Services"
-    }
-    ,
+      },
+      "legend": {
+        "env": "Sustainable Environment",
+        "tech": "Engineering & Technology",
+        "water": "Comprehensive Water Solutions"
+      },
+      "subtitle": "Protecting water and optimizing energy with modern solutions",
+      "title": "Our Commitments"
+    },
     "coreValues": {
-      "title": "Guiding Values",
-      "subtitle": "Core principles guiding all our activities and decisions",
       "badge": "Core Values",
       "items": {
-        "quality": {
-          "title": "Quality",
-          "content": [
-            "Quality first",
-            "International standards compliance",
-            "Strict quality control"
-          ]
-        },
-        "innovation": {
-          "title": "Innovation",
-          "content": [
-            "Adopting advanced technologies",
-            "Continuous R&D",
-            "Creative solutions"
-          ]
-        },
-        "sustainability": {
-          "title": "Sustainability",
-          "content": [
-            "Environmental protection",
-            "Sustainable development",
-            "Efficient resource use"
-          ]
-        },
         "customerSupport": {
-          "title": "Customer Support",
           "content": [
             "Accompanying throughout the project",
             "Dedicated care",
             "24/7 technical support"
-          ]
-        }
-      }
-    }
-    ,
-    "development": {
-      "title": "Development Orientation",
-      "subtitle": "BK Green is building a solid foundation to be a trusted partner in water engineering",
-      "badge": "Vision",
-      "items": {
-        "tech": {
-          "title": "Technology Foundation",
-          "description": "Building a modern and reliable technology system",
-          "detailsTitle": "Technology & Equipment",
-          "details": [
-            "Invest in high-quality water treatment equipment",
-            "Modern monitoring and operation systems",
-            "Strict quality control processes",
-            "Deep technical staff training",
-            "Build effective project management systems"
-          ]
-        },
-        "partnership": {
-          "title": "Partnership Building",
-          "description": "Developing strategic and sustainable partner networks",
-          "detailsTitle": "Partner Network",
-          "details": [
-            "Find reputable equipment suppliers",
-            "Build relationships with technology partners",
-            "Develop subcontractor networks",
-            "Cooperate with research institutes",
-            "Expand future partnerships"
-          ]
+          ],
+          "title": "Customer Support"
         },
         "innovation": {
-          "title": "Innovation Focus",
+          "content": [
+            "Adopting advanced technologies",
+            "Continuous R&D",
+            "Creative solutions"
+          ],
+          "title": "Innovation"
+        },
+        "quality": {
+          "content": [
+            "Quality first",
+            "International standards compliance",
+            "Strict quality control"
+          ],
+          "title": "Quality"
+        },
+        "sustainability": {
+          "content": [
+            "Environmental protection",
+            "Sustainable development",
+            "Efficient resource use"
+          ],
+          "title": "Sustainability"
+        }
+      },
+      "subtitle": "Core principles guiding all our activities and decisions",
+      "title": "Guiding Values"
+    },
+    "cta": {
+      "primary": "Contact Now",
+      "secondary": "View Services",
+      "subtitle": "Contact us for the best consultation and support for your project",
+      "title": "Start Your Journey with BK Green"
+    },
+    "development": {
+      "badge": "Vision",
+      "items": {
+        "innovation": {
           "description": "Investing in research and sustainable solutions",
-          "detailsTitle": "Research & Development",
           "details": [
             "Research advanced water treatment technologies",
             "Develop eco-friendly solutions",
             "Apply digital technologies in operation",
             "Invest in training and human development",
             "Build a professional knowledge library"
-          ]
+          ],
+          "detailsTitle": "Research & Development",
+          "title": "Innovation Focus"
+        },
+        "partnership": {
+          "description": "Developing strategic and sustainable partner networks",
+          "details": [
+            "Find reputable equipment suppliers",
+            "Build relationships with technology partners",
+            "Develop subcontractor networks",
+            "Cooperate with research institutes",
+            "Expand future partnerships"
+          ],
+          "detailsTitle": "Partner Network",
+          "title": "Partnership Building"
+        },
+        "tech": {
+          "description": "Building a modern and reliable technology system",
+          "details": [
+            "Invest in high-quality water treatment equipment",
+            "Modern monitoring and operation systems",
+            "Strict quality control processes",
+            "Deep technical staff training",
+            "Build effective project management systems"
+          ],
+          "detailsTitle": "Technology & Equipment",
+          "title": "Technology Foundation"
         }
-      }
-    }
-    ,
+      },
+      "subtitle": "BK Green is building a solid foundation to be a trusted partner in water engineering",
+      "title": "Development Orientation"
+    },
+    "facilities": {
+      "badge": "Facilities",
+      "items": [
+        {
+          "description": "Headquarters in Ho Chi Minh City with full amenities",
+          "title": "Head Office"
+        },
+        {
+          "description": "Professional equipment manufacturing and assembly workshop",
+          "title": "Manufacturing Workshop"
+        },
+        {
+          "description": "Modern water quality testing laboratory",
+          "title": "Laboratory"
+        }
+      ],
+      "subtitle": "Modern infrastructure for all production and research needs",
+      "title": "Facilities"
+    },
     "guidance": {
       "badge": "Guidance",
-      "title": "Vision, Mission & Values",
-      "subtitle": "Core principles and development orientation of BK Green",
       "cards": {
-        "vision": {
-          "title": "Vision",
-          "desc": "Become a leading water engineering company in Vietnam and Southeast Asia, recognized for technological innovation and environmental sustainability."
-        },
         "mission": {
-          "title": "Mission",
-          "desc": "Provide comprehensive water engineering solutions from design and construction to operation for households to large industrial projects."
+          "desc": "Provide comprehensive water engineering solutions from design and construction to operation for households to large industrial projects.",
+          "title": "Mission"
         },
         "values": {
-          "title": "Values",
-          "desc": "Outstanding quality, innovative mindset, environmental sustainability and dedicated customer support."
+          "desc": "Outstanding quality, innovative mindset, environmental sustainability and dedicated customer support.",
+          "title": "Values"
+        },
+        "vision": {
+          "desc": "Become a leading water engineering company in Vietnam and Southeast Asia, recognized for technological innovation and environmental sustainability.",
+          "title": "Vision"
         }
       },
       "legend": {
-        "vision": "Vision",
         "mission": "Mission",
-        "values": "Values"
-      }
-    }
-    ,
+        "values": "Values",
+        "vision": "Vision"
+      },
+      "subtitle": "Core principles and development orientation of BK Green",
+      "title": "Vision, Mission & Values"
+    },
     "interactive": {
       "hint": {
-        "front": "Click to see details",
-        "back": "Click to go back"
-      }
-    }
-  }
-  ,
-  "servicesPage": {
-    "header": {
-      "title": "Our Services",
-      "subtitle": "BK Green provides wastewater treatment, water supply and RO systems, starting with small projects and expanding services across Vietnam."
-    },
-    "catalog": {
-      "title": "Service Catalog",
-      "learnMore": "Learn More"
-    },
-    "services": {
-      "wastewater": {
-        "description": "Provide solutions and construction for buildings and industrial parks in early-stage projects.",
-        "features": ["Design wastewater treatment systems", "Professional construction and installation", "Operate and maintain systems", "Deep technical consulting"]
-      },
-      "operation": {
-        "description": "Operation services for wastewater and water supply, in development.",
-        "features": ["Continuous system operation", "Periodic maintenance", "Remote monitoring", "Detailed reporting"]
-      },
-      "ro": {
-        "description": "Implement RO water treatment systems with modern technology.",
-        "features": ["Optimize RO system design", "Professional installation", "Maintenance and component replacement", "Performance optimization"]
-      },
-      "electrical": {
-        "description": "Provide automation solutions for new projects.",
-        "features": ["Control cabinet design", "Modern SCADA systems", "Process automation", "Remote monitoring and control"]
-      },
-      "equipment": {
-        "description": "Distribute pumps, valves, water accessories and fire protection equipment.",
-        "features": ["Specialized pumps", "Quality valves and accessories", "Modern fire protection equipment", "Equipment selection consulting"]
+        "back": "Click to go back",
+        "front": "Click to see details"
       }
     },
-    "sustainability": {
-      "title": "Towards a Green Future",
-      "subtitle": "We are building energy-saving solutions in initial projects, aiming for a sustainable water future in Vietnam."
-    },
-    "process": {
-      "title": "Project Process",
-      "subtitle": "A professional workflow from survey to operation, ensuring quality and efficiency",
-      "stepLabel": "Step {step}",
-      "badge": "Professional process",
-      "steps": [
-        {"title": "Survey & Analysis", "description": "Assess current conditions and analyze project-specific needs"},
-        {"title": "Design & Planning", "description": "Detail system design and implementation planning"},
-        {"title": "Construction & Installation", "description": "Professional construction with experienced technical team"},
-        {"title": "Operation & Maintenance", "description": "Support operation and periodic system maintenance"}
-      ]
-    },
-    "technologies": {
-      "title": "Technologies Used",
-      "subtitle": "Applying advanced technologies and modern equipment to every project",
-      "items": {
-        "ro": {"title": "RO Systems", "description": "Advanced reverse osmosis water filtration technology", "features": ["High recovery rate", "Energy saving", "Stable water quality"]},
-        "scada": {"title": "SCADA & Automation", "description": "Remote monitoring and control systems", "features": ["24/7 monitoring", "Automatic control", "Detailed reporting"]},
-        "fire": {"title": "Fire Protection Equipment", "description": "Professional fire protection systems", "features": ["Early detection", "Effective firefighting", "Standards compliance"]}
-      }
-    },
-    "cases": {
-      "title": "Case Studies",
-      "subtitle": "Highlighted projects and achieved results",
-      "resultsTitle": "Achieved results:",
-      "0": {"title": "Industrial Park Project", "industry": "Industrial", "description": "2000m³/day wastewater treatment system for an industrial park", "results": ["Reduce 95% pollution", "Save 30% cost", "Stable operation"]},
-      "1": {"title": "Clean Water Plant", "industry": "Water supply", "description": "Industrial RO system for a clean water plant", "results": ["Capacity 1000m³/h", "High water quality", "Easy maintenance"]},
-      "2": {"title": "Commercial Building", "industry": "Commercial", "description": "Fire protection and water treatment systems for high-rise buildings", "results": ["Absolute safety", "Regulation compliance", "Reasonable cost"]}
-    },
-    "support": {
-      "title": "Warranty & Support",
-      "subtitle": "Comprehensive support commitment for customers",
-      "items": [
-        {"title": "24/7 Support", "description": "Technical team supports 24/7 for all issues"},
-        {"title": "Long-term Warranty", "description": "Comprehensive warranty for all equipment and systems"},
-        {"title": "Operation Training", "description": "Train staff to operate and maintain the system"}
-      ]
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Answers to common questions about our services",
-      "items": [
-        {"q": "How long does construction usually take?", "a": "It depends on project size, typically 2-6 months for small to medium projects."},
-        {"q": "Does BK Green support maintenance after completion?", "a": "Yes, we provide periodic maintenance and 24/7 technical support."},
-        {"q": "How are service costs calculated?", "a": "Costs are based on project size, technology used, and specific customer requirements."}
-      ]
-    },
-    "cta": {
-      "title": "Need Service Consultation?",
-      "subtitle": "Contact us for free consultation and a detailed quote",
-      "primary": "Contact Now",
-      "secondary": "View Projects"
-    },
-    "filters": {
-      "industry": ["Residential", "Industrial"],
-      "type": ["Wastewater", "Water supply"]
-    }
-  }
-  ,
-  "projectsPage": {
-    "header": {"title": "Projects", "subtitle": "BK Green is launching its first projects, bringing clean water solutions to the community."},
-    "stats": {"active": "Ongoing projects", "completed": "Completed projects", "capacity": "Design capacity", "service": "Professional service"},
-    "featured": {"title": "Featured Projects", "viewDetail": "View Details"},
-    "all": {"title": "All Projects", "detail": "Details"},
-    "cta": {"title": "Submit Your Project", "subtitle": "Have a project to consult? Contact us for professional support", "primary": "Contact Now", "secondary": "View Services"}
-  }
-  ,
-  "contactPage": {
-    "header": {"title": "Contact Us", "subtitle": "Reach out for the best consultation and support"},
-    "form": {
-      "title": "Send Message",
-      "name": "Full Name *",
-      "email": "Email *",
-      "company": "Company",
-      "phone": "Phone",
-      "requestType": "Request type *",
-      "message": "Message *",
-      "submit": "Send Message",
-      "placeholder": {
-        "name": "Enter full name",
-        "email": "Enter email",
-        "company": "Enter company name",
-        "phone": "Enter phone number",
-        "requestType": "Select a request type",
-        "message": "Enter your message..."
-      },
-      "requestTypes": ["Project consulting", "Product quotation", "Technical support", "Business partnership", "Other"]
-    },
-    "office": {"title": "Office", "mapPlaceholder": "Google Maps will be embedded here", "city": "Ho Chi Minh City", "viewMap": "View on Google Maps"},
-    "support": {"title": "Customer Support", "hotline": "Support hotline", "hours": "8:00 - 17:00 (Mon-Fri)", "email": "Support email", "sla": "Reply within 24h"},
-    "faqLink": "Frequently Asked Questions",
-    "info": {"phoneTitle": "Phone", "phoneDesc": "Call us for consultation", "emailTitle": "Email", "emailDesc": "Send us an email", "addressTitle": "Address", "addressDesc": "Head office in HCMC", "hoursTitle": "Working hours", "hoursDesc": "Monday - Friday"},
-    "cta": {"title": "Start Your Project", "subtitle": "Ready to deploy a water project? Contact us today", "call": "Call Now", "email": "Send Email"}
-  }
-  ,
-  "productsPage": {
-    "header": {"title": "Our Products", "subtitle": "BK Green supplies high-quality products: pumps, valves, accessories and RO systems from trusted partners."},
-    "featured": {
-      "title": "Featured Products",
-      "detailBtn": "Details",
-      "products": [
-        {"name": "Industrial Pump BK-P100", "category": "Pumps", "specs": "Flow: 100 m³/h | Head: 50 m", "description": "High‑efficiency industrial pump with energy saving"},
-        {"name": "Pressure Valve BK-V50", "category": "Valves", "specs": "Pressure: 0-16 bar | Temp: -10°C to 80°C", "description": "Accurate pressure control with high durability"},
-        {"name": "RO System BK-RO2000", "category": "RO Systems", "specs": "Capacity: 2000 L/h | Recovery: 75%", "description": "Industrial RO water filtration system"}
-      ]
-    },
-    "categories": {
-      "title": "Product Categories",
-      "learnMore": "Learn More",
-      "items": {
-        "pumps": {
-          "title": "Pumps",
-          "description": "Specialized pumps for water treatment systems",
-          "products": [
-            {"name": "Industrial Pump", "specs": "Flow: 50-500 m³/h", "description": "High‑efficiency industrial pump"},
-            {"name": "Wastewater Pump", "specs": "Flow: 20-200 m³/h", "description": "Dedicated for wastewater treatment"}
-          ]
-        },
-        "valves": {
-          "title": "Valves",
-          "description": "High‑quality pressure and leak‑proof valves",
-          "products": [
-            {"name": "Pressure Valve", "specs": "Pressure: 0-16 bar", "description": "Precise pressure adjustment"},
-            {"name": "Leak‑proof Valve", "specs": "Pressure: 0-25 bar", "description": "Effective leakage prevention"}
-          ]
-        },
-        "fire": {
-          "title": "Fire Accessories",
-          "description": "Professional fire protection equipment",
-          "products": [
-            {"name": "Water Nozzle", "specs": "Diameter: 50-200 mm", "description": "Dedicated firefighting nozzle"},
-            {"name": "Fire Alarm System", "specs": "Coverage: 1000 m²", "description": "Automatic fire alarm system"}
-          ]
+    "leadership": {
+      "badge": "Leadership",
+      "expertLabel": "Top Expert",
+      "members": [
+        {
+          "description": "Environmental engineer with 15+ years in wastewater treatment and project management",
+          "details": [
+            "15+ years in wastewater treatment",
+            "Managed 50+ large-scale projects",
+            "PMP certification - Professional Project Management",
+            "Master of Environmental Engineering",
+            "Consultant to major enterprises"
+          ],
+          "detailsTitle": "Experience & Achievements",
+          "name": "Mr. Tran Ba Dien",
+          "role": "Chief Executive Officer"
         }
-      }
+      ],
+      "subtitle": "Experienced experts leading BK Green toward a sustainable future",
+      "title": "Leadership Team"
     },
-    "filters": {
-      "title": "Filters & Search",
-      "typeTitle": "Product Type",
-      "applicationTitle": "Application",
-      "type": ["Pumps", "Valves", "Fire Accessories", "RO Systems"],
-      "application": ["Industrial", "Residential", "Commercial"],
-      "searchPlaceholder": "Search products...",
-      "filterBtn": "Filter",
-      "helper": "Use the filters on the left and the search bar to find products matching your needs.",
-      "loading": "Loading products...",
-      "noProductsFound": "No products found."
+    "meta": {
+      "description": "Overview of BK Green: strengths, commitments, leadership, certifications, facilities",
+      "title": "About BK Green"
     },
-    "related": {
-      "title": "Related Solutions",
-      "subtitle": "Explore services and projects related to our products",
-      "servicesBtn": "View Services",
-      "projectsBtn": "View Projects"
+    "overview": {
+      "badge": "About Us",
+      "cards": {
+        "environment": {
+          "desc": "Eco-friendly",
+          "title": "Environment"
+        },
+        "growth": {
+          "desc": "Sustainable development",
+          "title": "Growth"
+        }
+      },
+      "imageAlt": "About BK Green",
+      "p1": "BK GREEN TECHNICAL JSC is founded to deliver sustainable water supply and wastewater solutions.",
+      "p2": "We began our journey with an experienced team and a long-term vision for a future where water resources are protected and managed sustainably."
     },
-    "cta": {
-      "title": "Find a Dealer",
-      "subtitle": "Contact us to find the nearest dealer and get product advice",
-      "primary": "Contact Now"
+    "strengths": {
+      "badge": "Strengths",
+      "stats": [
+        {
+          "description": "With 15+ years of experience in water engineering, our engineers are intensively trained and internationally certified. We are committed to delivering the most optimal solutions for every project.",
+          "title": "Expert Team"
+        },
+        {
+          "description": "We strictly comply with ISO 9001:2015 and apply a 3-layer quality control process. Every product and service is thoroughly inspected before delivery to customers.",
+          "title": "Quality Commitment"
+        },
+        {
+          "description": "BK Green pioneers green, environmentally friendly solutions. We use energy‑saving technologies and wastewater recycling to help protect the environment for the future.",
+          "title": "Sustainability Focus"
+        }
+      ],
+      "subtitle": "Reasons we are a trusted partner in water engineering",
+      "title": "Why Choose BK Green?"
     }
-  }
-  ,
-  "units": {
-    "m3PerDay": "m³/day",
-    "m3PerHour": "m³/h"
+  },
+  "admin": {
+    "actions": {
+      "actions": "Actions",
+      "back": "Back",
+      "cancel": "Cancel",
+      "confirmDelete": "Confirm Delete",
+      "create": "Create",
+      "delete": "Delete",
+      "download": "Download",
+      "edit": "Edit",
+      "loggingIn": "Logging in...",
+      "login": "Sign in",
+      "more": "More",
+      "restore": "Restore Original Image",
+      "save": "Save",
+      "saving": "Saving...",
+      "upload": "Upload",
+      "uploading": "Uploading...",
+      "view": "View"
+    },
+    "cancel": "Cancel",
+    "confirmDelete": "Are you sure you want to delete this item?",
+    "contactForms": {
+      "all": "All",
+      "confirmDelete": "Are you sure you want to delete this form?",
+      "errors": {
+        "deleteFailed": "Failed to delete form",
+        "fetchFailed": "Failed to fetch forms",
+        "updateFailed": "Failed to update form"
+      },
+      "filterByStatus": "Filter by status",
+      "list": "Contact Forms List",
+      "listDescription": "View and manage contact forms",
+      "loading": "Loading...",
+      "status": {
+        "cancelled": "Cancelled",
+        "completed": "Completed",
+        "inProgress": "In Progress",
+        "pending": "Pending"
+      },
+      "success": {
+        "deleted": "Deleted successfully",
+        "updated": "Updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "date": "Date",
+        "email": "Email",
+        "message": "Message",
+        "name": "Name",
+        "phone": "Phone",
+        "status": "Status"
+      },
+      "title": "Manage Contact Forms"
+    },
+    "dashboard": {
+      "description": "Use the navigation menu to manage your website content, users, and settings.",
+      "quickActions": {
+        "contactForms": {
+          "description": "View and manage contact form submissions",
+          "title": "Contact Forms"
+        },
+        "description": "Perform common administrative tasks quickly.",
+        "media": {
+          "description": "Upload and manage media files",
+          "title": "Media Library"
+        },
+        "team": {
+          "description": "Manage team members and their information",
+          "title": "Team Management"
+        },
+        "title": "Quick Actions"
+      },
+      "quickLinks": {
+        "pages": {
+          "description": "Manage website pages",
+          "title": "Pages"
+        },
+        "products": {
+          "description": "Manage products",
+          "title": "Products"
+        },
+        "projects": {
+          "description": "Manage projects",
+          "title": "Projects"
+        },
+        "services": {
+          "description": "Manage services",
+          "title": "Services"
+        }
+      },
+      "stats": {
+        "totalProducts": "Total Products",
+        "totalProjects": "Total Projects",
+        "totalServices": "Total Services",
+        "totalUsers": "Total Users"
+      },
+      "title": "Admin Dashboard",
+      "welcome": "Welcome to the admin dashboard"
+    },
+    "equipment": {
+      "addNew": "Add New Equipment",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this equipment?",
+      "create": "Create New Equipment",
+      "delete": "Delete",
+      "edit": "Edit Equipment",
+      "errors": {
+        "deleteFailed": "Failed to delete equipment",
+        "fetchFailed": "Failed to fetch equipment",
+        "imageUploadFailed": "Failed to upload image",
+        "saveFailed": "Failed to save equipment"
+      },
+      "fileUpload": {
+        "equipmentPlaceholder": "Select equipment image"
+      },
+      "form": {
+        "category": "Category",
+        "description": "Description",
+        "image": "Image",
+        "order": "Order",
+        "slug": "Slug",
+        "title": "Title"
+      },
+      "formDescription": "Fill in equipment information",
+      "list": "Equipment List",
+      "listDescription": "Manage all equipment",
+      "loading": "Loading...",
+      "save": "Save",
+      "success": {
+        "created": "Equipment created successfully",
+        "deleted": "Equipment deleted successfully",
+        "imageUploaded": "Image uploaded successfully",
+        "updated": "Equipment updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "image": "Image",
+        "order": "Order",
+        "title": "Title"
+      },
+      "title": "Manage Equipment"
+    },
+    "errors": {
+      "deleteFailed": "Failed to delete",
+      "fetchFailed": "Failed to fetch data",
+      "saveFailed": "Failed to save"
+    },
+    "fileUpload": {
+      "equipmentPlaceholder": "Select equipment image",
+      "imageLabel": "Image",
+      "imagePlaceholder": "Select image",
+      "onlyImage": "Only image files are accepted",
+      "placeholder": "Select file to upload",
+      "processPlaceholder": "Select process image",
+      "productPlaceholder": "Select product image",
+      "projectPlaceholder": "Select project image",
+      "selectImage": "Select Image",
+      "servicePlaceholder": "Select service image",
+      "sizeLimit": "File must not exceed 5MB",
+      "teamPlaceholder": "Select team image",
+      "uploadFailed": "Upload failed",
+      "uploading": "Uploading...",
+      "uploadSuccess": "Upload successful"
+    },
+    "forms": {
+      "about_image": "About Image",
+      "bio": "Bio",
+      "category": "Category",
+      "content": "Content",
+      "createdAt": "Created",
+      "description": "Description",
+      "email": "Email",
+      "favicon": "Favicon",
+      "file": "File",
+      "general": "General",
+      "hero_background": "Hero Background",
+      "image": "Image",
+      "logo": "Logo",
+      "logo_white": "White Logo",
+      "message": "Message",
+      "metaDescription": "Meta Description",
+      "metaTitle": "Meta Title",
+      "name": "Name",
+      "newPage": "New Page",
+      "password": "Password",
+      "phone": "Phone",
+      "position": "Position",
+      "price": "Price",
+      "process_background": "Process Background",
+      "size": "Size",
+      "slug": "Slug",
+      "social_media": "Social Media",
+      "status": "Status",
+      "title": "Title",
+      "type": "Type",
+      "uploadNew": "Upload New"
+    },
+    "loading": "Loading...",
+    "login": {
+      "invalidCredentials": "Invalid email or password",
+      "required": "Please enter both email and password",
+      "serverError": "An error occurred during login",
+      "subtitle": "Enter your credentials to access the admin panel",
+      "success": "Login successful",
+      "title": "Sign in to your account"
+    },
+    "media": {
+      "confirmDelete": "Are you sure you want to delete this file?",
+      "errors": {
+        "deleteFailed": "Failed to delete file",
+        "fetchFailed": "Failed to fetch files",
+        "uploadFailed": "Failed to upload file"
+      },
+      "list": "File List",
+      "listDescription": "Manage all media files",
+      "loading": "Loading...",
+      "success": {
+        "deleted": "File deleted successfully",
+        "uploaded": "File uploaded successfully"
+      },
+      "upload": "Upload File",
+      "uploadFile": "Upload File"
+    },
+    "navigation": {
+      "contactForms": "Contact Forms",
+      "dashboard": "Dashboard",
+      "equipment": "Equipment",
+      "language": "Language",
+      "logout": "Logout",
+      "main": "Main Navigation",
+      "media": "Media",
+      "pages": "Pages",
+      "process": "Process",
+      "products": "Products",
+      "projects": "Projects",
+      "services": "Services",
+      "settings": "Settings",
+      "team": "Team"
+    },
+    "no": "No",
+    "process": {
+      "addNew": "Add New Step",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this step?",
+      "create": "Create New Step",
+      "delete": "Delete",
+      "edit": "Edit Step",
+      "errors": {
+        "deleteFailed": "Failed to delete step",
+        "fetchFailed": "Failed to fetch steps",
+        "imageUploadFailed": "Failed to upload image",
+        "saveFailed": "Failed to save step"
+      },
+      "fileUpload": {
+        "processPlaceholder": "Select process image"
+      },
+      "form": {
+        "description": "Description",
+        "image": "Image",
+        "order": "Order",
+        "step": "Step Number",
+        "title": "Title"
+      },
+      "formDescription": "Fill in process step information",
+      "list": "Process Steps List",
+      "listDescription": "Manage all process steps",
+      "loading": "Loading...",
+      "save": "Save",
+      "success": {
+        "created": "Step created successfully",
+        "deleted": "Step deleted successfully",
+        "imageUploaded": "Image uploaded successfully",
+        "updated": "Step updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "image": "Image",
+        "order": "Order",
+        "step": "Step",
+        "title": "Title"
+      },
+      "title": "Manage Process"
+    },
+    "products": {
+      "addNew": "Add New Product",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this product?",
+      "create": "Create New Product",
+      "delete": "Delete",
+      "edit": "Edit Product",
+      "errors": {
+        "deleteFailed": "Failed to delete product",
+        "fetchFailed": "Failed to fetch products",
+        "imageUploadFailed": "Failed to upload image",
+        "saveFailed": "Failed to save product"
+      },
+      "fileUpload": {
+        "productPlaceholder": "Select product image"
+      },
+      "form": {
+        "category": "Category",
+        "description": "Description",
+        "featured": "Featured",
+        "images": "Images",
+        "name": "Name",
+        "order": "Order",
+        "price": "Price",
+        "slug": "Slug",
+        "specs": "Specifications"
+      },
+      "formDescription": "Fill in product information",
+      "list": "Products List",
+      "listDescription": "Manage all products",
+      "loading": "Loading...",
+      "save": "Save",
+      "success": {
+        "created": "Product created successfully",
+        "deleted": "Product deleted successfully",
+        "imageUploaded": "Image uploaded successfully",
+        "updated": "Product updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "featured": "Featured",
+        "image": "Image",
+        "name": "Name",
+        "price": "Price"
+      },
+      "title": "Manage Products",
+      "yes": "Yes"
+    },
+    "projects": {
+      "addNew": "Add New Project",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this project?",
+      "create": "Create New Project",
+      "delete": "Delete",
+      "edit": "Edit Project",
+      "errors": {
+        "deleteFailed": "Failed to delete project",
+        "fetchFailed": "Failed to fetch projects",
+        "imageUploadFailed": "Failed to upload image",
+        "saveFailed": "Failed to save project"
+      },
+      "fileUpload": {
+        "projectPlaceholder": "Select project image"
+      },
+      "form": {
+        "capacity": "Capacity",
+        "category": "Category",
+        "description": "Description",
+        "featured": "Featured",
+        "images": "Images",
+        "location": "Location",
+        "order": "Order",
+        "slug": "Slug",
+        "status": "Status",
+        "title": "Title",
+        "type": "Type",
+        "year": "Year"
+      },
+      "formDescription": "Fill in project information",
+      "list": "Projects List",
+      "listDescription": "Manage all projects",
+      "loading": "Loading...",
+      "save": "Save",
+      "success": {
+        "created": "Project created successfully",
+        "deleted": "Project deleted successfully",
+        "imageUploaded": "Image uploaded successfully",
+        "updated": "Project updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "featured": "Featured",
+        "image": "Image",
+        "location": "Location",
+        "status": "Status",
+        "title": "Title"
+      },
+      "title": "Manage Projects",
+      "yes": "Yes"
+    },
+    "save": "Save",
+    "saving": "Saving...",
+    "services": {
+      "addNew": "Add New Service",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this service?",
+      "create": "Create New Service",
+      "delete": "Delete",
+      "edit": "Edit Service",
+      "errors": {
+        "deleteFailed": "Failed to delete service",
+        "fetchFailed": "Failed to fetch services",
+        "imageUploadFailed": "Failed to upload image",
+        "saveFailed": "Failed to save service"
+      },
+      "fileUpload": {
+        "servicePlaceholder": "Select service image"
+      },
+      "form": {
+        "description": "Description",
+        "image": "Image",
+        "order": "Order",
+        "slug": "Slug",
+        "title": "Title"
+      },
+      "formDescription": "Fill in service information",
+      "list": "Services List",
+      "listDescription": "Manage all services",
+      "loading": "Loading...",
+      "save": "Save",
+      "success": {
+        "created": "Service created successfully",
+        "deleted": "Service deleted successfully",
+        "imageUploaded": "Image uploaded successfully",
+        "updated": "Service updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "image": "Image",
+        "order": "Order",
+        "title": "Title"
+      },
+      "title": "Manage Services"
+    },
+    "settings": {
+      "appearance": "Appearance",
+      "appearanceDescription": "Appearance settings",
+      "cancel": "Cancel",
+      "darkMode": "Dark Mode",
+      "emailNotifications": "Email Notifications",
+      "errors": {
+        "fetchFailed": "Failed to fetch settings",
+        "saveFailed": "Failed to save settings"
+      },
+      "favicon": "Favicon",
+      "general": "General Settings",
+      "generalDescription": "General system settings",
+      "heroBackground": "Hero Background",
+      "loading": "Loading...",
+      "logo": "Logo",
+      "mediaSettings": "Media Settings",
+      "mediaSettingsDescription": "Configure fixed images for your website",
+      "none": "None",
+      "notifications": "Notifications",
+      "notificationsDescription": "Notification settings",
+      "save": "Save Settings",
+      "security": "Security",
+      "securityDescription": "Security settings",
+      "selectFaviconPlaceholder": "Select favicon",
+      "selectHeroBackgroundPlaceholder": "Select hero background",
+      "selectLogoPlaceholder": "Select logo image",
+      "sessionTimeout": "Session Timeout",
+      "sessionTimeoutPlaceholder": "Enter timeout in minutes",
+      "siteDescription": "Site Description",
+      "siteDescriptionPlaceholder": "Enter site description",
+      "siteName": "Site Name",
+      "siteNamePlaceholder": "Enter site name",
+      "success": {
+        "saved": "Settings saved successfully"
+      },
+      "title": "Settings"
+    },
+    "success": {
+      "created": "Created successfully",
+      "deleted": "Deleted successfully",
+      "updated": "Updated successfully"
+    },
+    "table": {
+      "actions": "Actions",
+      "bio": "Bio",
+      "category": "Category",
+      "createdAt": "Created",
+      "date": "Date",
+      "description": "Description",
+      "email": "Email",
+      "featured": "Featured",
+      "image": "Image",
+      "location": "Location",
+      "message": "Message",
+      "name": "Name",
+      "order": "Order",
+      "phone": "Phone",
+      "price": "Price",
+      "size": "Size",
+      "status": "Status",
+      "step": "Step",
+      "title": "Title",
+      "type": "Type"
+    },
+    "team": {
+      "addNew": "Add New Member",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this member?",
+      "create": "Create New Member",
+      "delete": "Delete",
+      "edit": "Edit Member",
+      "errors": {
+        "deleteFailed": "Failed to delete member",
+        "fetchFailed": "Failed to fetch members",
+        "imageUploadFailed": "Failed to upload image",
+        "saveFailed": "Failed to save member"
+      },
+      "fileUpload": {
+        "teamPlaceholder": "Select team member image"
+      },
+      "form": {
+        "bio": "Bio",
+        "email": "Email",
+        "image": "Image",
+        "name": "Name",
+        "phone": "Phone",
+        "position": "Position"
+      },
+      "formDescription": "Fill in member information",
+      "list": "Team Members List",
+      "listDescription": "Manage all team members",
+      "loading": "Loading...",
+      "save": "Save",
+      "success": {
+        "created": "Member created successfully",
+        "deleted": "Member deleted successfully",
+        "imageUploaded": "Image uploaded successfully",
+        "updated": "Member updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "bio": "Bio",
+        "email": "Email",
+        "image": "Image",
+        "name": "Name",
+        "phone": "Phone",
+        "position": "Position"
+      },
+      "title": "Team Management"
+    },
+    "yes": "Yes"
   },
   "common": {
     "phone": "0931252511",
     "phoneDisplay": "+84 931 252 511"
   },
-  "admin": {
-    "dashboard": {
-      "title": "Admin Dashboard",
-      "welcome": "Welcome to the admin dashboard",
-      "description": "Use the navigation menu to manage your website content, users, and settings.",
-      "stats": {
-        "totalUsers": "Total Users",
-        "totalProjects": "Total Projects",
-        "totalServices": "Total Services",
-        "totalProducts": "Total Products"
+  "contact": {
+    "form": {
+      "description": "Fill in the information below, we will contact you as soon as possible",
+      "email": "Email *",
+      "message": "Message Content *",
+      "name": "Full Name *",
+      "phone": "Phone Number",
+      "submit": "Send Message",
+      "title": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "title": "Contact Information"
+    },
+    "location": {
+      "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+      "title": "Office Location",
+      "viewMap": "View on Google Maps"
+    },
+    "subtitle": "Contact us for the best consultation and support",
+    "title": "Contact Us"
+  },
+  "contactPage": {
+    "cta": {
+      "call": "Call Now",
+      "email": "Send Email",
+      "subtitle": "Ready to deploy a water project? Contact us today",
+      "title": "Start Your Project"
+    },
+    "faqLink": "Frequently Asked Questions",
+    "form": {
+      "company": "Company",
+      "email": "Email *",
+      "message": "Message *",
+      "name": "Full Name *",
+      "phone": "Phone",
+      "placeholder": {
+        "company": "Enter company name",
+        "email": "Enter email",
+        "message": "Enter your message...",
+        "name": "Enter full name",
+        "phone": "Enter phone number",
+        "requestType": "Select a request type"
       },
-      "quickLinks": {
-        "pages": {
-          "title": "Pages",
-          "description": "Manage website pages"
+      "requestType": "Request type *",
+      "requestTypes": [
+        "Project consulting",
+        "Product quotation",
+        "Technical support",
+        "Business partnership",
+        "Other"
+      ],
+      "submit": "Send Message",
+      "title": "Send Message"
+    },
+    "header": {
+      "subtitle": "Reach out for the best consultation and support",
+      "title": "Contact Us"
+    },
+    "info": {
+      "addressDesc": "Head office in HCMC",
+      "addressTitle": "Address",
+      "emailDesc": "Send us an email",
+      "emailTitle": "Email",
+      "hoursDesc": "Monday - Friday",
+      "hoursTitle": "Working hours",
+      "phoneDesc": "Call us for consultation",
+      "phoneTitle": "Phone"
+    },
+    "office": {
+      "city": "Ho Chi Minh City",
+      "mapPlaceholder": "Google Maps will be embedded here",
+      "title": "Office",
+      "viewMap": "View on Google Maps"
+    },
+    "support": {
+      "email": "Support email",
+      "hotline": "Support hotline",
+      "hours": "8:00 - 17:00 (Mon-Fri)",
+      "sla": "Reply within 24h",
+      "title": "Customer Support"
+    }
+  },
+  "equipment": {
+    "items": {
+      "fire": {
+        "category": "Safety",
+        "description": "Professional fire protection systems",
+        "title": "Fire Protection"
+      },
+      "pump": {
+        "category": "Main equipment",
+        "description": "Specialized pumps for water treatment systems",
+        "title": "Industrial Pumps"
+      },
+      "ro": {
+        "category": "Water treatment",
+        "description": "Industrial RO filtration equipment",
+        "title": "RO Systems"
+      },
+      "valve": {
+        "category": "Accessories",
+        "description": "Control and safety valves for water systems",
+        "title": "Industrial Valves"
+      }
+    },
+    "subtitle": "We supply high-quality equipment and products for water treatment systems",
+    "title": "Equipment & Products"
+  },
+  "footer": {
+    "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+    "company": "BK GREEN TECHNICAL JOINT STOCK COMPANY",
+    "copyright": "© 2025 BK Green. All rights reserved.",
+    "description": "Specializing in water supply, drainage construction and wastewater treatment",
+    "email": "dien.tran@bkgreen.vn",
+    "quickLinks": "Quick Links"
+  },
+  "hero": {
+    "cta": "Contact Us",
+    "subtitle": "At BK Green, we understand every customer has unique needs. We perform comprehensive assessments to deliver tailored solutions that improve water quality and optimize operational efficiency.",
+    "title": "Complete systems for your water needs"
+  },
+  "navigation": {
+    "about": "About",
+    "closeMenu": "Close menu",
+    "contact": "Contact",
+    "home": "Home",
+    "openMenu": "Open main menu",
+    "products": "Products",
+    "projects": "Projects",
+    "services": "Services"
+  },
+  "process": {
+    "loading": "Loading...",
+    "noData": "No process data available",
+    "steps": {
+      "design": {
+        "description": "Design an appropriate water treatment system",
+        "title": "System Design"
+      },
+      "installation": {
+        "description": "Construct and install the system as designed",
+        "title": "Construction & Installation"
+      },
+      "maintenance": {
+        "description": "Operate the system and perform periodic maintenance",
+        "title": "Operation & Maintenance"
+      },
+      "survey": {
+        "description": "Survey current conditions and evaluate treatment needs",
+        "title": "Survey & Assessment"
+      }
+    },
+    "subtitle": "A professional workflow from survey to operation",
+    "title": "Our Working Process"
+  },
+  "productsPage": {
+    "categories": {
+      "items": {
+        "fire": {
+          "description": "Professional fire protection equipment",
+          "products": [
+            {
+              "description": "Dedicated firefighting nozzle",
+              "name": "Water Nozzle",
+              "specs": "Diameter: 50-200 mm"
+            },
+            {
+              "description": "Automatic fire alarm system",
+              "name": "Fire Alarm System",
+              "specs": "Coverage: 1000 m²"
+            }
+          ],
+          "title": "Fire Accessories"
         },
-        "services": {
-          "title": "Services",
-          "description": "Manage services"
+        "pumps": {
+          "description": "Specialized pumps for water treatment systems",
+          "products": [
+            {
+              "description": "High‑efficiency industrial pump",
+              "name": "Industrial Pump",
+              "specs": "Flow: 50-500 m³/h"
+            },
+            {
+              "description": "Dedicated for wastewater treatment",
+              "name": "Wastewater Pump",
+              "specs": "Flow: 20-200 m³/h"
+            }
+          ],
+          "title": "Pumps"
         },
-        "projects": {
-          "title": "Projects",
-          "description": "Manage projects"
-        },
-        "products": {
-          "title": "Products",
-          "description": "Manage products"
+        "valves": {
+          "description": "High‑quality pressure and leak‑proof valves",
+          "products": [
+            {
+              "description": "Precise pressure adjustment",
+              "name": "Pressure Valve",
+              "specs": "Pressure: 0-16 bar"
+            },
+            {
+              "description": "Effective leakage prevention",
+              "name": "Leak‑proof Valve",
+              "specs": "Pressure: 0-25 bar"
+            }
+          ],
+          "title": "Valves"
         }
       },
-      "quickActions": {
-        "title": "Quick Actions",
-        "description": "Perform common administrative tasks quickly.",
-        "team": {
-          "title": "Team Management",
-          "description": "Manage team members and their information"
+      "learnMore": "Learn More",
+      "title": "Product Categories"
+    },
+    "cta": {
+      "primary": "Contact Now",
+      "subtitle": "Contact us to find the nearest dealer and get product advice",
+      "title": "Find a Dealer"
+    },
+    "featured": {
+      "detailBtn": "Details",
+      "products": [
+        {
+          "category": "Pumps",
+          "description": "High‑efficiency industrial pump with energy saving",
+          "name": "Industrial Pump BK-P100",
+          "specs": "Flow: 100 m³/h | Head: 50 m"
         },
-        "media": {
-          "title": "Media Library",
-          "description": "Upload and manage media files"
+        {
+          "category": "Valves",
+          "description": "Accurate pressure control with high durability",
+          "name": "Pressure Valve BK-V50",
+          "specs": "Pressure: 0-16 bar | Temp: -10°C to 80°C"
         },
-        "contactForms": {
-          "title": "Contact Forms",
-          "description": "View and manage contact form submissions"
+        {
+          "category": "RO Systems",
+          "description": "Industrial RO water filtration system",
+          "name": "RO System BK-RO2000",
+          "specs": "Capacity: 2000 L/h | Recovery: 75%"
         }
-      }
+      ],
+      "title": "Featured Products"
     },
-    "navigation": {
-      "main": "Main Navigation",
-      "dashboard": "Dashboard",
-      "pages": "Pages",
-      "services": "Services",
-      "projects": "Projects",
-      "products": "Products",
-      "equipment": "Equipment",
-      "process": "Process",
-      "team": "Team",
-      "media": "Media",
-      "contactForms": "Contact Forms",
-      "settings": "Settings",
-      "logout": "Logout",
-      "language": "Language"
+    "filters": {
+      "application": [
+        "Industrial",
+        "Residential",
+        "Commercial"
+      ],
+      "applicationTitle": "Application",
+      "filterBtn": "Filter",
+      "helper": "Use the filters on the left and the search bar to find products matching your needs.",
+      "loading": "Loading products...",
+      "noProductsFound": "No products found.",
+      "searchPlaceholder": "Search products...",
+      "title": "Filters & Search",
+      "type": [
+        "Pumps",
+        "Valves",
+        "Fire Accessories",
+        "RO Systems"
+      ],
+      "typeTitle": "Product Type"
     },
-    "login": {
-      "title": "Sign in to your account",
-      "subtitle": "Enter your credentials to access the admin panel",
-      "required": "Please enter both email and password",
-      "invalidCredentials": "Invalid email or password",
-      "success": "Login successful",
-      "serverError": "An error occurred during login"
+    "header": {
+      "subtitle": "BK Green supplies high-quality products: pumps, valves, accessories and RO systems from trusted partners.",
+      "title": "Our Products"
     },
-    "projects": {
-      "title": "Manage Projects",
-      "addNew": "Add New Project",
-      "edit": "Edit Project",
-      "create": "Create New Project",
-      "list": "Projects List",
-      "listDescription": "Manage all projects",
-      "formDescription": "Fill in project information",
-      "form": {
-        "slug": "Slug",
-        "title": "Title",
-        "description": "Description",
-        "category": "Category",
-        "location": "Location",
-        "type": "Type",
-        "status": "Status",
-        "year": "Year",
-        "capacity": "Capacity",
-        "order": "Order",
-        "featured": "Featured",
-        "images": "Images"
-      },
-      "table": {
-        "image": "Image",
-        "title": "Title",
-        "location": "Location",
-        "status": "Status",
-        "featured": "Featured",
-        "actions": "Actions"
-      },
-      "yes": "Yes",
-      "cancel": "Cancel",
-      "save": "Save",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this project?",
-      "success": {
-        "created": "Project created successfully",
-        "updated": "Project updated successfully",
-        "deleted": "Project deleted successfully",
-        "imageUploaded": "Image uploaded successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch projects",
-        "saveFailed": "Failed to save project",
-        "deleteFailed": "Failed to delete project",
-        "imageUploadFailed": "Failed to upload image"
-      }
+    "related": {
+      "projectsBtn": "View Projects",
+      "servicesBtn": "View Services",
+      "subtitle": "Explore services and projects related to our products",
+      "title": "Related Solutions"
+    }
+  },
+  "projectsPage": {
+    "all": {
+      "detail": "Details",
+      "title": "All Projects"
     },
-    "services": {
-      "title": "Manage Services",
-      "addNew": "Add New Service",
-      "edit": "Edit Service",
-      "create": "Create New Service",
-      "list": "Services List",
-      "listDescription": "Manage all services",
-      "formDescription": "Fill in service information",
-      "form": {
-        "slug": "Slug",
-        "title": "Title",
-        "description": "Description",
-        "order": "Order",
-        "image": "Image"
-      },
-      "table": {
-        "image": "Image",
-        "title": "Title",
-        "order": "Order",
-        "actions": "Actions"
-      },
-      "cancel": "Cancel",
-      "save": "Save",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this service?",
-      "success": {
-        "created": "Service created successfully",
-        "updated": "Service updated successfully",
-        "deleted": "Service deleted successfully",
-        "imageUploaded": "Image uploaded successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch services",
-        "saveFailed": "Failed to save service",
-        "deleteFailed": "Failed to delete service",
-        "imageUploadFailed": "Failed to upload image"
-      }
+    "cta": {
+      "primary": "Contact Now",
+      "secondary": "View Services",
+      "subtitle": "Have a project to consult? Contact us for professional support",
+      "title": "Submit Your Project"
     },
-    "products": {
-      "title": "Manage Products",
-      "addNew": "Add New Product",
-      "edit": "Edit Product",
-      "create": "Create New Product",
-      "list": "Products List",
-      "listDescription": "Manage all products",
-      "formDescription": "Fill in product information",
-      "form": {
-        "slug": "Slug",
-        "name": "Name",
-        "description": "Description",
-        "category": "Category",
-        "price": "Price",
-        "specs": "Specifications",
-        "order": "Order",
-        "featured": "Featured",
-        "images": "Images"
-      },
-      "table": {
-        "image": "Image",
-        "name": "Name",
-        "price": "Price",
-        "featured": "Featured",
-        "actions": "Actions"
-      },
-      "yes": "Yes",
-      "cancel": "Cancel",
-      "save": "Save",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this product?",
-      "success": {
-        "created": "Product created successfully",
-        "updated": "Product updated successfully",
-        "deleted": "Product deleted successfully",
-        "imageUploaded": "Image uploaded successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch products",
-        "saveFailed": "Failed to save product",
-        "deleteFailed": "Failed to delete product",
-        "imageUploadFailed": "Failed to upload image"
-      }
+    "featured": {
+      "title": "Featured Projects",
+      "viewDetail": "View Details"
+    },
+    "header": {
+      "subtitle": "BK Green is launching its first projects, bringing clean water solutions to the community.",
+      "title": "Projects"
+    },
+    "stats": {
+      "active": "Ongoing projects",
+      "capacity": "Design capacity",
+      "completed": "Completed projects",
+      "service": "Professional service"
+    }
+  },
+  "services": {
+    "consulting": {
+      "description": "Consulting and designing optimal systems for each project",
+      "title": "Technical Consulting"
+    },
+    "electrical": {
+      "description": "Provide solutions and implement electrical cabinet and SCADA systems",
+      "title": "Electrical Cabinets & SCADA"
     },
     "equipment": {
-      "title": "Manage Equipment",
-      "addNew": "Add New Equipment",
-      "edit": "Edit Equipment",
-      "create": "Create New Equipment",
-      "list": "Equipment List",
-      "listDescription": "Manage all equipment",
-      "formDescription": "Fill in equipment information",
-      "form": {
-        "slug": "Slug",
-        "title": "Title",
-        "description": "Description",
-        "category": "Category",
-        "order": "Order",
-        "image": "Image"
+      "description": "Trade & distribute equipment: Pumps, Valves, Water and Fire Protection accessories",
+      "title": "Fire Equipment"
+    },
+    "fire": {
+      "description": "Professional fire protection and firefighting equipment",
+      "title": "Fire Protection Equipment"
+    },
+    "operation": {
+      "description": "Water system operation and maintenance services",
+      "title": "System Operation"
+    },
+    "ro": {
+      "description": "Provide solutions & implement RO water treatment systems",
+      "title": "RO Systems"
+    },
+    "subtitle": "We provide end-to-end services from design and construction to operation of water treatment systems",
+    "title": "Our Services",
+    "wastewater": {
+      "description": "Provide solutions & build wastewater treatment systems for buildings and industrial parks",
+      "title": "Wastewater Treatment"
+    }
+  },
+  "servicesPage": {
+    "cases": {
+      "0": {
+        "description": "2000m³/day wastewater treatment system for an industrial park",
+        "industry": "Industrial",
+        "results": [
+          "Reduce 95% pollution",
+          "Save 30% cost",
+          "Stable operation"
+        ],
+        "title": "Industrial Park Project"
       },
-      "table": {
-        "image": "Image",
-        "title": "Title",
-        "order": "Order",
-        "actions": "Actions"
+      "1": {
+        "description": "Industrial RO system for a clean water plant",
+        "industry": "Water supply",
+        "results": [
+          "Capacity 1000m³/h",
+          "High water quality",
+          "Easy maintenance"
+        ],
+        "title": "Clean Water Plant"
       },
-      "cancel": "Cancel",
-      "save": "Save",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this equipment?",
-      "success": {
-        "created": "Equipment created successfully",
-        "updated": "Equipment updated successfully",
-        "deleted": "Equipment deleted successfully",
-        "imageUploaded": "Image uploaded successfully"
+      "2": {
+        "description": "Fire protection and water treatment systems for high-rise buildings",
+        "industry": "Commercial",
+        "results": [
+          "Absolute safety",
+          "Regulation compliance",
+          "Reasonable cost"
+        ],
+        "title": "Commercial Building"
       },
-      "errors": {
-        "fetchFailed": "Failed to fetch equipment",
-        "saveFailed": "Failed to save equipment",
-        "deleteFailed": "Failed to delete equipment",
-        "imageUploadFailed": "Failed to upload image"
-      }
+      "resultsTitle": "Achieved results:",
+      "subtitle": "Highlighted projects and achieved results",
+      "title": "Case Studies"
+    },
+    "catalog": {
+      "learnMore": "Learn More",
+      "title": "Service Catalog"
+    },
+    "cta": {
+      "primary": "Contact Now",
+      "secondary": "View Projects",
+      "subtitle": "Contact us for free consultation and a detailed quote",
+      "title": "Need Service Consultation?"
+    },
+    "faq": {
+      "items": [
+        {
+          "a": "It depends on project size, typically 2-6 months for small to medium projects.",
+          "q": "How long does construction usually take?"
+        },
+        {
+          "a": "Yes, we provide periodic maintenance and 24/7 technical support.",
+          "q": "Does BK Green support maintenance after completion?"
+        },
+        {
+          "a": "Costs are based on project size, technology used, and specific customer requirements.",
+          "q": "How are service costs calculated?"
+        }
+      ],
+      "subtitle": "Answers to common questions about our services",
+      "title": "Frequently Asked Questions"
+    },
+    "filters": {
+      "industry": [
+        "Residential",
+        "Industrial"
+      ],
+      "type": [
+        "Wastewater",
+        "Water supply"
+      ]
+    },
+    "header": {
+      "subtitle": "BK Green provides wastewater treatment, water supply and RO systems, starting with small projects and expanding services across Vietnam.",
+      "title": "Our Services"
     },
     "process": {
-      "title": "Manage Process",
-      "addNew": "Add New Step",
-      "edit": "Edit Step",
-      "create": "Create New Step",
-      "list": "Process Steps List",
-      "listDescription": "Manage all process steps",
-      "formDescription": "Fill in process step information",
-      "form": {
-        "step": "Step Number",
-        "title": "Title",
-        "description": "Description",
-        "order": "Order",
-        "image": "Image"
+      "badge": "Professional process",
+      "stepLabel": "Step {step}",
+      "steps": [
+        {
+          "description": "Assess current conditions and analyze project-specific needs",
+          "title": "Survey & Analysis"
+        },
+        {
+          "description": "Detail system design and implementation planning",
+          "title": "Design & Planning"
+        },
+        {
+          "description": "Professional construction with experienced technical team",
+          "title": "Construction & Installation"
+        },
+        {
+          "description": "Support operation and periodic system maintenance",
+          "title": "Operation & Maintenance"
+        }
+      ],
+      "subtitle": "A professional workflow from survey to operation, ensuring quality and efficiency",
+      "title": "Project Process"
+    },
+    "services": {
+      "electrical": {
+        "description": "Provide automation solutions for new projects.",
+        "features": [
+          "Control cabinet design",
+          "Modern SCADA systems",
+          "Process automation",
+          "Remote monitoring and control"
+        ]
       },
-      "table": {
-        "step": "Step",
-        "image": "Image",
-        "title": "Title",
-        "order": "Order",
-        "actions": "Actions"
+      "equipment": {
+        "description": "Distribute pumps, valves, water accessories and fire protection equipment.",
+        "features": [
+          "Specialized pumps",
+          "Quality valves and accessories",
+          "Modern fire protection equipment",
+          "Equipment selection consulting"
+        ]
       },
-      "cancel": "Cancel",
-      "save": "Save",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this step?",
-      "success": {
-        "created": "Step created successfully",
-        "updated": "Step updated successfully",
-        "deleted": "Step deleted successfully",
-        "imageUploaded": "Image uploaded successfully"
+      "operation": {
+        "description": "Operation services for wastewater and water supply, in development.",
+        "features": [
+          "Continuous system operation",
+          "Periodic maintenance",
+          "Remote monitoring",
+          "Detailed reporting"
+        ]
       },
-      "errors": {
-        "fetchFailed": "Failed to fetch steps",
-        "saveFailed": "Failed to save step",
-        "deleteFailed": "Failed to delete step",
-        "imageUploadFailed": "Failed to upload image"
+      "ro": {
+        "description": "Implement RO water treatment systems with modern technology.",
+        "features": [
+          "Optimize RO system design",
+          "Professional installation",
+          "Maintenance and component replacement",
+          "Performance optimization"
+        ]
+      },
+      "wastewater": {
+        "description": "Provide solutions and construction for buildings and industrial parks in early-stage projects.",
+        "features": [
+          "Design wastewater treatment systems",
+          "Professional construction and installation",
+          "Operate and maintain systems",
+          "Deep technical consulting"
+        ]
       }
     },
-    "contactForms": {
-      "title": "Manage Contact Forms",
-      "list": "Contact Forms List",
-      "listDescription": "View and manage contact forms",
-      "filterByStatus": "Filter by status",
-      "all": "All",
-      "status": {
-        "pending": "Pending",
-        "inProgress": "In Progress",
-        "completed": "Completed",
-        "cancelled": "Cancelled"
+    "support": {
+      "items": [
+        {
+          "description": "Technical team supports 24/7 for all issues",
+          "title": "24/7 Support"
+        },
+        {
+          "description": "Comprehensive warranty for all equipment and systems",
+          "title": "Long-term Warranty"
+        },
+        {
+          "description": "Train staff to operate and maintain the system",
+          "title": "Operation Training"
+        }
+      ],
+      "subtitle": "Comprehensive support commitment for customers",
+      "title": "Warranty & Support"
+    },
+    "sustainability": {
+      "subtitle": "We are building energy-saving solutions in initial projects, aiming for a sustainable water future in Vietnam.",
+      "title": "Towards a Green Future"
+    },
+    "technologies": {
+      "items": {
+        "fire": {
+          "description": "Professional fire protection systems",
+          "features": [
+            "Early detection",
+            "Effective firefighting",
+            "Standards compliance"
+          ],
+          "title": "Fire Protection Equipment"
+        },
+        "ro": {
+          "description": "Advanced reverse osmosis water filtration technology",
+          "features": [
+            "High recovery rate",
+            "Energy saving",
+            "Stable water quality"
+          ],
+          "title": "RO Systems"
+        },
+        "scada": {
+          "description": "Remote monitoring and control systems",
+          "features": [
+            "24/7 monitoring",
+            "Automatic control",
+            "Detailed reporting"
+          ],
+          "title": "SCADA & Automation"
+        }
       },
-      "table": {
-        "name": "Name",
-        "email": "Email",
-        "phone": "Phone",
-        "message": "Message",
-        "status": "Status",
-        "date": "Date",
-        "actions": "Actions"
-      },
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this form?",
-      "success": {
-        "updated": "Updated successfully",
-        "deleted": "Deleted successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch forms",
-        "updateFailed": "Failed to update form",
-        "deleteFailed": "Failed to delete form"
-      }
-    },
-    "actions": {
-      "create": "Create",
-      "edit": "Edit",
-      "delete": "Delete",
-      "save": "Save",
-      "cancel": "Cancel",
-      "back": "Back",
-      "upload": "Upload",
-      "view": "View",
-      "confirmDelete": "Confirm Delete",
-      "login": "Sign in",
-      "loggingIn": "Logging in...",
-      "actions": "Actions",
-      "download": "Download",
-      "restore": "Restore Original Image",
-      "uploading": "Uploading...",
-      "saving": "Saving...",
-      "more": "More"
-    },
-    "forms": {
-      "title": "Title",
-      "description": "Description",
-      "content": "Content",
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "message": "Message",
-      "status": "Status",
-      "category": "Category",
-      "price": "Price",
-      "image": "Image",
-      "file": "File",
-      "position": "Position",
-      "bio": "Bio",
-      "slug": "Slug",
-      "metaTitle": "Meta Title",
-      "metaDescription": "Meta Description",
-      "password": "Password",
-      "createdAt": "Created",
-      "type": "Type",
-      "size": "Size",
-      "general": "General",
-      "logo": "Logo",
-      "logo_white": "White Logo",
-      "hero_background": "Hero Background",
-      "process_background": "Process Background",
-      "favicon": "Favicon",
-      "social_media": "Social Media",
-      "about_image": "About Image",
-      "uploadNew": "Upload New",
-      "newPage": "New Page"
-    },
-    "errors": {
-      "required": "This field is required",
-      "invalidEmail": "Invalid email address",
-      "uploadFailed": "Upload failed",
-      "saveFailed": "Save failed",
-      "deleteFailed": "Delete failed",
-      "loginFailed": "Login failed",
-      "fetchFailed": "Failed to fetch data",
-      "noFileSelected": "No file selected",
-      "restoreFailed": "Restore failed",
-      "invalidData": "Invalid data provided",
-      "fetchContactFormsFailed": "Failed to fetch contact forms",
-      "updateContactFormFailed": "Failed to update contact form",
-      "deleteContactFormFailed": "Failed to delete contact form"
-    },
-    "fileUpload": {
-      "imageLabel": "Image",
-      "selectImage": "Select Image",
-      "uploading": "Uploading...",
-      "placeholder": "Select file to upload",
-      "imagePlaceholder": "Select image",
-      "servicePlaceholder": "Select service image",
-      "projectPlaceholder": "Select project image",
-      "productPlaceholder": "Select product image",
-      "teamPlaceholder": "Select team image",
-      "processPlaceholder": "Select process image",
-      "equipmentPlaceholder": "Select equipment image",
-      "onlyImage": "Only image files are accepted",
-      "sizeLimit": "File must not exceed 5MB",
-      "uploadSuccess": "Upload successful",
-      "uploadFailed": "Upload failed"
-    },
-    "success": {
-      "saved": "Saved successfully",
-      "deleted": "Deleted successfully",
-      "uploaded": "Uploaded successfully",
-      "login": "Login successful",
-      "restored": "Image restored successfully"
-    },
-    "saving": "Saving...",
-    "media": {
-      "title": "Media Library",
-      "list": "File List",
-      "listDescription": "Manage all media files",
-      "upload": "Upload File",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this file?",
-      "success": {
-        "uploaded": "File uploaded successfully",
-        "deleted": "File deleted successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch files",
-        "uploadFailed": "Failed to upload file",
-        "deleteFailed": "Failed to delete file"
-      }
-    },
-    "team": {
-      "title": "Team Management",
-      "addNew": "Add New Member",
-      "edit": "Edit Member",
-      "create": "Create New Member",
-      "list": "Team Members List",
-      "listDescription": "Manage all team members",
-      "formDescription": "Fill in member information",
-      "form": {
-        "name": "Name",
-        "position": "Position",
-        "bio": "Bio",
-        "email": "Email",
-        "phone": "Phone",
-        "image": "Image"
-      },
-      "table": {
-        "image": "Image",
-        "name": "Name",
-        "position": "Position",
-        "email": "Email",
-        "phone": "Phone",
-        "actions": "Actions"
-      },
-      "cancel": "Cancel",
-      "save": "Save",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this member?",
-      "success": {
-        "created": "Member created successfully",
-        "updated": "Member updated successfully",
-        "deleted": "Member deleted successfully",
-        "imageUploaded": "Image uploaded successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch members",
-        "saveFailed": "Failed to save member",
-        "deleteFailed": "Failed to delete member",
-        "imageUploadFailed": "Failed to upload image"
-      }
-    },
-    "settings": {
-      "title": "Settings",
-      "general": "General Settings",
-      "generalDescription": "General system settings",
-      "appearance": "Appearance",
-      "appearanceDescription": "Appearance settings",
-      "security": "Security",
-      "securityDescription": "Security settings",
-      "notifications": "Notifications",
-      "notificationsDescription": "Notification settings",
-      "save": "Save Settings",
-      "cancel": "Cancel",
-      "loading": "Loading...",
-      "success": {
-        "saved": "Settings saved successfully"
-      },
-      "errors": {
-        "saveFailed": "Failed to save settings",
-        "fetchFailed": "Failed to fetch settings"
-      },
-      "siteName": "Site Name",
-      "siteNamePlaceholder": "Enter site name",
-      "siteDescription": "Site Description",
-      "siteDescriptionPlaceholder": "Enter site description",
-      "darkMode": "Dark Mode",
-      "sessionTimeout": "Session Timeout",
-      "sessionTimeoutPlaceholder": "Enter timeout in minutes",
-      "emailNotifications": "Email Notifications",
-      "mediaSettingsDescription": "Configure fixed images for your website",
-      "logo": "Logo",
-      "selectLogoPlaceholder": "Select logo image",
-      "heroBackground": "Hero Background",
-      "selectHeroBackgroundPlaceholder": "Select hero background",
-      "favicon": "Favicon",
-      "selectFaviconPlaceholder": "Select favicon",
-      "none": "None"
-    },
-    "media": {
-      "uploadFile": "Upload File",
-      "list": "File List",
-      "listDescription": "Manage all media files",
-      "upload": "Upload File",
-      "loading": "Loading...",
-      "confirmDelete": "Are you sure you want to delete this file?",
-      "success": {
-        "uploaded": "File uploaded successfully",
-        "deleted": "File deleted successfully"
-      },
-      "errors": {
-        "fetchFailed": "Failed to fetch files",
-        "uploadFailed": "Failed to upload file",
-        "deleteFailed": "Failed to delete file"
-      }
-    },
-    "settings": {
-      "title": "Settings",
-      "general": "General Settings",
-      "generalDescription": "General system settings",
-      "appearance": "Appearance",
-      "appearanceDescription": "Appearance settings",
-      "security": "Security",
-      "securityDescription": "Security settings",
-      "notifications": "Notifications",
-      "notificationsDescription": "Notification settings",
-      "save": "Save Settings",
-      "cancel": "Cancel",
-      "loading": "Loading...",
-      "success": {
-        "saved": "Settings saved successfully"
-      },
-      "errors": {
-        "saveFailed": "Failed to save settings",
-        "fetchFailed": "Failed to fetch settings"
-      },
-      "siteName": "Site Name",
-      "siteNamePlaceholder": "Enter site name",
-      "siteDescription": "Site Description",
-      "siteDescriptionPlaceholder": "Enter site description",
-      "darkMode": "Dark Mode",
-      "sessionTimeout": "Session Timeout",
-      "sessionTimeoutPlaceholder": "Enter timeout in minutes",
-      "emailNotifications": "Email Notifications",
-      "mediaSettings": "Media Settings",
-      "mediaSettingsDescription": "Configure fixed images for your website",
-      "logo": "Logo",
-      "selectLogoPlaceholder": "Select logo image",
-      "heroBackground": "Hero Background",
-      "selectHeroBackgroundPlaceholder": "Select hero background",
-      "favicon": "Favicon",
-      "selectFaviconPlaceholder": "Select favicon",
-      "none": "None"
-    },
-    "table": {
-      "image": "Image",
-      "name": "Name",
-      "title": "Title",
-      "order": "Order",
-      "actions": "Actions",
-      "bio": "Bio",
-      "phone": "Phone",
-      "email": "Email",
-      "location": "Location",
-      "status": "Status",
-      "featured": "Featured",
-      "price": "Price",
-      "category": "Category",
-      "step": "Step",
-      "description": "Description",
-      "message": "Message",
-      "date": "Date"
-    },
-    "yes": "Yes",
-    "no": "No",
-    "cancel": "Cancel",
-    "save": "Save",
-    "loading": "Loading...",
-    "confirmDelete": "Are you sure you want to delete this item?",
-    "success": {
-      "updated": "Updated successfully",
-      "deleted": "Deleted successfully",
-      "created": "Created successfully"
-    },
-    "errors": {
-      "fetchFailed": "Failed to fetch data",
-      "saveFailed": "Failed to save",
-      "deleteFailed": "Failed to delete"
+      "subtitle": "Applying advanced technologies and modern equipment to every project",
+      "title": "Technologies Used"
     }
+  },
+  "units": {
+    "m3PerDay": "m³/day",
+    "m3PerHour": "m³/h"
   }
 }

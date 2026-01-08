@@ -1,1173 +1,1353 @@
 {
-  "navigation": {
-    "home": "Accueil",
-    "about": "À propos",
-    "services": "Services",
-    "products": "Produits",
-    "projects": "Projets",
-    "contact": "Contact",
-    "openMenu": "Ouvrir le menu principal",
-    "closeMenu": "Fermer le menu"
-  },
-  "process": {
-    "title": "Notre Processus de Travail",
-    "subtitle": "Un flux professionnel du relevé à l'exploitation",
-    "loading": "Chargement...",
-    "noData": "Aucune donnée de processus disponible",
-    "steps": {
-      "survey": {"title": "Étude & Évaluation", "description": "Étudier l'état actuel et évaluer les besoins de traitement"},
-      "design": {"title": "Conception du Système", "description": "Concevoir un système de traitement de l'eau approprié"},
-      "installation": {"title": "Construction & Installation", "description": "Construire et installer le système selon la conception"},
-      "maintenance": {"title": "Exploitation & Maintenance", "description": "Exploiter le système et assurer la maintenance périodique"}
-    }
-  },
-  "equipment": {
-    "title": "Équipements & Produits",
-    "subtitle": "Nous fournissons des équipements et produits de haute qualité pour les systèmes de traitement de l'eau",
-    "items": {
-      "pump": {"title": "Pompes industrielles", "description": "Pompes spécialisées pour les systèmes de traitement de l'eau", "category": "Équipement principal"},
-      "valve": {"title": "Vannes industrielles", "description": "Vannes de contrôle et de sécurité pour systèmes d'eau", "category": "Accessoires"},
-      "fire": {"title": "Protection incendie", "description": "Systèmes professionnels de protection incendie", "category": "Sécurité"},
-      "ro": {"title": "Systèmes RO", "description": "Équipements de filtration RO industriels", "category": "Traitement de l'eau"}
-    }
-  },
-  "hero": {
-    "title": "Systèmes complets pour vos besoins en eau",
-    "subtitle": "Chez BK Green, nous savons que chaque client a des besoins uniques. Nous réalisons des évaluations complètes pour fournir des solutions sur mesure améliorant la qualité de l'eau et l'efficacité opérationnelle.",
-    "cta": "Contactez-nous"
-  },
-  "services": {
-    "title": "Nos Services",
-    "subtitle": "Nous proposons des services de bout en bout, de la conception et la construction à l'exploitation des systèmes de traitement de l'eau",
-    "wastewater": {
-      "title": "Traitement des Eaux Usées",
-      "description": "Fournir des solutions et réaliser des systèmes de traitement des eaux usées pour bâtiments et parcs industriels"
-    },
-    "ro": {
-      "title": "Systèmes RO",
-      "description": "Fournir des solutions et mettre en œuvre des systèmes RO"
-    },
-    "electrical": {
-      "title": "Armoires Électriques & SCADA",
-      "description": "Fournir des solutions et mettre en place des armoires électriques et des systèmes SCADA"
-    },
-    "equipment": {
-      "title": "Équipements Incendie",
-      "description": "Commerce & distribution d'équipements : Pompes, Vannes, Accessoires eau et protection incendie"
-    },
-    "fire": {
-      "title": "Équipement de Protection Incendie",
-      "description": "Équipement professionnel de protection et de lutte contre l'incendie"
-    },
-    "operation": {
-      "title": "Exploitation du Système",
-      "description": "Services d'exploitation et de maintenance des systèmes d'eau"
-    },
-    "consulting": {
-      "title": "Conseil Technique",
-      "description": "Conseil et conception de systèmes optimaux pour chaque projet"
-    }
-  },
-  "contact": {
-    "title": "Contactez-nous",
-    "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support",
-    "form": {
-      "title": "Envoyer un Message",
-      "description": "Remplissez les informations ci-dessous, nous vous contacterons dès que possible",
-      "name": "Nom Complet *",
-      "email": "Email *",
-      "phone": "Numéro de Téléphone",
-      "message": "Contenu du Message *",
-      "submit": "Envoyer le Message"
-    },
-    "info": {
-      "title": "Informations de Contact",
-      "phone": "Téléphone",
-      "email": "Email",
-      "address": "Adresse"
-    },
-    "location": {
-      "title": "Emplacement du Bureau",
-      "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
-      "viewMap": "Voir sur Google Maps"
-    }
-  },
-  "footer": {
-    "quickLinks": "Liens rapides",
-    "company": "SOCIÉTÉ PAR ACTIONS TECHNIQUE BK GREEN",
-    "description": "Spécialisée dans la construction d'approvisionnement en eau, de drainage et de traitement des eaux usées",
-    "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
-    "email": "dien.tran@bkgreen.vn",
-    "copyright": "© 2025 BK Green. Tous droits réservés."
-  },
   "about": {
-    "title": "À propos de BK Green",
+    "features": {
+      "expertise": {
+        "description": "Ingénieurs avec des connaissances approfondies et une expérience pratique en traitement de l'eau",
+        "title": "Grande Expertise"
+      },
+      "quality": {
+        "description": "Toujours placer la qualité et la satisfaction client au premier plan",
+        "title": "Engagement Qualité"
+      },
+      "team": {
+        "description": "Personnel jeune et dynamique avec un fort esprit de croissance continue",
+        "title": "Équipe Enthousiaste"
+      },
+      "technology": {
+        "description": "Application de solutions technologiques modernes et d'équipements de haute qualité",
+        "title": "Technologie Avancée"
+      }
+    },
+    "imageAlt": "Entreprise BK Green - Équipe d'ingénieurs professionnels",
     "p1": "BK GREEN TECHNICAL JOINT STOCK COMPANY est une entreprise jeune et dynamique spécialisée dans les projets d'approvisionnement en eau, de drainage et de traitement des eaux usées.",
     "p2": "Avec une équipe d'ingénieurs jeunes, enthousiastes et hautement qualifiés, nous apportons une réelle valeur aux clients grâce à la technologie moderne et à un service dédié.",
     "p3": "Avec la devise ‘Créer une réelle valeur’, BK Green apprend, se développe et applique en continu des solutions d'ingénierie avancées pour protéger l'environnement et offrir des solutions durables à la communauté.",
-    "imageAlt": "Entreprise BK Green - Équipe d'ingénieurs professionnels",
-    "features": {
-      "expertise": {
-        "title": "Grande Expertise",
-        "description": "Ingénieurs avec des connaissances approfondies et une expérience pratique en traitement de l'eau"
-      },
-      "technology": {
-        "title": "Technologie Avancée",
-        "description": "Application de solutions technologiques modernes et d'équipements de haute qualité"
-      },
-      "team": {
-        "title": "Équipe Enthousiaste",
-        "description": "Personnel jeune et dynamique avec un fort esprit de croissance continue"
-      },
-      "quality": {
-        "title": "Engagement Qualité",
-        "description": "Toujours placer la qualité et la satisfaction client au premier plan"
-      }
-    }
-  }
-  ,
+    "title": "À propos de BK Green"
+  },
   "aboutPage": {
-    "meta": {
-      "title": "À propos",
-      "description": "Présentation de BK Green : atouts, engagements, direction, certifications, infrastructures"
-    },
-    "overview": {
-      "badge": "À propos de nous",
-      "imageAlt": "À propos de BK Green",
-      "cards": {
-        "growth": {"title": "Croissance", "desc": "Développement durable"},
-        "environment": {"title": "Environnement", "desc": "Éco-responsable"}
-      },
-      "p1": "BK GREEN TECHNICAL JSC est fondée pour offrir des solutions durables d'eau potable et de traitement des eaux usées.",
-      "p2": "Nous avons commencé notre parcours avec une équipe expérimentée et une vision à long terme pour un avenir où l'eau est protégée et gérée de manière durable."
-    },
-    "strengths": {
-      "badge": "Atouts",
-      "title": "Pourquoi choisir BK Green ?",
-      "subtitle": "Raisons pour lesquelles nous sommes un partenaire de confiance",
-      "stats": [
-        {"title": "Équipe d'experts", "description": "Avec plus de 15 ans d'expérience en ingénierie de l'eau, nos ingénieurs sont formés intensivement et certifiés à l'international. Nous nous engageons à fournir les solutions les plus optimales pour chaque projet."},
-        {"title": "Engagement qualité", "description": "Nous respectons strictement la norme ISO 9001:2015 et appliquons un processus de contrôle qualité en 3 niveaux. Chaque produit et service est rigoureusement vérifié avant livraison aux clients."},
-        {"title": "Focus durabilité", "description": "BK Green est pionnier des solutions vertes et respectueuses de l'environnement. Nous utilisons des technologies économes en énergie et le recyclage des eaux usées pour contribuer à la protection de l'environnement."}
-      ]
+    "certifications": {
+      "badge": "Certifications",
+      "items": [
+        {
+          "description": "Conforme aux normes internationales de qualité et de sécurité",
+          "title": "Certification de Qualité"
+        },
+        {
+          "description": "Ingénieurs formés intensivement avec licences professionnelles",
+          "title": "Diplômes Techniques"
+        },
+        {
+          "description": "Licences complètes d'activité et d'environnement",
+          "title": "Licences d'Exploitation"
+        }
+      ],
+      "subtitle": "Assurer la qualité et la conformité aux normes internationales",
+      "title": "Certifications & Diplômes"
     },
     "commit": {
       "badge": "Engagement",
-      "title": "Nos Engagements",
-      "subtitle": "Protéger l'eau et optimiser l'énergie avec des solutions modernes",
       "cards": {
-        "tech": {"title": "Ingénierie & Technologie", "desc": "Application de technologies avancées et expertise approfondie"},
-        "env": {"title": "Environnement Durable", "desc": "Engagement pour la protection de l'environnement et la durabilité"},
-        "water": {"title": "Solutions d'Eau", "desc": "Eau potable, traitement des eaux usées et solutions complètes"}
-      },
-      "legend": {"tech": "Ingénierie & Technologie", "env": "Environnement Durable", "water": "Solutions d'Eau Complètes"}
-    }
-    ,
-    "leadership": {
-      "badge": "Direction",
-      "title": "Équipe de Direction",
-      "subtitle": "Des experts expérimentés conduisent BK Green vers un avenir durable",
-      "expertLabel": "Expert de premier plan",
-      "members": [
-        {
-          "name": "M. Tran Ba Dien",
-          "role": "Directeur Général",
-          "description": "Ingénieur environnement avec 15+ ans en traitement des eaux usées et gestion de projets",
-          "detailsTitle": "Expérience & Réalisations",
-          "details": [
-            "15+ ans en traitement des eaux usées",
-            "Gestion de 50+ projets de grande envergure",
-            "Certification PMP - Gestion de projet professionnelle",
-            "Master en ingénierie de l'environnement",
-            "Consultant pour de grandes entreprises"
-          ]
+        "env": {
+          "desc": "Engagement pour la protection de l'environnement et la durabilité",
+          "title": "Environnement Durable"
+        },
+        "tech": {
+          "desc": "Application de technologies avancées et expertise approfondie",
+          "title": "Ingénierie & Technologie"
+        },
+        "water": {
+          "desc": "Eau potable, traitement des eaux usées et solutions complètes",
+          "title": "Solutions d'Eau"
         }
-      ]
-    }
-    ,
-    "certifications": {
-      "badge": "Certifications",
-      "title": "Certifications & Diplômes",
-      "subtitle": "Assurer la qualité et la conformité aux normes internationales",
-      "items": [
-        {"title": "Certification de Qualité", "description": "Conforme aux normes internationales de qualité et de sécurité"},
-        {"title": "Diplômes Techniques", "description": "Ingénieurs formés intensivement avec licences professionnelles"},
-        {"title": "Licences d'Exploitation", "description": "Licences complètes d'activité et d'environnement"}
-      ]
-    }
-    ,
-    "facilities": {
-      "badge": "Infrastructures",
-      "title": "Infrastructures",
-      "subtitle": "Infrastructures modernes pour tous les besoins de production et de recherche",
-      "items": [
-        {"title": "Siège Social", "description": "Siège à Ho Chi Minh-Ville avec toutes commodités"},
-        {"title": "Atelier de Production", "description": "Atelier professionnel de fabrication et d'assemblage d'équipements"},
-        {"title": "Laboratoire", "description": "Laboratoire moderne de tests de qualité de l'eau"}
-      ]
-    }
-    ,
-    "cta": {
-      "title": "Commencez votre parcours avec BK Green",
-      "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support pour votre projet",
-      "primary": "Contactez maintenant",
-      "secondary": "Voir les services"
-    }
-    ,
+      },
+      "legend": {
+        "env": "Environnement Durable",
+        "tech": "Ingénierie & Technologie",
+        "water": "Solutions d'Eau Complètes"
+      },
+      "subtitle": "Protéger l'eau et optimiser l'énergie avec des solutions modernes",
+      "title": "Nos Engagements"
+    },
     "coreValues": {
-      "title": "Valeurs directrices",
-      "subtitle": "Principes fondamentaux guidant toutes nos activités et décisions",
       "badge": "Valeurs fondamentales",
       "items": {
-        "quality": {
-          "title": "Qualité",
-          "content": [
-            "La qualité avant tout",
-            "Conformité aux normes internationales",
-            "Contrôle qualité strict"
-          ]
-        },
-        "innovation": {
-          "title": "Innovation",
-          "content": [
-            "Adoption de technologies avancées",
-            "R&D continue",
-            "Solutions créatives"
-          ]
-        },
-        "sustainability": {
-          "title": "Durabilité",
-          "content": [
-            "Protection de l'environnement",
-            "Développement durable",
-            "Utilisation efficace des ressources"
-          ]
-        },
         "customerSupport": {
-          "title": "Support Client",
           "content": [
             "Accompagnement tout au long du projet",
             "Service dédié",
             "Support technique 24/7"
-          ]
-        }
-      }
-    }
-    ,
-    "development": {
-      "title": "Orientation du Développement",
-      "subtitle": "BK Green construit une base solide pour devenir un partenaire de confiance en ingénierie de l'eau",
-      "badge": "Vision",
-      "items": {
-        "tech": {
-          "title": "Fondation Technologique",
-          "description": "Construire un système technologique moderne et fiable",
-          "detailsTitle": "Technologie & Équipement",
-          "details": [
-            "Investir dans des équipements de traitement de l'eau de haute qualité",
-            "Systèmes modernes de surveillance et d'exploitation",
-            "Processus de contrôle qualité stricts",
-            "Formation technique approfondie du personnel",
-            "Construire des systèmes efficaces de gestion de projet"
-          ]
-        },
-        "partnership": {
-          "title": "Construction de Partenariats",
-          "description": "Développer des réseaux de partenaires stratégiques et durables",
-          "detailsTitle": "Réseau de Partenaires",
-          "details": [
-            "Trouver des fournisseurs d'équipements réputés",
-            "Établir des relations avec des partenaires technologiques",
-            "Développer des réseaux de sous-traitants",
-            "Coopérer avec des instituts de recherche",
-            "Étendre les partenariats futurs"
-          ]
+          ],
+          "title": "Support Client"
         },
         "innovation": {
-          "title": "Focus Innovation",
+          "content": [
+            "Adoption de technologies avancées",
+            "R&D continue",
+            "Solutions créatives"
+          ],
+          "title": "Innovation"
+        },
+        "quality": {
+          "content": [
+            "La qualité avant tout",
+            "Conformité aux normes internationales",
+            "Contrôle qualité strict"
+          ],
+          "title": "Qualité"
+        },
+        "sustainability": {
+          "content": [
+            "Protection de l'environnement",
+            "Développement durable",
+            "Utilisation efficace des ressources"
+          ],
+          "title": "Durabilité"
+        }
+      },
+      "subtitle": "Principes fondamentaux guidant toutes nos activités et décisions",
+      "title": "Valeurs directrices"
+    },
+    "cta": {
+      "primary": "Contactez maintenant",
+      "secondary": "Voir les services",
+      "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support pour votre projet",
+      "title": "Commencez votre parcours avec BK Green"
+    },
+    "development": {
+      "badge": "Vision",
+      "items": {
+        "innovation": {
           "description": "Investir dans la recherche et des solutions durables",
-          "detailsTitle": "Recherche & Développement",
           "details": [
             "Rechercher des technologies avancées de traitement de l'eau",
             "Développer des solutions écologiques",
             "Appliquer les technologies numériques dans l'exploitation",
             "Investir dans la formation et le développement humain",
             "Construire une bibliothèque de connaissances professionnelles"
-          ]
+          ],
+          "detailsTitle": "Recherche & Développement",
+          "title": "Focus Innovation"
+        },
+        "partnership": {
+          "description": "Développer des réseaux de partenaires stratégiques et durables",
+          "details": [
+            "Trouver des fournisseurs d'équipements réputés",
+            "Établir des relations avec des partenaires technologiques",
+            "Développer des réseaux de sous-traitants",
+            "Coopérer avec des instituts de recherche",
+            "Étendre les partenariats futurs"
+          ],
+          "detailsTitle": "Réseau de Partenaires",
+          "title": "Construction de Partenariats"
+        },
+        "tech": {
+          "description": "Construire un système technologique moderne et fiable",
+          "details": [
+            "Investir dans des équipements de traitement de l'eau de haute qualité",
+            "Systèmes modernes de surveillance et d'exploitation",
+            "Processus de contrôle qualité stricts",
+            "Formation technique approfondie du personnel",
+            "Construire des systèmes efficaces de gestion de projet"
+          ],
+          "detailsTitle": "Technologie & Équipement",
+          "title": "Fondation Technologique"
         }
-      }
-    }
-    ,
+      },
+      "subtitle": "BK Green construit une base solide pour devenir un partenaire de confiance en ingénierie de l'eau",
+      "title": "Orientation du Développement"
+    },
+    "facilities": {
+      "badge": "Infrastructures",
+      "items": [
+        {
+          "description": "Siège à Ho Chi Minh-Ville avec toutes commodités",
+          "title": "Siège Social"
+        },
+        {
+          "description": "Atelier professionnel de fabrication et d'assemblage d'équipements",
+          "title": "Atelier de Production"
+        },
+        {
+          "description": "Laboratoire moderne de tests de qualité de l'eau",
+          "title": "Laboratoire"
+        }
+      ],
+      "subtitle": "Infrastructures modernes pour tous les besoins de production et de recherche",
+      "title": "Infrastructures"
+    },
     "guidance": {
       "badge": "Orientation",
-      "title": "Vision, Mission & Valeurs",
-      "subtitle": "Principes fondamentaux et orientation du développement de BK Green",
       "cards": {
-        "vision": {
-          "title": "Vision",
-          "desc": "Devenir une entreprise leader en ingénierie de l'eau au Vietnam et en Asie du Sud-Est, reconnue pour l'innovation technologique et la durabilité environnementale."
-        },
         "mission": {
-          "title": "Mission",
-          "desc": "Fournir des solutions complètes d'ingénierie de l'eau, de la conception et la construction à l'exploitation, pour les foyers jusqu'aux grands projets industriels."
+          "desc": "Fournir des solutions complètes d'ingénierie de l'eau, de la conception et la construction à l'exploitation, pour les foyers jusqu'aux grands projets industriels.",
+          "title": "Mission"
         },
         "values": {
-          "title": "Valeurs",
-          "desc": "Qualité supérieure, innovation, durabilité environnementale et support client dévoué."
+          "desc": "Qualité supérieure, innovation, durabilité environnementale et support client dévoué.",
+          "title": "Valeurs"
+        },
+        "vision": {
+          "desc": "Devenir une entreprise leader en ingénierie de l'eau au Vietnam et en Asie du Sud-Est, reconnue pour l'innovation technologique et la durabilité environnementale.",
+          "title": "Vision"
         }
       },
       "legend": {
-        "vision": "Vision",
         "mission": "Mission",
-        "values": "Valeurs"
-      }
-    }
-    ,
+        "values": "Valeurs",
+        "vision": "Vision"
+      },
+      "subtitle": "Principes fondamentaux et orientation du développement de BK Green",
+      "title": "Vision, Mission & Valeurs"
+    },
     "interactive": {
       "hint": {
-        "front": "Cliquez pour voir les détails",
-        "back": "Cliquez pour revenir"
-      }
-    }
-  }
-  ,
-  "servicesPage": {
-    "header": {
-      "title": "Nos Services",
-      "subtitle": "BK Green fournit des systèmes de traitement des eaux usées, d'eau potable et RO, en commençant par de petits projets et en étendant ses services au Vietnam."
-    },
-    "catalog": {
-      "title": "Catalogue des Services",
-      "learnMore": "En savoir plus"
-    },
-    "services": {
-      "wastewater": {
-        "description": "Fournir des solutions et la construction pour les bâtiments et les parcs industriels dans les projets initiaux.",
-        "features": ["Conception de systèmes de traitement des eaux usées", "Construction et installation professionnelles", "Exploitation et maintenance des systèmes", "Conseil technique approfondi"]
-      },
-      "operation": {
-        "description": "Services d'exploitation pour les eaux usées et l'eau potable, en développement.",
-        "features": ["Exploitation continue des systèmes", "Maintenance périodique", "Surveillance à distance", "Rapports détaillés"]
-      },
-      "ro": {
-        "description": "Mettre en œuvre des systèmes RO avec une technologie moderne.",
-        "features": ["Conception optimale du système RO", "Installation professionnelle", "Maintenance et remplacement des composants", "Optimisation des performances"]
-      },
-      "electrical": {
-        "description": "Fournir des solutions d'automatisation pour les nouveaux projets.",
-        "features": ["Conception d'armoires de commande", "Systèmes SCADA modernes", "Automatisation des processus", "Surveillance et contrôle à distance"]
-      },
-      "equipment": {
-        "description": "Distribuer des pompes, des vannes, des accessoires d'eau et des équipements de protection incendie.",
-        "features": ["Pompes spécialisées", "Vannes et accessoires de qualité", "Équipements de protection incendie modernes", "Conseil de sélection d'équipement"]
+        "back": "Cliquez pour revenir",
+        "front": "Cliquez pour voir les détails"
       }
     },
-    "sustainability": {
-      "title": "Vers un avenir vert",
-      "subtitle": "Nous construisons des solutions économes en énergie dans les premiers projets, visant un avenir durable de l'eau au Vietnam."
-    },
-    "process": {
-      "title": "Processus du Projet",
-      "subtitle": "Un flux professionnel du relevé à l'exploitation, garantissant qualité et efficacité",
-      "stepLabel": "Étape {step}",
-      "badge": "Processus professionnel",
-      "steps": [
-        {"title": "Étude & Analyse", "description": "Évaluer l'état actuel et analyser les besoins spécifiques du projet"},
-        {"title": "Conception & Planification", "description": "Concevoir en détail le système et planifier la mise en œuvre"},
-        {"title": "Construction & Installation", "description": "Construction professionnelle avec une équipe technique expérimentée"},
-        {"title": "Exploitation & Maintenance", "description": "Soutenir l'exploitation et la maintenance périodique du système"}
-      ]
-    },
-    "technologies": {
-      "title": "Technologies Utilisées",
-      "subtitle": "Application de technologies avancées et d'équipements modernes à chaque projet",
-      "items": {
-        "ro": {"title": "Systèmes RO", "description": "Technologie avancée d'osmose inverse", "features": ["Taux de récupération élevé", "Économie d'énergie", "Qualité de l'eau stable"]},
-        "scada": {"title": "SCADA & Automatisation", "description": "Systèmes de surveillance et de contrôle à distance", "features": ["Surveillance 24/7", "Contrôle automatique", "Rapports détaillés"]},
-        "fire": {"title": "Équipements de Protection Incendie", "description": "Systèmes professionnels de protection incendie", "features": ["Détection précoce", "Lutte contre l'incendie efficace", "Conformité aux normes"]}
-      }
-    },
-    "cases": {
-      "title": "Études de cas",
-      "subtitle": "Projets phares et résultats obtenus",
-      "resultsTitle": "Résultats obtenus :",
-      "0": {"title": "Projet de Parc Industriel", "industry": "Industriel", "description": "Système de traitement des eaux usées 2000m³/jour pour un parc industriel", "results": ["Réduction de 95% de la pollution", "Économie de 30% des coûts", "Exploitation stable"]},
-      "1": {"title": "Usine d'Eau Potable", "industry": "Eau potable", "description": "Système RO industriel pour une usine d'eau potable", "results": ["Capacité 1000m³/h", "Haute qualité de l'eau", "Maintenance facile"]},
-      "2": {"title": "Bâtiment Commercial", "industry": "Commercial", "description": "Systèmes de protection incendie et de traitement de l'eau pour immeuble de grande hauteur", "results": ["Sécurité absolue", "Conformité réglementaire", "Coût raisonnable"]}
-    },
-    "support": {
-      "title": "Garantie & Support",
-      "subtitle": "Engagement de support complet pour les clients",
-      "items": [
-        {"title": "Support 24/7", "description": "Équipe technique disponible 24/7 pour tous les problèmes"},
-        {"title": "Garantie Longue Durée", "description": "Garantie complète pour tous les équipements et systèmes"},
-        {"title": "Formation à l'Exploitation", "description": "Former le personnel à l'exploitation et à la maintenance du système"}
-      ]
-    },
-    "faq": {
-      "title": "FAQ",
-      "subtitle": "Réponses aux questions fréquentes sur nos services",
-      "items": [
-        {"q": "Combien de temps dure généralement la construction ?", "a": "Cela dépend de la taille du projet, généralement 2 à 6 mois pour les projets petits à moyens."},
-        {"q": "BK Green assure-t-il la maintenance après la fin du projet ?", "a": "Oui, nous assurons une maintenance périodique et un support technique 24/7."},
-        {"q": "Comment sont calculés les coûts des services ?", "a": "Les coûts dépendent de la taille du projet, de la technologie utilisée et des exigences spécifiques du client."}
-      ]
-    },
-    "cta": {
-      "title": "Besoin d'une consultation de service ?",
-      "subtitle": "Contactez-nous pour une consultation gratuite et un devis détaillé",
-      "primary": "Contactez maintenant",
-      "secondary": "Voir les projets"
-    },
-    "filters": {
-      "industry": ["Résidentiel", "Industriel"],
-      "type": ["Eaux usées", "Eau potable"]
-    }
-  }
-  ,
-  "projectsPage": {
-    "header": {"title": "Projets", "subtitle": "BK Green lance ses premiers projets, apportant des solutions d'eau potable à la communauté."},
-    "stats": {"active": "Projets en cours", "completed": "Projets terminés", "capacity": "Capacité de conception", "service": "Service professionnel"},
-    "featured": {"title": "Projets phares", "viewDetail": "Voir les détails"},
-    "all": {"title": "Tous les projets", "detail": "Détails"},
-    "cta": {"title": "Soumettez votre projet", "subtitle": "Vous avez un projet à consulter ? Contactez-nous pour un support professionnel", "primary": "Contactez maintenant", "secondary": "Voir les services"}
-  }
-  ,
-  "contactPage": {
-    "header": {"title": "Contactez-nous", "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support"},
-    "form": {
-      "title": "Envoyer un message",
-      "name": "Nom complet *",
-      "email": "Email *",
-      "company": "Entreprise",
-      "phone": "Téléphone",
-      "requestType": "Type de demande *",
-      "message": "Message *",
-      "submit": "Envoyer le message",
-      "placeholder": {
-        "name": "Entrez le nom complet",
-        "email": "Entrez l'email",
-        "company": "Entrez le nom de l'entreprise",
-        "phone": "Entrez le numéro de téléphone",
-        "requestType": "Sélectionnez un type de demande",
-        "message": "Entrez votre message..."
-      },
-      "requestTypes": ["Conseil de projet", "Devis produit", "Support technique", "Partenariat commercial", "Autre"]
-    },
-    "office": {"title": "Bureau", "mapPlaceholder": "Google Maps sera intégré ici", "city": "Ho Chi Minh-Ville", "viewMap": "Voir sur Google Maps"},
-    "support": {"title": "Support Client", "hotline": "Hotline de support", "hours": "8:00 - 17:00 (Lun-Ven)", "email": "Email de support", "sla": "Réponse sous 24h"},
-    "faqLink": "Questions fréquentes",
-    "info": {"phoneTitle": "Téléphone", "phoneDesc": "Appelez-nous pour une consultation", "emailTitle": "Email", "emailDesc": "Envoyez-nous un email", "addressTitle": "Adresse", "addressDesc": "Siège à HCMV", "hoursTitle": "Heures d'ouverture", "hoursDesc": "Du lundi au vendredi"},
-    "cta": {"title": "Démarrez votre projet", "subtitle": "Prêt à lancer un projet d'eau ? Contactez-nous dès aujourd'hui", "call": "Appelez maintenant", "email": "Envoyer un email"}
-  }
-  ,
-  "productsPage": {
-    "header": {"title": "Nos Produits", "subtitle": "BK Green fournit des produits de haute qualité : pompes, vannes, accessoires et systèmes RO de partenaires de confiance."},
-    "featured": {
-      "title": "Produits phares",
-      "detailBtn": "Détails",
-      "products": [
-        {"name": "Pompe Industrielle BK-P100", "category": "Pompes", "specs": "Débit : 100 m³/h | Hauteur : 50 m", "description": "Pompe industrielle à haut rendement, économe en énergie"},
-        {"name": "Vanne de Pression BK-V50", "category": "Vannes", "specs": "Pression : 0-16 bar | Temp : -10°C à 80°C", "description": "Contrôle de pression précis et grande durabilité"},
-        {"name": "Système RO BK-RO2000", "category": "Systèmes RO", "specs": "Capacité : 2000 L/h | Rendement : 75%", "description": "Système RO industriel de filtration d'eau"}
-      ]
-    },
-    "categories": {
-      "title": "Catégories de Produits",
-      "learnMore": "En savoir plus",
-      "items": {
-        "pumps": {
-          "title": "Pompes",
-          "description": "Pompes spécialisées pour les systèmes de traitement de l'eau",
-          "products": [
-            {"name": "Pompe Industrielle", "specs": "Débit : 50-500 m³/h", "description": "Pompe industrielle à haut rendement"},
-            {"name": "Pompe Eaux Usées", "specs": "Débit : 20-200 m³/h", "description": "Spécialisée pour le traitement des eaux usées"}
-          ]
-        },
-        "valves": {
-          "title": "Vannes",
-          "description": "Vannes de pression et anti‑fuite de haute qualité",
-          "products": [
-            {"name": "Vanne de Pression", "specs": "Pression : 0-16 bar", "description": "Réglage de pression précis"},
-            {"name": "Vanne Anti‑fuite", "specs": "Pression : 0-25 bar", "description": "Prévention efficace des fuites"}
-          ]
-        },
-        "fire": {
-          "title": "Accessoires Incendie",
-          "description": "Équipements professionnels de protection incendie",
-          "products": [
-            {"name": "Lance d'Eau", "specs": "Diamètre : 50-200 mm", "description": "Lance d'incendie dédiée"},
-            {"name": "Système d'Alarme Incendie", "specs": "Couverture : 1000 m²", "description": "Système d'alarme incendie automatique"}
-          ]
+    "leadership": {
+      "badge": "Direction",
+      "expertLabel": "Expert de premier plan",
+      "members": [
+        {
+          "description": "Ingénieur environnement avec 15+ ans en traitement des eaux usées et gestion de projets",
+          "details": [
+            "15+ ans en traitement des eaux usées",
+            "Gestion de 50+ projets de grande envergure",
+            "Certification PMP - Gestion de projet professionnelle",
+            "Master en ingénierie de l'environnement",
+            "Consultant pour de grandes entreprises"
+          ],
+          "detailsTitle": "Expérience & Réalisations",
+          "name": "M. Tran Ba Dien",
+          "role": "Directeur Général"
         }
-      }
+      ],
+      "subtitle": "Des experts expérimentés conduisent BK Green vers un avenir durable",
+      "title": "Équipe de Direction"
     },
-    "filters": {
-      "title": "Filtres & Recherche",
-      "typeTitle": "Type de produit",
-      "applicationTitle": "Application",
-      "type": ["Pompes", "Vannes", "Accessoires Incendie", "Systèmes RO"],
-      "application": ["Industriel", "Résidentiel", "Commercial"],
-      "searchPlaceholder": "Rechercher des produits...",
-      "filterBtn": "Filtrer",
-      "helper": "Utilisez les filtres à gauche et la barre de recherche pour trouver les produits adaptés à vos besoins.",
-      "loading": "Chargement des produits...",
-      "noProductsFound": "Aucun produit trouvé."
+    "meta": {
+      "description": "Présentation de BK Green : atouts, engagements, direction, certifications, infrastructures",
+      "title": "À propos"
     },
-    "related": {
-      "title": "Solutions liées",
-      "subtitle": "Découvrez les services et projets liés à nos produits",
-      "servicesBtn": "Voir les services",
-      "projectsBtn": "Voir les projets"
+    "overview": {
+      "badge": "À propos de nous",
+      "cards": {
+        "environment": {
+          "desc": "Éco-responsable",
+          "title": "Environnement"
+        },
+        "growth": {
+          "desc": "Développement durable",
+          "title": "Croissance"
+        }
+      },
+      "imageAlt": "À propos de BK Green",
+      "p1": "BK GREEN TECHNICAL JSC est fondée pour offrir des solutions durables d'eau potable et de traitement des eaux usées.",
+      "p2": "Nous avons commencé notre parcours avec une équipe expérimentée et une vision à long terme pour un avenir où l'eau est protégée et gérée de manière durable."
     },
-    "cta": {
-      "title": "Trouver un revendeur",
-      "subtitle": "Contactez‑nous pour trouver le revendeur le plus proche et obtenir des conseils produits",
-      "primary": "Contactez maintenant"
+    "strengths": {
+      "badge": "Atouts",
+      "stats": [
+        {
+          "description": "Avec plus de 15 ans d'expérience en ingénierie de l'eau, nos ingénieurs sont formés intensivement et certifiés à l'international. Nous nous engageons à fournir les solutions les plus optimales pour chaque projet.",
+          "title": "Équipe d'experts"
+        },
+        {
+          "description": "Nous respectons strictement la norme ISO 9001:2015 et appliquons un processus de contrôle qualité en 3 niveaux. Chaque produit et service est rigoureusement vérifié avant livraison aux clients.",
+          "title": "Engagement qualité"
+        },
+        {
+          "description": "BK Green est pionnier des solutions vertes et respectueuses de l'environnement. Nous utilisons des technologies économes en énergie et le recyclage des eaux usées pour contribuer à la protection de l'environnement.",
+          "title": "Focus durabilité"
+        }
+      ],
+      "subtitle": "Raisons pour lesquelles nous sommes un partenaire de confiance",
+      "title": "Pourquoi choisir BK Green ?"
     }
-  }
-  ,
-  "units": {
-    "m3PerDay": "m³/jour",
-    "m3PerHour": "m³/h"
+  },
+  "admin": {
+    "actions": {
+      "actions": "Actions",
+      "back": "Retour",
+      "cancel": "Annuler",
+      "confirmDelete": "Confirmer la suppression",
+      "create": "Créer",
+      "delete": "Supprimer",
+      "download": "Télécharger",
+      "edit": "Modifier",
+      "loggingIn": "Connexion en cours...",
+      "login": "Se connecter",
+      "more": "Plus",
+      "restore": "Restaurer l'image originale",
+      "save": "Enregistrer",
+      "saving": "Enregistrement...",
+      "upload": "Téléverser",
+      "uploading": "Téléversement...",
+      "view": "Voir"
+    },
+    "cancel": "Annuler",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet élément?",
+    "contactForms": {
+      "all": "Tous",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce formulaire?",
+      "errors": {
+        "deleteFailed": "Échec de la suppression du formulaire",
+        "fetchFailed": "Échec du chargement des formulaires",
+        "updateFailed": "Échec de la mise à jour du formulaire"
+      },
+      "filterByStatus": "Filtrer par statut",
+      "list": "Liste des Formulaires",
+      "listDescription": "Voir et gérer les formulaires de contact",
+      "loading": "Chargement...",
+      "status": {
+        "cancelled": "Annulé",
+        "completed": "Terminé",
+        "inProgress": "En cours",
+        "pending": "En attente"
+      },
+      "success": {
+        "deleted": "Supprimé avec succès",
+        "updated": "Mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "date": "Date",
+        "email": "Email",
+        "message": "Message",
+        "name": "Nom",
+        "phone": "Téléphone",
+        "status": "Statut"
+      },
+      "title": "Gérer les Formulaires de Contact"
+    },
+    "dashboard": {
+      "description": "Utilisez le menu de navigation pour gérer le contenu de votre site web, les utilisateurs et les paramètres.",
+      "quickActions": {
+        "contactForms": {
+          "description": "Voir et gérer les soumissions de formulaires de contact",
+          "title": "Formulaires de contact"
+        },
+        "description": "Effectuez rapidement les tâches administratives courantes.",
+        "media": {
+          "description": "Téléverser et gérer les fichiers média",
+          "title": "Bibliothèque média"
+        },
+        "team": {
+          "description": "Gérer les membres de l'équipe et leurs informations",
+          "title": "Gestion d'équipe"
+        },
+        "title": "Actions rapides"
+      },
+      "quickLinks": {
+        "pages": {
+          "description": "Gérer les pages du site web",
+          "title": "Pages"
+        },
+        "products": {
+          "description": "Gérer les produits",
+          "title": "Produits"
+        },
+        "projects": {
+          "description": "Gérer les projets",
+          "title": "Projets"
+        },
+        "services": {
+          "description": "Gérer les services",
+          "title": "Services"
+        }
+      },
+      "stats": {
+        "totalProducts": "Produits totaux",
+        "totalProjects": "Projets totaux",
+        "totalServices": "Services totaux",
+        "totalUsers": "Utilisateurs totaux"
+      },
+      "title": "Tableau de bord Admin",
+      "welcome": "Bienvenue sur le tableau de bord administrateur"
+    },
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "equipment": {
+      "addNew": "Ajouter un Nouvel Équipement",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet équipement?",
+      "create": "Créer un Nouvel Équipement",
+      "delete": "Supprimer",
+      "edit": "Modifier l'Équipement",
+      "errors": {
+        "deleteFailed": "Échec de la suppression de l'équipement",
+        "fetchFailed": "Échec du chargement de l'équipement",
+        "imageUploadFailed": "Échec du téléversement de l'image",
+        "saveFailed": "Échec de l'enregistrement de l'équipement"
+      },
+      "fileUpload": {
+        "equipmentPlaceholder": "Sélectionner l'image de l'équipement"
+      },
+      "form": {
+        "category": "Catégorie",
+        "description": "Description",
+        "image": "Image",
+        "order": "Ordre",
+        "slug": "Slug",
+        "title": "Titre"
+      },
+      "formDescription": "Remplir les informations de l'équipement",
+      "list": "Liste de l'Équipement",
+      "listDescription": "Gérer tout l'équipement",
+      "loading": "Chargement...",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Équipement créé avec succès",
+        "deleted": "Équipement supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès",
+        "updated": "Équipement mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "image": "Image",
+        "order": "Ordre",
+        "title": "Titre"
+      },
+      "title": "Gérer l'Équipement"
+    },
+    "errors": {
+      "deleteFailed": "Échec de la suppression",
+      "fetchFailed": "Échec du chargement des données",
+      "saveFailed": "Échec de l'enregistrement"
+    },
+    "fileUpload": {
+      "equipmentPlaceholder": "Sélectionner l'image de l'équipement",
+      "imageLabel": "Image",
+      "imagePlaceholder": "Sélectionner l'image",
+      "onlyImage": "Seuls les fichiers image sont acceptés",
+      "placeholder": "Sélectionner le fichier à téléverser",
+      "processPlaceholder": "Sélectionner l'image de l'étape",
+      "productPlaceholder": "Sélectionner l'image du produit",
+      "projectPlaceholder": "Sélectionner l'image du projet",
+      "selectImage": "Sélectionner l'image",
+      "servicePlaceholder": "Sélectionner l'image du service",
+      "sizeLimit": "Le fichier ne doit pas dépasser 5 Mo",
+      "teamPlaceholder": "Sélectionner l'image de l'équipe",
+      "uploadFailed": "Échec du téléversement",
+      "uploading": "Téléversement...",
+      "uploadSuccess": "Téléversement réussi"
+    },
+    "forms": {
+      "about_image": "Image à propos",
+      "bio": "Biographie",
+      "category": "Catégorie",
+      "content": "Contenu",
+      "createdAt": "Créé",
+      "description": "Description",
+      "email": "Email",
+      "favicon": "Favicon",
+      "file": "Fichier",
+      "general": "Général",
+      "hero_background": "Arrière-plan hero",
+      "image": "Image",
+      "logo": "Logo",
+      "logo_white": "Logo blanc",
+      "message": "Message",
+      "metaDescription": "Description meta",
+      "metaTitle": "Titre meta",
+      "name": "Nom",
+      "newPage": "Nouvelle page",
+      "password": "Mot de passe",
+      "phone": "Téléphone",
+      "position": "Poste",
+      "price": "Prix",
+      "process_background": "Arrière-plan processus",
+      "size": "Taille",
+      "slug": "Slug",
+      "social_media": "Médias sociaux",
+      "status": "Statut",
+      "title": "Titre",
+      "type": "Type",
+      "uploadNew": "Téléverser nouveau"
+    },
+    "loading": "Chargement...",
+    "login": {
+      "invalidCredentials": "Email ou mot de passe invalide",
+      "required": "Veuillez saisir l'email et le mot de passe",
+      "serverError": "Une erreur s'est produite lors de la connexion",
+      "subtitle": "Entrez vos identifiants pour accéder au panneau d'administration",
+      "success": "Connexion réussie",
+      "title": "Connectez-vous à votre compte"
+    },
+    "media": {
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce fichier?",
+      "errors": {
+        "deleteFailed": "Échec de la suppression du fichier",
+        "fetchFailed": "Échec du chargement des fichiers",
+        "uploadFailed": "Échec du téléversement du fichier"
+      },
+      "list": "Liste des fichiers",
+      "listDescription": "Gérer tous les fichiers média",
+      "loading": "Chargement...",
+      "success": {
+        "deleted": "Fichier supprimé avec succès",
+        "uploaded": "Fichier téléversé avec succès"
+      },
+      "upload": "Téléverser un fichier",
+      "uploadFile": "Téléverser un fichier"
+    },
+    "navigation": {
+      "contactForms": "Formulaires de contact",
+      "dashboard": "Tableau de bord",
+      "equipment": "Équipement",
+      "language": "Langue",
+      "logout": "Déconnexion",
+      "main": "Navigation principale",
+      "media": "Médias",
+      "pages": "Pages",
+      "process": "Processus",
+      "products": "Produits",
+      "projects": "Projets",
+      "services": "Services",
+      "settings": "Paramètres",
+      "team": "Équipe"
+    },
+    "no": "Non",
+    "process": {
+      "addNew": "Ajouter une Nouvelle Étape",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette étape?",
+      "create": "Créer une Nouvelle Étape",
+      "delete": "Supprimer",
+      "edit": "Modifier l'Étape",
+      "errors": {
+        "deleteFailed": "Échec de la suppression de l'étape",
+        "fetchFailed": "Échec du chargement des étapes",
+        "imageUploadFailed": "Échec du téléversement de l'image",
+        "saveFailed": "Échec de l'enregistrement de l'étape"
+      },
+      "fileUpload": {
+        "processPlaceholder": "Sélectionner l'image de l'étape"
+      },
+      "form": {
+        "description": "Description",
+        "image": "Image",
+        "order": "Ordre",
+        "step": "Numéro d'Étape",
+        "title": "Titre"
+      },
+      "formDescription": "Remplir les informations de l'étape",
+      "list": "Liste des Étapes",
+      "listDescription": "Gérer toutes les étapes du processus",
+      "loading": "Chargement...",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Étape créée avec succès",
+        "deleted": "Étape supprimée avec succès",
+        "imageUploaded": "Image téléversée avec succès",
+        "updated": "Étape mise à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "image": "Image",
+        "order": "Ordre",
+        "step": "Étape",
+        "title": "Titre"
+      },
+      "title": "Gérer le Processus"
+    },
+    "products": {
+      "addNew": "Ajouter un Nouveau Produit",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce produit?",
+      "create": "Créer un Nouveau Produit",
+      "delete": "Supprimer",
+      "edit": "Modifier le Produit",
+      "errors": {
+        "deleteFailed": "Échec de la suppression du produit",
+        "fetchFailed": "Échec du chargement des produits",
+        "imageUploadFailed": "Échec du téléversement de l'image",
+        "saveFailed": "Échec de l'enregistrement du produit"
+      },
+      "fileUpload": {
+        "productPlaceholder": "Sélectionner l'image du produit"
+      },
+      "form": {
+        "category": "Catégorie",
+        "description": "Description",
+        "featured": "En vedette",
+        "images": "Images",
+        "name": "Nom",
+        "order": "Ordre",
+        "price": "Prix",
+        "slug": "Slug",
+        "specs": "Spécifications"
+      },
+      "formDescription": "Remplir les informations du produit",
+      "list": "Liste des Produits",
+      "listDescription": "Gérer tous les produits",
+      "loading": "Chargement...",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Produit créé avec succès",
+        "deleted": "Produit supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès",
+        "updated": "Produit mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "featured": "En vedette",
+        "image": "Image",
+        "name": "Nom",
+        "price": "Prix"
+      },
+      "title": "Gérer les Produits",
+      "yes": "Oui"
+    },
+    "projects": {
+      "addNew": "Ajouter un Nouveau Projet",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce projet?",
+      "create": "Créer un Nouveau Projet",
+      "delete": "Supprimer",
+      "edit": "Modifier le Projet",
+      "errors": {
+        "deleteFailed": "Échec de la suppression du projet",
+        "fetchFailed": "Échec du chargement des projets",
+        "imageUploadFailed": "Échec du téléversement de l'image",
+        "saveFailed": "Échec de l'enregistrement du projet"
+      },
+      "fileUpload": {
+        "projectPlaceholder": "Sélectionner l'image du projet"
+      },
+      "form": {
+        "capacity": "Capacité",
+        "category": "Catégorie",
+        "description": "Description",
+        "featured": "En vedette",
+        "images": "Images",
+        "location": "Emplacement",
+        "order": "Ordre",
+        "slug": "Slug",
+        "status": "Statut",
+        "title": "Titre",
+        "type": "Type",
+        "year": "Année"
+      },
+      "formDescription": "Remplir les informations du projet",
+      "list": "Liste des Projets",
+      "listDescription": "Gérer tous les projets",
+      "loading": "Chargement...",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Projet créé avec succès",
+        "deleted": "Projet supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès",
+        "updated": "Projet mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "featured": "En vedette",
+        "image": "Image",
+        "location": "Emplacement",
+        "status": "Statut",
+        "title": "Titre"
+      },
+      "title": "Gérer les Projets",
+      "yes": "Oui"
+    },
+    "save": "Enregistrer",
+    "saving": "Enregistrement...",
+    "savings": "Enregistrement...",
+    "services": {
+      "addNew": "Ajouter un Nouveau Service",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce service?",
+      "create": "Créer un Nouveau Service",
+      "delete": "Supprimer",
+      "edit": "Modifier le Service",
+      "errors": {
+        "deleteFailed": "Échec de la suppression du service",
+        "fetchFailed": "Échec du chargement des services",
+        "imageUploadFailed": "Échec du téléversement de l'image",
+        "saveFailed": "Échec de l'enregistrement du service"
+      },
+      "fileUpload": {
+        "servicePlaceholder": "Sélectionner l'image du service"
+      },
+      "form": {
+        "description": "Description",
+        "image": "Image",
+        "order": "Ordre",
+        "slug": "Slug",
+        "title": "Titre"
+      },
+      "formDescription": "Remplir les informations du service",
+      "list": "Liste des Services",
+      "listDescription": "Gérer tous les services",
+      "loading": "Chargement...",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Service créé avec succès",
+        "deleted": "Service supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès",
+        "updated": "Service mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "image": "Image",
+        "order": "Ordre",
+        "title": "Titre"
+      },
+      "title": "Gérer les Services"
+    },
+    "settings": {
+      "appearance": "Apparence",
+      "appearanceDescription": "Paramètres d'apparence",
+      "cancel": "Annuler",
+      "darkMode": "Mode sombre",
+      "emailNotifications": "Notifications par email",
+      "errors": {
+        "fetchFailed": "Échec du chargement des paramètres",
+        "saveFailed": "Échec de l'enregistrement des paramètres"
+      },
+      "favicon": "Favicon",
+      "general": "Paramètres généraux",
+      "generalDescription": "Paramètres généraux du système",
+      "heroBackground": "Arrière-plan Hero",
+      "loading": "Chargement...",
+      "logo": "Logo",
+      "mediaSettings": "Paramètres Media",
+      "mediaSettingsDescription": "Configurer les images fixes pour votre site web",
+      "none": "Aucun",
+      "notifications": "Notifications",
+      "notificationsDescription": "Paramètres de notification",
+      "save": "Enregistrer les paramètres",
+      "security": "Sécurité",
+      "securityDescription": "Paramètres de sécurité",
+      "selectFaviconPlaceholder": "Sélectionner favicon",
+      "selectHeroBackgroundPlaceholder": "Sélectionner l'arrière-plan hero",
+      "selectLogoPlaceholder": "Sélectionner l'image du logo",
+      "sessionTimeout": "Expiration de session",
+      "sessionTimeoutPlaceholder": "Entrez le délai d'expiration (minutes)",
+      "siteDescription": "Description du site",
+      "siteDescriptionPlaceholder": "Entrez la description du site",
+      "siteName": "Nom du site",
+      "siteNamePlaceholder": "Entrez le nom du site",
+      "success": {
+        "saved": "Paramètres enregistrés avec succès"
+      },
+      "title": "Paramètres"
+    },
+    "success": {
+      "created": "Créé avec succès",
+      "deleted": "Supprimé avec succès",
+      "updated": "Mis à jour avec succès"
+    },
+    "table": {
+      "actions": "Actions",
+      "bio": "Biographie",
+      "category": "Catégorie",
+      "createdAt": "Créé",
+      "date": "Date",
+      "description": "Description",
+      "email": "Email",
+      "featured": "En vedette",
+      "image": "Image",
+      "location": "Emplacement",
+      "message": "Message",
+      "name": "Nom",
+      "order": "Ordre",
+      "phone": "Téléphone",
+      "price": "Prix",
+      "size": "Taille",
+      "status": "Statut",
+      "step": "Étape",
+      "title": "Titre",
+      "type": "Type"
+    },
+    "team": {
+      "addNew": "Ajouter un Nouveau Membre",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce membre?",
+      "create": "Créer un Nouveau Membre",
+      "edit": "Modifier le Membre",
+      "errors": {
+        "deleteFailed": "Échec de la suppression du membre",
+        "fetchFailed": "Échec du chargement des membres",
+        "imageUploadFailed": "Échec du téléversement de l'image",
+        "saveFailed": "Échec de l'enregistrement du membre"
+      },
+      "form": {
+        "bio": "Biographie",
+        "email": "Email",
+        "image": "Image",
+        "name": "Nom",
+        "phone": "Téléphone",
+        "position": "Poste"
+      },
+      "formDescription": "Remplir les informations du membre",
+      "list": "Liste des Membres",
+      "listDescription": "Gérer tous les membres de l'équipe",
+      "loading": "Chargement...",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Membre créé avec succès",
+        "deleted": "Membre supprimé avec succès",
+        "imageUploaded": "Image téléversée avec succès",
+        "updated": "Membre mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "email": "Email",
+        "image": "Image",
+        "name": "Nom",
+        "phone": "Téléphone",
+        "position": "Poste"
+      },
+      "title": "Gestion d'Équipe"
+    },
+    "yes": "Oui"
   },
   "common": {
     "phone": "0931252511",
     "phoneDisplay": "+84 931 252 511"
   },
-  "admin": {
-    "dashboard": {
-      "title": "Tableau de bord Admin",
-      "welcome": "Bienvenue sur le tableau de bord administrateur",
-      "description": "Utilisez le menu de navigation pour gérer le contenu de votre site web, les utilisateurs et les paramètres.",
-      "stats": {
-        "totalUsers": "Utilisateurs totaux",
-        "totalProjects": "Projets totaux",
-        "totalServices": "Services totaux",
-        "totalProducts": "Produits totaux"
+  "contact": {
+    "form": {
+      "description": "Remplissez les informations ci-dessous, nous vous contacterons dès que possible",
+      "email": "Email *",
+      "message": "Contenu du Message *",
+      "name": "Nom Complet *",
+      "phone": "Numéro de Téléphone",
+      "submit": "Envoyer le Message",
+      "title": "Envoyer un Message"
+    },
+    "info": {
+      "address": "Adresse",
+      "email": "Email",
+      "phone": "Téléphone",
+      "title": "Informations de Contact"
+    },
+    "location": {
+      "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+      "title": "Emplacement du Bureau",
+      "viewMap": "Voir sur Google Maps"
+    },
+    "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support",
+    "title": "Contactez-nous"
+  },
+  "contactPage": {
+    "cta": {
+      "call": "Appelez maintenant",
+      "email": "Envoyer un email",
+      "subtitle": "Prêt à lancer un projet d'eau ? Contactez-nous dès aujourd'hui",
+      "title": "Démarrez votre projet"
+    },
+    "faqLink": "Questions fréquentes",
+    "form": {
+      "company": "Entreprise",
+      "email": "Email *",
+      "message": "Message *",
+      "name": "Nom complet *",
+      "phone": "Téléphone",
+      "placeholder": {
+        "company": "Entrez le nom de l'entreprise",
+        "email": "Entrez l'email",
+        "message": "Entrez votre message...",
+        "name": "Entrez le nom complet",
+        "phone": "Entrez le numéro de téléphone",
+        "requestType": "Sélectionnez un type de demande"
       },
-      "quickLinks": {
-        "pages": {
-          "title": "Pages",
-          "description": "Gérer les pages du site web"
+      "requestType": "Type de demande *",
+      "requestTypes": [
+        "Conseil de projet",
+        "Devis produit",
+        "Support technique",
+        "Partenariat commercial",
+        "Autre"
+      ],
+      "submit": "Envoyer le message",
+      "title": "Envoyer un message"
+    },
+    "header": {
+      "subtitle": "Contactez-nous pour la meilleure consultation et le meilleur support",
+      "title": "Contactez-nous"
+    },
+    "info": {
+      "addressDesc": "Siège à HCMV",
+      "addressTitle": "Adresse",
+      "emailDesc": "Envoyez-nous un email",
+      "emailTitle": "Email",
+      "hoursDesc": "Du lundi au vendredi",
+      "hoursTitle": "Heures d'ouverture",
+      "phoneDesc": "Appelez-nous pour une consultation",
+      "phoneTitle": "Téléphone"
+    },
+    "office": {
+      "city": "Ho Chi Minh-Ville",
+      "mapPlaceholder": "Google Maps sera intégré ici",
+      "title": "Bureau",
+      "viewMap": "Voir sur Google Maps"
+    },
+    "support": {
+      "email": "Email de support",
+      "hotline": "Hotline de support",
+      "hours": "8:00 - 17:00 (Lun-Ven)",
+      "sla": "Réponse sous 24h",
+      "title": "Support Client"
+    }
+  },
+  "equipment": {
+    "items": {
+      "fire": {
+        "category": "Sécurité",
+        "description": "Systèmes professionnels de protection incendie",
+        "title": "Protection incendie"
+      },
+      "pump": {
+        "category": "Équipement principal",
+        "description": "Pompes spécialisées pour les systèmes de traitement de l'eau",
+        "title": "Pompes industrielles"
+      },
+      "ro": {
+        "category": "Traitement de l'eau",
+        "description": "Équipements de filtration RO industriels",
+        "title": "Systèmes RO"
+      },
+      "valve": {
+        "category": "Accessoires",
+        "description": "Vannes de contrôle et de sécurité pour systèmes d'eau",
+        "title": "Vannes industrielles"
+      }
+    },
+    "subtitle": "Nous fournissons des équipements et produits de haute qualité pour les systèmes de traitement de l'eau",
+    "title": "Équipements & Produits"
+  },
+  "footer": {
+    "address": "517B Le Trong Tan, Tay Thanh, Ho Chi Minh City",
+    "company": "SOCIÉTÉ PAR ACTIONS TECHNIQUE BK GREEN",
+    "copyright": "© 2025 BK Green. Tous droits réservés.",
+    "description": "Spécialisée dans la construction d'approvisionnement en eau, de drainage et de traitement des eaux usées",
+    "email": "dien.tran@bkgreen.vn",
+    "quickLinks": "Liens rapides"
+  },
+  "hero": {
+    "cta": "Contactez-nous",
+    "subtitle": "Chez BK Green, nous savons que chaque client a des besoins uniques. Nous réalisons des évaluations complètes pour fournir des solutions sur mesure améliorant la qualité de l'eau et l'efficacité opérationnelle.",
+    "title": "Systèmes complets pour vos besoins en eau"
+  },
+  "navigation": {
+    "about": "À propos",
+    "closeMenu": "Fermer le menu",
+    "contact": "Contact",
+    "home": "Accueil",
+    "openMenu": "Ouvrir le menu principal",
+    "products": "Produits",
+    "projects": "Projets",
+    "services": "Services"
+  },
+  "process": {
+    "loading": "Chargement...",
+    "noData": "Aucune donnée de processus disponible",
+    "steps": {
+      "design": {
+        "description": "Concevoir un système de traitement de l'eau approprié",
+        "title": "Conception du Système"
+      },
+      "installation": {
+        "description": "Construire et installer le système selon la conception",
+        "title": "Construction & Installation"
+      },
+      "maintenance": {
+        "description": "Exploiter le système et assurer la maintenance périodique",
+        "title": "Exploitation & Maintenance"
+      },
+      "survey": {
+        "description": "Étudier l'état actuel et évaluer les besoins de traitement",
+        "title": "Étude & Évaluation"
+      }
+    },
+    "subtitle": "Un flux professionnel du relevé à l'exploitation",
+    "title": "Notre Processus de Travail"
+  },
+  "productsPage": {
+    "categories": {
+      "items": {
+        "fire": {
+          "description": "Équipements professionnels de protection incendie",
+          "products": [
+            {
+              "description": "Lance d'incendie dédiée",
+              "name": "Lance d'Eau",
+              "specs": "Diamètre : 50-200 mm"
+            },
+            {
+              "description": "Système d'alarme incendie automatique",
+              "name": "Système d'Alarme Incendie",
+              "specs": "Couverture : 1000 m²"
+            }
+          ],
+          "title": "Accessoires Incendie"
         },
-        "services": {
-          "title": "Services",
-          "description": "Gérer les services"
+        "pumps": {
+          "description": "Pompes spécialisées pour les systèmes de traitement de l'eau",
+          "products": [
+            {
+              "description": "Pompe industrielle à haut rendement",
+              "name": "Pompe Industrielle",
+              "specs": "Débit : 50-500 m³/h"
+            },
+            {
+              "description": "Spécialisée pour le traitement des eaux usées",
+              "name": "Pompe Eaux Usées",
+              "specs": "Débit : 20-200 m³/h"
+            }
+          ],
+          "title": "Pompes"
         },
-        "projects": {
-          "title": "Projets",
-          "description": "Gérer les projets"
-        },
-        "products": {
-          "title": "Produits",
-          "description": "Gérer les produits"
+        "valves": {
+          "description": "Vannes de pression et anti‑fuite de haute qualité",
+          "products": [
+            {
+              "description": "Réglage de pression précis",
+              "name": "Vanne de Pression",
+              "specs": "Pression : 0-16 bar"
+            },
+            {
+              "description": "Prévention efficace des fuites",
+              "name": "Vanne Anti‑fuite",
+              "specs": "Pression : 0-25 bar"
+            }
+          ],
+          "title": "Vannes"
         }
       },
-      "quickActions": {
-        "title": "Actions rapides",
-        "description": "Effectuez rapidement les tâches administratives courantes.",
-        "team": {
-          "title": "Gestion d'équipe",
-          "description": "Gérer les membres de l'équipe et leurs informations"
+      "learnMore": "En savoir plus",
+      "title": "Catégories de Produits"
+    },
+    "cta": {
+      "primary": "Contactez maintenant",
+      "subtitle": "Contactez‑nous pour trouver le revendeur le plus proche et obtenir des conseils produits",
+      "title": "Trouver un revendeur"
+    },
+    "featured": {
+      "detailBtn": "Détails",
+      "products": [
+        {
+          "category": "Pompes",
+          "description": "Pompe industrielle à haut rendement, économe en énergie",
+          "name": "Pompe Industrielle BK-P100",
+          "specs": "Débit : 100 m³/h | Hauteur : 50 m"
         },
-        "media": {
-          "title": "Bibliothèque média",
-          "description": "Téléverser et gérer les fichiers média"
+        {
+          "category": "Vannes",
+          "description": "Contrôle de pression précis et grande durabilité",
+          "name": "Vanne de Pression BK-V50",
+          "specs": "Pression : 0-16 bar | Temp : -10°C à 80°C"
         },
-        "contactForms": {
-          "title": "Formulaires de contact",
-          "description": "Voir et gérer les soumissions de formulaires de contact"
+        {
+          "category": "Systèmes RO",
+          "description": "Système RO industriel de filtration d'eau",
+          "name": "Système RO BK-RO2000",
+          "specs": "Capacité : 2000 L/h | Rendement : 75%"
         }
-      }
+      ],
+      "title": "Produits phares"
     },
-    "navigation": {
-      "main": "Navigation principale",
-      "dashboard": "Tableau de bord",
-      "pages": "Pages",
-      "services": "Services",
-      "projects": "Projets",
-      "products": "Produits",
-      "equipment": "Équipement",
-      "process": "Processus",
-      "team": "Équipe",
-      "media": "Médias",
-      "contactForms": "Formulaires de contact",
-      "settings": "Paramètres",
-      "logout": "Déconnexion"
+    "filters": {
+      "application": [
+        "Industriel",
+        "Résidentiel",
+        "Commercial"
+      ],
+      "applicationTitle": "Application",
+      "filterBtn": "Filtrer",
+      "helper": "Utilisez les filtres à gauche et la barre de recherche pour trouver les produits adaptés à vos besoins.",
+      "loading": "Chargement des produits...",
+      "noProductsFound": "Aucun produit trouvé.",
+      "searchPlaceholder": "Rechercher des produits...",
+      "title": "Filtres & Recherche",
+      "type": [
+        "Pompes",
+        "Vannes",
+        "Accessoires Incendie",
+        "Systèmes RO"
+      ],
+      "typeTitle": "Type de produit"
     },
-    "login": {
-      "title": "Connectez-vous à votre compte",
-      "subtitle": "Entrez vos identifiants pour accéder au panneau d'administration",
-      "required": "Veuillez saisir l'email et le mot de passe",
-      "invalidCredentials": "Email ou mot de passe invalide",
-      "success": "Connexion réussie",
-      "serverError": "Une erreur s'est produite lors de la connexion"
+    "header": {
+      "subtitle": "BK Green fournit des produits de haute qualité : pompes, vannes, accessoires et systèmes RO de partenaires de confiance.",
+      "title": "Nos Produits"
     },
-    "projects": {
-      "title": "Gérer les Projets",
-      "addNew": "Ajouter un Nouveau Projet",
-      "edit": "Modifier le Projet",
-      "create": "Créer un Nouveau Projet",
-      "list": "Liste des Projets",
-      "listDescription": "Gérer tous les projets",
-      "formDescription": "Remplir les informations du projet",
-      "form": {
-        "slug": "Slug",
-        "title": "Titre",
-        "description": "Description",
-        "category": "Catégorie",
-        "location": "Emplacement",
-        "type": "Type",
-        "status": "Statut",
-        "year": "Année",
-        "capacity": "Capacité",
-        "order": "Ordre",
-        "featured": "En vedette",
-        "images": "Images"
-      },
-      "table": {
-        "image": "Image",
-        "title": "Titre",
-        "location": "Emplacement",
-        "status": "Statut",
-        "featured": "En vedette",
-        "actions": "Actions"
-      },
-      "yes": "Oui",
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce projet?",
-      "success": {
-        "created": "Projet créé avec succès",
-        "updated": "Projet mis à jour avec succès",
-        "deleted": "Projet supprimé avec succès",
-        "imageUploaded": "Image téléversée avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des projets",
-        "saveFailed": "Échec de l'enregistrement du projet",
-        "deleteFailed": "Échec de la suppression du projet",
-        "imageUploadFailed": "Échec du téléversement de l'image"
-      }
+    "related": {
+      "projectsBtn": "Voir les projets",
+      "servicesBtn": "Voir les services",
+      "subtitle": "Découvrez les services et projets liés à nos produits",
+      "title": "Solutions liées"
+    }
+  },
+  "projectsPage": {
+    "all": {
+      "detail": "Détails",
+      "title": "Tous les projets"
     },
-    "services": {
-      "title": "Gérer les Services",
-      "addNew": "Ajouter un Nouveau Service",
-      "edit": "Modifier le Service",
-      "create": "Créer un Nouveau Service",
-      "list": "Liste des Services",
-      "listDescription": "Gérer tous les services",
-      "formDescription": "Remplir les informations du service",
-      "form": {
-        "slug": "Slug",
-        "title": "Titre",
-        "description": "Description",
-        "order": "Ordre",
-        "image": "Image"
-      },
-      "table": {
-        "image": "Image",
-        "title": "Titre",
-        "order": "Ordre",
-        "actions": "Actions"
-      },
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce service?",
-      "success": {
-        "created": "Service créé avec succès",
-        "updated": "Service mis à jour avec succès",
-        "deleted": "Service supprimé avec succès",
-        "imageUploaded": "Image téléversée avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des services",
-        "saveFailed": "Échec de l'enregistrement du service",
-        "deleteFailed": "Échec de la suppression du service",
-        "imageUploadFailed": "Échec du téléversement de l'image"
-      }
+    "cta": {
+      "primary": "Contactez maintenant",
+      "secondary": "Voir les services",
+      "subtitle": "Vous avez un projet à consulter ? Contactez-nous pour un support professionnel",
+      "title": "Soumettez votre projet"
     },
-    "products": {
-      "title": "Gérer les Produits",
-      "addNew": "Ajouter un Nouveau Produit",
-      "edit": "Modifier le Produit",
-      "create": "Créer un Nouveau Produit",
-      "list": "Liste des Produits",
-      "listDescription": "Gérer tous les produits",
-      "formDescription": "Remplir les informations du produit",
-      "form": {
-        "slug": "Slug",
-        "name": "Nom",
-        "description": "Description",
-        "category": "Catégorie",
-        "price": "Prix",
-        "specs": "Spécifications",
-        "order": "Ordre",
-        "featured": "En vedette",
-        "images": "Images"
-      },
-      "table": {
-        "image": "Image",
-        "name": "Nom",
-        "price": "Prix",
-        "featured": "En vedette",
-        "actions": "Actions"
-      },
-      "yes": "Oui",
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce produit?",
-      "success": {
-        "created": "Produit créé avec succès",
-        "updated": "Produit mis à jour avec succès",
-        "deleted": "Produit supprimé avec succès",
-        "imageUploaded": "Image téléversée avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des produits",
-        "saveFailed": "Échec de l'enregistrement du produit",
-        "deleteFailed": "Échec de la suppression du produit",
-        "imageUploadFailed": "Échec du téléversement de l'image"
-      }
+    "featured": {
+      "title": "Projets phares",
+      "viewDetail": "Voir les détails"
+    },
+    "header": {
+      "subtitle": "BK Green lance ses premiers projets, apportant des solutions d'eau potable à la communauté.",
+      "title": "Projets"
+    },
+    "stats": {
+      "active": "Projets en cours",
+      "capacity": "Capacité de conception",
+      "completed": "Projets terminés",
+      "service": "Service professionnel"
+    }
+  },
+  "services": {
+    "consulting": {
+      "description": "Conseil et conception de systèmes optimaux pour chaque projet",
+      "title": "Conseil Technique"
+    },
+    "electrical": {
+      "description": "Fournir des solutions et mettre en place des armoires électriques et des systèmes SCADA",
+      "title": "Armoires Électriques & SCADA"
     },
     "equipment": {
-      "title": "Gérer l'Équipement",
-      "addNew": "Ajouter un Nouvel Équipement",
-      "edit": "Modifier l'Équipement",
-      "create": "Créer un Nouvel Équipement",
-      "list": "Liste de l'Équipement",
-      "listDescription": "Gérer tout l'équipement",
-      "formDescription": "Remplir les informations de l'équipement",
-      "form": {
-        "slug": "Slug",
-        "title": "Titre",
-        "description": "Description",
-        "category": "Catégorie",
-        "order": "Ordre",
-        "image": "Image"
+      "description": "Commerce & distribution d'équipements : Pompes, Vannes, Accessoires eau et protection incendie",
+      "title": "Équipements Incendie"
+    },
+    "fire": {
+      "description": "Équipement professionnel de protection et de lutte contre l'incendie",
+      "title": "Équipement de Protection Incendie"
+    },
+    "operation": {
+      "description": "Services d'exploitation et de maintenance des systèmes d'eau",
+      "title": "Exploitation du Système"
+    },
+    "ro": {
+      "description": "Fournir des solutions et mettre en œuvre des systèmes RO",
+      "title": "Systèmes RO"
+    },
+    "subtitle": "Nous proposons des services de bout en bout, de la conception et la construction à l'exploitation des systèmes de traitement de l'eau",
+    "title": "Nos Services",
+    "wastewater": {
+      "description": "Fournir des solutions et réaliser des systèmes de traitement des eaux usées pour bâtiments et parcs industriels",
+      "title": "Traitement des Eaux Usées"
+    }
+  },
+  "servicesPage": {
+    "cases": {
+      "0": {
+        "description": "Système de traitement des eaux usées 2000m³/jour pour un parc industriel",
+        "industry": "Industriel",
+        "results": [
+          "Réduction de 95% de la pollution",
+          "Économie de 30% des coûts",
+          "Exploitation stable"
+        ],
+        "title": "Projet de Parc Industriel"
       },
-      "table": {
-        "image": "Image",
-        "title": "Titre",
-        "order": "Ordre",
-        "actions": "Actions"
+      "1": {
+        "description": "Système RO industriel pour une usine d'eau potable",
+        "industry": "Eau potable",
+        "results": [
+          "Capacité 1000m³/h",
+          "Haute qualité de l'eau",
+          "Maintenance facile"
+        ],
+        "title": "Usine d'Eau Potable"
       },
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet équipement?",
-      "success": {
-        "created": "Équipement créé avec succès",
-        "updated": "Équipement mis à jour avec succès",
-        "deleted": "Équipement supprimé avec succès",
-        "imageUploaded": "Image téléversée avec succès"
+      "2": {
+        "description": "Systèmes de protection incendie et de traitement de l'eau pour immeuble de grande hauteur",
+        "industry": "Commercial",
+        "results": [
+          "Sécurité absolue",
+          "Conformité réglementaire",
+          "Coût raisonnable"
+        ],
+        "title": "Bâtiment Commercial"
       },
-      "errors": {
-        "fetchFailed": "Échec du chargement de l'équipement",
-        "saveFailed": "Échec de l'enregistrement de l'équipement",
-        "deleteFailed": "Échec de la suppression de l'équipement",
-        "imageUploadFailed": "Échec du téléversement de l'image"
-      }
+      "resultsTitle": "Résultats obtenus :",
+      "subtitle": "Projets phares et résultats obtenus",
+      "title": "Études de cas"
+    },
+    "catalog": {
+      "learnMore": "En savoir plus",
+      "title": "Catalogue des Services"
+    },
+    "cta": {
+      "primary": "Contactez maintenant",
+      "secondary": "Voir les projets",
+      "subtitle": "Contactez-nous pour une consultation gratuite et un devis détaillé",
+      "title": "Besoin d'une consultation de service ?"
+    },
+    "faq": {
+      "items": [
+        {
+          "a": "Cela dépend de la taille du projet, généralement 2 à 6 mois pour les projets petits à moyens.",
+          "q": "Combien de temps dure généralement la construction ?"
+        },
+        {
+          "a": "Oui, nous assurons une maintenance périodique et un support technique 24/7.",
+          "q": "BK Green assure-t-il la maintenance après la fin du projet ?"
+        },
+        {
+          "a": "Les coûts dépendent de la taille du projet, de la technologie utilisée et des exigences spécifiques du client.",
+          "q": "Comment sont calculés les coûts des services ?"
+        }
+      ],
+      "subtitle": "Réponses aux questions fréquentes sur nos services",
+      "title": "FAQ"
+    },
+    "filters": {
+      "industry": [
+        "Résidentiel",
+        "Industriel"
+      ],
+      "type": [
+        "Eaux usées",
+        "Eau potable"
+      ]
+    },
+    "header": {
+      "subtitle": "BK Green fournit des systèmes de traitement des eaux usées, d'eau potable et RO, en commençant par de petits projets et en étendant ses services au Vietnam.",
+      "title": "Nos Services"
     },
     "process": {
-      "title": "Gérer le Processus",
-      "addNew": "Ajouter une Nouvelle Étape",
-      "edit": "Modifier l'Étape",
-      "create": "Créer une Nouvelle Étape",
-      "list": "Liste des Étapes",
-      "listDescription": "Gérer toutes les étapes du processus",
-      "formDescription": "Remplir les informations de l'étape",
-      "form": {
-        "step": "Numéro d'Étape",
-        "title": "Titre",
-        "description": "Description",
-        "order": "Ordre",
-        "image": "Image"
+      "badge": "Processus professionnel",
+      "stepLabel": "Étape {step}",
+      "steps": [
+        {
+          "description": "Évaluer l'état actuel et analyser les besoins spécifiques du projet",
+          "title": "Étude & Analyse"
+        },
+        {
+          "description": "Concevoir en détail le système et planifier la mise en œuvre",
+          "title": "Conception & Planification"
+        },
+        {
+          "description": "Construction professionnelle avec une équipe technique expérimentée",
+          "title": "Construction & Installation"
+        },
+        {
+          "description": "Soutenir l'exploitation et la maintenance périodique du système",
+          "title": "Exploitation & Maintenance"
+        }
+      ],
+      "subtitle": "Un flux professionnel du relevé à l'exploitation, garantissant qualité et efficacité",
+      "title": "Processus du Projet"
+    },
+    "services": {
+      "electrical": {
+        "description": "Fournir des solutions d'automatisation pour les nouveaux projets.",
+        "features": [
+          "Conception d'armoires de commande",
+          "Systèmes SCADA modernes",
+          "Automatisation des processus",
+          "Surveillance et contrôle à distance"
+        ]
       },
-      "table": {
-        "step": "Étape",
-        "image": "Image",
-        "title": "Titre",
-        "order": "Ordre",
-        "actions": "Actions"
+      "equipment": {
+        "description": "Distribuer des pompes, des vannes, des accessoires d'eau et des équipements de protection incendie.",
+        "features": [
+          "Pompes spécialisées",
+          "Vannes et accessoires de qualité",
+          "Équipements de protection incendie modernes",
+          "Conseil de sélection d'équipement"
+        ]
       },
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette étape?",
-      "success": {
-        "created": "Étape créée avec succès",
-        "updated": "Étape mise à jour avec succès",
-        "deleted": "Étape supprimée avec succès",
-        "imageUploaded": "Image téléversée avec succès"
+      "operation": {
+        "description": "Services d'exploitation pour les eaux usées et l'eau potable, en développement.",
+        "features": [
+          "Exploitation continue des systèmes",
+          "Maintenance périodique",
+          "Surveillance à distance",
+          "Rapports détaillés"
+        ]
       },
-      "errors": {
-        "fetchFailed": "Échec du chargement des étapes",
-        "saveFailed": "Échec de l'enregistrement de l'étape",
-        "deleteFailed": "Échec de la suppression de l'étape",
-        "imageUploadFailed": "Échec du téléversement de l'image"
+      "ro": {
+        "description": "Mettre en œuvre des systèmes RO avec une technologie moderne.",
+        "features": [
+          "Conception optimale du système RO",
+          "Installation professionnelle",
+          "Maintenance et remplacement des composants",
+          "Optimisation des performances"
+        ]
+      },
+      "wastewater": {
+        "description": "Fournir des solutions et la construction pour les bâtiments et les parcs industriels dans les projets initiaux.",
+        "features": [
+          "Conception de systèmes de traitement des eaux usées",
+          "Construction et installation professionnelles",
+          "Exploitation et maintenance des systèmes",
+          "Conseil technique approfondi"
+        ]
       }
     },
-    "contactForms": {
-      "title": "Gérer les Formulaires de Contact",
-      "list": "Liste des Formulaires",
-      "listDescription": "Voir et gérer les formulaires de contact",
-      "filterByStatus": "Filtrer par statut",
-      "all": "Tous",
-      "status": {
-        "pending": "En attente",
-        "inProgress": "En cours",
-        "completed": "Terminé",
-        "cancelled": "Annulé"
-      },
-      "table": {
-        "name": "Nom",
-        "email": "Email",
-        "phone": "Téléphone",
-        "message": "Message",
-        "status": "Statut",
-        "date": "Date",
-        "actions": "Actions"
-      },
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce formulaire?",
-      "success": {
-        "updated": "Mis à jour avec succès",
-        "deleted": "Supprimé avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des formulaires",
-        "updateFailed": "Échec de la mise à jour du formulaire",
-        "deleteFailed": "Échec de la suppression du formulaire"
-      }
+    "support": {
+      "items": [
+        {
+          "description": "Équipe technique disponible 24/7 pour tous les problèmes",
+          "title": "Support 24/7"
+        },
+        {
+          "description": "Garantie complète pour tous les équipements et systèmes",
+          "title": "Garantie Longue Durée"
+        },
+        {
+          "description": "Former le personnel à l'exploitation et à la maintenance du système",
+          "title": "Formation à l'Exploitation"
+        }
+      ],
+      "subtitle": "Engagement de support complet pour les clients",
+      "title": "Garantie & Support"
     },
-    "actions": {
-      "create": "Créer",
-      "edit": "Modifier",
-      "delete": "Supprimer",
-      "save": "Enregistrer",
-      "cancel": "Annuler",
-      "back": "Retour",
-      "upload": "Téléverser",
-      "view": "Voir",
-      "confirmDelete": "Confirmer la suppression",
-      "login": "Se connecter",
-      "loggingIn": "Connexion en cours...",
-      "actions": "Actions",
-      "download": "Télécharger",
-      "restore": "Restaurer l'image originale",
-      "uploading": "Téléversement...",
-      "saving": "Enregistrement...",
-      "more": "Plus",
-      "edit": "Modifier",
-      "delete": "Supprimer"
+    "sustainability": {
+      "subtitle": "Nous construisons des solutions économes en énergie dans les premiers projets, visant un avenir durable de l'eau au Vietnam.",
+      "title": "Vers un avenir vert"
     },
-    "forms": {
-      "title": "Titre",
-      "description": "Description",
-      "content": "Contenu",
-      "name": "Nom",
-      "email": "Email",
-      "phone": "Téléphone",
-      "message": "Message",
-      "status": "Statut",
-      "category": "Catégorie",
-      "price": "Prix",
-      "image": "Image",
-      "file": "Fichier",
-      "position": "Poste",
-      "bio": "Biographie",
-      "slug": "Slug",
-      "metaTitle": "Titre meta",
-      "metaDescription": "Description meta",
-      "password": "Mot de passe",
-      "createdAt": "Créé",
-      "type": "Type",
-      "size": "Taille",
-      "general": "Général",
-      "logo": "Logo",
-      "logo_white": "Logo blanc",
-      "hero_background": "Arrière-plan hero",
-      "process_background": "Arrière-plan processus",
-      "favicon": "Favicon",
-      "social_media": "Médias sociaux",
-      "about_image": "Image à propos",
-      "uploadNew": "Téléverser nouveau",
-      "newPage": "Nouvelle page"
-    },
-    "errors": {
-      "required": "Ce champ est obligatoire",
-      "invalidEmail": "Adresse email invalide",
-      "uploadFailed": "Échec du téléversement",
-      "saveFailed": "Échec de l'enregistrement",
-      "deleteFailed": "Échec de la suppression",
-      "loginFailed": "Échec de la connexion",
-      "fetchFailed": "Échec du chargement des données",
-      "noFileSelected": "Aucun fichier sélectionné",
-      "restoreFailed": "Échec de la restauration",
-      "invalidData": "Données fournies invalides",
-      "fetchContactFormsFailed": "Échec du chargement des formulaires de contact",
-      "updateContactFormFailed": "Échec de la mise à jour du formulaire de contact",
-      "deleteContactFormFailed": "Échec de la suppression du formulaire de contact"
-    },
-    "fileUpload": {
-      "imageLabel": "Image",
-      "selectImage": "Sélectionner l'image",
-      "uploading": "Téléversement...",
-      "placeholder": "Sélectionner le fichier à téléverser",
-      "imagePlaceholder": "Sélectionner l'image",
-      "servicePlaceholder": "Sélectionner l'image du service",
-      "projectPlaceholder": "Sélectionner l'image du projet",
-      "productPlaceholder": "Sélectionner l'image du produit",
-      "teamPlaceholder": "Sélectionner l'image de l'équipe",
-      "processPlaceholder": "Sélectionner l'image de l'étape",
-      "equipmentPlaceholder": "Sélectionner l'image de l'équipement",
-      "onlyImage": "Seuls les fichiers image sont acceptés",
-      "sizeLimit": "Le fichier ne doit pas dépasser 5 Mo",
-      "uploadSuccess": "Téléversement réussi",
-      "uploadFailed": "Échec du téléversement"
-    },
-    "success": {
-      "saved": "Enregistré avec succès",
-      "deleted": "Supprimé avec succès",
-      "uploaded": "Téléversé avec succès",
-      "login": "Connexion réussie",
-      "restored": "Image restaurée avec succès"
-    },
-    "saving": "Enregistrement...",
-    "savings": "Enregistrement...",
-    "media": {
-      "title": "Bibliothèque Média",
-      "list": "Liste des fichiers",
-      "listDescription": "Gérer tous les fichiers média",
-      "upload": "Téléverser un fichier",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce fichier?",
-      "success": {
-        "uploaded": "Fichier téléversé avec succès",
-        "deleted": "Fichier supprimé avec succès"
+    "technologies": {
+      "items": {
+        "fire": {
+          "description": "Systèmes professionnels de protection incendie",
+          "features": [
+            "Détection précoce",
+            "Lutte contre l'incendie efficace",
+            "Conformité aux normes"
+          ],
+          "title": "Équipements de Protection Incendie"
+        },
+        "ro": {
+          "description": "Technologie avancée d'osmose inverse",
+          "features": [
+            "Taux de récupération élevé",
+            "Économie d'énergie",
+            "Qualité de l'eau stable"
+          ],
+          "title": "Systèmes RO"
+        },
+        "scada": {
+          "description": "Systèmes de surveillance et de contrôle à distance",
+          "features": [
+            "Surveillance 24/7",
+            "Contrôle automatique",
+            "Rapports détaillés"
+          ],
+          "title": "SCADA & Automatisation"
+        }
       },
-      "errors": {
-        "fetchFailed": "Échec du chargement des fichiers",
-        "uploadFailed": "Échec du téléversement du fichier",
-        "deleteFailed": "Échec de la suppression du fichier"
-      }
-    },
-    "team": {
-      "title": "Gestion d'Équipe",
-      "addNew": "Ajouter un Nouveau Membre",
-      "edit": "Modifier le Membre",
-      "create": "Créer un Nouveau Membre",
-      "list": "Liste des Membres",
-      "listDescription": "Gérer tous les membres de l'équipe",
-      "formDescription": "Remplir les informations du membre",
-      "form": {
-        "name": "Nom",
-        "position": "Poste",
-        "bio": "Biographie",
-        "email": "Email",
-        "phone": "Téléphone",
-        "image": "Image"
-      },
-      "table": {
-        "image": "Image",
-        "name": "Nom",
-        "position": "Poste",
-        "email": "Email",
-        "phone": "Téléphone",
-        "actions": "Actions"
-      },
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce membre?",
-      "success": {
-        "created": "Membre créé avec succès",
-        "updated": "Membre mis à jour avec succès",
-        "deleted": "Membre supprimé avec succès",
-        "imageUploaded": "Image téléversée avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des membres",
-        "saveFailed": "Échec de l'enregistrement du membre",
-        "deleteFailed": "Échec de la suppression du membre",
-        "imageUploadFailed": "Échec du téléversement de l'image"
-      }
-    },
-    "settings": {
-      "title": "Paramètres",
-      "general": "Paramètres généraux",
-      "generalDescription": "Paramètres généraux du système",
-      "appearance": "Apparence",
-      "appearanceDescription": "Paramètres d'apparence",
-      "security": "Sécurité",
-      "securityDescription": "Paramètres de sécurité",
-      "notifications": "Notifications",
-      "notificationsDescription": "Paramètres de notification",
-      "save": "Enregistrer les paramètres",
-      "cancel": "Annuler",
-      "loading": "Chargement...",
-      "success": {
-        "saved": "Paramètres enregistrés avec succès"
-      },
-      "errors": {
-        "saveFailed": "Échec de l'enregistrement des paramètres",
-        "fetchFailed": "Échec du chargement des paramètres"
-      },
-      "siteName": "Nom du site",
-      "siteNamePlaceholder": "Entrez le nom du site",
-      "siteDescription": "Description du site",
-      "siteDescriptionPlaceholder": "Entrez la description du site",
-      "darkMode": "Mode sombre",
-      "sessionTimeout": "Expiration de session",
-      "sessionTimeoutPlaceholder": "Entrez le délai d'expiration (minutes)",
-      "emailNotifications": "Notifications par email",
-      "mediaSettings": "Paramètres Media",
-      "mediaSettingsDescription": "Configurer les images fixes pour votre site web",
-      "logo": "Logo",
-      "selectLogoPlaceholder": "Sélectionner l'image du logo",
-      "heroBackground": "Arrière-plan Hero",
-      "selectHeroBackgroundPlaceholder": "Sélectionner l'arrière-plan hero",
-      "favicon": "Favicon",
-      "selectFaviconPlaceholder": "Sélectionner favicon",
-      "none": "Aucun"
-    },
-    "media": {
-      "uploadFile": "Téléverser un fichier",
-      "list": "Liste des fichiers",
-      "listDescription": "Gérer tous les fichiers média",
-      "upload": "Téléverser un fichier",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce fichier?",
-      "success": {
-        "uploaded": "Fichier téléversé avec succès",
-        "deleted": "Fichier supprimé avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des fichiers",
-        "uploadFailed": "Échec du téléversement du fichier",
-        "deleteFailed": "Échec de la suppression du fichier"
-      }
-    },
-    "team": {
-      "title": "Gestion d'Équipe",
-      "addNew": "Ajouter un Nouveau Membre",
-      "edit": "Modifier le Membre",
-      "create": "Créer un Nouveau Membre",
-      "list": "Liste des Membres",
-      "listDescription": "Gérer tous les membres de l'équipe",
-      "formDescription": "Remplir les informations du membre",
-      "form": {
-        "name": "Nom",
-        "position": "Poste",
-        "bio": "Biographie",
-        "email": "Email",
-        "phone": "Téléphone",
-        "image": "Image"
-      },
-      "table": {
-        "image": "Image",
-        "name": "Nom",
-        "position": "Poste",
-        "email": "Email",
-        "phone": "Téléphone",
-        "actions": "Actions"
-      },
-      "cancel": "Annuler",
-      "save": "Enregistrer",
-      "loading": "Chargement...",
-      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce membre?",
-      "success": {
-        "created": "Membre créé avec succès",
-        "updated": "Membre mis à jour avec succès",
-        "deleted": "Membre supprimé avec succès",
-        "imageUploaded": "Image téléversée avec succès"
-      },
-      "errors": {
-        "fetchFailed": "Échec du chargement des membres",
-        "saveFailed": "Échec de l'enregistrement du membre",
-        "deleteFailed": "Échec de la suppression du membre",
-        "imageUploadFailed": "Échec du téléversement de l'image"
-      }
-    },
-    "settings": {
-      "title": "Paramètres",
-      "general": "Paramètres généraux",
-      "generalDescription": "Paramètres généraux du système",
-      "appearance": "Apparence",
-      "appearanceDescription": "Paramètres d'apparence",
-      "security": "Sécurité",
-      "securityDescription": "Paramètres de sécurité",
-      "notifications": "Notifications",
-      "notificationsDescription": "Paramètres de notification",
-      "save": "Enregistrer les paramètres",
-      "cancel": "Annuler",
-      "loading": "Chargement...",
-      "success": {
-        "saved": "Paramètres enregistrés avec succès"
-      },
-      "errors": {
-        "saveFailed": "Échec de l'enregistrement des paramètres",
-        "fetchFailed": "Échec du chargement des paramètres"
-      },
-      "siteName": "Nom du site",
-      "siteNamePlaceholder": "Entrez le nom du site",
-      "siteDescription": "Description du site",
-      "siteDescriptionPlaceholder": "Entrez la description du site",
-      "darkMode": "Mode sombre",
-      "sessionTimeout": "Expiration de session",
-      "sessionTimeoutPlaceholder": "Entrez le délai d'expiration (minutes)",
-      "emailNotifications": "Notifications par email",
-      "mediaSettings": "Paramètres Media",
-      "mediaSettingsDescription": "Configurer les images fixes pour votre site web",
-      "logo": "Logo",
-      "selectLogoPlaceholder": "Sélectionner l'image du logo",
-      "heroBackground": "Arrière-plan Hero",
-      "selectHeroBackgroundPlaceholder": "Sélectionner l'arrière-plan hero",
-      "favicon": "Favicon",
-      "selectFaviconPlaceholder": "Sélectionner favicon",
-      "none": "Aucun"
-    },
-    "table": {
-      "image": "Image",
-      "name": "Nom",
-      "title": "Titre",
-      "order": "Ordre",
-      "actions": "Actions",
-      "bio": "Biographie",
-      "phone": "Téléphone",
-      "email": "Email",
-      "location": "Emplacement",
-      "status": "Statut",
-      "featured": "En vedette",
-      "price": "Prix",
-      "category": "Catégorie",
-      "step": "Étape",
-      "description": "Description",
-      "message": "Message",
-      "date": "Date"
-    },
-    "edit": "Modifier",
-    "delete": "Supprimer",
-    "yes": "Oui",
-    "no": "Non",
-    "cancel": "Annuler",
-    "save": "Enregistrer",
-    "loading": "Chargement...",
-    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet élément?",
-    "success": {
-      "updated": "Mis à jour avec succès",
-      "deleted": "Supprimé avec succès",
-      "created": "Créé avec succès"
-    },
-    "errors": {
-      "fetchFailed": "Échec du chargement des données",
-      "saveFailed": "Échec de l'enregistrement",
-      "deleteFailed": "Échec de la suppression"
+      "subtitle": "Application de technologies avancées et d'équipements modernes à chaque projet",
+      "title": "Technologies Utilisées"
     }
+  },
+  "units": {
+    "m3PerDay": "m³/jour",
+    "m3PerHour": "m³/h"
   }
 }
