@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Plus } from 'lucide-react'
 
 import { useTranslations } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
@@ -15,9 +16,14 @@ import { MediaTable } from './components/media-table'
 
 export default function MediaPage() {
   const t = useTranslations('admin')
+  const { setTitle } = useAdminTitle()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [category, setCategory] = useState('general')
+
+  useEffect(() => {
+    setTitle(t('navigation.media'))
+  }, [setTitle, t])
 
   const handleFileUpload = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -61,10 +67,7 @@ export default function MediaPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-3xl font-bold">
-          {t('navigation.media')}
-        </h1>
+      <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-4">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button>

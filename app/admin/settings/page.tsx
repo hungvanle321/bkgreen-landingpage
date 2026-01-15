@@ -3,25 +3,31 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { useTranslations } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
+import { Eye, EyeOff } from 'lucide-react'
 import { toast } from 'sonner'
 
 export default function SettingsPage() {
   const t = useTranslations('admin.settings')
+  const { setTitle } = useAdminTitle()
   const { theme, setTheme } = useTheme()
   const [loading, setLoading] = useState(false)
+  const [showDefaultPassword, setShowDefaultPassword] = useState(false)
   const [generalSettings, setGeneralSettings] = useState({
     siteName: '',
     siteDescription: '',
     sessionTimeout: '',
-    emailNotifications: false
+    emailNotifications: false,
+    defaultPassword: 'admin123',
   })
 
   useEffect(() => {
+    setTitle(t('title'))
     const fetchSettings = async () => {
       try {
         // Fetch current settings
@@ -33,7 +39,8 @@ export default function SettingsPage() {
           siteName: settings.siteName || '',
           siteDescription: settings.siteDescription || '',
           sessionTimeout: settings.sessionTimeout || '',
-          emailNotifications: settings.emailNotifications || false
+          emailNotifications: settings.emailNotifications || false,
+          defaultPassword: settings.defaultPassword || 'admin123',
         })
       } catch (error) {
         console.error('Error fetching settings:', error)
@@ -41,7 +48,7 @@ export default function SettingsPage() {
     }
 
     void fetchSettings()
-  }, [])
+  }, [setTitle, t])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -68,6 +75,11 @@ export default function SettingsPage() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ key: 'emailNotifications', value: generalSettings.emailNotifications.toString() })
+        }),
+        fetch('/admin/api/settings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ key: 'defaultPassword', value: generalSettings.defaultPassword })
         })
       ])
 
@@ -81,10 +93,6 @@ export default function SettingsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">{t('title')}</h1>
-      </div>
-
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Card>
@@ -143,6 +151,26 @@ export default function SettingsPage() {
                   value={generalSettings.sessionTimeout}
                   onChange={(e) => setGeneralSettings(prev => ({ ...prev, sessionTimeout: e.target.value }))}
                 />
+              </div>
+              <div>
+                <Label>{t('defaultPassword')}</Label>
+                <p className="text-xs text-gray-500 mb-2">{t('defaultPasswordDescription')}</p>
+                <div className="flex gap-2">
+                  <Input
+                    type={showDefaultPassword ? 'text' : 'password'}
+                    placeholder={t('defaultPasswordPlaceholder')}
+                    value={generalSettings.defaultPassword}
+                    onChange={(e) => setGeneralSettings(prev => ({ ...prev, defaultPassword: e.target.value }))}
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    onClick={() => setShowDefaultPassword(!showDefaultPassword)}
+                  >
+                    {showDefaultPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>

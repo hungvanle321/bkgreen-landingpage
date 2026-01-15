@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslations, useLocale } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
@@ -35,6 +36,7 @@ interface Equipment {
 
 export default function EquipmentPage() {
   const t = useTranslations('admin.equipment')
+  const { setTitle } = useAdminTitle()
   const locale = useLocale() as 'vi' | 'en' | 'fr'
   const [equipment, setEquipment] = useState<Equipment[]>([])
   const [loading, setLoading] = useState(true)
@@ -78,8 +80,9 @@ export default function EquipmentPage() {
   }
 
   useEffect(() => {
+    setTitle(t('title'))
     void fetchEquipment()
-  }, [])
+  }, [setTitle, t])
 
   const handleSubmit = async (data: any) => {
     setIsSubmitted(true)
@@ -201,8 +204,7 @@ export default function EquipmentPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-3xl font-bold">{t('title')}</h1>
+      <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-4">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button onClick={resetForm}>

@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Plus, AlertCircle } from 'lucide-react'
 
 import { useTranslations } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
@@ -34,6 +35,7 @@ interface Page {
 
 export default function PagesPage() {
   const t = useTranslations('admin')
+  const { setTitle } = useAdminTitle()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [editingPage, setEditingPage] = useState<Page | null>(null)
@@ -55,6 +57,10 @@ export default function PagesPage() {
   })
   const [slugError, setSlugError] = useState<string | null>(null)
   const [isUploadingImage, setIsUploadingImage] = useState(false)
+
+  useEffect(() => {
+    setTitle(t('navigation.pages') || 'Pages')
+  }, [setTitle, t])
 
   const resetForm = () => {
     setFormData({
@@ -161,10 +167,7 @@ export default function PagesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">
-          {t('navigation.pages') || 'Pages'}
-        </h1>
+      <div className="flex justify-end items-center">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
@@ -39,6 +40,7 @@ interface Project {
 
 export default function ProjectsPage() {
   const t = useTranslations('admin.projects')
+  const { setTitle } = useAdminTitle()
   const tValidation = useTranslations('admin.validation')
   const locale = useLocale() as 'vi' | 'en' | 'fr'
   const [projects, setProjects] = useState<Project[]>([])
@@ -85,8 +87,9 @@ export default function ProjectsPage() {
   }
 
   useEffect(() => {
+    setTitle(t('title'))
     void fetchProjects()
-  }, [])
+  }, [setTitle, t])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -233,8 +236,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-3xl font-bold">{t('title')}</h1>
+      <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-4">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button onClick={resetForm}>

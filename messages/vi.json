@@ -423,21 +423,6 @@
       "updateContactFormFailed": "Không thể cập nhật form liên hệ",
       "uploadFailed": "Tải lên thất bại"
     },
-    "validation": {
-      "titleRequired": "Tiêu đề không được để trống",
-      "nameRequired": "Tên không được để trống",
-      "descriptionRequired": "Mô tả không được để trống",
-      "slugRequired": "Đường dẫn không được để trống",
-      "stepRequired": "Bước không được để trống",
-      "orderMin": "Thứ tự phải lớn hơn hoặc bằng 0",
-      "atLeastOneTranslation": "Vui lòng nhập ít nhất một ngôn ngữ",
-      "contentRequired": "Nội dung không được để trống",
-      "positionRequired": "Chức vụ không được để trống",
-      "bioRequired": "Tiểu sử không được để trống",
-      "priceInvalid": "Giá không hợp lệ",
-      "priceMin": "Giá phải lớn hơn hoặc bằng 0",
-      "orderInvalid": "Thứ tự không hợp lệ"
-    },
     "fileUpload": {
       "equipmentPlaceholder": "Chọn hình ảnh thiết bị",
       "imageLabel": "Hình ảnh",
@@ -515,21 +500,88 @@
       "uploadFile": "Tải lên File"
     },
     "navigation": {
+      "account": "Tài khoản",
+      "changePassword": "Đổi mật khẩu",
       "contactForms": "Liên hệ",
       "dashboard": "Bảng điều khiển",
       "equipment": "Thiết bị",
       "language": "Ngôn ngữ",
-      "more": "Khác",
       "logout": "Đăng xuất",
       "main": "Điều hướng chính",
       "media": "Thư viện",
+      "more": "Khác",
       "pages": "Trang",
       "process": "Quy trình",
       "products": "Sản phẩm",
+      "profile": "Hồ sơ của tôi",
       "projects": "Dự án",
       "services": "Dịch vụ",
       "settings": "Cài đặt",
-      "team": "Đội ngũ"
+      "team": "Đội ngũ",
+      "users": "Người dùng"
+    },
+    "profile": {
+      "changePassword": "Đổi mật khẩu",
+      "changePasswordDescription": "Cập nhật mật khẩu đăng nhập của bạn",
+      "description": "Quản lý thông tin cá nhân và bảo mật tài khoản",
+      "errors": {
+        "fetchFailed": "Không thể tải thông tin người dùng",
+        "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự",
+        "passwordMismatch": "Mật khẩu xác nhận không khớp",
+        "passwordRequired": "Vui lòng nhập mật khẩu hiện tại",
+        "requiredFields": "Vui lòng điền đầy đủ thông tin",
+        "updateFailed": "Không thể cập nhật thông tin",
+        "uploadFailed": "Không thể tải ảnh lên"
+      },
+      "form": {
+        "confirmPassword": "Xác nhận mật khẩu mới",
+        "currentPassword": "Mật khẩu hiện tại",
+        "email": "Email",
+        "name": "Tên",
+        "newPassword": "Mật khẩu mới",
+        "passwordHint": "Mật khẩu phải có ít nhất 6 ký tự"
+      },
+      "loading": "Đang tải...",
+      "profileInfo": "Thông tin cá nhân",
+      "profileInfoDescription": "Cập nhật ảnh đại diện và thông tin của bạn",
+      "saveChanges": "Lưu thay đổi",
+      "saving": "Đang lưu...",
+      "success": {
+        "avatarUpdated": "Cập nhật ảnh đại diện thành công",
+        "passwordChanged": "Đổi mật khẩu thành công",
+        "profileUpdated": "Cập nhật thông tin thành công"
+      },
+      "title": "Hồ sơ của tôi",
+      "uploadAvatar": "Tải ảnh lên",
+      "cropDialog": {
+        "title": "Cắt ảnh đại diện",
+        "description": "Điều chỉnh vùng cắt để chọn ảnh đại diện của bạn",
+        "cancel": "Hủy",
+        "apply": "Áp dụng"
+      }
+    },
+    "changePassword": {
+      "cancel": "Hủy",
+      "cardDescription": "Nhập mật khẩu hiện tại và mật khẩu mới",
+      "changePassword": "Đổi mật khẩu",
+      "description": "Cập nhật mật khẩu đăng nhập của bạn",
+      "errors": {
+        "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự",
+        "passwordMismatch": "Mật khẩu xác nhận không khớp",
+        "passwordRequired": "Vui lòng nhập mật khẩu hiện tại",
+        "updateFailed": "Không thể cập nhật mật khẩu"
+      },
+      "form": {
+        "confirmPassword": "Xác nhận mật khẩu mới",
+        "currentPassword": "Mật khẩu hiện tại",
+        "newPassword": "Mật khẩu mới",
+        "passwordHint": "Mật khẩu phải có ít nhất 6 ký tự"
+      },
+      "saving": "Đang lưu...",
+      "success": {
+        "passwordChanged": "Đổi mật khẩu thành công"
+      },
+      "title": "Đổi mật khẩu"
     },
     "process": {
       "addNew": "Thêm bước mới",
@@ -723,6 +775,9 @@
       "appearanceDescription": "Cài đặt giao diện",
       "cancel": "Hủy",
       "darkMode": "Chế độ tối",
+      "defaultPassword": "Mật khẩu mặc định",
+      "defaultPasswordDescription": "Mật khẩu mặc định cho người dùng mới",
+      "defaultPasswordPlaceholder": "Nhập mật khẩu mặc định",
       "emailNotifications": "Thông báo email",
       "errors": {
         "fetchFailed": "Không thể tải cài đặt",
@@ -828,6 +883,78 @@
         "position": "Chức vụ"
       },
       "title": "Quản lý Đội ngũ"
+    },
+    "users": {
+      "addNew": "Thêm người dùng mới",
+      "cancel": "Hủy",
+      "confirmDelete": "Bạn có chắc chắn muốn xóa người dùng này?",
+      "create": "Tạo người dùng mới",
+      "delete": "Xóa",
+      "edit": "Chỉnh sửa người dùng",
+      "errors": {
+        "adminAccountProtected": "Tài khoản admin không thể xóa",
+        "deleteFailed": "Không thể xóa người dùng",
+        "emailAlreadyExists": "Email đã tồn tại",
+        "fetchFailed": "Không thể tải người dùng",
+        "saveFailed": "Không thể lưu người dùng"
+      },
+      "form": {
+        "email": "Email",
+        "name": "Tên",
+        "newPassword": "Mật khẩu mới",
+        "password": "Mật khẩu",
+        "role": "Vai trò"
+      },
+      "formDescription": "Điền thông tin người dùng",
+      "list": "Danh sách người dùng",
+      "listDescription": "Quản lý tất cả người dùng",
+      "loading": "Đang tải...",
+      "roles": {
+        "admin": "Quản trị viên",
+        "user": "Người dùng"
+      },
+      "resetPassword": "Đặt lại mật khẩu",
+      "resetPasswordConfirm": "Đặt lại mật khẩu",
+      "resetPasswordDescription": "Đặt mật khẩu về mặc định cho",
+      "save": "Lưu",
+      "success": {
+        "created": "Tạo người dùng thành công",
+        "deleted": "Xóa người dùng thành công",
+        "updated": "Cập nhật người dùng thành công"
+      },
+      "table": {
+        "actions": "Thao tác",
+        "createdAt": "Ngày tạo",
+        "email": "Email",
+        "name": "Tên",
+        "role": "Vai trò"
+      },
+      "title": "Quản lý người dùng",
+      "tooltip": {
+        "delete": "Xóa người dùng",
+        "edit": "Chỉnh sửa người dùng",
+        "resetPassword": "Đặt lại mật khẩu về mặc định"
+      },
+      "validationMessages": {
+        "emailRequired": "Email là bắt buộc",
+        "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự",
+        "passwordRequired": "Mật khẩu là bắt buộc"
+      }
+    },
+    "validation": {
+      "atLeastOneTranslation": "Vui lòng nhập ít nhất một ngôn ngữ",
+      "bioRequired": "Tiểu sử không được để trống",
+      "contentRequired": "Nội dung không được để trống",
+      "descriptionRequired": "Mô tả không được để trống",
+      "nameRequired": "Tên không được để trống",
+      "orderInvalid": "Thứ tự không hợp lệ",
+      "orderMin": "Thứ tự phải lớn hơn hoặc bằng 0",
+      "positionRequired": "Chức vụ không được để trống",
+      "priceInvalid": "Giá không hợp lệ",
+      "priceMin": "Giá phải lớn hơn hoặc bằng 0",
+      "slugRequired": "Đường dẫn không được để trống",
+      "stepRequired": "Bước không được để trống",
+      "titleRequired": "Tiêu đề không được để trống"
     }
   },
   "common": {
@@ -964,11 +1091,12 @@
     "contact": "Liên Hệ",
     "home": "Trang Chủ",
     "more": "Khác",
-    "pages": "Trang",
     "openMenu": "Mở menu chính",
+    "pages": "Trang",
     "products": "Sản Phẩm",
     "projects": "Dự Án",
-    "services": "Dịch Vụ"
+    "services": "Dịch Vụ",
+    "users": "Người Dùng"
   },
   "process": {
     "loading": "Đang tải...",

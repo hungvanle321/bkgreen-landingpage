@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
@@ -32,6 +33,7 @@ interface Service {
 
 export default function ServicesPage() {
   const t = useTranslations('admin.services')
+  const { setTitle } = useAdminTitle()
   const tValidation = useTranslations('admin.validation')
   const locale = useLocale() as 'vi' | 'en' | 'fr'
   const [services, setServices] = useState<Service[]>([])
@@ -73,8 +75,9 @@ export default function ServicesPage() {
   }
 
   useEffect(() => {
+    setTitle(t('title'))
     void fetchServices()
-  }, [])
+  }, [setTitle, t])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -210,8 +213,7 @@ export default function ServicesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-3xl font-bold">{t('title')}</h1>
+      <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-4">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button onClick={resetForm}>

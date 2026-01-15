@@ -420,21 +420,6 @@
       "saveFailed": "Échec de l'enregistrement",
       "uploadFailed": "Échec du téléversement"
     },
-    "validation": {
-      "titleRequired": "Le titre est requis",
-      "nameRequired": "Le nom est requis",
-      "descriptionRequired": "La description est requise",
-      "slugRequired": "Le slug est requis",
-      "stepRequired": "L'étape est requise",
-      "orderMin": "L'ordre doit être supérieur ou égal à 0",
-      "atLeastOneTranslation": "Au moins une traduction est requise",
-      "contentRequired": "Le contenu est requis",
-      "positionRequired": "Le poste est requis",
-      "bioRequired": "La biographie est requise",
-      "priceInvalid": "Prix invalide",
-      "priceMin": "Le prix doit être supérieur ou égal à 0",
-      "orderInvalid": "Ordre invalide"
-    },
     "fileUpload": {
       "equipmentPlaceholder": "Sélectionner l'image de l'équipement",
       "imageLabel": "Image",
@@ -512,23 +497,90 @@
       "uploadFile": "Téléverser un fichier"
     },
     "navigation": {
+      "account": "Compte",
+      "changePassword": "Changer le mot de passe",
       "contactForms": "Formulaires de contact",
       "dashboard": "Tableau de bord",
       "equipment": "Équipement",
       "language": "Langue",
-      "more": "Autres",
       "logout": "Déconnexion",
       "main": "Navigation principale",
       "media": "Médias",
+      "more": "Autres",
       "pages": "Pages",
       "process": "Processus",
       "products": "Produits",
+      "profile": "Mon Profil",
       "projects": "Projets",
       "services": "Services",
       "settings": "Paramètres",
-      "team": "Équipe"
+      "team": "Équipe",
+      "users": "Utilisateurs"
     },
     "no": "Non",
+    "profile": {
+      "changePassword": "Changer le mot de passe",
+      "changePasswordDescription": "Mettez à jour votre mot de passe de connexion",
+      "description": "Gérez vos informations personnelles et la sécurité de votre compte",
+      "errors": {
+        "fetchFailed": "Échec du chargement des informations utilisateur",
+        "passwordMin": "Le mot de passe doit contenir au moins 6 caractères",
+        "passwordMismatch": "Le mot de passe de confirmation ne correspond pas",
+        "passwordRequired": "Veuillez saisir le mot de passe actuel",
+        "requiredFields": "Veuillez remplir tous les champs obligatoires",
+        "updateFailed": "Échec de la mise à jour des informations",
+        "uploadFailed": "Échec du téléchargement de l'image"
+      },
+      "form": {
+        "confirmPassword": "Confirmer le nouveau mot de passe",
+        "currentPassword": "Mot de passe actuel",
+        "email": "Email",
+        "name": "Nom",
+        "newPassword": "Nouveau mot de passe",
+        "passwordHint": "Le mot de passe doit contenir au moins 6 caractères"
+      },
+      "loading": "Chargement...",
+      "profileInfo": "Informations personnelles",
+      "profileInfoDescription": "Mettez à jour votre avatar et vos informations",
+      "saveChanges": "Enregistrer les modifications",
+      "saving": "Enregistrement...",
+      "success": {
+        "avatarUpdated": "Avatar mis à jour avec succès",
+        "passwordChanged": "Mot de passe modifié avec succès",
+        "profileUpdated": "Profil mis à jour avec succès"
+      },
+      "title": "Mon Profil",
+      "uploadAvatar": "Télécharger l'avatar",
+      "cropDialog": {
+        "title": "Recadrer l'avatar",
+        "description": "Ajustez la zone de recadrage pour sélectionner votre avatar",
+        "cancel": "Annuler",
+        "apply": "Appliquer le recadrage"
+      }
+    },
+    "changePassword": {
+      "cancel": "Annuler",
+      "cardDescription": "Entrez votre mot de passe actuel et le nouveau",
+      "changePassword": "Changer le mot de passe",
+      "description": "Mettez à jour votre mot de passe de connexion",
+      "errors": {
+        "passwordMin": "Le mot de passe doit contenir au moins 6 caractères",
+        "passwordMismatch": "Le mot de passe de confirmation ne correspond pas",
+        "passwordRequired": "Veuillez saisir le mot de passe actuel",
+        "updateFailed": "Échec de la mise à jour du mot de passe"
+      },
+      "form": {
+        "confirmPassword": "Confirmer le nouveau mot de passe",
+        "currentPassword": "Mot de passe actuel",
+        "newPassword": "Nouveau mot de passe",
+        "passwordHint": "Le mot de passe doit contenir au moins 6 caractères"
+      },
+      "saving": "Enregistrement...",
+      "success": {
+        "passwordChanged": "Mot de passe modifié avec succès"
+      },
+      "title": "Changer le mot de passe"
+    },
     "process": {
       "addNew": "Ajouter une Nouvelle Étape",
       "cancel": "Annuler",
@@ -722,6 +774,9 @@
       "appearanceDescription": "Paramètres d'apparence",
       "cancel": "Annuler",
       "darkMode": "Mode sombre",
+      "defaultPassword": "Mot de passe par défaut",
+      "defaultPasswordDescription": "Mot de passe par défaut pour les nouveaux utilisateurs",
+      "defaultPasswordPlaceholder": "Entrez le mot de passe par défaut",
       "emailNotifications": "Notifications par email",
       "errors": {
         "fetchFailed": "Échec du chargement des paramètres",
@@ -824,6 +879,78 @@
         "position": "Poste"
       },
       "title": "Gestion d'Équipe"
+    },
+    "users": {
+      "addNew": "Ajouter un nouvel utilisateur",
+      "cancel": "Annuler",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet utilisateur?",
+      "create": "Créer un nouvel utilisateur",
+      "delete": "Supprimer",
+      "edit": "Modifier l'utilisateur",
+      "errors": {
+        "adminAccountProtected": "Le compte administrateur ne peut pas être supprimé",
+        "deleteFailed": "Impossible de supprimer l'utilisateur",
+        "emailAlreadyExists": "L'email existe déjà",
+        "fetchFailed": "Impossible de charger les utilisateurs",
+        "saveFailed": "Impossible d'enregistrer l'utilisateur"
+      },
+      "form": {
+        "email": "Email",
+        "name": "Nom",
+        "newPassword": "Nouveau mot de passe",
+        "password": "Mot de passe",
+        "role": "Rôle"
+      },
+      "formDescription": "Remplissez les informations de l'utilisateur",
+      "list": "Liste des utilisateurs",
+      "listDescription": "Gérez tous les utilisateurs",
+      "loading": "Chargement...",
+      "roles": {
+        "admin": "Administrateur",
+        "user": "Utilisateur"
+      },
+      "resetPassword": "Réinitialiser le mot de passe",
+      "resetPasswordConfirm": "Réinitialiser le mot de passe",
+      "resetPasswordDescription": "Définir le mot de passe par défaut pour",
+      "save": "Enregistrer",
+      "success": {
+        "created": "Utilisateur créé avec succès",
+        "deleted": "Utilisateur supprimé avec succès",
+        "updated": "Utilisateur mis à jour avec succès"
+      },
+      "table": {
+        "actions": "Actions",
+        "createdAt": "Créé",
+        "email": "Email",
+        "name": "Nom",
+        "role": "Rôle"
+      },
+      "title": "Gestion des utilisateurs",
+      "tooltip": {
+        "delete": "Supprimer l'utilisateur",
+        "edit": "Modifier l'utilisateur",
+        "resetPassword": "Réinitialiser le mot de passe par défaut"
+      },
+      "validationMessages": {
+        "emailRequired": "L'email est requis",
+        "passwordMin": "Le mot de passe doit contenir au moins 6 caractères",
+        "passwordRequired": "Le mot de passe est requis"
+      }
+    },
+    "validation": {
+      "atLeastOneTranslation": "Au moins une traduction est requise",
+      "bioRequired": "La biographie est requise",
+      "contentRequired": "Le contenu est requis",
+      "descriptionRequired": "La description est requise",
+      "nameRequired": "Le nom est requis",
+      "orderInvalid": "Ordre invalide",
+      "orderMin": "L'ordre doit être supérieur ou égal à 0",
+      "positionRequired": "Le poste est requis",
+      "priceInvalid": "Prix invalide",
+      "priceMin": "Le prix doit être supérieur ou égal à 0",
+      "slugRequired": "Le slug est requis",
+      "stepRequired": "L'étape est requise",
+      "titleRequired": "Le titre est requis"
     },
     "yes": "Oui"
   },
@@ -961,8 +1088,8 @@
     "contact": "Contact",
     "home": "Accueil",
     "more": "Autres",
-    "pages": "Pages",
     "openMenu": "Ouvrir le menu principal",
+    "pages": "Pages",
     "products": "Produits",
     "projects": "Projets",
     "services": "Services"

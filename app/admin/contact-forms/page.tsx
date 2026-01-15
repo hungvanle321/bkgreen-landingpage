@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
@@ -23,6 +24,7 @@ interface ContactForm {
 
 export default function ContactFormsPage() {
   const t = useTranslations('admin.contactForms')
+  const { setTitle } = useAdminTitle()
   const [forms, setForms] = useState<ContactForm[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState<string>('all')
@@ -44,6 +46,10 @@ export default function ContactFormsPage() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    setTitle(t('title'))
+  }, [setTitle, t])
 
   useEffect(() => {
     void fetchForms()
@@ -105,8 +111,7 @@ export default function ContactFormsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-3xl font-bold">{t('title')}</h1>
+      <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-4">
         <Select value={statusFilter} onValueChange={setStatusFilter}>
           <SelectTrigger className="w-48">
             <SelectValue placeholder={t('filterByStatus')} />

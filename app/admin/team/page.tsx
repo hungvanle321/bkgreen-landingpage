@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { useAdminTitle } from '../components/admin-title-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
@@ -35,6 +36,7 @@ interface TeamMember {
 
 export default function TeamPage() {
   const t = useTranslations('admin.team')
+  const { setTitle } = useAdminTitle()
   const [members, setMembers] = useState<TeamMember[]>([])
   const [loading, setLoading] = useState(true)
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -72,8 +74,9 @@ export default function TeamPage() {
   }
 
   useEffect(() => {
+    setTitle(t('title'))
     void fetchMembers()
-  }, [])
+  }, [setTitle, t])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -168,8 +171,7 @@ export default function TeamPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-3xl font-bold">{t('title')}</h1>
+      <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-4">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button onClick={resetForm}>

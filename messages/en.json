@@ -418,21 +418,6 @@
       "saveFailed": "Failed to save",
       "uploadFailed": "Failed to upload"
     },
-    "validation": {
-      "titleRequired": "Title is required",
-      "nameRequired": "Name is required",
-      "descriptionRequired": "Description is required",
-      "slugRequired": "Slug is required",
-      "stepRequired": "Step is required",
-      "orderMin": "Order must be 0 or greater",
-      "atLeastOneTranslation": "At least one translation is required",
-      "contentRequired": "Content is required",
-      "positionRequired": "Position is required",
-      "bioRequired": "Bio is required",
-      "priceInvalid": "Invalid price",
-      "priceMin": "Price must be greater than or equal to 0",
-      "orderInvalid": "Invalid order"
-    },
     "fileUpload": {
       "equipmentPlaceholder": "Select equipment image",
       "imageLabel": "Image",
@@ -514,19 +499,86 @@
       "dashboard": "Dashboard",
       "equipment": "Equipment",
       "language": "Language",
-      "more": "More",
       "logout": "Logout",
       "main": "Main Navigation",
       "media": "Media",
+      "more": "More",
       "pages": "Pages",
       "process": "Process",
       "products": "Products",
+      "profile": "My Profile",
       "projects": "Projects",
       "services": "Services",
       "settings": "Settings",
-      "team": "Team"
+      "team": "Team",
+      "users": "Users",
+      "account": "Account",
+      "changePassword": "Change Password"
     },
     "no": "No",
+    "profile": {
+      "changePassword": "Change Password",
+      "changePasswordDescription": "Update your login password",
+      "description": "Manage your personal information and account security",
+      "errors": {
+        "fetchFailed": "Failed to load user information",
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordMismatch": "Confirmation password does not match",
+        "passwordRequired": "Please enter current password",
+        "requiredFields": "Please fill in all required fields",
+        "updateFailed": "Failed to update information",
+        "uploadFailed": "Failed to upload image"
+      },
+      "form": {
+        "confirmPassword": "Confirm New Password",
+        "currentPassword": "Current Password",
+        "email": "Email",
+        "name": "Name",
+        "newPassword": "New Password",
+        "passwordHint": "Password must be at least 6 characters"
+      },
+      "loading": "Loading...",
+      "profileInfo": "Personal Information",
+      "profileInfoDescription": "Update your avatar and information",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "success": {
+        "avatarUpdated": "Avatar updated successfully",
+        "passwordChanged": "Password changed successfully",
+        "profileUpdated": "Profile updated successfully"
+      },
+      "title": "My Profile",
+      "uploadAvatar": "Upload Avatar",
+      "cropDialog": {
+        "title": "Crop Avatar",
+        "description": "Adjust the crop area to select your avatar",
+        "cancel": "Cancel",
+        "apply": "Apply Crop"
+      }
+    },
+    "changePassword": {
+      "cancel": "Cancel",
+      "cardDescription": "Enter your current password and new password",
+      "changePassword": "Change Password",
+      "description": "Update your login password",
+      "errors": {
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordMismatch": "Confirmation password does not match",
+        "passwordRequired": "Please enter current password",
+        "updateFailed": "Failed to update password"
+      },
+      "form": {
+        "confirmPassword": "Confirm New Password",
+        "currentPassword": "Current Password",
+        "newPassword": "New Password",
+        "passwordHint": "Password must be at least 6 characters"
+      },
+      "saving": "Saving...",
+      "success": {
+        "passwordChanged": "Password changed successfully"
+      },
+      "title": "Change Password"
+    },
     "process": {
       "addNew": "Add New Step",
       "cancel": "Cancel",
@@ -719,6 +771,9 @@
       "appearanceDescription": "Appearance settings",
       "cancel": "Cancel",
       "darkMode": "Dark Mode",
+      "defaultPassword": "Default Password",
+      "defaultPasswordDescription": "Default password for new users",
+      "defaultPasswordPlaceholder": "Enter default password",
       "emailNotifications": "Email Notifications",
       "errors": {
         "fetchFailed": "Failed to fetch settings",
@@ -826,6 +881,78 @@
         "position": "Position"
       },
       "title": "Team Management"
+    },
+    "users": {
+      "addNew": "Add New User",
+      "cancel": "Cancel",
+      "confirmDelete": "Are you sure you want to delete this user?",
+      "create": "Create New User",
+      "delete": "Delete",
+      "edit": "Edit User",
+      "errors": {
+        "adminAccountProtected": "Admin account cannot be deleted",
+        "deleteFailed": "Failed to delete user",
+        "emailAlreadyExists": "Email already exists",
+        "fetchFailed": "Failed to fetch users",
+        "saveFailed": "Failed to save user"
+      },
+      "form": {
+        "email": "Email",
+        "name": "Name",
+        "newPassword": "New Password",
+        "password": "Password",
+        "role": "Role"
+      },
+      "formDescription": "Fill in user information",
+      "list": "Users List",
+      "listDescription": "Manage all users",
+      "loading": "Loading...",
+      "roles": {
+        "admin": "Admin",
+        "user": "User"
+      },
+      "resetPassword": "Reset Password",
+      "resetPasswordConfirm": "Reset Password",
+      "resetPasswordDescription": "Set password to default for",
+      "save": "Save",
+      "success": {
+        "created": "User created successfully",
+        "deleted": "User deleted successfully",
+        "updated": "User updated successfully"
+      },
+      "table": {
+        "actions": "Actions",
+        "createdAt": "Created",
+        "email": "Email",
+        "name": "Name",
+        "role": "Role"
+      },
+      "title": "User Management",
+      "tooltip": {
+        "delete": "Delete user",
+        "edit": "Edit user",
+        "resetPassword": "Reset password to default"
+      },
+      "validationMessages": {
+        "emailRequired": "Email is required",
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordRequired": "Password is required"
+      }
+    },
+    "validation": {
+      "atLeastOneTranslation": "At least one translation is required",
+      "bioRequired": "Bio is required",
+      "contentRequired": "Content is required",
+      "descriptionRequired": "Description is required",
+      "nameRequired": "Name is required",
+      "orderInvalid": "Invalid order",
+      "orderMin": "Order must be 0 or greater",
+      "positionRequired": "Position is required",
+      "priceInvalid": "Invalid price",
+      "priceMin": "Price must be greater than or equal to 0",
+      "slugRequired": "Slug is required",
+      "stepRequired": "Step is required",
+      "titleRequired": "Title is required"
     },
     "yes": "Yes"
   },
@@ -963,8 +1090,8 @@
     "contact": "Contact",
     "home": "Home",
     "more": "More",
-    "pages": "Pages",
     "openMenu": "Open main menu",
+    "pages": "Pages",
     "products": "Products",
     "projects": "Projects",
     "services": "Services"

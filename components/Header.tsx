@@ -185,14 +185,15 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors ${
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-all duration-200 ${
               isHomePage && !isScrolled
-                ? 'text-white hover:text-primary-red'
-                : 'text-gray-700 hover:text-primary-red'
+                ? 'text-white hover:text-primary-red hover:bg-white/10'
+                : 'text-gray-700 hover:text-primary-red hover:bg-gray-100'
             }`}
             onClick={() => setMobileMenuOpen(true)}
+            aria-label={t('openMenu')}
           >
-            <span className="sr-only">{t('openMenu') }</span>
+            <span className="sr-only">{t('openMenu')}</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
@@ -270,12 +271,12 @@ export default function Header() {
           />
           <div className="fixed inset-y-0 right-0 z-[100] w-full h-screen overflow-y-auto overscroll-contain bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 shadow-xl">
             <div className="flex items-center justify-between">
-              <span className="sr-only">BK Green</span>
-              <div />
+              <span className="text-lg font-semibold text-foreground">Menu</span>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 hover:text-primary-red transition-all duration-200"
                 onClick={() => setMobileMenuOpen(false)}
+                aria-label={t('closeMenu')}
               >
                 <span className="sr-only">{t('closeMenu')}</span>
                 <X className="h-6 w-6" aria-hidden="true" />
