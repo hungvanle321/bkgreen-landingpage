@@ -33,12 +33,6 @@ export default function ServicesPageClient() {
     { title: t('technologies.items.fire.title'), description: t('technologies.items.fire.description'), image: '/service-equipment.jpg', features: [t('technologies.items.fire.features.0'), t('technologies.items.fire.features.1'), t('technologies.items.fire.features.2')] }
   ]
 
-  const caseStudies = [
-    { title: t('cases.0.title'), industry: t('cases.0.industry'), description: t('cases.0.description'), image: '/service-wastewater.jpg', results: [t('cases.0.results.0'), t('cases.0.results.1'), t('cases.0.results.2')] },
-    { title: t('cases.1.title'), industry: t('cases.1.industry'), description: t('cases.1.description'), image: '/service-ro.jpg', results: [t('cases.1.results.0'), t('cases.1.results.1'), t('cases.1.results.2')] },
-    { title: t('cases.2.title'), industry: t('cases.2.industry'), description: t('cases.2.description'), image: '/service-equipment.jpg', results: [t('cases.2.results.0'), t('cases.2.results.1'), t('cases.2.results.2')] }
-  ]
-
   const supportServices = [
     { icon: Clock, title: t('support.items.0.title'), description: t('support.items.0.description'), image: '/service-operation.jpg' },
     { icon: Shield, title: t('support.items.1.title'), description: t('support.items.1.description'), image: '/service-consulting.jpg' },
@@ -181,44 +175,6 @@ export default function ServicesPageClient() {
                       </li>
                     ))}
                   </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{t('cases.title')}</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">{t('cases.subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {caseStudies.map((study) => (
-              <Card key={study.title} className="flex flex-col h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white overflow-hidden">
-                <div className="aspect-video relative overflow-hidden">
-                  <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-900">{study.industry}</span>
-                  </div>
-                </div>
-                <CardHeader className="flex-shrink-0">
-                  <CardTitle className="text-xl" style={{ color: '#1844a7' }}>{study.title}</CardTitle>
-                  <CardDescription className="text-base">{study.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-900">{t('cases.resultsTitle')}</h4>
-                    <ul className="space-y-2">
-                      {study.results.map((result, index) => (
-                        <li key={index} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4" style={{ color: '#007a3f' }} />
-                          <span className="text-sm text-gray-600">{result}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </CardContent>
               </Card>
             ))}

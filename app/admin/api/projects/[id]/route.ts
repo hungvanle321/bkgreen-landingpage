@@ -20,6 +20,7 @@ const projectSchema = z.object({
     locale: z.enum(['vi', 'en', 'fr']),
     title: z.string().min(1),
     description: z.string().min(1),
+    shortDescription: z.string().optional(),
     category: z.string().optional(),
   })).optional(),
 })

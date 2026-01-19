@@ -644,6 +644,8 @@
       },
       "form": {
         "category": "Danh mục",
+        "selectCategory": "Chọn danh mục",
+        "shortDescription": "Mô tả ngắn",
         "description": "Mô tả",
         "featured": "Nổi bật",
         "images": "Hình ảnh",
@@ -693,11 +695,14 @@
       "form": {
         "capacity": "Công suất",
         "category": "Danh mục",
+        "shortDescription": "Mô tả ngắn",
         "description": "Mô tả",
         "featured": "Nổi bật",
         "images": "Hình ảnh",
         "location": "Địa điểm",
         "order": "Thứ tự",
+        "selectStatus": "Chọn trạng thái",
+        "selectType": "Chọn loại dự án",
         "slug": "Đường dẫn",
         "status": "Trạng thái",
         "title": "Tiêu đề",
@@ -1262,7 +1267,8 @@
       "capacity": "Công suất thiết kế",
       "completed": "Dự án hoàn thành",
       "service": "Dịch vụ chuyên nghiệp"
-    }
+    },
+    "loading": "Đang tải dự án..."
   },
   "services": {
     "consulting": {
@@ -1297,41 +1303,6 @@
     }
   },
   "servicesPage": {
-    "cases": {
-      "0": {
-        "description": "Hệ thống xử lý nước thải 2000m³/ngày cho khu công nghiệp",
-        "industry": "Công nghiệp",
-        "results": [
-          "Giảm 95% ô nhiễm",
-          "Tiết kiệm 30% chi phí",
-          "Vận hành ổn định"
-        ],
-        "title": "Dự Án Khu Công Nghiệp"
-      },
-      "1": {
-        "description": "Hệ thống RO công nghiệp cho nhà máy nước sạch",
-        "industry": "Nước cấp",
-        "results": [
-          "Công suất 1000m³/h",
-          "Chất lượng nước cao",
-          "Bảo trì dễ dàng"
-        ],
-        "title": "Nhà Máy Nước Sạch"
-      },
-      "2": {
-        "description": "Hệ thống PCCC và xử lý nước cho tòa nhà cao tầng",
-        "industry": "Thương mại",
-        "results": [
-          "An toàn tuyệt đối",
-          "Tuân thủ quy định",
-          "Chi phí hợp lý"
-        ],
-        "title": "Tòa Nhà Thương Mại"
-      },
-      "resultsTitle": "Kết quả đạt được:",
-      "subtitle": "Các dự án tiêu biểu và kết quả đạt được",
-      "title": "Case Studies"
-    },
     "catalog": {
       "learnMore": "Tìm Hiểu Thêm",
       "title": "Danh Mục Dịch Vụ"
@@ -1499,6 +1470,22 @@
       },
       "subtitle": "Áp dụng công nghệ tiên tiến và thiết bị hiện đại cho mọi dự án",
       "title": "Công Nghệ Sử Dụng"
+    }
+  },
+  "products": {
+    "title": "Sản phẩm",
+    "featured": {
+      "badge": "Nổi bật"
+    },
+    "details": {
+      "description": "Mô tả sản phẩm",
+      "gallery": "Thư viện ảnh",
+      "info": "Thông tin sản phẩm",
+      "category": "Danh mục",
+      "specs": "Thông số kỹ thuật",
+      "price": "Giá",
+      "contact": "Liên hệ tư vấn",
+      "back": "Quay lại danh sách"
     }
   },
   "units": {

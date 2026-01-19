@@ -38,6 +38,7 @@ export function createValidationSchemas(messages: Partial<ValidationMessages> = 
     locale: z.string(),
     title: z.string().min(1, msg.titleRequired),
     description: z.string().min(1, msg.descriptionRequired),
+    shortDescription: z.string().optional(),
     category: z.string().optional(),
   })
 
@@ -47,6 +48,7 @@ export function createValidationSchemas(messages: Partial<ValidationMessages> = 
     locale: z.string(),
     title: z.string(),
     description: z.string(),
+    shortDescription: z.string().optional(),
     category: z.string().optional(),
   }).superRefine((data, ctx) => {
     // Only require title and description for Vietnamese
@@ -74,6 +76,7 @@ export function createValidationSchemas(messages: Partial<ValidationMessages> = 
     locale: z.string(),
     name: z.string().min(1, msg.nameRequired),
     description: z.string().min(1, msg.descriptionRequired),
+    shortDescription: z.string().optional(),
     category: z.string().optional(),
   })
 

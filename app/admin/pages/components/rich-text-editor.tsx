@@ -57,7 +57,7 @@ export function RichTextEditor({ value, onChange, placeholder, onUploadStart, on
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm sm:prose-base dark:prose-invert min-h-[220px] max-h-[520px] overflow-y-auto px-4 py-3 rounded-md border bg-background focus:outline-none",
+          "prose prose-sm sm:prose-base dark:prose-invert min-h-[220px] max-h-[520px] overflow-y-auto px-4 py-3 rounded-md border bg-background focus:outline-none prose-img:max-w-md prose-img:mx-auto prose-img:rounded-lg",
       },
     },
     onUpdate: ({ editor }: { editor: any }) => {

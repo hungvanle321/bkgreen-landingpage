@@ -55,7 +55,7 @@ function renderNode(node: JSONContent, key: number): React.ReactNode {
         <div key={key} className="my-4">
           {/* Dùng img thường để tránh cấu hình next/image cho đường dẫn động */}
           {/* Nếu cần tối ưu có thể chuyển sang next/image sau */}
-          <img src={src} alt={alt} className="rounded-lg w-full h-auto" />
+          <img src={src} alt={alt} className="rounded-lg max-w-md w-full h-auto mx-auto" />
         </div>
       )
     }

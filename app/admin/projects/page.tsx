@@ -13,11 +13,19 @@ import { DeleteConfirmDialog } from '@/components/ui/delete-confirm-dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Textarea } from '@/components/ui/textarea'
+import { RichTextEditor } from '../pages/components/rich-text-editor'
 import { MultiFileUpload } from '@/components/ui/multi-file-upload'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { Plus, Edit, Trash2, Image as ImageIcon } from 'lucide-react'
 import { toast } from 'sonner'
 import Image from 'next/image'
+import { getProjectStatusOptions, getProjectTypeOptions, getProjectStatusLabel, getProjectStatusColor } from '@/types/project'
 
 interface Project {
   id: string
@@ -34,6 +42,7 @@ interface Project {
     locale: string
     title: string
     description: string
+    shortDescription?: string
     category?: string
   }>
 }
@@ -67,9 +76,9 @@ export default function ProjectsPage() {
     order: 0,
     featured: false,
     translations: [
-      { locale: 'vi', title: '', description: '', category: '' },
-      { locale: 'en', title: '', description: '', category: '' },
-      { locale: 'fr', title: '', description: '', category: '' },
+      { locale: 'vi', title: '', description: '', shortDescription: '', category: '' },
+      { locale: 'en', title: '', description: '', shortDescription: '', category: '' },
+      { locale: 'fr', title: '', description: '', shortDescription: '', category: '' },
     ],
   })
 
@@ -186,9 +195,9 @@ export default function ProjectsPage() {
       order: 0,
       featured: false,
       translations: [
-        { locale: 'vi', title: '', description: '', category: '' },
-        { locale: 'en', title: '', description: '', category: '' },
-        { locale: 'fr', title: '', description: '', category: '' },
+        { locale: 'vi', title: '', description: '', shortDescription: '', category: '' },
+        { locale: 'en', title: '', description: '', shortDescription: '', category: '' },
+        { locale: 'fr', title: '', description: '', shortDescription: '', category: '' },
       ],
     })
     setEditingProject(null)
@@ -219,6 +228,7 @@ export default function ProjectsPage() {
             locale: loc,
             title: trans?.title || '',
             description: trans?.description || '',
+            shortDescription: trans?.shortDescription || '',
             category: trans?.category || '',
           }
         }),
@@ -291,20 +301,42 @@ export default function ProjectsPage() {
                 </div>
                 <div>
                   <Label>{t('form.type')}</Label>
-                  <Input
+                  <Select
                     value={formData.type}
-                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                  />
+                    onValueChange={(value) => setFormData({ ...formData, type: value })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('form.selectType') || 'Select type'} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {getProjectTypeOptions(locale).map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <Label>{t('form.status')}</Label>
-                  <Input
+                  <Select
                     value={formData.status}
-                    onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                  />
+                    onValueChange={(value) => setFormData({ ...formData, status: value })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('form.selectStatus') || 'Select status'} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {getProjectStatusOptions(locale).map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div>
                   <Label>{t('form.year')}</Label>
@@ -364,16 +396,30 @@ export default function ProjectsPage() {
                         />
                       </div>
                       <div>
-                        <Label>{t('form.description')}</Label>
-                        <Textarea
-                          value={trans?.description || ''}
+                        <Label>{t('form.shortDescription') || 'Short Description'}</Label>
+                        <Input
+                          value={trans?.shortDescription || ''}
                           onChange={(e) => {
                             const newTrans = formData.translations.map(t =>
-                              t.locale === loc ? { ...t, description: e.target.value } : t
+                              t.locale === loc ? { ...t, shortDescription: e.target.value } : t
                             )
                             setFormData({ ...formData, translations: newTrans })
                           }}
-                          required={loc === 'vi'}
+                        />
+                      </div>
+                      <div>
+                        <Label>{t('form.description')}</Label>
+                        <RichTextEditor
+                          value={trans?.description || ''}
+                          onChange={(jsonString) => {
+                            const newTrans = formData.translations.map(t =>
+                              t.locale === loc ? { ...t, description: jsonString } : t
+                            )
+                            setFormData({ ...formData, translations: newTrans })
+                          }}
+                          placeholder={loc === 'vi' 
+                            ? 'Nhập mô tả dự án (có thể chèn tiêu đề, danh sách, hình ảnh...)'
+                            : `Enter project description (${loc === 'en' ? 'English' : 'French'})...`}
                         />
                       </div>
                       <div>
@@ -440,7 +486,13 @@ export default function ProjectsPage() {
                       <TableCell>{trans?.title || '-'}</TableCell>
                       <TableCell className="hidden md:table-cell">{project.location || '-'}</TableCell>
                       <TableCell className="hidden lg:table-cell">
-                        <Badge variant="outline">{project.status || '-'}</Badge>
+                        {project.status ? (
+                          <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${getProjectStatusColor(project.status)}`}>
+                            {getProjectStatusLabel(project.status, locale)}
+                          </span>
+                        ) : (
+                          <span className="text-gray-400">-</span>
+                        )}
                       </TableCell>
                       <TableCell className="hidden lg:table-cell">
                         {project.featured && <Badge>{t('yes')}</Badge>}
@@ -516,7 +568,13 @@ export default function ProjectsPage() {
                         </div>
                         <div>
                           <span className="font-medium">{t('table.status')}:</span>
-                          <span className="ml-2">{project.status || '-'}</span>
+                          {project.status ? (
+                            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold border ml-2 ${getProjectStatusColor(project.status)}`}>
+                              {getProjectStatusLabel(project.status, locale)}
+                            </span>
+                          ) : (
+                            <span className="ml-2 text-gray-400">-</span>
+                          )}
                         </div>
                       </div>
                     </div>

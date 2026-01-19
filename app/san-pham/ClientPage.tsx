@@ -1,5 +1,5 @@
 "use client"
-import { Droplets, Settings, Shield, Search, Filter } from 'lucide-react'
+import { Droplets, Settings, Shield, Search, Filter, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useTranslations, useLocale} from 'next-intl'
@@ -7,13 +7,16 @@ import { useEffect, useState, useCallback } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { getProductCategoryLabel, getProductCategoryColor } from '@/types/product'
 
 interface Product {
   id: string
+  slug: string
   name: string
   category: string
   specs: string
   description: string
+  shortDescription?: string
   images?: string[]
 }
 
@@ -27,6 +30,8 @@ export default function ProductsPageClient() {
   const [loading, setLoading] = useState(true)
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [searchQuery, setSearchQuery] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 12
 
   const fetchProducts = useCallback(async (category = null) => {
     setLoading(true)
@@ -80,6 +85,7 @@ export default function ProductsPageClient() {
     } else {
       setSelectedCategories(selectedCategories.filter(c => c !== category))
     }
+    setCurrentPage(1) // Reset to page 1 when filter changes
   }
 
   const filteredProducts = products.filter(product => {
@@ -87,6 +93,11 @@ export default function ProductsPageClient() {
     const matchesSearch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase()) || product.description.toLowerCase().includes(searchQuery.toLowerCase())
     return matchesCategory && matchesSearch
   })
+
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const paginatedProducts = filteredProducts.slice(startIndex, endIndex)
 
   const productCategories = [
     {
@@ -161,9 +172,11 @@ export default function ProductsPageClient() {
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium" style={{ color: '#007a3f' }}>
-                      {product.category}
-                    </span>
+                    {product.category && (
+                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${getProductCategoryColor(product.category)}`}>
+                        {getProductCategoryLabel(product.category, locale as 'vi' | 'en' | 'fr')}
+                      </span>
+                    )}
                   </div>
                   <CardTitle className="text-xl">{product.name}</CardTitle>
                   <CardDescription className="text-sm font-mono">
@@ -171,9 +184,9 @@ export default function ProductsPageClient() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-muted-foreground flex-1 line-clamp-3 mb-4">{product.description}</p>
+                  <p className="text-muted-foreground flex-1 line-clamp-3 mb-4">{product.shortDescription || product.description}</p>
                   <Button asChild variant="outline" className="w-full mt-auto" style={{ borderColor: '#cc0000', color: '#cc0000' }}>
-                    <Link href={`/${locale}/lien-he`} className="focus:outline-none focus:ring-0">{t('featured.detailBtn')}</Link>
+                    <Link href={`/${locale}/san-pham/${product.slug}`} className="focus:outline-none focus:ring-0">{t('featured.detailBtn')}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -215,15 +228,15 @@ export default function ProductsPageClient() {
                 <CardContent className="flex-1 flex flex-col">
                   <div className="flex-1 space-y-3 mb-4">
                     {category.products.map((product, index) => (
-                      <div key={index} className="border-l-2 border-primary pl-3">
+                      <Link key={index} href={`/${locale}/san-pham/${product.slug}`} className="block border-l-2 border-primary pl-3 hover:bg-muted/50 transition-colors rounded-r">
                         <h4 className="font-semibold text-foreground">{product.name}</h4>
                         <p className="text-sm text-muted-foreground">{product.specs}</p>
-                        <p className="text-xs text-muted-foreground/70 line-clamp-2">{product.description}</p>
-                      </div>
+                        <p className="text-xs text-muted-foreground/70 line-clamp-2">{product.shortDescription || product.description}</p>
+                      </Link>
                     ))}
                   </div>
                   <Button asChild variant="outline" className="w-full mt-auto" style={{ borderColor: '#cc0000', color: '#cc0000' }}>
-                    <Link href={`/${locale}/lien-he`} className="focus:outline-none focus:ring-0">{t('categories.learnMore')}</Link>
+                    <Link href={`/${locale}/san-pham`} className="focus:outline-none focus:ring-0">{t('categories.learnMore')}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -291,38 +304,65 @@ export default function ProductsPageClient() {
               ) : filteredProducts.length === 0 ? (
                 <p className="text-muted-foreground">{t('filters.noProductsFound')}</p>
               ) : (
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                  {filteredProducts.map((product) => (
-                    <Card key={product.id} className="flex flex-col h-full hover:shadow-lg transition-shadow">
-                      <div className="aspect-video relative rounded-t-lg overflow-hidden">
-                        <Image
-                          src={product.images?.[0] || '/equipment-pump.jpg'}
-                          alt={product.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
-                          className="object-cover"
-                        />
-                      </div>
-                      <CardHeader className="flex-shrink-0">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium" style={{ color: '#007a3f' }}>
-                            {product.category}
-                          </span>
+                <>
+                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    {paginatedProducts.map((product) => (
+                      <Card key={product.id} className="flex flex-col h-full hover:shadow-lg transition-shadow">
+                        <div className="aspect-video relative rounded-t-lg overflow-hidden">
+                          <Image
+                            src={product.images?.[0] || '/equipment-pump.jpg'}
+                            alt={product.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
+                            className="object-cover"
+                          />
                         </div>
-                        <CardTitle className="text-xl">{product.name}</CardTitle>
-                        <CardDescription className="text-sm font-mono">
-                          {product.specs}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="flex-1 flex flex-col">
-                        <p className="text-muted-foreground flex-1 line-clamp-3 mb-4">{product.description}</p>
-                        <Button asChild variant="outline" className="w-full mt-auto" style={{ borderColor: '#cc0000', color: '#cc0000' }}>
-                          <Link href={`/${locale}/lien-he`} className="focus:outline-none focus:ring-0">{t('featured.detailBtn')}</Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                        <CardHeader className="flex-shrink-0">
+                          <div className="flex items-center justify-between">
+                            {product.category && (
+                              <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${getProductCategoryColor(product.category)}`}>
+                                {getProductCategoryLabel(product.category, locale as 'vi' | 'en' | 'fr')}
+                              </span>
+                            )}
+                          </div>
+                          <CardTitle className="text-xl">{product.name}</CardTitle>
+                          <CardDescription className="text-sm font-mono">
+                            {product.specs}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex-1 flex flex-col">
+                          <p className="text-muted-foreground flex-1 line-clamp-3 mb-4">{product.shortDescription || product.description}</p>
+                          <Button asChild variant="outline" className="w-full mt-auto" style={{ borderColor: '#cc0000', color: '#cc0000' }}>
+                            <Link href={`/${locale}/san-pham/${product.slug}`} className="focus:outline-none focus:ring-0">{t('featured.detailBtn')}</Link>
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                  {totalPages > 1 && (
+                    <div className="mt-8 flex items-center justify-center gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                        disabled={currentPage === 1}
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                      </Button>
+                      <span className="text-sm text-muted-foreground">
+                        Trang {currentPage} / {totalPages}
+                      </span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                        disabled={currentPage === totalPages}
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </div>

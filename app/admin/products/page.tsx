@@ -15,9 +15,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Textarea } from '@/components/ui/textarea'
 import { Badge } from '@/components/ui/badge'
 import { MultiFileUpload } from '@/components/ui/multi-file-upload'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { Plus, Edit, Trash2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Image from 'next/image'
+import { getProductCategoryOptions, getProductCategoryLabel, getProductCategoryColor } from '@/types/product'
 
 interface Product {
   id: string
@@ -31,6 +39,7 @@ interface Product {
     locale: string
     name: string
     description: string
+    shortDescription?: string
     category?: string
   }>
 }
@@ -61,9 +70,9 @@ export default function ProductsPage() {
     order: 0,
     featured: false,
     translations: [
-      { locale: 'vi', name: '', description: '', category: '' },
-      { locale: 'en', name: '', description: '', category: '' },
-      { locale: 'fr', name: '', description: '', category: '' },
+      { locale: 'vi', name: '', description: '', shortDescription: '', category: '' },
+      { locale: 'en', name: '', description: '', shortDescription: '', category: '' },
+      { locale: 'fr', name: '', description: '', shortDescription: '', category: '' },
     ],
   })
 
@@ -198,9 +207,9 @@ export default function ProductsPage() {
       order: 0,
       featured: false,
       translations: [
-        { locale: 'vi', name: '', description: '', category: '' },
-        { locale: 'en', name: '', description: '', category: '' },
-        { locale: 'fr', name: '', description: '', category: '' },
+        { locale: 'vi', name: '', description: '', shortDescription: '', category: '' },
+        { locale: 'en', name: '', description: '', shortDescription: '', category: '' },
+        { locale: 'fr', name: '', description: '', shortDescription: '', category: '' },
       ],
     })
     setEditingProduct(null)
@@ -228,6 +237,7 @@ export default function ProductsPage() {
             locale: loc,
             name: trans?.name || '',
             description: trans?.description || '',
+            shortDescription: trans?.shortDescription || '',
             category: trans?.category || '',
           }
         }),
@@ -361,6 +371,18 @@ export default function ProductsPage() {
                         />
                       </div>
                       <div>
+                        <Label>{t('form.shortDescription') || 'Short Description'}</Label>
+                        <Input
+                          value={trans?.shortDescription || ''}
+                          onChange={(e) => {
+                            const newTrans = formData.translations.map(t =>
+                              t.locale === loc ? { ...t, shortDescription: e.target.value } : t
+                            )
+                            setFormData({ ...formData, translations: newTrans })
+                          }}
+                        />
+                      </div>
+                      <div>
                         <Label>{t('form.description')}</Label>
                         <Textarea
                           value={trans?.description || ''}
@@ -375,15 +397,26 @@ export default function ProductsPage() {
                       </div>
                       <div>
                         <Label>{t('form.category')}</Label>
-                        <Input
+                        <Select
                           value={trans?.category || ''}
-                          onChange={(e) => {
+                          onValueChange={(value) => {
                             const newTrans = formData.translations.map(t =>
-                              t.locale === loc ? { ...t, category: e.target.value } : t
+                              t.locale === loc ? { ...t, category: value } : t
                             )
                             setFormData({ ...formData, translations: newTrans })
                           }}
-                        />
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder={t('form.selectCategory') || 'Select category'} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {getProductCategoryOptions(locale).map((option) => (
+                              <SelectItem key={option.value} value={option.value}>
+                                {option.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </div>
                     </TabsContent>
                   )
@@ -433,7 +466,14 @@ export default function ProductsPage() {
                           <div className="w-16 h-16 bg-muted" />
                         )}
                       </TableCell>
-                      <TableCell>{trans?.name || '-'}</TableCell>
+                      <TableCell>
+                        <div>{trans?.name || '-'}</div>
+                        {trans?.category && (
+                          <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border mt-1 ${getProductCategoryColor(trans.category)}`}>
+                            {getProductCategoryLabel(trans.category, locale)}
+                          </span>
+                        )}
+                      </TableCell>
                       <TableCell className="hidden md:table-cell">{product.price != null ? `$${product.price}` : '-'}</TableCell>
                       <TableCell className="hidden lg:table-cell">
                         {product.featured && <Badge>{t('yes')}</Badge>}

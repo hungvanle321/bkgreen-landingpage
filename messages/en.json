@@ -288,6 +288,29 @@
       "view": "View"
     },
     "cancel": "Cancel",
+    "changePassword": {
+      "cancel": "Cancel",
+      "cardDescription": "Enter your current password and new password",
+      "changePassword": "Change Password",
+      "description": "Update your login password",
+      "errors": {
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordMismatch": "Confirmation password does not match",
+        "passwordRequired": "Please enter current password",
+        "updateFailed": "Failed to update password"
+      },
+      "form": {
+        "confirmPassword": "Confirm New Password",
+        "currentPassword": "Current Password",
+        "newPassword": "New Password",
+        "passwordHint": "Password must be at least 6 characters"
+      },
+      "saving": "Saving...",
+      "success": {
+        "passwordChanged": "Password changed successfully"
+      },
+      "title": "Change Password"
+    },
     "confirmDelete": "Are you sure you want to delete this item?",
     "contactForms": {
       "all": "All",
@@ -495,6 +518,8 @@
       "uploadFile": "Upload File"
     },
     "navigation": {
+      "account": "Account",
+      "changePassword": "Change Password",
       "contactForms": "Contact Forms",
       "dashboard": "Dashboard",
       "equipment": "Equipment",
@@ -511,74 +536,9 @@
       "services": "Services",
       "settings": "Settings",
       "team": "Team",
-      "users": "Users",
-      "account": "Account",
-      "changePassword": "Change Password"
+      "users": "Users"
     },
     "no": "No",
-    "profile": {
-      "changePassword": "Change Password",
-      "changePasswordDescription": "Update your login password",
-      "description": "Manage your personal information and account security",
-      "errors": {
-        "fetchFailed": "Failed to load user information",
-        "passwordMin": "Password must be at least 6 characters",
-        "passwordMismatch": "Confirmation password does not match",
-        "passwordRequired": "Please enter current password",
-        "requiredFields": "Please fill in all required fields",
-        "updateFailed": "Failed to update information",
-        "uploadFailed": "Failed to upload image"
-      },
-      "form": {
-        "confirmPassword": "Confirm New Password",
-        "currentPassword": "Current Password",
-        "email": "Email",
-        "name": "Name",
-        "newPassword": "New Password",
-        "passwordHint": "Password must be at least 6 characters"
-      },
-      "loading": "Loading...",
-      "profileInfo": "Personal Information",
-      "profileInfoDescription": "Update your avatar and information",
-      "saveChanges": "Save Changes",
-      "saving": "Saving...",
-      "success": {
-        "avatarUpdated": "Avatar updated successfully",
-        "passwordChanged": "Password changed successfully",
-        "profileUpdated": "Profile updated successfully"
-      },
-      "title": "My Profile",
-      "uploadAvatar": "Upload Avatar",
-      "cropDialog": {
-        "title": "Crop Avatar",
-        "description": "Adjust the crop area to select your avatar",
-        "cancel": "Cancel",
-        "apply": "Apply Crop"
-      }
-    },
-    "changePassword": {
-      "cancel": "Cancel",
-      "cardDescription": "Enter your current password and new password",
-      "changePassword": "Change Password",
-      "description": "Update your login password",
-      "errors": {
-        "passwordMin": "Password must be at least 6 characters",
-        "passwordMismatch": "Confirmation password does not match",
-        "passwordRequired": "Please enter current password",
-        "updateFailed": "Failed to update password"
-      },
-      "form": {
-        "confirmPassword": "Confirm New Password",
-        "currentPassword": "Current Password",
-        "newPassword": "New Password",
-        "passwordHint": "Password must be at least 6 characters"
-      },
-      "saving": "Saving...",
-      "success": {
-        "passwordChanged": "Password changed successfully"
-      },
-      "title": "Change Password"
-    },
     "process": {
       "addNew": "Add New Step",
       "cancel": "Cancel",
@@ -670,6 +630,46 @@
       "title": "Manage Products",
       "yes": "Yes"
     },
+    "profile": {
+      "changePassword": "Change Password",
+      "changePasswordDescription": "Update your login password",
+      "cropDialog": {
+        "apply": "Apply Crop",
+        "cancel": "Cancel",
+        "description": "Adjust the crop area to select your avatar",
+        "title": "Crop Avatar"
+      },
+      "description": "Manage your personal information and account security",
+      "errors": {
+        "fetchFailed": "Failed to load user information",
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordMismatch": "Confirmation password does not match",
+        "passwordRequired": "Please enter current password",
+        "requiredFields": "Please fill in all required fields",
+        "updateFailed": "Failed to update information",
+        "uploadFailed": "Failed to upload image"
+      },
+      "form": {
+        "confirmPassword": "Confirm New Password",
+        "currentPassword": "Current Password",
+        "email": "Email",
+        "name": "Name",
+        "newPassword": "New Password",
+        "passwordHint": "Password must be at least 6 characters"
+      },
+      "loading": "Loading...",
+      "profileInfo": "Personal Information",
+      "profileInfoDescription": "Update your avatar and information",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "success": {
+        "avatarUpdated": "Avatar updated successfully",
+        "passwordChanged": "Password changed successfully",
+        "profileUpdated": "Profile updated successfully"
+      },
+      "title": "My Profile",
+      "uploadAvatar": "Upload Avatar"
+    },
     "projects": {
       "addNew": "Add New Project",
       "cancel": "Cancel",
@@ -694,6 +694,9 @@
         "images": "Images",
         "location": "Location",
         "order": "Order",
+        "selectStatus": "Select status",
+        "selectType": "Select project type",
+        "shortDescription": "Short Description",
         "slug": "Slug",
         "status": "Status",
         "title": "Title",
@@ -907,13 +910,13 @@
       "list": "Users List",
       "listDescription": "Manage all users",
       "loading": "Loading...",
+      "resetPassword": "Reset Password",
+      "resetPasswordConfirm": "Reset Password",
+      "resetPasswordDescription": "Set password to default for",
       "roles": {
         "admin": "Admin",
         "user": "User"
       },
-      "resetPassword": "Reset Password",
-      "resetPasswordConfirm": "Reset Password",
-      "resetPasswordDescription": "Set password to default for",
       "save": "Save",
       "success": {
         "created": "User created successfully",
@@ -1255,6 +1258,7 @@
       "subtitle": "BK Green is launching its first projects, bringing clean water solutions to the community.",
       "title": "Projects"
     },
+    "loading": "Loading projects...",
     "stats": {
       "active": "Ongoing projects",
       "capacity": "Design capacity",
@@ -1295,41 +1299,6 @@
     }
   },
   "servicesPage": {
-    "cases": {
-      "0": {
-        "description": "2000m³/day wastewater treatment system for an industrial park",
-        "industry": "Industrial",
-        "results": [
-          "Reduce 95% pollution",
-          "Save 30% cost",
-          "Stable operation"
-        ],
-        "title": "Industrial Park Project"
-      },
-      "1": {
-        "description": "Industrial RO system for a clean water plant",
-        "industry": "Water supply",
-        "results": [
-          "Capacity 1000m³/h",
-          "High water quality",
-          "Easy maintenance"
-        ],
-        "title": "Clean Water Plant"
-      },
-      "2": {
-        "description": "Fire protection and water treatment systems for high-rise buildings",
-        "industry": "Commercial",
-        "results": [
-          "Absolute safety",
-          "Regulation compliance",
-          "Reasonable cost"
-        ],
-        "title": "Commercial Building"
-      },
-      "resultsTitle": "Achieved results:",
-      "subtitle": "Highlighted projects and achieved results",
-      "title": "Case Studies"
-    },
     "catalog": {
       "learnMore": "Learn More",
       "title": "Service Catalog"
@@ -1497,6 +1466,22 @@
       },
       "subtitle": "Applying advanced technologies and modern equipment to every project",
       "title": "Technologies Used"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "featured": {
+      "badge": "Featured"
+    },
+    "details": {
+      "description": "Product Description",
+      "gallery": "Product Gallery",
+      "info": "Product Information",
+      "category": "Category",
+      "specs": "Specifications",
+      "price": "Price",
+      "contact": "Contact Us",
+      "back": "Back to Products"
     }
   },
   "units": {

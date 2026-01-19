@@ -236,7 +236,7 @@ export default function AboutPage() {
                   
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col justify-between p-6">
-                    <div className="flex items-start mb-4">
+                    <div className="flex items-center mb-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mr-4 mt-1">
                         <IconComponent className="h-6 w-6 text-white" />
                       </div>

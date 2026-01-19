@@ -5,6 +5,7 @@ export interface TranslationInput {
   name?: string
   title?: string
   description?: string
+  shortDescription?: string
   category?: string
 }
 
@@ -113,7 +114,9 @@ export async function translateMissing(
   if (!baseVi) return translations
 
   const fields: Array<keyof TranslationInput> = ['name', 'title', 'description', 'category']
-  const sourceTexts = fields
+  // Include shortDescription in auto-translation if provided in VI
+  const extendedFields: Array<keyof TranslationInput> = ['name', 'title', 'description', 'shortDescription', 'category']
+  const sourceTexts = extendedFields
     .map((field) => baseVi[field])
     .filter((text): text is string => Boolean(text && text.trim()))
 
@@ -124,7 +127,7 @@ export async function translateMissing(
   try {
     const translated = await translateTexts(sourceTexts, targetLocales, config)
 
-    const fieldOrder: Array<keyof TranslationInput> = fields.filter((field) =>
+    const fieldOrder: Array<keyof TranslationInput> = extendedFields.filter((field) =>
       Boolean(baseVi[field]?.trim())
     )
 

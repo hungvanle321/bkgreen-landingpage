@@ -696,6 +696,8 @@
         "images": "Images",
         "location": "Emplacement",
         "order": "Ordre",
+        "selectStatus": "Sélectionner le statut",
+        "selectType": "Sélectionner le type de projet",
         "slug": "Slug",
         "status": "Statut",
         "title": "Titre",
@@ -1048,6 +1050,7 @@
       "fire": {
         "category": "Sécurité",
         "description": "Systèmes professionnels de protection incendie",
+        "shortDescription": "Description courte",
         "title": "Protection incendie"
       },
       "pump": {
@@ -1258,7 +1261,8 @@
       "capacity": "Capacité de conception",
       "completed": "Projets terminés",
       "service": "Service professionnel"
-    }
+    },
+    "loading": "Chargement des projets..."
   },
   "services": {
     "consulting": {
@@ -1293,41 +1297,6 @@
     }
   },
   "servicesPage": {
-    "cases": {
-      "0": {
-        "description": "Système de traitement des eaux usées 2000m³/jour pour un parc industriel",
-        "industry": "Industriel",
-        "results": [
-          "Réduction de 95% de la pollution",
-          "Économie de 30% des coûts",
-          "Exploitation stable"
-        ],
-        "title": "Projet de Parc Industriel"
-      },
-      "1": {
-        "description": "Système RO industriel pour une usine d'eau potable",
-        "industry": "Eau potable",
-        "results": [
-          "Capacité 1000m³/h",
-          "Haute qualité de l'eau",
-          "Maintenance facile"
-        ],
-        "title": "Usine d'Eau Potable"
-      },
-      "2": {
-        "description": "Systèmes de protection incendie et de traitement de l'eau pour immeuble de grande hauteur",
-        "industry": "Commercial",
-        "results": [
-          "Sécurité absolue",
-          "Conformité réglementaire",
-          "Coût raisonnable"
-        ],
-        "title": "Bâtiment Commercial"
-      },
-      "resultsTitle": "Résultats obtenus :",
-      "subtitle": "Projets phares et résultats obtenus",
-      "title": "Études de cas"
-    },
     "catalog": {
       "learnMore": "En savoir plus",
       "title": "Catalogue des Services"
@@ -1495,6 +1464,22 @@
       },
       "subtitle": "Application de technologies avancées et d'équipements modernes à chaque projet",
       "title": "Technologies Utilisées"
+    }
+  },
+  "products": {
+    "title": "Produits",
+    "featured": {
+      "badge": "En Vedette"
+    },
+    "details": {
+      "description": "Description du Produit",
+      "gallery": "Galerie de Produits",
+      "info": "Informations sur le Produit",
+      "category": "Catégorie",
+      "specs": "Spécifications",
+      "price": "Prix",
+      "contact": "Contactez-nous",
+      "back": "Retour aux Produits"
     }
   },
   "units": {

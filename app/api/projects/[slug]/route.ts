@@ -3,31 +3,26 @@ import { NextResponse } from 'next/server'
 
 import { prisma } from '@/lib/prisma'
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest, context: { params: Promise<{ slug: string }> }) {
   try {
+    const { slug } = await context.params
     const { searchParams } = new URL(request.url)
     const locale = searchParams.get('locale') || 'vi'
-    const limit = parseInt(searchParams.get('limit') || '6')
-    const featured = searchParams.get('featured') === 'true'
 
-    const whereClause: any = {}
-    if (featured) {
-      whereClause.featured = true
-    }
-
-    const projects = await prisma.project.findMany({
-      where: whereClause,
+    const project = await prisma.project.findUnique({
+      where: { slug },
       include: {
         translations: {
           where: { locale },
         },
       },
-      orderBy: { order: 'asc' },
-      take: limit,
     })
 
-    // Transform the data to include the translated fields directly
-    const transformedProjects = projects.map((project: any) => ({
+    if (!project) {
+      return NextResponse.json({ error: 'Project not found' }, { status: 404 })
+    }
+
+    const transformed = {
       id: project.id,
       slug: project.slug,
       images: project.images,
@@ -42,13 +37,13 @@ export async function GET(request: NextRequest) {
       description: project.translations[0]?.description || '',
       shortDescription: project.translations[0]?.shortDescription || '',
       category: project.translations[0]?.category || '',
-    }))
+    }
 
-    return NextResponse.json(transformedProjects)
+    return NextResponse.json(transformed)
   } catch (error) {
-    console.error('Error fetching projects:', error)
+    console.error('Error fetching project by slug:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch projects' },
+      { error: 'Failed to fetch project' },
       { status: 500 }
     )
   }

@@ -72,6 +72,7 @@ model ProjectTranslation {
   locale      String // 'vi', 'en', 'fr'
   title       String
   description String
+  shortDescription String?
   category    String?
 
   project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
@@ -131,6 +132,7 @@ model ProductTranslation {
   locale      String // 'vi', 'en', 'fr'
   name        String
   description String
+  shortDescription String?
   category    String?
 
   product Product @relation(fields: [productId], references: [id], onDelete: Cascade)

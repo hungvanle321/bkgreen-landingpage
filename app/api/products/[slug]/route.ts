@@ -3,43 +3,33 @@ import { NextResponse } from 'next/server'
 
 import { prisma } from '@/lib/prisma'
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ slug: string }> }
+) {
   try {
+    const { slug } = await params
     const { searchParams } = new URL(request.url)
     const locale = searchParams.get('locale') || 'vi'
-    const limit = parseInt(searchParams.get('limit') || '6')
-    const featured = searchParams.get('featured') === 'true'
-    const category = searchParams.get('category')
 
-    const whereClause: any = {}
-    if (featured) {
-      whereClause.featured = true
-    }
-    if (category) {
-      whereClause.translations = {
-        some: {
-          locale,
-          category: {
-            contains: category,
-            mode: 'insensitive'
-          }
-        }
-      }
-    }
-
-    const products = await prisma.product.findMany({
-      where: whereClause,
+    const product = await prisma.product.findUnique({
+      where: { slug },
       include: {
         translations: {
           where: { locale },
         },
       },
-      orderBy: { order: 'asc' },
-      take: limit,
     })
 
+    if (!product) {
+      return NextResponse.json(
+        { error: 'Product not found' },
+        { status: 404 }
+      )
+    }
+
     // Transform the data to include the translated fields directly
-    const transformedProducts = products.map((product: any) => ({
+    const transformedProduct = {
       id: product.id,
       slug: product.slug,
       images: product.images,
@@ -51,13 +41,13 @@ export async function GET(request: NextRequest) {
       description: product.translations[0]?.description || '',
       shortDescription: product.translations[0]?.shortDescription || '',
       category: product.translations[0]?.category || '',
-    }))
+    }
 
-    return NextResponse.json(transformedProducts)
+    return NextResponse.json(transformedProduct)
   } catch (error) {
-    console.error('Error fetching products:', error)
+    console.error('Error fetching product:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch products' },
+      { error: 'Failed to fetch product' },
       { status: 500 }
     )
   }
