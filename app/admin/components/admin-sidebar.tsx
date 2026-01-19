@@ -62,7 +62,6 @@ export function AdminSidebar() {
           setCurrentUser(data)
         }
       } catch {
-        console.log('Could not fetch current user')
       }
     }
     void fetchCurrentUser()

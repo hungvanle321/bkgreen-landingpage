@@ -396,28 +396,36 @@ export default function ProcessPage() {
             {steps.map((step) => {
               const trans = getTranslation(step.translations)
               return (
-                <div key={step.id} className="py-4 space-y-4">
-                  {/* Step Number and Image */}
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <span className="text-lg font-bold text-blue-600">{step.step}</span>
-                      </div>
+                <div key={step.id} className="py-4 space-y-3">
+                  {/* Step Number */}
+                  <div className="flex justify-center">
+                    <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <span className="text-2xl font-bold text-blue-600">{step.step}</span>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-gray-900 text-lg">{trans?.title || '-'}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{t('table.order')}: {step.order}</p>
-                    </div>
-                    <div className="flex-shrink-0">
+                  </div>
+
+                  {/* Image */}
+                  <div className="flex justify-center">
+                    <div className="h-24 sm:h-32 bg-gray-100 rounded flex items-center justify-center">
                       {step.image ? (
-                        <div className="relative w-16 h-16">
-                          <Image src={step.image} alt="" fill className="object-cover rounded" />
-                        </div>
+                        <Image src={step.image} alt="" width={200} height={200} className="h-full w-auto object-contain rounded" />
                       ) : (
-                        <div className="w-16 h-16 bg-muted rounded flex items-center justify-center">
-                          <div className="w-8 h-8 bg-gray-200 rounded"></div>
+                        <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
+                          <div className="w-8 h-8 bg-gray-300 rounded"></div>
                         </div>
                       )}
+                    </div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="space-y-2">
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.title') || 'Title'}:</span>
+                      <p className="font-medium text-gray-900">{trans?.title || '-'}</p>
+                    </div>
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.order')}:</span>
+                      <p className="text-gray-900">{step.order}</p>
                     </div>
                   </div>
 

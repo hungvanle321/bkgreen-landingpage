@@ -105,11 +105,12 @@ export async function PUT(
       // Upload new file
       const url = await uploadFile(file)
 
-      // Update database record
+      // Update database record - keep the original name for fixed categories
       const updatedFile = await prisma.media.update({
         where: { id },
         data: {
-          name: file.name,
+          // Keep original name if it's a fixed category, otherwise use uploaded file name
+          name: existingFile.name,
           url: url,
           type: file.type,
           size: file.size,

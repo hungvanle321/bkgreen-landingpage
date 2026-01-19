@@ -337,40 +337,40 @@ export default function TeamPage() {
           {/* Mobile Card View */}
           <div className="md:hidden divide-y divide-gray-200">
             {members.map((member) => (
-              <div key={member.id} className="py-4 space-y-4">
-                {/* Image and Name */}
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
+              <div key={member.id} className="py-4 space-y-3">
+                {/* Image */}
+                <div className="flex justify-center">
+                  <div className="h-24 sm:h-32 w-24 sm:w-32 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
                     {member.image ? (
-                      <Image src={member.image} alt={member.name} width={48} height={48} unoptimized className="rounded" />
+                      <Image src={member.image} alt={member.name} width={128} height={128} unoptimized className="h-full w-full object-cover" />
                     ) : (
-                      <div className="w-12 h-12 bg-gray-200 rounded flex items-center justify-center">
-                        <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-                      </div>
+                      <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
                     )}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-medium text-gray-900 text-lg">{member.name}</h3>
-                    <p className="text-sm text-gray-600">{member.position}</p>
-                  </div>
                 </div>
 
-                {/* Contact Information */}
-                <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                {/* Info */}
+                <div className="space-y-2">
                   <div>
-                    <span className="font-medium">{t('table.email')}:</span>
-                    <span className="ml-2">{member.email || '-'}</span>
+                    <span className="text-sm text-gray-500">{t('table.name') || 'Name'}:</span>
+                    <p className="font-medium text-gray-900">{member.name}</p>
                   </div>
                   <div>
-                    <span className="font-medium">{t('table.phone')}:</span>
-                    <span className="ml-2">{member.phone || '-'}</span>
+                    <span className="text-sm text-gray-500">{t('table.position') || 'Position'}:</span>
+                    <p className="text-gray-900">{member.position}</p>
                   </div>
-                </div>
-
-                {/* Bio */}
-                <div>
-                  <span className="font-medium text-gray-700">{t('table.bio')}:</span>
-                  <p className="mt-1 text-sm text-gray-600">{member.bio}</p>
+                  <div>
+                    <span className="text-sm text-gray-500">{t('table.email')}:</span>
+                    <p className="text-gray-900">{member.email || '-'}</p>
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500">{t('table.phone')}:</span>
+                    <p className="text-gray-900">{member.phone || '-'}</p>
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500">{t('table.bio')}:</span>
+                    <p className="text-gray-900 text-sm">{member.bio}</p>
+                  </div>
                 </div>
 
                 {/* Actions */}

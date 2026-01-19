@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
 
   try {
     const { email, password } = await request.json()
-    console.log(locale)
 
     if (!email || !password) {
       return NextResponse.json(

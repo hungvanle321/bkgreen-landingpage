@@ -381,23 +381,29 @@ export default function EquipmentPage() {
             {equipment.map((item) => {
               const trans = getTranslation(item.translations)
               return (
-                <div key={item.id} className="py-4 space-y-4">
-                  {/* Image and Title */}
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
+                <div key={item.id} className="py-4 space-y-3">
+                  {/* Image */}
+                  <div className="flex justify-center">
+                    <div className="h-24 sm:h-32 bg-gray-100 rounded flex items-center justify-center">
                       {item.image ? (
-                        <div className="relative w-16 h-16">
-                          <Image src={item.image} alt="" fill className="object-cover rounded" unoptimized />
-                        </div>
+                        <Image src={item.image} alt="" width={200} height={200} className="h-full w-auto object-contain rounded" unoptimized />
                       ) : (
-                        <div className="w-16 h-16 bg-muted rounded flex items-center justify-center">
-                          <div className="w-8 h-8 bg-gray-200 rounded"></div>
+                        <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
+                          <div className="w-8 h-8 bg-gray-300 rounded"></div>
                         </div>
                       )}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-gray-900 text-lg">{trans?.title || '-'}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{t('table.order')}: {item.order}</p>
+                  </div>
+
+                  {/* Info */}
+                  <div className="space-y-2">
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.title') || 'Title'}:</span>
+                      <p className="font-medium text-gray-900">{trans?.title || '-'}</p>
+                    </div>
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.order')}:</span>
+                      <p className="text-gray-900">{item.order}</p>
                     </div>
                   </div>
 

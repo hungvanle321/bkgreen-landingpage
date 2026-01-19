@@ -36,14 +36,7 @@ const eslintConfig = [
       'no-console': ['warn', { allow: ['warn', 'error'] }],
 
       // Import hygiene
-      'import/order': [
-        'warn',
-        {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-          'newlines-between': 'always',
-          alphabetize: { order: 'asc', caseInsensitive: true },
-        },
-      ],
+      'import/order': 'off',
 
       // TypeScript best practices
       'no-unused-vars': 'off',

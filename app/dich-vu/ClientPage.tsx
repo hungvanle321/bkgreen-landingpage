@@ -1,4 +1,5 @@
 "use client"
+import { useEffect, useState } from 'react'
 import { Droplets, Settings, Filter, Zap, Package, CheckCircle, ArrowRight, Clock, Shield, Users } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,18 +8,65 @@ import {useTranslations, useLocale} from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
+interface Service {
+  id: string
+  slug: string
+  icon?: string
+  image?: string
+  title: string
+  description: string
+  features: string[]
+  featured: boolean
+}
+
 export default function ServicesPageClient() {
   const t = useTranslations('servicesPage')
   const tCore = useTranslations('services')
   const locale = useLocale()
+  const [services, setServices] = useState<Service[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const services = [
-    { icon: Droplets, title: tCore('wastewater.title'), description: t('services.wastewater.description'), features: [t('services.wastewater.features.0'), t('services.wastewater.features.1'), t('services.wastewater.features.2'), t('services.wastewater.features.3')], image: '/service-wastewater.jpg' },
-    { icon: Settings, title: tCore('operation.title'), description: t('services.operation.description'), features: [t('services.operation.features.0'), t('services.operation.features.1'), t('services.operation.features.2'), t('services.operation.features.3')], image: '/service-operation.jpg' },
-    { icon: Filter, title: tCore('ro.title'), description: t('services.ro.description'), features: [t('services.ro.features.0'), t('services.ro.features.1'), t('services.ro.features.2'), t('services.ro.features.3')], image: '/service-ro.jpg' },
-    { icon: Zap, title: tCore('electrical.title'), description: t('services.electrical.description'), features: [t('services.electrical.features.0'), t('services.electrical.features.1'), t('services.electrical.features.2'), t('services.electrical.features.3')], image: '/service-electrical.jpg' },
-    { icon: Package, title: tCore('equipment.title'), description: t('services.equipment.description'), features: [t('services.equipment.features.0'), t('services.equipment.features.1'), t('services.equipment.features.2'), t('services.equipment.features.3')], image: '/service-equipment.jpg' }
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const res = await fetch(`/api/services?locale=${locale}`)
+        if (res.ok) {
+          const data = await res.json()
+          setServices(data)
+        }
+      } catch (error) {
+        console.error('Error fetching services:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    void fetchServices()
+  }, [locale])
+
+  // Fallback to hardcoded services if no data from CMS
+  const defaultServices = [
+    { icon: 'Droplets', title: tCore('wastewater.title'), description: t('services.wastewater.description'), features: [t('services.wastewater.features.0'), t('services.wastewater.features.1'), t('services.wastewater.features.2'), t('services.wastewater.features.3')], image: '/service-wastewater.jpg' },
+    { icon: 'Settings', title: tCore('operation.title'), description: t('services.operation.description'), features: [t('services.operation.features.0'), t('services.operation.features.1'), t('services.operation.features.2'), t('services.operation.features.3')], image: '/service-operation.jpg' },
+    { icon: 'Filter', title: tCore('ro.title'), description: t('services.ro.description'), features: [t('services.ro.features.0'), t('services.ro.features.1'), t('services.ro.features.2'), t('services.ro.features.3')], image: '/service-ro.jpg' },
+    { icon: 'Zap', title: tCore('electrical.title'), description: t('services.electrical.description'), features: [t('services.electrical.features.0'), t('services.electrical.features.1'), t('services.electrical.features.2'), t('services.electrical.features.3')], image: '/service-electrical.jpg' },
+    { icon: 'Package', title: tCore('equipment.title'), description: t('services.equipment.description'), features: [t('services.equipment.features.0'), t('services.equipment.features.1'), t('services.equipment.features.2'), t('services.equipment.features.3')], image: '/service-equipment.jpg' }
   ]
+
+  const iconMap: Record<string, any> = {
+    Droplets, Settings, Filter, Zap, Package
+  }
+
+  // Use CMS data if available, otherwise use defaults
+  const displayServices = services.length > 0 ? services : defaultServices.map((s, i) => ({
+    id: String(i),
+    slug: '',
+    icon: s.icon,
+    image: s.image,
+    title: s.title,
+    description: s.description,
+    features: s.features,
+    featured: false
+  }))
 
   const projectProcess = [
     { step: '01', title: t('process.steps.0.title'), description: t('process.steps.0.description'), image: '/process-survey.jpg' },
@@ -61,42 +109,51 @@ export default function ServicesPageClient() {
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{t('catalog.title')}</h2>
           </div>
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {services.map((service, index) => (
-              <Card key={service.title} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 bg-white overflow-hidden rounded-xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
-                  <div className="relative h-56 lg:min-h-full overflow-hidden">
-                    <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" priority={index < 2} loading={index < 2 ? 'eager' : 'lazy'} />
-                  </div>
-                  <div className="p-6 flex h-full flex-col">
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#007a3f' }}>
-                          <service.icon className="h-5 w-5 text-white" aria-hidden="true" />
-                        </div>
-                        <CardTitle className="text-xl">{service.title}</CardTitle>
+          {loading ? (
+            <div className="text-center py-12">Đang tải...</div>
+          ) : (
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+              {displayServices.map((service, index) => {
+                const IconComponent = service.icon ? iconMap[service.icon] || Package : Package
+                const serviceImage = service.image || '/service-wastewater.jpg'
+                
+                return (
+                  <Card key={service.id} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 bg-white overflow-hidden rounded-xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
+                      <div className="relative h-56 lg:min-h-full overflow-hidden">
+                        <Image src={serviceImage} alt={service.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" priority={index < 2} loading={index < 2 ? 'eager' : 'lazy'} />
                       </div>
-                      <CardDescription className="text-base mb-4">{service.description}</CardDescription>
-                      <ul className="space-y-2 mb-6">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4" style={{ color: '#007a3f' }} />
-                            <span className="text-sm text-gray-600">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="p-6 flex h-full flex-col">
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ backgroundColor: '#007a3f' }}>
+                              <IconComponent className="h-5 w-5 text-white" aria-hidden="true" />
+                            </div>
+                            <CardTitle className="text-xl">{service.title}</CardTitle>
+                          </div>
+                          <CardDescription className="text-base mb-4">{service.description}</CardDescription>
+                          <ul className="space-y-2 mb-6">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-center space-x-2">
+                                <CheckCircle className="h-4 w-4" style={{ color: '#007a3f' }} />
+                                <span className="text-sm text-gray-600">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <Button asChild variant="outline" className="w-full mt-auto" style={{ borderColor: '#cc0000', color: '#cc0000' }}>
+                          <Link href={`/${locale}/lien-he`} className="flex items-center justify-center gap-2 focus:outline-none focus:ring-0">
+                            <span>{t('catalog.learnMore')}</span>
+                            <ArrowRight className="h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
-                    <Button asChild variant="outline" className="w-full mt-auto" style={{ borderColor: '#cc0000', color: '#cc0000' }}>
-                      <Link href={`/${locale}/lien-he`} className="flex items-center justify-center gap-2 focus:outline-none focus:ring-0">
-                        <span>{t('catalog.learnMore')}</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+                  </Card>
+                )
+              })}
+            </div>
+          )}
         </div>
       </section>
 

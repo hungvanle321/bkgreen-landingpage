@@ -7,6 +7,7 @@ import '../globals.css'
 import AOSInit from '@/components/AOSInit'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import FloatingActionButtons from '@/components/FloatingActionButtons'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
 import type { Metadata } from 'next'
@@ -145,6 +146,7 @@ export default async function LocaleLayout({
         {children}
       </main>
       <Footer />
+      <FloatingActionButtons />
         </NextIntlClientProvider>
       </ThemeProvider>
     </div>

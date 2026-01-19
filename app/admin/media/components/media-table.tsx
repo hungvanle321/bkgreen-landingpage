@@ -23,6 +23,17 @@ interface MediaFile {
   createdAt: Date
 }
 
+// Fixed categories that should appear in table
+const FIXED_CATEGORIES = [
+  'logo',
+  'logo_white',
+  'hero_background',
+  'about_image',
+  'process_background',
+  'favicon',
+  'social_media'
+] as const
+
 export function MediaTable() {
   const t = useTranslations('admin')
   const [files, setFiles] = useState<MediaFile[]>([])
@@ -37,7 +48,11 @@ export function MediaTable() {
       setLoading(true)
       const response = await fetch('/admin/api/media')
       const data = await response.json()
-      setFiles(data)
+      // Only show fixed category files
+      const fixedFiles = data.filter((file: MediaFile) => 
+        FIXED_CATEGORIES.includes(file.category as any)
+      )
+      setFiles(fixedFiles)
     } catch (error) {
       console.error('Error fetching files:', error)
       toast.error(t('errors.fetchFailed') || 'Failed to fetch files')
@@ -137,7 +152,7 @@ export function MediaTable() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-32">{t('forms.name') || 'Name'}</TableHead>
+                <TableHead className="w-64">{t('forms.name') || 'Name'}</TableHead>
                 <TableHead className="hidden md:table-cell">{t('forms.category') || 'Category'}</TableHead>
                 <TableHead className="hidden lg:table-cell">{t('forms.type') || 'Type'}</TableHead>
                 <TableHead className="hidden lg:table-cell">{t('forms.size') || 'Size'}</TableHead>
@@ -274,52 +289,54 @@ export function MediaTable() {
         {/* Mobile Card View */}
         <div className="md:hidden divide-y divide-gray-200">
           {files.map((file) => (
-            <div key={file.id} className="p-4 space-y-4">
-              {/* Image and Name Section */}
-              <div className="flex items-start space-x-4">
-                <div className="max-w-16 max-h-16 bg-gray-100 rounded flex items-center justify-center overflow-hidden flex-shrink-0">
+            <div key={file.id} className="p-4 space-y-3">
+              {/* Image Section - Centered on Mobile */}
+              <div className="flex justify-center">
+                <div className="h-24 sm:h-32 bg-gray-100 rounded flex items-center justify-center overflow-hidden">
                   {file.type.startsWith('image/') ? (
                     <img
                       src={file.url}
                       alt={file.name}
-                      className="max-w-full max-h-full object-contain rounded"
+                      className="h-full w-auto object-contain rounded"
                     />
                   ) : (
                     <div className="text-center p-2">
-                      <ImageIcon className="h-5 w-5 mx-auto text-gray-400 mb-1" />
+                      <ImageIcon className="h-8 w-8 mx-auto text-gray-400 mb-1" />
                       <p className="text-xs text-gray-500">File</p>
                     </div>
                   )}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-medium text-gray-900 text-sm">{file.name}</h3>
-                  <div className="grid grid-cols-2 gap-2 text-xs text-gray-600 mt-2">
-                    <div>
-                      <span className="font-medium">{t('forms.category') || 'Category'}:</span>
-                      <span className="ml-1 capitalize">{t(`forms.${file.category}`) || file.category}</span>
-                    </div>
-                    <div>
-                      <span className="font-medium">{t('forms.type') || 'Type'}:</span>
-                      <span className="ml-1">{file.type}</span>
-                    </div>
-                    <div>
-                      <span className="font-medium">{t('forms.size') || 'Size'}:</span>
-                      <span className="ml-1">{formatFileSize(file.size)}</span>
-                    </div>
-                    <div>
-                      <span className="font-medium">{t('forms.createdAt') || 'Created'}:</span>
-                      <span className="ml-1">{new Date(file.createdAt).toLocaleDateString()}</span>
-                    </div>
+              </div>
+
+              {/* Name and Info Section */}
+              <div className="space-y-2">
+                <h3 className="font-medium text-gray-900 text-sm text-center sm:text-left break-words">{file.name}</h3>
+                <div className="flex flex-col gap-1.5 text-xs text-gray-600">
+                  <div>
+                    <span className="font-medium">{t('forms.category') || 'Category'}:</span>
+                    <span className="ml-1 capitalize">{t(`forms.${file.category}`) || file.category}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">{t('forms.type') || 'Type'}:</span>
+                    <span className="ml-1">{file.type}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">{t('forms.size') || 'Size'}:</span>
+                    <span className="ml-1">{formatFileSize(file.size)}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">{t('forms.createdAt') || 'Created'}:</span>
+                    <span className="ml-1">{new Date(file.createdAt).toLocaleDateString()}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Actions Section */}
-              <div className="flex flex-wrap gap-2">
+              {/* Actions Section - Horizontal on all sizes */}
+              <div className="flex gap-2">
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex-1 min-w-[120px]"
+                  className="flex-1"
                   onClick={() => {
                     setSelectedFile(file)
                     setImageDialogOpen(true)
@@ -331,7 +348,7 @@ export function MediaTable() {
                 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="outline" size="sm" className="flex-1 min-w-[120px]">
+                    <Button variant="outline" size="sm" className="flex-1">
                       <MoreHorizontal className="h-3 w-3 mr-2" />
                       {t('actions.more') || 'More'}
                     </Button>

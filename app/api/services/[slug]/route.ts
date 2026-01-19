@@ -3,22 +3,33 @@ import { NextResponse } from 'next/server'
 
 import { prisma } from '@/lib/prisma'
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  context: { params: Promise<{ slug: string }> }
+) {
   try {
+    const { slug } = await context.params
     const { searchParams } = new URL(request.url)
     const locale = searchParams.get('locale') || 'vi'
 
-    const services = await prisma.service.findMany({
+    const service = await prisma.service.findUnique({
+      where: { slug },
       include: {
         translations: {
           where: { locale },
         },
       },
-      orderBy: { order: 'asc' },
     })
 
+    if (!service) {
+      return NextResponse.json(
+        { error: 'Service not found' },
+        { status: 404 }
+      )
+    }
+
     // Transform the data to include the translated fields directly
-    const transformedServices = services.map((service: any) => ({
+    const transformedService = {
       id: service.id,
       slug: service.slug,
       icon: service.icon,
@@ -28,13 +39,13 @@ export async function GET(request: NextRequest) {
       title: service.translations[0]?.title || '',
       description: service.translations[0]?.description || '',
       features: service.translations[0]?.features ? JSON.parse(service.translations[0].features) : [],
-    }))
+    }
 
-    return NextResponse.json(transformedServices)
+    return NextResponse.json(transformedService)
   } catch (error) {
-    console.error('Error fetching services:', error)
+    console.error('Error fetching service:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch services' },
+      { error: 'Failed to fetch service' },
       { status: 500 }
     )
   }

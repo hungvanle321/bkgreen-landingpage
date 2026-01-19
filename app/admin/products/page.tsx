@@ -526,35 +526,41 @@ export default function ProductsPage() {
             {products.map((product) => {
               const trans = getTranslation(product.translations)
               return (
-                <div key={product.id} className="py-4 space-y-4">
-                  {/* Image and Name */}
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
+                <div key={product.id} className="py-4 space-y-3">
+                  {/* Image */}
+                  <div className="flex justify-center">
+                    <div className="h-24 sm:h-32 bg-gray-100 rounded flex items-center justify-center">
                       {product.images[0] ? (
-                        <div className="relative w-16 h-16">
-                          <Image src={product.images[0]} alt="" fill className="object-cover rounded" unoptimized />
-                        </div>
+                        <Image src={product.images[0]} alt="" width={200} height={200} className="h-full w-auto object-contain rounded" unoptimized />
                       ) : (
-                        <div className="w-16 h-16 bg-muted rounded flex items-center justify-center">
-                          <div className="w-8 h-8 bg-gray-200 rounded"></div>
+                        <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
+                          <div className="w-8 h-8 bg-gray-300 rounded"></div>
                         </div>
                       )}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-gray-900 text-lg">{trans?.name || '-'}</h3>
-                      <div className="grid grid-cols-2 gap-2 text-sm text-gray-600 mt-1">
-                        <div>
-                          <span className="font-medium">{t('table.price')}:</span>
-                          <span className="ml-2">{product.price != null ? `$${product.price}` : '-'}</span>
-                        </div>
-                        {product.featured && (
-                          <div>
-                            <span className="font-medium">{t('table.featured')}:</span>
-                            <span className="ml-2"><Badge>{t('yes')}</Badge></span>
-                          </div>
-                        )}
-                      </div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="space-y-2">
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.name') || 'Name'}:</span>
+                      <p className="font-medium text-gray-900">{trans?.name || '-'}</p>
+                      {trans?.category && (
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border mt-1 ${getProductCategoryColor(trans.category)}`}>
+                          {getProductCategoryLabel(trans.category, locale)}
+                        </span>
+                      )}
                     </div>
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.price')}:</span>
+                      <p className="text-gray-900">{product.price != null ? `$${product.price}` : '-'}</p>
+                    </div>
+                    {product.featured && (
+                      <div>
+                        <span className="text-sm text-gray-500">{t('table.featured')}:</span>
+                        <Badge className="ml-2">{t('yes')}</Badge>
+                      </div>
+                    )}
                   </div>
 
                   {/* Actions */}

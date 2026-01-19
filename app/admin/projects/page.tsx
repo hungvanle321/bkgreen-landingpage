@@ -545,47 +545,47 @@ export default function ProjectsPage() {
             {projects.map((project) => {
               const trans = getTranslation(project.translations)
               return (
-                <div key={project.id} className="py-4 space-y-4">
-                  {/* Image and Title */}
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
+                <div key={project.id} className="py-4 space-y-3">
+                  {/* Image */}
+                  <div className="flex justify-center">
+                    <div className="h-24 sm:h-32 bg-gray-100 rounded flex items-center justify-center">
                       {project.images[0] ? (
-                        <div className="relative w-16 h-16">
-                          <Image src={project.images[0]} alt="" fill className="object-cover rounded" unoptimized />
-                        </div>
+                        <Image src={project.images[0]} alt="" width={200} height={200} className="h-full w-auto object-contain rounded" unoptimized />
                       ) : (
-                        <div className="w-16 h-16 bg-muted rounded flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
                           <ImageIcon className="h-6 w-6 text-gray-400" />
                         </div>
                       )}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-gray-900 text-lg">{trans?.title || '-'}</h3>
-                      <div className="grid grid-cols-2 gap-2 text-sm text-gray-600 mt-1">
-                        <div>
-                          <span className="font-medium">{t('table.location')}:</span>
-                          <span className="ml-2">{project.location || '-'}</span>
-                        </div>
-                        <div>
-                          <span className="font-medium">{t('table.status')}:</span>
-                          {project.status ? (
-                            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold border ml-2 ${getProjectStatusColor(project.status)}`}>
-                              {getProjectStatusLabel(project.status, locale)}
-                            </span>
-                          ) : (
-                            <span className="ml-2 text-gray-400">-</span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
                   </div>
 
-                  {/* Featured Badge */}
-                  {project.featured && (
+                  {/* Info */}
+                  <div className="space-y-2">
                     <div>
-                      <Badge>{t('yes')}</Badge>
+                      <span className="text-sm text-gray-500">{t('table.title') || 'Title'}:</span>
+                      <p className="font-medium text-gray-900">{trans?.title || '-'}</p>
                     </div>
-                  )}
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.location')}:</span>
+                      <p className="text-gray-900">{project.location || '-'}</p>
+                    </div>
+                    <div>
+                      <span className="text-sm text-gray-500">{t('table.status')}:</span>
+                      {project.status ? (
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold border ml-1 ${getProjectStatusColor(project.status)}`}>
+                          {getProjectStatusLabel(project.status, locale)}
+                        </span>
+                      ) : (
+                        <span className="text-gray-400">-</span>
+                      )}
+                    </div>
+                    {project.featured && (
+                      <div>
+                        <span className="text-sm text-gray-500">{t('table.featured')}:</span>
+                        <Badge className="ml-2">{t('yes')}</Badge>
+                      </div>
+                    )}
+                  </div>
 
                   {/* Actions */}
                   <TooltipProvider>
