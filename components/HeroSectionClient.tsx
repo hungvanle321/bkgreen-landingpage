@@ -27,7 +27,7 @@ export default function HeroSectionClient() {
 
   return (
     <section className="relative text-white bg-cover bg-center bg-no-repeat min-h-screen flex items-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div className="absolute inset-0 bg-black/60 md:bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl lg:w-3/5">
