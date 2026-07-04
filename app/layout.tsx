@@ -13,7 +13,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#007a3f" />
       </head>
       <body className="font-sans" suppressHydrationWarning>
-        {children}
+        
       </body>
     </html>
   )
